@@ -1,0 +1,33 @@
+[
+    {
+    "id": "a1",
+    "name": "Spring mood 1",
+    "image": "color addict 1",
+    "renderfile": "spring_mood.json"
+},{
+    "id": "a2",
+    "name": "Spring mood 2",
+    "image": "color addict 2",
+    "renderfile": "color addict 2"
+},{
+    "id": "a3",
+    "name": "Spring mood 3",
+    "image": "color addict 3",
+    "renderfile": "color addict 3"
+},{
+    "id": "a4",
+    "name": "Spring mood 4",
+    "image": "color addict 4",
+    "renderfile": "color addict 4"
+},{
+    "id": "a5",
+    "name": "Spring mood 5",
+    "image": "color addict 5",
+    "renderfile": "color addict 5"
+},{
+    "id": "a7",
+    "name": "Spring mood 7",
+    "image": "color addict 7",
+    "renderfile": "color addict 7"
+}
+]

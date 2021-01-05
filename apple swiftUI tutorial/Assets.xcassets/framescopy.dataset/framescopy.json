@@ -1,0 +1,14 @@
+[
+    "b1":{
+    "id": "a1",
+    "name": "Spring mood",
+    "image": "spring_mood",
+    "renderfile": "spring_mood"
+},
+    "b2":{
+    "id": "a2",
+    "name": "color addict",
+    "image": "color addict 1",
+    "renderfile": "color addict 1"
+}
+]

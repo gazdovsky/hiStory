@@ -1,0 +1,2596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BC4A1280-1147-4544-8277-423531C61D54"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BC8DB68-9EC4-4D5A-9309-DC1A70DCD204"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "saveImg()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C94DA74D-4743-4B27-A9CB-F73CD2DE3015"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "saveImg()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66CD741D-FED2-4216-8E09-BEBE9A561DE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7ADB49EF-CC1D-442B-B635-0EDFE7140AFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/storyBar/extraTabButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "605ADB57-37A5-4097-A357-C64FF6665C58"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4823D05F-368A-42ED-B422-453AE4039EE4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A4EDEA3-1926-4C50-9F79-EFDCD6DEC05C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/DataFetching/DataFetching.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C95E5021-415E-4A03-9A39-96A05E30025E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "readPlst(_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "437CB965-9DF2-4E88-8D8C-E814B4BC3965"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/views/multiFrames.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04693C05-2C7A-4743-9551-464FB6162D23"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/views/multiFrames.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31BBE97B-5C41-49BB-9245-214895CD6A22"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76E007A6-B25D-40BB-80BA-DC380FFFB739"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "Coordinator"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "76E007A6-B25D-40BB-80BA-DC380FFFB739 - ce07c90627e3a714"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.parent.getter : apple_swiftUI_tutorial.ImagePickerView"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "157">
+               </Location>
+               <Location
+                  uuid = "76E007A6-B25D-40BB-80BA-DC380FFFB739 - 1bc57d73a17458ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.Coordinator.(__preview__imagePickerController in _97B3061729E054BFF9ADE1545A30528C)(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76FCE2E7-2658-4C52-AE73-24E2A86821B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "init(parent:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76FCE2E7-2658-4C52-AE73-24E2A86821B5 - 5e787eb1afaa0df6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.__allocating_init(parent: apple_swiftUI_tutorial.ImagePickerView) -&gt; apple_swiftUI_tutorial.ImagePickerView.Coordinator"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "11">
+               </Location>
+               <Location
+                  uuid = "76FCE2E7-2658-4C52-AE73-24E2A86821B5 - 49aa21ef0382711f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.init(parent: apple_swiftUI_tutorial.ImagePickerView) -&gt; apple_swiftUI_tutorial.ImagePickerView.Coordinator"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "145">
+               </Location>
+               <Location
+                  uuid = "76FCE2E7-2658-4C52-AE73-24E2A86821B5 - 1bc57d73a17458ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.Coordinator.(__preview__imagePickerController in _97B3061729E054BFF9ADE1545A30528C)(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "246">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DE93AB5-2309-43B4-979A-5525387C348C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "init(parent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3C97A04-E65D-44F2-AD15-FCEA5A015E2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B3C97A04-E65D-44F2-AD15-FCEA5A015E2E - 8f1d5e694c023b93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "B3C97A04-E65D-44F2-AD15-FCEA5A015E2E - 1bc57d73a17458ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.Coordinator.(__preview__imagePickerController in _97B3061729E054BFF9ADE1545A30528C)(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A91E09D-9BA4-46BF-B20A-C02FBDF29C3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9A91E09D-9BA4-46BF-B20A-C02FBDF29C3B - 8f1d5e694c023b93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "9A91E09D-9BA4-46BF-B20A-C02FBDF29C3B - 1bc57d73a17458ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.Coordinator.(__preview__imagePickerController in _97B3061729E054BFF9ADE1545A30528C)(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1915BA88-6A5C-4734-B258-DCE2065C9333"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1915BA88-6A5C-4734-B258-DCE2065C9333 - 8f1d5e694c023bd1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "709">
+               </Location>
+               <Location
+                  uuid = "1915BA88-6A5C-4734-B258-DCE2065C9333 - 1bc57d73a1745888"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.Coordinator.(__preview__imagePickerController in _97B3061729E054BFF9ADE1545A30528C)(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "712">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FBD3AF56-3EC4-4F1C-BB7C-CAF1CCBBB04E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FBD3AF56-3EC4-4F1C-BB7C-CAF1CCBBB04E - 8f1d5e694c023bf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "771">
+               </Location>
+               <Location
+                  uuid = "FBD3AF56-3EC4-4F1C-BB7C-CAF1CCBBB04E - 1bc57d73a17458a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.Coordinator.(__preview__imagePickerController in _97B3061729E054BFF9ADE1545A30528C)(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "820">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "952D5F09-B9EC-4644-A560-DB998D74937B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "updateUIViewController(_:context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "952D5F09-B9EC-4644-A560-DB998D74937B - fc99d0da71aae82f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.updateUIViewController(_: __C.UIViewController, context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "174">
+               </Location>
+               <Location
+                  uuid = "952D5F09-B9EC-4644-A560-DB998D74937B - ec00af882966bfb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.photoSelector.(__preview__body in _97B3061729E054BFF9ADE1545A30528C).getter : some"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE4DF013-8BBC-47D3-9D15-330B9BF393D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "updateUIViewController(_:context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE4DF013-8BBC-47D3-9D15-330B9BF393D5 - fc99d0da71aae82f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.updateUIViewController(_: __C.UIViewController, context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "174">
+               </Location>
+               <Location
+                  uuid = "BE4DF013-8BBC-47D3-9D15-330B9BF393D5 - ec00af882966bf98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.photoSelector.(__preview__body in _97B3061729E054BFF9ADE1545A30528C).getter : some"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B10D797D-3A93-4949-ACC0-88720960EFAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "makeCoordinator()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B10D797D-3A93-4949-ACC0-88720960EFAB - 71c6f019514898c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.makeCoordinator() -&gt; apple_swiftUI_tutorial.ImagePickerView.Coordinator"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "99">
+               </Location>
+               <Location
+                  uuid = "B10D797D-3A93-4949-ACC0-88720960EFAB - cdeb0a29d9a5f009"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.(__preview__makeCoordinator in _97B3061729E054BFF9ADE1545A30528C)() -&gt; apple_swiftUI_tutorial.ImagePickerView.Coordinator"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0627EC05-4092-4B1C-9195-CAA7A50374D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "makeUIViewController(context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0627EC05-4092-4B1C-9195-CAA7A50374D8 - e6f6b576bebb4ddf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.makeUIViewController(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "211">
+               </Location>
+               <Location
+                  uuid = "0627EC05-4092-4B1C-9195-CAA7A50374D8 - 498651cc6e78207a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.(__preview__makeUIViewController in _97B3061729E054BFF9ADE1545A30528C)(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BCE5652-529C-46DB-9243-7D627C911397"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "makeUIViewController(context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4BCE5652-529C-46DB-9243-7D627C911397 - e6f6b576bebb4ddf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.makeUIViewController(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "211">
+               </Location>
+               <Location
+                  uuid = "4BCE5652-529C-46DB-9243-7D627C911397 - 498651cc6e78207a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.(__preview__makeUIViewController in _97B3061729E054BFF9ADE1545A30528C)(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97CE3106-1393-4810-96A9-2F32BC525E78"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "makeUIViewController(context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "97CE3106-1393-4810-96A9-2F32BC525E78 - e6f6b576bebb4dfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.makeUIViewController(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "251">
+               </Location>
+               <Location
+                  uuid = "97CE3106-1393-4810-96A9-2F32BC525E78 - 498651cc6e782059"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.(__preview__makeUIViewController in _97B3061729E054BFF9ADE1545A30528C)(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "141">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1890683-1FE9-43AA-8B48-FBBE62831F90"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "makeUIViewController(context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C1890683-1FE9-43AA-8B48-FBBE62831F90 - e6f6b576bebb4d9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.makeUIViewController(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "402">
+               </Location>
+               <Location
+                  uuid = "C1890683-1FE9-43AA-8B48-FBBE62831F90 - 498651cc6e782038"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.(__preview__makeUIViewController in _97B3061729E054BFF9ADE1545A30528C)(context: SwiftUI.UIViewControllerRepresentableContext&lt;apple_swiftUI_tutorial.ImagePickerView&gt;) -&gt; __C.UIViewController"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "258">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7543841-29DC-4014-85C9-F25FE4E7DB2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B7543841-29DC-4014-85C9-F25FE4E7DB2A - 8f1d5e694c023b17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.ImagePickerView.Coordinator.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "890">
+               </Location>
+               <Location
+                  uuid = "B7543841-29DC-4014-85C9-F25FE4E7DB2A - 1bc57d73a174584e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_SwiftUIPhotoSelector_6):apple_swiftUI_tutorial.ImagePickerView.Coordinator.(__preview__imagePickerController in _97B3061729E054BFF9ADE1545A30528C)(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "SwiftUIPhotoSelector.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/SwiftUIPhotoSelector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "956">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DC9AFF6-0C51-460B-BF9E-E20A4AE3CB83"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "saveImg()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0F684B7-8DA7-4A64-B90F-549A3F576C71"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getDocumentsDirectory()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75858416-14EE-4F5B-B079-D139D1082F06"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getDocumentsDirectory()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08EB27A5-A8A4-4028-BE73-4B2257AB4DA9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getDocumentsDirectory()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3035C65-5D87-4EAB-BE3E-07E27F3343E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/saveTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "previews"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FBB02D0-8C7D-447D-9830-9EB186AC71D2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/views/WikiButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02EA0DDD-93C8-4DCC-A6F4-2A3080C99C42"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/photoSelector/sovfl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67CDD6E2-EE80-406D-88CD-CDF11560E388"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/storyBar/ToolbarButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "719AC6FC-AF3F-4678-A746-6A4D032B00E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "719AC6FC-AF3F-4678-A746-6A4D032B00E1 - 7585a1702aa0e086"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in apple_swiftUI_tutorial.frame1.body.getter : some"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "615">
+               </Location>
+               <Location
+                  uuid = "719AC6FC-AF3F-4678-A746-6A4D032B00E1 - 53efc5e5bf2f6ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in (extension in apple_swiftUI_tutorial_PreviewReplacement_frame_6):apple_swiftUI_tutorial.frame1.(__preview__body in _171B0355CA869F2F124743EF394E7F27).getter : some"
+                  moduleName = "frame.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "615">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED40ECB6-5331-4B1D-AF10-B54C06332E4E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "ED40ECB6-5331-4B1D-AF10-B54C06332E4E - 7585a1702aa0e325"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in apple_swiftUI_tutorial.frame1.body.getter : some"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "ED40ECB6-5331-4B1D-AF10-B54C06332E4E - 53efc5e5bf2f54e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in (extension in apple_swiftUI_tutorial_PreviewReplacement_frame_6):apple_swiftUI_tutorial.frame1.(__preview__body in _171B0355CA869F2F124743EF394E7F27).getter : some"
+                  moduleName = "frame.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "476">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "355B6C7D-CA8A-4922-8D90-EDF37E202E32"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "readPlst(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "355B6C7D-CA8A-4922-8D90-EDF37E202E32 - 7393b6afce0c1e95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1269">
+               </Location>
+               <Location
+                  uuid = "355B6C7D-CA8A-4922-8D90-EDF37E202E32 - 103f7ea449228612"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20E344A8-E975-4648-BF2A-80711DC5FE45"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "saveImageToFolder(image:name:folder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "20E344A8-E975-4648-BF2A-80711DC5FE45 - b68441a02024e3eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "574">
+               </Location>
+               <Location
+                  uuid = "20E344A8-E975-4648-BF2A-80711DC5FE45 - 8ad773844394bc8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "602">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1997714-78AD-465D-B6A4-918C55FC5584"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "saveImageToFolder(image:name:folder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D1997714-78AD-465D-B6A4-918C55FC5584 - b68441a02024e394"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "621">
+               </Location>
+               <Location
+                  uuid = "D1997714-78AD-465D-B6A4-918C55FC5584 - 8ad773844394bb7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "792">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B74380DC-338E-4B3E-8775-A873708DAD24"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "saveImageToFolder(image:name:folder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "saveImageToFolder(image:name:folder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - b68441a02024e3b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "910">
+               </Location>
+               <Location
+                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - b68441a02024e3b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "1065">
+               </Location>
+               <Location
+                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - 8ad773844394b96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "1081">
+               </Location>
+               <Location
+                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - 8ad773844394b96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "1231">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DF13D73-105C-4F0B-9FEF-AE92F83B7222"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "getImagesFromFolder(folderName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6877A360-691B-425D-B828-14B73B096164"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "getImagesFromFolder(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6877A360-691B-425D-B828-14B73B096164 - 791b8daa301cdaf4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "401">
+               </Location>
+               <Location
+                  uuid = "6877A360-691B-425D-B828-14B73B096164 - 537751968d6c8273"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "263">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75343F62-45B9-4DD6-8182-E60CC5614F14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "getImagesFromFolder(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "75343F62-45B9-4DD6-8182-E60CC5614F14 - 791b8daa301cdad5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "555">
+               </Location>
+               <Location
+                  uuid = "75343F62-45B9-4DD6-8182-E60CC5614F14 - 537751968d6c8252"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "529">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6679E218-C85E-4999-B53F-6D22DA75DE0E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "createFileDirectory(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6679E218-C85E-4999-B53F-6D22DA75DE0E - daaf70f1bbf394fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.createFileDirectory(folderName: Swift.String) -&gt; Foundation.URL"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "1070">
+               </Location>
+               <Location
+                  uuid = "6679E218-C85E-4999-B53F-6D22DA75DE0E - 1536f60078756e04"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__createFileDirectory in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; Foundation.URL"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "847">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "074C7F43-A2BE-4827-8985-D198EB06FD65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "createFileDirectory(folderName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C51F773D-87A0-471D-A8BD-557F27BDB936"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "createFileDirectory(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C51F773D-87A0-471D-A8BD-557F27BDB936 - daaf70f1bbf3957f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.createFileDirectory(folderName: Swift.String) -&gt; Foundation.URL"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "1487">
+               </Location>
+               <Location
+                  uuid = "C51F773D-87A0-471D-A8BD-557F27BDB936 - 1536f60078756f80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__createFileDirectory in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; Foundation.URL"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "128"
+                  endingLineNumber = "128"
+                  offsetFromSymbolStart = "1640">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E93839C4-1085-47D5-9995-4EA271F6284A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "createFileDirectory(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E93839C4-1085-47D5-9995-4EA271F6284A - daaf70f1bbf39621"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.createFileDirectory(folderName: Swift.String) -&gt; Foundation.URL"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1911">
+               </Location>
+               <Location
+                  uuid = "E93839C4-1085-47D5-9995-4EA271F6284A - 1536f60078756cde"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__createFileDirectory in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; Foundation.URL"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1980">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "499B245E-BEDA-4F06-AC42-0579258F1D30"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "getDocumentsDirectory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8967DAD9-62ED-4F09-A732-9206CF1F2871"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "getDocumentsDirectory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D6FB94D-DD98-455D-B5C6-6BAF7557BED6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "saveTransformToFolder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3D6FB94D-DD98-455D-B5C6-6BAF7557BED6 - e60dc40d636d5c2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "377">
+               </Location>
+               <Location
+                  uuid = "3D6FB94D-DD98-455D-B5C6-6BAF7557BED6 - 803790c44fa2f1a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "246">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2E47E17-2A1B-4631-9C5D-486CFAE782F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "saveTransformToFolder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCBB9A89-56BB-4E93-9745-D9046506EBBC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "saveTransformToFolder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CCBB9A89-56BB-4E93-9745-D9046506EBBC - e60dc40d636d5c81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1317">
+               </Location>
+               <Location
+                  uuid = "CCBB9A89-56BB-4E93-9745-D9046506EBBC - 803790c44fa2f10b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1468">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B0F3590-58ED-41BC-BFCE-B31AE26CB7B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "saveTransformToFolder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7B0F3590-58ED-41BC-BFCE-B31AE26CB7B6 - e60dc40d636d5c4f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1077">
+               </Location>
+               <Location
+                  uuid = "7B0F3590-58ED-41BC-BFCE-B31AE26CB7B6 - 803790c44fa2f1c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1090">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB3E8AD6-96AE-4CEC-93F4-E3439BD46370"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "saveTransformToFolder()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB3E8AD6-96AE-4CEC-93F4-E3439BD46370 - e60dc40d636d5cae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1165">
+               </Location>
+               <Location
+                  uuid = "AB3E8AD6-96AE-4CEC-93F4-E3439BD46370 - 803790c44fa2f124"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1310">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C16943E-6999-42F3-838F-9009C6B6A2AC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "createFileDirectory(folderName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C57FB496-3498-401B-826B-77B550BAA115"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "getSavedTemplates(source:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C57FB496-3498-401B-826B-77B550BAA115 - ea55b267c8cffd35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getSavedTemplates() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "259">
+               </Location>
+               <Location
+                  uuid = "C57FB496-3498-401B-826B-77B550BAA115 - ff034981243985c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getSavedTemplates in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "111">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE6C929D-445E-45E1-BEEA-B4B7395BCC6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "getSavedTemplates(source:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE5C65D7-228D-4BBE-9A85-34A073FCF366"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "getSavedTemplates(source:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EE5C65D7-228D-4BBE-9A85-34A073FCF366 - ea55b267c8cffaea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getSavedTemplates() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "842">
+               </Location>
+               <Location
+                  uuid = "EE5C65D7-228D-4BBE-9A85-34A073FCF366 - ff034981243981c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getSavedTemplates in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "743">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D664A2E-D022-4DA9-A5C0-1B28328D1FE0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/views/MainMenu/draftTemplates.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "6D664A2E-D022-4DA9-A5C0-1B28328D1FE0 - dfb75fa5024baafd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int) -&gt; SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.Text, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI.Text, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;&gt;&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt; in apple_swiftUI_tutorial.draftTemplates.body.getter : some"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/views/MainMenu/draftTemplates.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "796">
+               </Location>
+               <Location
+                  uuid = "6D664A2E-D022-4DA9-A5C0-1B28328D1FE0 - d62f34d3611caefc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int) -&gt; &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0)&gt; in (extension in apple_swiftUI_tutorial_PreviewReplacement_draftTemplates_7):apple_swiftUI_tutorial.draftTemplates.(__preview__body in _2DB5A484A7E1D75BB960761F21EA3C00).getter : some"
+                  moduleName = "draftTemplates.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/views/MainMenu/draftTemplates.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "714">
+               </Location>
+               <Location
+                  uuid = "6D664A2E-D022-4DA9-A5C0-1B28328D1FE0 - b74e2c2d822403c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #2 (Swift.Int) -&gt; &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.__designTimeSelection&lt;A where A: SwiftUI.View&gt;(A, Swift.String) -&gt; some&gt;&gt;.0)&gt; in (extension in apple_swiftUI_tutorial_PreviewReplacement_draftTemplates_7):apple_swiftUI_tutorial.draftTemplates.(__preview__body in _2DB5A484A7E1D75BB960761F21EA3C00).getter : some"
+                  moduleName = "draftTemplates.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/views/MainMenu/draftTemplates.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "10833">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51D748BB-9DF0-4937-B6E8-4A15F64A0C8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/photoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "imageInBlackBox"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E04F5820-C0DE-4B54-BB95-0A83E586F938"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "fileModificationDate(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A0015EB-A6EC-44F8-AF84-3866A1F1402F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "fileModificationDate(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5DED1264-5CD8-46B0-81E5-C7C8D607E358"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "getImagesFromFolder(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5DED1264-5CD8-46B0-81E5-C7C8D607E358 - 791b8daa301cd69a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "3970">
+               </Location>
+               <Location
+                  uuid = "5DED1264-5CD8-46B0-81E5-C7C8D607E358 - 537751968d6c8ffc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "2261">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67AD5F74-EE43-4108-B446-BD5B44131AB8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "getImagesFromFolder(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "67AD5F74-EE43-4108-B446-BD5B44131AB8 - 791b8daa301cd6d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "3106">
+               </Location>
+               <Location
+                  uuid = "67AD5F74-EE43-4108-B446-BD5B44131AB8 - 537751968d6c8e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "1850">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEFB5657-D4AD-45C2-978D-5DB05C9A2D4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "getImagesFromFolder(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EEFB5657-D4AD-45C2-978D-5DB05C9A2D4C - 791b8daa301cd77b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "4159">
+               </Location>
+               <Location
+                  uuid = "EEFB5657-D4AD-45C2-978D-5DB05C9A2D4C - 537751968d6c8ffc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
+                  moduleName = "coordinator.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "2261">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97BB9ACB-708A-440A-8107-7F144A54ED0E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/photoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "imageInBlackBox"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "451E0AE0-0A92-4B49-BAC5-3CA6738963E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/KeyBoardNotificationReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFF24351-BDCD-4EDE-84A1-BE7E07989E3A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/KeyBoardNotificationReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88F24586-7C6D-4584-BBEF-4321EE812758"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/KeyBoardNotificationReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "88F24586-7C6D-4584-BBEF-4321EE812758 - 7968470648aa2c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.KeyboardState.init(with: Foundation.Notification) -&gt; apple_swiftUI_tutorial.KeyboardState"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/KeyBoardNotificationReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "3664">
+               </Location>
+               <Location
+                  uuid = "88F24586-7C6D-4584-BBEF-4321EE812758 - 7968470648aa2c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.KeyboardState.init(with: Foundation.Notification) -&gt; apple_swiftUI_tutorial.KeyboardState"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/KeyBoardNotificationReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "3746">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24DD9A34-FC60-407D-8A21-ABF0FA21748B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/KeyBoardNotificationReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01BCA08E-20FF-48B8-A28F-13F19C2650A8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "readPlst(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "01BCA08E-20FF-48B8-A28F-13F19C2650A8 - 7393b6afce0c1e32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "817">
+               </Location>
+               <Location
+                  uuid = "01BCA08E-20FF-48B8-A28F-13F19C2650A8 - 103f7ea4492286b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "655">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42A2BBEB-670D-46E4-8972-A789648035DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "readPlst(_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EFB7005-9856-4B2D-B1BD-CF72A38DC8FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "readPlst(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "1EFB7005-9856-4B2D-B1BD-CF72A38DC8FE - 7393b6afce0c1e11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "842">
+               </Location>
+               <Location
+                  uuid = "1EFB7005-9856-4B2D-B1BD-CF72A38DC8FE - 103f7ea449228696"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "808">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05EBCEEC-1614-4C90-9821-12B3E267D438"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "readPlst(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "05EBCEEC-1614-4C90-9821-12B3E267D438 - 7393b6afce0c11ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "964">
+               </Location>
+               <Location
+                  uuid = "05EBCEEC-1614-4C90-9821-12B3E267D438 - 103f7ea449228929"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
+                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "936">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41246A99-D11E-45C0-AE5D-BA38040E6C6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/screenShotSaver/takeScreenShot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "screenshot(origin:size:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20ABC1CD-69E3-4264-8AAF-DE30DB5DBC4B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/screenShotSaver/takeScreenShot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "screenshot(origin:size:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "151AC285-71DE-41E2-87CE-A8782D1E0F09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/screenShotSaver/takeScreenShot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "screenshot(origin:size:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57FA9823-1A0D-46B2-8F7B-6466330DEBC6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/screenShotSaver/takeScreenShot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "screenshot(origin:size:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4D4C86D-998F-41E4-B747-6EC6C5A9210D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/screenShotSaver/takeScreenShot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "screenshot(origin:size:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

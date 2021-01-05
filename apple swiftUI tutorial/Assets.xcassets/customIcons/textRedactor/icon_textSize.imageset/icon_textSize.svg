@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="101" viewBox="0 0 90 101">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ecc9af;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #7d3704;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_1_копия" data-name="Фигура 1 копия" class="cls-1" d="M40,0H50V42H40V0Z"/>
+  <path id="Фигура_1_копия_3" data-name="Фигура 1 копия 3" class="cls-1" d="M66,16V26H24V16H66Z"/>
+  <path id="Фигура_1_копия_4" data-name="Фигура 1 копия 4" class="cls-2" d="M66,91v10H24V91H66Z"/>
+</svg>

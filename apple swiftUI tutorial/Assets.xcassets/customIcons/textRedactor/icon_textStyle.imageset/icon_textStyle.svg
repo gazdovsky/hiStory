@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="106" height="101" viewBox="0 0 106 101">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 150px;
+        font-family: "Times New Roman";
+      }
+
+      .cls-1 {
+        fill: #ecc9af;
+      }
+
+      .cls-2 {
+        fill: #7e3804;
+      }
+    </style>
+  </defs>
+  <text id="A" class="cls-1" x="-1" y="101">A</text>
+  <text id="a-2" data-name="a" class="cls-2" x="39" y="99">a</text>
+</svg>

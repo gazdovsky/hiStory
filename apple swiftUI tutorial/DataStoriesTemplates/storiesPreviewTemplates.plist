@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	
+		<key>b1</key>
+		<dict>
+			<key>id</key>
+			<string>a1</string>
+			<key>name</key>
+			<string>Spring mood</string>
+			<key>image</key>
+			<string>spring_mood</string>
+			<key>renderfile</key>
+			<string>spring_mood</string>
+		</dict>
+		<key>b2</key>
+		<dict>
+			<key>id</key>
+			<string>a2</string>
+			<key>name</key>
+			<string>color addict</string>
+			<key>image</key>
+			<string>color addict 1</string>
+			<key>renderfile</key>
+			<string>color addict 1</string>
+		</dict>
+	
+</dict>
+</plist>
