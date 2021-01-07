@@ -14,19 +14,43 @@ class textContainersFrameData: ObservableObject{
     static var shared = textContainersFrameData()
     @ObservedObject var storyTemplate: selectorContainerStore = .shared
     @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 5)
+
+    @Published var activeTextContainer = 0
+    
+    func indexOfActiveTextContainer() -> Int{
+        var active = 0
+        var activeCount = 0
+        for i in 0..<textContainers.count {
+            if textContainers[i].isActive == true{
+                active = i
+                activeCount += 1
+            }
+        }
+        active = activeCount > 0 ? active : -1
+        return active
+    }
+    
+    func deactivateAllTextContainers(){
+        activeTextContainer = 0
+        for i in 0..<textContainers.count {
+            self.textContainers[i].isActive = false
+        }
+    }
 }
 
 struct textContainersFrame: View {
     @ObservedObject var data: textContainersFrameData = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
     var body: some View {
-        Image(data.storyTemplate.templateImageName)
+        Image(redactor.storyTemplate.templateImageName)
             .resizable()
             .aspectRatio(1080/1920, contentMode: .fit)
+            .opacity(0)
             .overlay(
                 ZStack{
-                    ForEach(data.textContainers.indices){ u in
-                        textViewWrapper(textViewItem: $data.textContainers[u], index: u)
-                            .modifier(makeTransformingMultilineText(index : u, fontSize: data.textContainers[u].fontSize))
+                    ForEach(redactor.textFields.textContainers.indices){ u in
+                        textViewWrapper(textViewItem: $redactor.textFields.textContainers[u], index: u)
+                            .modifier(makeTransformingMultilineText(index : u, fontSize: redactor.textFields.textContainers[u].fontSize))
                     }
                 }
             )

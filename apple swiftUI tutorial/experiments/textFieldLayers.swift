@@ -10,7 +10,8 @@ import SwiftUI
 import UIKit
 
 struct textViewWrapper: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
     @Binding var textViewItem: textFieldContainer
     var index: Int
     @State var w: CGFloat = 100
@@ -38,7 +39,7 @@ struct textViewWrapper: View {
                                 }
                             })
                 )
-                .opacity(settings.activeTextContainer == index && settings.indexOfActiveTextContainer() != -1 ? 1 : 0)
+                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
             TextView(fieldText: $textViewItem.fieldText,
                      fontSize: $textViewItem.fontSize,
                      textAlign: textViewItem.textAlign,
@@ -50,12 +51,13 @@ struct textViewWrapper: View {
                      isFirstResponder: $textViewItem.isFirstResponder,
                      fieldHeight: $fieldHeight,
                      fieldWidth: $w,
+                     kern: $textViewItem.kern,
                      style: $textViewItem.style
             )
             .onTapGesture{
-                settings.textContainers[index].isActive = true
-                settings.textContainers[index].isFirstResponder = true
-                settings.redactorMode = .textEdit
+                redactor.textFields.textContainers[index].isActive = true
+                redactor.textFields.textContainers[index].isFirstResponder = true
+                redactor.redactorMode = .textEdit
             }
             .zIndex(Double(4))
             .frame(width: w, height: fieldHeight)
@@ -75,7 +77,7 @@ struct textViewWrapper: View {
                                 }
                             })
                 )
-                .opacity(settings.activeTextContainer == index && settings.indexOfActiveTextContainer() != -1 ? 1 : 0)
+                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
         }
     }
 }
@@ -84,7 +86,10 @@ struct textViewWrapper: View {
 struct TextView: UIViewRepresentable {
     var kbHandler:KeyboardHandler?
     typealias UIViewType = UITextView
-    var settings: selectorContainerStore = .shared
+//    var settings: selectorContainerStore = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
+    
+//    var textFields: textContainersFrameData = .shared
     var placeholderText: String = "666"
     @Binding var fieldText: String
     @Binding var fontSize: CGFloat
@@ -98,7 +103,7 @@ struct TextView: UIViewRepresentable {
     @Binding var isFirstResponder: Bool
     @Binding var fieldHeight: CGFloat
     @Binding var fieldWidth: CGFloat
-    var kern: CGFloat = 0.3
+    @Binding var kern: CGFloat
     @Binding var style: styleTextContainer
     //
     func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
@@ -116,7 +121,7 @@ struct TextView: UIViewRepresentable {
         shadow.shadowBlurRadius = 1
         
         textView.typingAttributes = [
-            NSAttributedString.Key.kern: $style.kern,
+            NSAttributedString.Key.kern: style.kern,
             NSAttributedString.Key.obliqueness: 0,
             NSAttributedString.Key.shadow: shadow,
             NSAttributedString.Key.strokeWidth: 0,
@@ -130,7 +135,7 @@ struct TextView: UIViewRepresentable {
         
         uiView.allowsEditingTextAttributes = true
         uiView.typingAttributes = [
-            NSAttributedString.Key.kern: $style.kern
+            NSAttributedString.Key.kern: style.kern
         ]
         
         
@@ -179,12 +184,12 @@ struct TextView: UIViewRepresentable {
             parent.kbHandler = KeyboardHandler { state in
                 let duration = state.animationDuration
                 UIView.animate(withDuration: duration) {
-                    self.parent.settings.keyboardHeight = Int(state.height)
-                    self.parent.settings.updateSupposedKeyboardHeight()
+                    self.parent.redactor.keyboardHeight = Int(state.height)
+                    self.parent.redactor.updateSupposedKeyboardHeight()
                     print("key shows animate", state.height)
                 }
             }
-            parent.settings.activeTextContainer = parent.index
+            parent.redactor.textFields.activeTextContainer = parent.index
         }
         
         func textViewDidEndEditing(_ textView: UITextView) {

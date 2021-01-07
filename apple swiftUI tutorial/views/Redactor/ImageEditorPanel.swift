@@ -9,21 +9,23 @@
 import SwiftUI
 
 struct ImageEditorPanel: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var data: photoContainersFrameData = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
     var body: some View {
         HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
             
-        
+            
             //            Spacer()
             ToolbarButton(icon: "xmark", isSelected: true, size: 30){
-                self.settings.clearContainer(index: self.settings.indexOfActiveContainer())
-                self.settings.redactorMode = .nothing
+                redactor.photoContainers.clearContainer(index: redactor.photoContainers.indexOfActiveContainer())
+                redactor.redactorMode = .nothing
             }
-//            Spacer()
+            //            Spacer()
             ToolbarButton(icon: "checkmark", isSelected: true, size: 30){
-                self.settings.acceptContainerChanges(index: self.settings.indexOfActiveContainer())
-                settings.saveTransformToFolder()
-                self.settings.redactorMode = .nothing
+                redactor.photoContainers.acceptContainerChanges(index: redactor.photoContainers.indexOfActiveContainer())
+                redactor.photoContainers.saveTransformToFolder()
+                redactor.redactorMode = .nothing
             }
             .padding([.leading])
             //        Spacer()

@@ -9,28 +9,21 @@
 import Foundation
 import SwiftUI
 
-enum redactorMode {
-    case nothing
-    case textEdit
-    case imageEdit
-}
-class textContainerStore: ObservableObject {
-    init() {
-    }
-    
-    static var shared = textContainerStore()
-    var tester = 0
-    @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 5)
-    @Published var activeTextContainer = 0
-}
+//enum redactorMode {
+//    case nothing
+//    case textEdit
+//    case imageEdit
+//}
 
-class selectorContainerStore: ObservableObject {
 
-    init() {
-    }
+class selectorContainerStore: systemFilesWorker, ObservableObject {
+
+//    init() {
+//    }
    
     static var shared = selectorContainerStore()
-   
+//    var photoContainersFrames: photoContainersFrameData = .shared
+    
     @Published var score = 0
     @Published var containers:Array<photoSelector> = Array(repeating:  photoSelector() , count: 5)
     @Published var lastActiveContainerIndex = -2
@@ -39,11 +32,11 @@ class selectorContainerStore: ObservableObject {
     @Published var savedStorys:[String] = [""]
     @Published var navigateToRedactor: Bool = false
     @Published var templateOpacity: Bool = false
-    @Published var keyboardHeight: Int = 0
-    @Published var supposedKeyboardHeight: Int = 260
+//    @Published var keyboardHeight: Int = 0
+//    @Published var supposedKeyboardHeight: Int = 260
     @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 5)
     @Published var activeTextContainer = 0
-    @Published var redactorMode: redactorMode = .nothing
+//    @Published var redactorMode: redactorMode = .nothing
     @Published var templateFrame: CGRect = CGRect()
     @Published var tx: CGFloat = 1
     @Published var ty: CGFloat = 1
@@ -74,18 +67,18 @@ class selectorContainerStore: ObservableObject {
         }
     }
 
-        func indexOfActiveContainer() -> Int {
-        var active = 0
-        var activeCount = 0
-        for i in 0...containers.count-1 {
-            if containers[i].redactorActive == true{
-                active = i
-                activeCount += 1
-            }
-        }
-        active = activeCount > 0 ? active : -1
-        return active
-    }
+//        func indexOfActiveContainer() -> Int {
+//        var active = 0
+//        var activeCount = 0
+//        for i in 0...containers.count-1 {
+//            if containers[i].redactorActive == true{
+//                active = i
+//                activeCount += 1
+//            }
+//        }
+//        active = activeCount > 0 ? active : -1
+//        return active
+//    }
     func clearAllContainers() -> Void{
         for i in 0...containers.count-1{
             containers[i] = photoSelector()
@@ -96,14 +89,14 @@ class selectorContainerStore: ObservableObject {
         containers[index] = photoSelector()
         templateOpacity = false
     }
-    func acceptContainerChanges(index: Int) -> Void {
-        if index == -1 {return}
-        containers[index].redactorActive = false
-        templateOpacity = false
-
-        saveContainerImage(index: index)
-//        savedStorys = getSavedTemplates()
-    }
+//    func acceptContainerChanges(index: Int) -> Void {
+//        if index == -1 {return}
+//        containers[index].redactorActive = false
+//        templateOpacity = false
+//
+//        saveContainerImage(index: index)
+////        savedStorys = getSavedTemplates()
+//    }
     func saveContainerImage(index: Int) -> Void {
         let newFolder = createFileDirectory(folderName: templateImageName) //story
 //        let newFolder = getDocumentsDirectory().appendingPathComponent(templateImageName)
@@ -135,16 +128,16 @@ class selectorContainerStore: ObservableObject {
         }
     }
     
-    func saveImageToFolder(image: UIImage, name:String, folder: URL){
-        let data = image.jpegData(compressionQuality: 0.8)
-//               let filename = getDocumentsDirectory().appendingPathComponent(name)
-        let filename = folder.appendingPathComponent(name)
-           do{
-            try data?.write(to: filename)
-           } catch {
-            
-           }
-    }
+//    func saveImageToFolder(image: UIImage, name:String, folder: URL){
+//        let data = image.jpegData(compressionQuality: 0.8)
+////               let filename = getDocumentsDirectory().appendingPathComponent(name)
+//        let filename = folder.appendingPathComponent(name)
+//           do{
+//            try data?.write(to: filename)
+//           } catch {
+//            
+//           }
+//    }
     func getImagesFromFolder(folderName:String) -> Void {
         let folder = getDocumentsDirectory().appendingPathComponent(folderName)
         //      _rr = ("\(folder)")
@@ -163,86 +156,86 @@ class selectorContainerStore: ObservableObject {
             containers[i].imageZIndex = 1
         }
     }
-    func createFileDirectory(folderName: String) -> URL { 
-        let documentsURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//    func createFileDirectory(folderName: String) -> URL { 
+//        let documentsURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//
+//        //set the name of the new folder
+//        let folderURL = documentsURL.appendingPathComponent(folderName)
+////        print( "\(folderURL)")
+//        do
+//        {
+//             try FileManager.default.createDirectory(at: folderURL, withIntermediateDirectories: true)
+//        }
+//        catch let error as NSError
+//        {
+//            NSLog("Unable to create directory \(error.debugDescription)")
+//        }
+//        return folderURL
+//    }
+//    func getDocumentsDirectory() -> URL {
+//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        return paths[0]
+//    }
 
-        //set the name of the new folder
-        let folderURL = documentsURL.appendingPathComponent(folderName)
-//        print( "\(folderURL)")
-        do
-        {
-             try FileManager.default.createDirectory(at: folderURL, withIntermediateDirectories: true)
-        }
-        catch let error as NSError
-        {
-            NSLog("Unable to create directory \(error.debugDescription)")
-        }
-        return folderURL
-    }
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-
-    func getSavedTemplates(source: String) -> [String]{
-        var folders: [URL]
-        var names: [String] = []
-        do{
-            folders = try getDocumentsDirectory().subDirectories()
-            folders.sort(by: {
-                return $0.appendingPathComponent("data.JSON").customModificationDate?.compare($1.appendingPathComponent("data.JSON").customModificationDate ?? Date()) == .orderedDescending
-            })
-            folders.forEach{
-                names.append($0.lastPathComponent)
-            }
-         print(source, names)
-        } catch {
-        }
-//        print(names)
-        return names
-    }
+//    func getSavedTemplates(source: String) -> [String]{
+//        var folders: [URL]
+//        var names: [String] = []
+//        do{
+//            folders = try getDocumentsDirectory().subDirectories()
+//            folders.sort(by: {
+//                return $0.appendingPathComponent("data.JSON").customModificationDate?.compare($1.appendingPathComponent("data.JSON").customModificationDate ?? Date()) == .orderedDescending
+//            })
+//            folders.forEach{
+//                names.append($0.lastPathComponent)
+//            }
+//         print(source, names)
+//        } catch {
+//        }
+////        print(names)
+//        return names
+//    }
     
-    func fileModificationDate(url: URL) -> Date? {
-    do {
-    let attr = try FileManager.default.attributesOfItem(atPath: url.path)
-//        _ = attr[.modificationDate] as? Date
-//        print(dts)
-        return attr[.modificationDate] as? Date
-    } catch {
-    return nil
-    }
-    }
+//    func fileModificationDate(url: URL) -> Date? {
+//    do {
+//    let attr = try FileManager.default.attributesOfItem(atPath: url.path)
+////        _ = attr[.modificationDate] as? Date
+////        print(dts)
+//        return attr[.modificationDate] as? Date
+//    } catch {
+//    return nil
+//    }
+//    }
     
-    func clearDrafts(){
-        var folders: [URL]
-        do{
-            folders = try getDocumentsDirectory().subDirectories()
-            do{
-                try folders.forEach{ try FileManager.default.removeItem(at: $0)}
-            }catch{
-            }
-        } catch {
-        }
-    }
+//    func clearDrafts(){
+//        var folders: [URL]
+//        do{
+//            folders = try getDocumentsDirectory().subDirectories()
+//            do{
+//                try folders.forEach{ try FileManager.default.removeItem(at: $0)}
+//            }catch{
+//            }
+//        } catch {
+//        }
+//    }
     
-    func deactivateAllTextContainers(){
-        activeTextContainer = 0
-        for i in 0..<textContainers.count {
-            self.textContainers[i].isActive = false
-        }
-    }
-    func indexOfActiveTextContainer() -> Int{
-        var active = 0
-        var activeCount = 0
-        for i in 0..<textContainers.count {
-            if textContainers[i].isActive == true{
-                active = i
-                activeCount += 1
-            }    
-        }
-        active = activeCount > 0 ? active : -1
-        return active
-    }
+//    func deactivateAllTextContainers(){
+//        activeTextContainer = 0
+//        for i in 0..<textContainers.count {
+//            self.textContainers[i].isActive = false
+//        }
+//    }
+//    func indexOfActiveTextContainer() -> Int{
+//        var active = 0
+//        var activeCount = 0
+//        for i in 0..<textContainers.count {
+//            if textContainers[i].isActive == true{
+//                active = i
+//                activeCount += 1
+//            }    
+//        }
+//        active = activeCount > 0 ? active : -1
+//        return active
+//    }
     
     func saveTextContainersToFolder(){
         let transformTextData = [textContainers[0], textContainers[1]]
@@ -266,14 +259,14 @@ class selectorContainerStore: ObservableObject {
         }
     }
     
-    func updateSupposedKeyboardHeight() {
-        if keyboardHeight == 0{
-        } else if keyboardHeight > 0 {
-            supposedKeyboardHeight = keyboardHeight
-        }
-        
-        
-    }
+//    func updateSupposedKeyboardHeight() {
+//        if keyboardHeight == 0{
+//        } else if keyboardHeight > 0 {
+//            supposedKeyboardHeight = keyboardHeight
+//        }
+//        
+//        
+//    }
     
 }
 

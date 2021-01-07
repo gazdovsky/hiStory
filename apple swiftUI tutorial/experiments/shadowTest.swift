@@ -11,7 +11,7 @@ import SwiftUI
 
 struct Shadow: View {
     
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
     var body: some View {
         HStack {
 //            Text(String())

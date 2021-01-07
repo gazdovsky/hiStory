@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct textLayer: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
     var body: some View {
         Text("dd")
 //        TextView(fieldText: $settings.textContainers[0].fieldText,

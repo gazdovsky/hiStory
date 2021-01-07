@@ -35,68 +35,69 @@ struct frame1: View {
                 )
                 .opacity(settings.templateOpacity ? 0 : 0) 
                 .overlay(
-                    GeometryReader{ g in
-                        ZStack{
-                            Rectangle()
-                                .resisable()
-                                .shadow(radius: 20)
-                                
-                                .foregroundColor(Color.white)
-                                .opacity(0.3)
-                                
-                            ForEach(self.crnts.indices){ index -> AnyView in
-                                if(self.crnts.count <= index ){
-                                    return AnyView(EmptyView())
-                                }
-                                let i = self.crnts[index]
-                                if(i.id == "empty" ){
-                                    return AnyView(EmptyView())
-                                }
-                                
-                                return AnyView  (
-                                    photoSelectorWithParams(
-                                        actualTemplateWith: g.size.width,
-                                        actualTemplateHeight: g.size.height,
-                                        konstantTemplateWith: self.imgW,
-                                        container: i,
-                                        redactorActive: self.$settings.containers[index].redactorActive,
-                                        templateOpacity: $settings.templateOpacity,
-                                        index: index)
-                                        .onTapGesture {
-                                            var activeCount = 0
-                                            for indexActive in 0...self.crnts.count{
-                                                if indexActive != index {
-                                                    self.settings.containers[indexActive].redactorActive = false
-                                                }
-                                                if self.settings.containers[indexActive].redactorActive == true {activeCount += 1}
-                                            }
-                                            self.settings.containers[index].redactorActive.toggle()
-                                            settings.templateOpacity = activeCount == 0 ? true : false
-                                            if self.settings.containers[index].redactorActive {
-                                                self.settings.redactorMode = .imageEdit
-                                            } else {
-                                                self.settings.redactorMode = .nothing
-                                            }
-                                        }
-                                        .disabled(!settings.containers[index].redactorActive && settings.templateOpacity)
-                                        .zIndex(!settings.containers[index].redactorActive && settings.templateOpacity ? 0 : 2)
-                                )
-                            }
-                             Image(settings.templateImageName)
-                                 .resizable()
-                                 .zIndex(3)
-                                 .aspectRatio(1080/1920, contentMode: .fit)
-                                 .contentShape(
-                                     Rectangle()
-                                         .size(CGSize(width: 1.0, height: 1.0))
-                                 )
-                                .opacity(settings.templateOpacity ? 0.5 : 1)
-                        }
-                        .onAppear(perform: {
-//                            tGeom = g.frame(in: .global)
-                        }
-                        )
-                    }
+//                    GeometryReader{ g in
+//                        ZStack{
+//                            Rectangle()
+//                                .resisable()
+//                                .shadow(radius: 20)
+//                                
+//                                .foregroundColor(Color.white)
+//                                .opacity(0.3)
+//                                
+//                            ForEach(self.crnts.indices){ index -> AnyView in
+//                                if(self.crnts.count <= index ){
+//                                    return AnyView(EmptyView())
+//                                }
+//                                let i = self.crnts[index]
+//                                if(i.id == "empty" ){
+//                                    return AnyView(EmptyView())
+//                                }
+//                                
+//                                return AnyView  (
+//                                    photoSelectorWithParams(
+//                                        actualTemplateWith: g.size.width,
+//                                        actualTemplateHeight: g.size.height,
+//                                        konstantTemplateWith: self.imgW,
+//                                        container: i,
+//                                        redactorActive: self.$settings.containers[index].redactorActive,
+//                                        templateOpacity: $settings.templateOpacity,
+//                                        index: index)
+//                                        .onTapGesture {
+//                                            var activeCount = 0
+//                                            for indexActive in 0...self.crnts.count{
+//                                                if indexActive != index {
+//                                                    self.settings.containers[indexActive].redactorActive = false
+//                                                }
+//                                                if self.settings.containers[indexActive].redactorActive == true {activeCount += 1}
+//                                            }
+//                                            self.settings.containers[index].redactorActive.toggle()
+//                                            settings.templateOpacity = activeCount == 0 ? true : false
+//                                            if self.settings.containers[index].redactorActive {
+//                                                self.settings.redactorMode = .imageEdit
+//                                            } else {
+//                                                self.settings.redactorMode = .nothing
+//                                            }
+//                                        }
+//                                        .disabled(!settings.containers[index].redactorActive && settings.templateOpacity)
+//                                        .zIndex(!settings.containers[index].redactorActive && settings.templateOpacity ? 0 : 2)
+//                                )
+//                            }
+//                             Image(settings.templateImageName)
+//                                 .resizable()
+//                                 .zIndex(3)
+//                                 .aspectRatio(1080/1920, contentMode: .fit)
+//                                 .contentShape(
+//                                     Rectangle()
+//                                         .size(CGSize(width: 1.0, height: 1.0))
+//                                 )
+//                                .opacity(settings.templateOpacity ? 0.5 : 1)
+//                        }
+//                        .onAppear(perform: {
+////                            tGeom = g.frame(in: .global)
+//                        }
+//                        )
+//                    }
+                    photoContainersFrame()
                 )
                 .overlay(
 //                    ZStack{

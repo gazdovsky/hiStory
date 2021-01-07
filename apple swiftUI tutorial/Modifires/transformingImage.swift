@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct makeTransformingImage: ViewModifier{
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
+    @ObservedObject var data: photoContainersFrameData = .shared
     @State var index: Int
     @State private var currentScale:   CGFloat = 1.0
     @State private var     newScale:   CGFloat = 1.0
@@ -29,62 +30,62 @@ struct makeTransformingImage: ViewModifier{
         let mGesture =  MagnificationGesture(minimumScaleDelta: 0.1)
             .onChanged({scaleValue in
                 if !transforming {return}
-                if self.needSynchronizeMagnification {
-                    self.newScale = self.settings.containers[index].transform.currentScale
-                    self.needSynchronizeMagnification = false
+                if  needSynchronizeMagnification {
+                     newScale =  data.containers[index].transform.currentScale
+                     needSynchronizeMagnification = false
                 }
-                self.settings.containers[index].transform.currentScale = self.newScale * scaleValue
+                data.containers[index].transform.currentScale =  newScale * scaleValue
             })
             .onEnded({_ in
                 if !transforming {return}
-                self.newScale = self.settings.containers[index].transform.currentScale
+                 newScale =  data.containers[index].transform.currentScale
             })
         
         let dGesture = DragGesture(minimumDistance: 5)
             .onChanged({value in
                 if !transforming {return}
                 
-                if self.needSynchronizeDrag &&
-                    abs(self.settings.containers[index].transform.currentPosition.width - value.translation.width) > 5 &&
-                    abs(self.settings.containers[index].transform.currentPosition.height - value.translation.height) > 5 &&
-                    self.settings.containers[index].transform.currentPosition.width > 5
+                if  needSynchronizeDrag &&
+                    abs( data.containers[index].transform.currentPosition.width - value.translation.width) > 5 &&
+                    abs( data.containers[index].transform.currentPosition.height - value.translation.height) > 5 &&
+                        data.containers[index].transform.currentPosition.width > 5
                 {
-                    self.newPosition = self.settings.containers[index].transform.currentPosition
-                    self.needSynchronizeDrag = false
+                     newPosition =  data.containers[index].transform.currentPosition
+                     needSynchronizeDrag = false
                 }
-                self.settings.containers[index].transform.currentPosition = CGSize(
-                    width: value.translation.width + self.newPosition.width,
-                    height: value.translation.height + self.newPosition.height)
+                data.containers[index].transform.currentPosition = CGSize(
+                    width: value.translation.width +  newPosition.width,
+                    height: value.translation.height +  newPosition.height)
             })
             .onEnded({ value in
                 if !transforming {return}
-                self.newPosition = self.settings.containers[index].transform.currentPosition
+                 newPosition =  data.containers[index].transform.currentPosition
             })
         
         let rGesture = RotationGesture()
             .onChanged({degrees in
                 if !transforming {return}
-                if self.needSynchronizeAngle {
-                    self.newrotate = self.settings.containers[index].transform.rotate
-                    self.needSynchronizeAngle = false
+                if  needSynchronizeAngle {
+                     newrotate =  data.containers[index].transform.rotate
+                     needSynchronizeAngle = false
                 }
-                self.settings.containers[index].transform.rotate = self.newrotate + Double(degrees.degrees / 180 * .pi)
+                data.containers[index].transform.rotate =  newrotate + Double(degrees.degrees / 180 * .pi)
             })
             .onEnded({ degrees in
-                self.newrotate = self.settings.containers[index].transform.rotate
+                 newrotate =  data.containers[index].transform.rotate
             })
         
         let multiGesture = dGesture.simultaneously(with: mGesture).simultaneously(with: rGesture)
-        //        self.settings.saveTransformToFolder()
+        //         settings.saveTransformToFolder()
         return content
-            .scaleEffect(self.settings.containers[index].transform.currentScale)
-            .rotationEffect(Angle(degrees: self.settings.containers[index].transform.rotate * 180 / .pi) )
-            .offset(self.settings.containers[index].transform.currentPosition)
+            .scaleEffect( data.containers[index].transform.currentScale)
+            .rotationEffect(Angle(degrees:  data.containers[index].transform.rotate * 180 / .pi) )
+            .offset( data.containers[index].transform.currentPosition)
             .gesture(multiGesture)
 //            .overlay(
 //                ZStack{
 //
-//                    VStack{Text("w:\(Int(self.settings.containers[index].transform.currentPosition.width)) h:\(Int(self.settings.containers[index].transform.currentPosition.height))")
+//                    VStack{Text("w:\(Int( settings.containers[index].transform.currentPosition.width)) h:\(Int( settings.containers[index].transform.currentPosition.height))")
 //                        Text("x:\(Int(UnitPoint.center.x)) y:\(Int(UnitPoint.center.y))")
 //
 //

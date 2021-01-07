@@ -41,7 +41,6 @@ struct defaultTemplates: View {
                             mainMenuItem(iPreview:dd[n].items[i], isNavigate: $settings.navigateToRedactor, w:self.itemW , h: self.itemH)
                                 .overlay(
                                     Button(action:{
-                                        settings.clearAllContainers()
                                         settings.navigateToRedactor = true
                                         settings.templateName = dd[n].items[i].renderfile
                                         settings.templateImageName = dd[n].items[i].image

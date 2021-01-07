@@ -1121,228 +1121,6 @@
             endingLineNumber = "29"
             landmarkName = "readPlst(_:)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "355B6C7D-CA8A-4922-8D90-EDF37E202E32 - 7393b6afce0c1e95"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "1269">
-               </Location>
-               <Location
-                  uuid = "355B6C7D-CA8A-4922-8D90-EDF37E202E32 - 103f7ea449228612"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "1264">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "20E344A8-E975-4648-BF2A-80711DC5FE45"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "saveImageToFolder(image:name:folder:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "20E344A8-E975-4648-BF2A-80711DC5FE45 - b68441a02024e3eb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "574">
-               </Location>
-               <Location
-                  uuid = "20E344A8-E975-4648-BF2A-80711DC5FE45 - 8ad773844394bc8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "602">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D1997714-78AD-465D-B6A4-918C55FC5584"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "saveImageToFolder(image:name:folder:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D1997714-78AD-465D-B6A4-918C55FC5584 - b68441a02024e394"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "621">
-               </Location>
-               <Location
-                  uuid = "D1997714-78AD-465D-B6A4-918C55FC5584 - 8ad773844394bb7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "792">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B74380DC-338E-4B3E-8775-A873708DAD24"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "saveImageToFolder(image:name:folder:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "saveImageToFolder(image:name:folder:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - b68441a02024e3b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "910">
-               </Location>
-               <Location
-                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - b68441a02024e3b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveImageToFolder(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "1065">
-               </Location>
-               <Location
-                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - 8ad773844394b96"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "1081">
-               </Location>
-               <Location
-                  uuid = "3B57DC11-C6E7-412C-B2F4-EFCEEACA2EF4 - 8ad773844394b96"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveImageToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(image: __C.UIImage, name: Swift.String, folder: Foundation.URL) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "1231">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1355,58 +1133,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "getImagesFromFolder(folderName:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6877A360-691B-425D-B828-14B73B096164"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "getImagesFromFolder(folderName:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6877A360-691B-425D-B828-14B73B096164 - 791b8daa301cdaf4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "401">
-               </Location>
-               <Location
-                  uuid = "6877A360-691B-425D-B828-14B73B096164 - 537751968d6c8273"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "263">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1419,8 +1149,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "getImagesFromFolder(folderName:)"
             landmarkType = "7">
             <Locations>
@@ -1467,10 +1197,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "createFileDirectory(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "6679E218-C85E-4999-B53F-6D22DA75DE0E - daaf70f1bbf394fb"
@@ -1515,9 +1245,9 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "createFileDirectory(folderName:)"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "getImagesFromFolder(folderName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1531,10 +1261,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "createFileDirectory(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "C51F773D-87A0-471D-A8BD-557F27BDB936 - daaf70f1bbf3957f"
@@ -1579,10 +1309,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "createFileDirectory(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "E93839C4-1085-47D5-9995-4EA271F6284A - daaf70f1bbf39621"
@@ -1627,10 +1357,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "getDocumentsDirectory()"
-            landmarkType = "7">
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1643,10 +1373,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "getDocumentsDirectory()"
-            landmarkType = "7">
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1659,9 +1389,9 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "saveTransformToFolder()"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "saveContainerImage(index:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1707,8 +1437,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "saveTransformToFolder()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1723,8 +1453,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "saveTransformToFolder()"
             landmarkType = "7">
             <Locations>
@@ -1771,8 +1501,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "saveTransformToFolder()"
             landmarkType = "7">
             <Locations>
@@ -1819,8 +1549,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "saveTransformToFolder()"
             landmarkType = "7">
             <Locations>
@@ -1867,10 +1597,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "createFileDirectory(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1883,10 +1613,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "getSavedTemplates(source:)"
-            landmarkType = "7">
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "C57FB496-3498-401B-826B-77B550BAA115 - ea55b267c8cffd35"
@@ -1931,10 +1661,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "getSavedTemplates(source:)"
-            landmarkType = "7">
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1947,10 +1677,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "getSavedTemplates(source:)"
-            landmarkType = "7">
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "EE5C65D7-228D-4BBE-9A85-34A073FCF366 - ea55b267c8cffaea"
@@ -1997,8 +1727,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "6D664A2E-D022-4DA9-A5C0-1B28328D1FE0 - dfb75fa5024baafd"
@@ -2074,10 +1804,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "fileModificationDate(url:)"
-            landmarkType = "7">
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2090,10 +1820,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "fileModificationDate(url:)"
-            landmarkType = "7">
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2106,8 +1836,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "getImagesFromFolder(folderName:)"
             landmarkType = "7">
             <Locations>
@@ -2154,8 +1884,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "getImagesFromFolder(folderName:)"
             landmarkType = "7">
             <Locations>
@@ -2202,8 +1932,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "getImagesFromFolder(folderName:)"
             landmarkType = "7">
             <Locations>
@@ -2366,38 +2096,6 @@
             endingLineNumber = "32"
             landmarkName = "readPlst(_:)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "01BCA08E-20FF-48B8-A28F-13F19C2650A8 - 7393b6afce0c1e32"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "817">
-               </Location>
-               <Location
-                  uuid = "01BCA08E-20FF-48B8-A28F-13F19C2650A8 - 103f7ea4492286b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "655">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2430,38 +2128,6 @@
             endingLineNumber = "33"
             landmarkName = "readPlst(_:)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "1EFB7005-9856-4B2D-B1BD-CF72A38DC8FE - 7393b6afce0c1e11"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "842">
-               </Location>
-               <Location
-                  uuid = "1EFB7005-9856-4B2D-B1BD-CF72A38DC8FE - 103f7ea449228696"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "808">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2478,38 +2144,6 @@
             endingLineNumber = "34"
             landmarkName = "readPlst(_:)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "05EBCEEC-1614-4C90-9821-12B3E267D438 - 7393b6afce0c11ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.readPlst&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "964">
-               </Location>
-               <Location
-                  uuid = "05EBCEEC-1614-4C90-9821-12B3E267D438 - 103f7ea449228929"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial_PreviewReplacement_storyTemplatePreviewDecoder_7.(__preview__readPlst in _D9D8440C581DDD18131DA4079E3EB315)&lt;A where A: Swift.Decodable&gt;(Swift.String) -&gt; A"
-                  moduleName = "storyTemplatePreviewDecoder.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "936">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2590,6 +2224,22 @@
             endingLineNumber = "41"
             landmarkName = "screenshot(origin:size:)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0BB12A3-090C-43CB-B081-FD3A2BA16356"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/photoSelector/SwiftUIPhotoSelector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

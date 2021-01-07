@@ -27,10 +27,10 @@ struct pickerFontsUI_Preview: PreviewProvider {
 
 struct pickerFonts: UIViewRepresentable {
     typealias UIViewType = UIPickerView
-    var settings: selectorContainerStore = .shared
-
+//    var settings: selectorContainerStore = .shared
+    var textFields: textContainersFrameData = .shared
     var activeTextContainer: Int {
-        settings.indexOfActiveTextContainer()
+        textFields.indexOfActiveTextContainer()
     }
     var dataSource = ["Cochin-BoldItalic", "Didot", "Georgia", "Helvetica", "Helvetica-Light", "HelveticaNeue-UltraLight", "HoeflerText-BlackItalic", "HoeflerText-Italic", "IowanOldStyle-BoldItalic", "MarkerFelt-Thin", "Noteworthy-Bold", "Palatino-BoldItalic"]
     
@@ -55,7 +55,7 @@ struct pickerFonts: UIViewRepresentable {
             self.parent = pickerView
         }
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            parent.settings.textContainers[parent.activeTextContainer].fontName = parent.dataSource[row]
+            parent.textFields.textContainers[parent.activeTextContainer].fontName = parent.dataSource[row]
         }
         
         //number of components

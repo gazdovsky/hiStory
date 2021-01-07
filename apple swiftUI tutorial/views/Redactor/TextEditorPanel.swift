@@ -23,8 +23,9 @@ enum keyboardState {
 }
 
 struct TextEditorPanel: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
-    @ObservedObject var textData: textContainersFrameData = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var textData: textContainersFrameData = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
 //    let gradientStep:CGFloat = 1/8
     let iconSize: CGFloat = 20
     var gradient:AngularGradient {
@@ -63,10 +64,10 @@ struct TextEditorPanel: View {
     @State var aTool: textRedactorToolType = .nothing
     {
         didSet{
-            if aTool != .nothing || settings.keyboardHeight > 0{
-                settings.redactorOffset = -settings.supposedKeyboardHeight
+            if aTool != .nothing || redactor.keyboardHeight > 0{
+                redactor.redactorOffset = -redactor.supposedKeyboardHeight
             } else {
-                settings.redactorOffset = 0
+                redactor.redactorOffset = 0
             }
             
             
@@ -75,15 +76,15 @@ struct TextEditorPanel: View {
     @State var keyboardState: keyboardState = .show
     {
         didSet{
-            if aTool != .nothing || settings.keyboardHeight > 0{
-                settings.redactorOffset = -settings.supposedKeyboardHeight
+            if aTool != .nothing || redactor.keyboardHeight > 0{
+                redactor.redactorOffset = -redactor.supposedKeyboardHeight
             } else {
-                settings.redactorOffset = 0
+                redactor.redactorOffset = 0
             }
         }
     }
     var aContainer: Int{
-        return settings.activeTextContainer
+        return redactor.textFields.activeTextContainer
     }
     let fontList = ["Arial", "Cochin-BoldItalic", "Didot", "Georgia", "Helvetica", "Helvetica-Light", "HelveticaNeue-UltraLight", "HoeflerText-BlackItalic", "HoeflerText-Italic", "IowanOldStyle-BoldItalic", "MarkerFelt-Thin", "Noteworthy-Bold", "Palatino-BoldItalic"]
     @State  var selectedFontIndex = 0
@@ -93,10 +94,10 @@ struct TextEditorPanel: View {
         VStack{
             HStack(alignment: .center, content: {
                 ToolbarButton(icon: "trash", isSelected: true, size: iconSize){ //icon_trashBusket
-                    textData.textContainers[aContainer].fieldText = " "
-                    textData.textContainers[aContainer].fontSize = 0.1
-                    settings.deactivateAllTextContainers()
-                    settings.redactorMode = .nothing
+                    redactor.textFields.textContainers[aContainer].fieldText = " "
+                    redactor.textFields.textContainers[aContainer].fontSize = 0.1
+                    redactor.textFields.deactivateAllTextContainers()
+                    redactor.redactorMode = .nothing
                     keyboardState = .hide
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
@@ -108,12 +109,12 @@ struct TextEditorPanel: View {
 //                        UIApplication.shared.windows.forEach {
 //                            $0.endEditing(false)
 //                        }
-                        textData.textContainers[aContainer].isFirstResponder = false
+                        redactor.textFields.textContainers[aContainer].isFirstResponder = false
                         aTool = .nothing
                         keyboardState = .hide
-                        settings.redactorOffset = 0
+                        redactor.storyTemplate.redactorOffset = 0
                     } else {
-                        textData.textContainers[aContainer].isFirstResponder = true
+                        redactor.textFields.textContainers[aContainer].isFirstResponder = true
                         keyboardState = .show
                         aTool = .nothing
                     }
@@ -157,13 +158,13 @@ struct TextEditorPanel: View {
                        aTool = .nothing
                     } else {
                       aTool = .colorPicker
-                       textData.textContainers[aContainer].isFirstResponder = false
+                        redactor.textFields.textContainers[aContainer].isFirstResponder = false
                         keyboardState = .hide
                     }
 //                    UIApplication.shared.windows.forEach {
 //                        $0.endEditing(false)
 //                    }
-                    textData.textContainers[aContainer].isFirstResponder = false
+                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
                     keyboardState = .hide
                 }
                     .foregroundColor(Color(hex: "f4d8c8"))
@@ -195,7 +196,7 @@ struct TextEditorPanel: View {
 //                    UIApplication.shared.windows.forEach {
 //                        $0.endEditing(false)
 //                    }
-                    textData.textContainers[aContainer].isFirstResponder = false
+                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
                     keyboardState = .hide
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
@@ -211,7 +212,7 @@ struct TextEditorPanel: View {
 //                    UIApplication.shared.windows.forEach {
 //                        $0.endEditing(false)
 //                    }
-                    textData.textContainers[aContainer].isFirstResponder = false
+                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
                     keyboardState = .hide
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
@@ -223,12 +224,12 @@ struct TextEditorPanel: View {
                 ToolbarButton(icon: "checkmark.circle", isSelected: true, size: iconSize){
                     //                        UIApplication.shared.windows.forEach { $0.endEditing(false) }
 //                    self.textData.textContainers[aContainer].activeTextContainer = 0
-                    textData.textContainers[aContainer].isFirstResponder = false
-                    textData.textContainers[aContainer].isActive = false
-                    settings.deactivateAllTextContainers()
-                    settings.redactorOffset = 0
+                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
+                    redactor.textFields.textContainers[aContainer].isActive = false
+                    redactor.textFields.deactivateAllTextContainers()
+                    redactor.storyTemplate.redactorOffset = 0
                     aTool = .nothing
-                    settings.redactorMode = .nothing
+                    redactor.redactorMode = .nothing
                     keyboardState = .show
                 }
                 .padding([.leading,.trailing])
@@ -238,8 +239,8 @@ struct TextEditorPanel: View {
                 switch aTool{
                 case .colorPicker: return AnyView(
                     VStack(alignment: .center, content: {
-                    colorPickerHexWithSaturation(chosenColor: $textData.textContainers[aContainer].fontColor)
-                    TextField("hex:" , text:  $textData.textContainers[aContainer].fontColor)
+                        colorPickerHexWithSaturation(chosenColor: $redactor.textFields.textContainers[aContainer].fontColor)
+                    TextField("hex:" , text:  $redactor.textFields.textContainers[aContainer].fontColor)
                         .fixedSize()
                         .padding([.top, .bottom], 5)
                         .padding([.leading, .trailing], 10)
@@ -249,7 +250,7 @@ struct TextEditorPanel: View {
                 )
                 case .size: return AnyView(
                     Slider(
-                    value: $textData.textContainers[aContainer].fontSize,
+                    value: $redactor.textFields.textContainers[aContainer].fontSize,
                         in: 0...100
                 )
                     
@@ -259,29 +260,29 @@ struct TextEditorPanel: View {
                     VStack{
                     HStack{
                     ToolbarButton(icon: "text.alignleft", isSelected: true, size: 30){
-                        textData.textContainers[aContainer].textAlign = 0
+                        redactor.textFields.textContainers[aContainer].textAlign = 0
                     }
                     .foregroundColor(Color(hex: "f4d8c8"))
                     .padding([.leading])
                     ToolbarButton(icon: "text.aligncenter", isSelected: true, size: 30){
-                        textData.textContainers[aContainer].textAlign = 1
+                        redactor.textFields.textContainers[aContainer].textAlign = 1
                     }
                     .foregroundColor(Color(hex: "f4d8c8"))
                     .padding([.leading])
                     ToolbarButton(icon: "text.alignright", isSelected: true, size: 30){
-                        textData.textContainers[aContainer].textAlign = 2
+                        redactor.textFields.textContainers[aContainer].textAlign = 2
                     }
                     .foregroundColor(Color(hex: "f4d8c8"))
                     .padding([.leading])
                 }
                         Slider(
-                        value: $textData.textContainers[aContainer].fontSize,
+                        value: $redactor.textFields.textContainers[aContainer].fontSize,
                         in: 0...100
                     )
                     .padding()
                         Slider(
-                            value: $textData.textContainers[aContainer].style.kern,
-                        in: 0...10
+                            value: $redactor.textFields.textContainers[aContainer].style.kern,
+                        in: 0...15
                     )
                     .padding()
                     }
@@ -298,7 +299,7 @@ struct TextEditorPanel: View {
                 case .nothing: return AnyView(EmptyView())
                 }
             }
-            .frame(width: nil, height: CGFloat(settings.supposedKeyboardHeight))
+            .frame(width: nil, height: CGFloat(redactor.supposedKeyboardHeight))
         }
     }
 }

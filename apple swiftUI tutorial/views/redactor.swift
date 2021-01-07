@@ -9,9 +9,38 @@ import UIKit
 import SwiftUI
 import Combine
 
+enum redactorMode {
+    case nothing
+    case textEdit
+    case imageEdit
+}
+
+class redactorViewData: ObservableObject{
+        init() {
+        }
+    
+    static var shared = redactorViewData()
+    @ObservedObject var storyTemplate: selectorContainerStore = .shared
+    @ObservedObject var photoContainers: photoContainersFrameData = .shared
+    @ObservedObject var textFields: textContainersFrameData = .shared
+    @Published var redactorMode: redactorMode = .nothing
+    @Published var templateOpacity: Bool = false
+    @Published var keyboardHeight: Int = 0
+    @Published var supposedKeyboardHeight: Int = 260
+    @Published var redactorOffset: Int = 0
+    
+    func updateSupposedKeyboardHeight() {
+        if keyboardHeight == 0{
+        } else if keyboardHeight > 0 {
+            supposedKeyboardHeight = keyboardHeight
+        }
+    }
+}
 
 struct redactor: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings2: photoContainersFrameData = .shared
     @State var h:CGFloat = 330
     @State var w:CGFloat = 180
     @State var barOp = true
@@ -33,7 +62,8 @@ struct redactor: View {
  VStack{
     HStack{
         ToolbarButton(icon: "chevron.backward", isSelected: true, size: 15) {
-            settings.navigateToRedactor = false
+            redactor.storyTemplate.navigateToRedactor = false
+            redactor.photoContainers.clearAllContainers()
         }
         .padding()
         Spacer()
@@ -52,8 +82,8 @@ struct redactor: View {
         let draftImage = frame1(restoreFromDrafts: true).asImage()
         UIImageWriteToSavedPhotosAlbum(draftImage, nil, nil, nil)
         
-        let newFolder = settings.createFileDirectory(folderName: settings.templateImageName)
-        settings.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
+        let newFolder = redactor.photoContainers.createFileDirectory(folderName: redactor.storyTemplate.templateImageName)
+        redactor.photoContainers.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
     })
     .padding()
     }
@@ -64,7 +94,7 @@ struct redactor: View {
                 .padding(0)
                 .overlay(
                     VStack{
-                        Text("\(settings.tx.description) \(settings.ty.description) \(settings.tw.description) \(settings.th.description)")
+                        Text("\(redactor.storyTemplate.tx.description) \(redactor.storyTemplate.ty.description) \(redactor.storyTemplate.tw.description) \(redactor.storyTemplate.th.description)")
                     }
                 )
             ZStack{
@@ -83,10 +113,10 @@ struct redactor: View {
                             .zIndex(0)
                             .onAppear(perform: {
                                 if(geo.frame(in: .global).midX > 0){
-                                settings.tx = geo.frame(in: .global).midX
-                                settings.ty = geo.frame(in: .global).midY
-                                settings.tw = geo.frame(in: .global).width
-                                settings.th = geo.frame(in: .global).height
+                                    redactor.storyTemplate.tx = geo.frame(in: .global).midX
+                                    redactor.storyTemplate.ty = geo.frame(in: .global).midY
+                                    redactor.storyTemplate.tw = geo.frame(in: .global).width
+                                    redactor.storyTemplate.th = geo.frame(in: .global).height
                                 }
                                 
                             })
@@ -144,7 +174,7 @@ struct redactor: View {
     .padding([.leading,.trailing],21)
     .padding([.top, .bottom], 15)
         }
- .offset(CGSize(width: 0, height: settings.keyboardHeight > 0 || settings.redactorMode != .textEdit ? -settings.keyboardHeight : settings.redactorOffset))
+ .offset(CGSize(width: 0, height: redactor.keyboardHeight > 0 || redactor.redactorMode != .textEdit ? -redactor.keyboardHeight : redactor.redactorOffset))
         .background(Color(hex: "#bb8a62"))
  .edgesIgnoringSafeArea([.bottom,.top])
         .navigationBarTitle("", displayMode: .inline)
@@ -152,8 +182,8 @@ struct redactor: View {
         .navigationBarItems(trailing:
                                 HStack(alignment: .bottom){
                                     Button("Save"){
-                                        settings.saveTransformToFolder()
-                                        settings.saveTextContainersToFolder()
+                                        redactor.storyTemplate.saveTransformToFolder()
+                                        redactor.storyTemplate.saveTextContainersToFolder()
                                     }
                                     .foregroundColor(Color(hex: "f4d8c8"))
                                     .padding(.trailing)
@@ -162,8 +192,8 @@ struct redactor: View {
 //                                        self.settings.redactorTransform = transformContainer()
                                         
                                         let image = screenshot(
-                                            origin: CGPoint(x: settings.tx, y: settings.ty),
-                                            size: CGSize(width: settings.tw, height: settings.th)
+                                            origin: CGPoint(x: redactor.storyTemplate.tx, y: redactor.storyTemplate.ty),
+                                            size: CGSize(width: redactor.storyTemplate.tw, height: redactor.storyTemplate.th)
                                         )
 //                                        let newFolder = settings.createFileDirectory(folderName: settings.templateImageName)
 //                                        settings.saveImageToFolder(image: image, name:"scr.jpg", folder: newFolder)
@@ -179,14 +209,14 @@ struct redactor: View {
             ZStack(alignment: .bottom, content: {
                 Color.clear
                 MainEditorPanel()
-                    .opacity(settings.redactorMode == .nothing ? 1 : 0)
+                    .opacity(redactor.redactorMode == .nothing ? 1 : 0)
                 ImageEditorPanel()
-                    .opacity(settings.redactorMode == .imageEdit ? 1 : 0)
+                    .opacity(redactor.redactorMode == .imageEdit ? 1 : 0)
                 TextEditorPanel()
-                    .opacity(settings.redactorMode == .textEdit ? 1 : 0)
+                    .opacity(redactor.redactorMode == .textEdit ? 1 : 0)
                     
             })
-            .offset(CGSize(width: 0, height: -settings.keyboardHeight))
+            .offset(CGSize(width: 0, height: -redactor.keyboardHeight))
             .padding([.leading,.trailing],21)
             .padding([.top, .bottom], 15)
             .edgesIgnoringSafeArea(.bottom)

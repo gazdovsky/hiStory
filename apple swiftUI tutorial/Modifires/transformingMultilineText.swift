@@ -9,25 +9,26 @@
 import SwiftUI
 
 struct transformingMultilineText: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var textData: selectorContainerStore = .shared
     var body: some View {
         Text("dd")
 //        TextView(fieldText:
-//                                    $settings.textContainers[1].fieldText,
-//                 fontSize: $settings.textContainers[1].fontSize, //$settings.textContainers[1].fontSize,
-//                                 textAlign: settings.textContainers[1].textAlign,
-//                                 fontName: settings.textContainers[1].fontName,
-//                                 fontColor: settings.textContainers[1].fontColor,
+//                                    $textData.textContainers[1].fieldText,
+//                 fontSize: $textData.textContainers[1].fontSize, //$textData.textContainers[1].fontSize,
+//                                 textAlign: textData.textContainers[1].textAlign,
+//                                 fontName: textData.textContainers[1].fontName,
+//                                 fontColor: textData.textContainers[1].fontColor,
 //                                 index: 1,
-//                                 activeTextContainer: $settings.textContainers[1].activeTextContainer,
-//                                 isActive: $settings.textContainers[1].isActive)
-//            .modifier(makeTransformingMultilineText(index : 1, fontSize: settings.textContainers[1].fontSize))
+//                                 activeTextContainer: $textData.textContainers[1].activeTextContainer,
+//                                 isActive: $textData.textContainers[1].isActive)
+//            .modifier(makeTransformingMultilineText(index : 1, fontSize: textData.textContainers[1].fontSize))
 //            .fixedSize()
     }
 }
 
 struct makeTransformingMultilineText: ViewModifier{
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var textData: selectorContainerStore = .shared
+    @ObservedObject var textData: textContainersFrameData = .shared
 //    @State var fontName: String
     @State var index: Int
     @State var fontSize: CGFloat
@@ -43,51 +44,51 @@ struct makeTransformingMultilineText: ViewModifier{
     func body(content: Content) -> some View{
         let mGesture =  MagnificationGesture(minimumScaleDelta: 0.1)
             .onChanged({scaleValue in
-                if self.needSynchronizeMagnification {
-                    self.newFontSize = self.settings.textContainers[index].fontSize
-                    self.needSynchronizeMagnification = false
+                if  needSynchronizeMagnification {
+                     newFontSize =  textData.textContainers[index].fontSize
+                     needSynchronizeMagnification = false
                 }
-                if self.newFontSize * scaleValue < 400 && self.newFontSize * scaleValue > 6 {
-                    self.settings.textContainers[index].fontSize = (self.newFontSize * scaleValue)
+                if  newFontSize * scaleValue < 400 &&  newFontSize * scaleValue > 6 {
+                     textData.textContainers[index].fontSize = ( newFontSize * scaleValue)
                 }
 //                else {
-//                    self.newFontSize = self.settings.textContainers[index].fontSize
+//                     newFontSize =  textData.textContainers[index].fontSize
 //                }
             })
             .onEnded({_ in
-                self.newFontSize = self.settings.textContainers[index].fontSize
+                 newFontSize =  textData.textContainers[index].fontSize
             })
         let dGesture = DragGesture(minimumDistance: 5)
             .onChanged({value in
-                if self.needSynchronizeDrag {
-self.newPosition = self.settings.textContainers[index].transform.currentPosition
-                    self.needSynchronizeDrag = false
+                if  needSynchronizeDrag {
+ newPosition =  textData.textContainers[index].transform.currentPosition
+                     needSynchronizeDrag = false
                 }
                 
-                self.settings.textContainers[index].transform.currentPosition = CGSize(
-                    width: value.translation.width + self.newPosition.width,
-                    height: value.translation.height + self.newPosition.height)
+                 textData.textContainers[index].transform.currentPosition = CGSize(
+                    width: value.translation.width +  newPosition.width,
+                    height: value.translation.height +  newPosition.height)
             })
             .onEnded({ _ in
-                self.newPosition = self.settings.textContainers[index].transform.currentPosition
+                 newPosition =  textData.textContainers[index].transform.currentPosition
             })
         let rGesture = RotationGesture()
             .onChanged({degrees in
-                if self.needSynchronizeAngle {
-                    self.newrotate = self.settings.textContainers[index].transform.rotate
-                    self.needSynchronizeAngle = false
+                if  needSynchronizeAngle {
+                     newrotate =  textData.textContainers[index].transform.rotate
+                     needSynchronizeAngle = false
                 }
-                self.settings.textContainers[index].transform.rotate = self.newrotate + Double(degrees.degrees / 180 * .pi)
+                 textData.textContainers[index].transform.rotate =  newrotate + Double(degrees.degrees / 180 * .pi)
             })
             .onEnded({_ in
-                self.newrotate = self.settings.textContainers[index].transform.rotate
+                 newrotate =  textData.textContainers[index].transform.rotate
             })
         let multiGesture = dGesture.simultaneously(with: mGesture).simultaneously(with: rGesture)
         
         return content
 //            .font(.custom(fontName, size: fontSize))
-            .rotationEffect(Angle(degrees: self.settings.textContainers[index].transform.rotate * 180 / .pi))
-            .offset(self.settings.textContainers[index].transform.currentPosition)
+            .rotationEffect(Angle(degrees:  textData.textContainers[index].transform.rotate * 180 / .pi))
+            .offset( textData.textContainers[index].transform.currentPosition)
             .gesture(multiGesture)
     }
 }

@@ -12,33 +12,35 @@ import PhotosUI
 import SwiftUI
 
 struct SwiftUIPhotoSelector: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
+    @ObservedObject var settings2: photoContainersFrameData = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
     @State var index: Int = 0
     @State var isShowingImagePicker = false
     @State var imageInBlackBox = UIImage()
     @State var imageSelected = false
     {
         didSet{
-            self.settings.saveTransformToFolder()
+            redactor.photoContainers.saveTransformToFolder()
         }
     }
     @State var imageZIndex = 0.0
     
     var body: some View{
         ZStack{
-            Image(uiImage: self.settings.containers[index].imageInBlackBox)
+            Image(uiImage: redactor.photoContainers.containers[index].imageInBlackBox)
                 .resizable()
                 .scaledToFill()
                 .background(
                     Color(hex: "#bbbbbb")
                 )
                 .layoutPriority(10)
-                .zIndex(settings.containers[index].imageZIndex)
+                .zIndex(redactor.photoContainers.containers[index].imageZIndex)
             Button(action: {
-                if self.settings.containers[index].imageSelected == false && self.settings.redactorMode == .nothing {
-                    self.settings.containers[index].isShowingImagePicker.toggle()
-                    self.settings.containers[index].imageZIndex = 1
-                    self.settings.containers[index].imageSelected = true
+                if  !redactor.photoContainers.containers[index].imageSelected && redactor.redactorMode == .nothing {
+                    redactor.photoContainers.containers[index].isShowingImagePicker.toggle()
+                    redactor.photoContainers.containers[index].imageZIndex = 1
+                    redactor.photoContainers.containers[index].imageSelected = true
                 }
             }, label: {
                 Image("img2")
@@ -48,10 +50,10 @@ struct SwiftUIPhotoSelector: View {
                     .foregroundColor(.white)
             }
             )
-            .opacity(self.settings.containers[index].imageSelected ? 0 : 1)
-            .sheet(isPresented: self.$settings.containers[index].isShowingImagePicker , content: {
-                ImagePickerView(isPresented: self.$settings.containers[index].isShowingImagePicker,
-                                selectedImage: self.$settings.containers[index].imageInBlackBox, index: self.index)
+            .opacity(redactor.photoContainers.containers[index].imageSelected ? 0 : 1)
+            .sheet(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker , content: {
+                ImagePickerView(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker,
+                                selectedImage: $redactor.photoContainers.containers[index].imageInBlackBox, index: index)
             }
             )
         }
@@ -59,7 +61,9 @@ struct SwiftUIPhotoSelector: View {
 }
 
 struct ImagePickerView: UIViewControllerRepresentable {
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings2: photoContainersFrameData = .shared
+    @ObservedObject var redactor: redactorViewData = .shared
     @Binding var isPresented: Bool
     @Binding var selectedImage: UIImage
     var index:Int = 1
@@ -89,8 +93,8 @@ struct ImagePickerView: UIViewControllerRepresentable {
             if let selectedImageFromPicker = info[.originalImage] as? UIImage {
                 self.parent.selectedImage = selectedImageFromPicker
                 
-                let newFolder = parent.settings.createFileDirectory(folderName: parent.settings.templateImageName) //story
-                parent.settings.saveImageToFolder(image: selectedImageFromPicker, name:"t\(parent.index).jpg", folder: newFolder)
+                let newFolder = parent.redactor.photoContainers.createFileDirectory(folderName: parent.redactor.storyTemplate.templateImageName) //story
+                parent.redactor.photoContainers.saveImageToFolder(image: selectedImageFromPicker, name:"t\(parent.index).jpg", folder: newFolder)
                 
             }
             self.parent.isPresented = false

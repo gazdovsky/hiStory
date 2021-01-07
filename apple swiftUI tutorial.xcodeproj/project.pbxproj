@@ -15,6 +15,7 @@
 		A7157F97258C9911008D503C /* makeEquitableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7157F96258C9911008D503C /* makeEquitableView.swift */; };
 		A7184AF925A487BE00AEEE20 /* textContainersFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7184AF825A487BE00AEEE20 /* textContainersFrame.swift */; };
 		A7184AFD25A4B7A700AEEE20 /* photoContainersFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7184AFC25A4B7A700AEEE20 /* photoContainersFrame.swift */; };
+		A7184B0425A50A3500AEEE20 /* systemFilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7184B0325A50A3500AEEE20 /* systemFilesWorker.swift */; };
 		A71E156A2476AE22005682BE /* CreateNewWikiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E15692476AE22005682BE /* CreateNewWikiView.swift */; };
 		A71E156C2476C790005682BE /* WikiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E156B2476C790005682BE /* WikiButton.swift */; };
 		A721E2E7246DE92A002166E9 /* redactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E2E3246DE7D8002166E9 /* redactor.swift */; };
@@ -122,6 +123,7 @@
 		A7157F96258C9911008D503C /* makeEquitableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeEquitableView.swift; sourceTree = "<group>"; };
 		A7184AF825A487BE00AEEE20 /* textContainersFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textContainersFrame.swift; sourceTree = "<group>"; };
 		A7184AFC25A4B7A700AEEE20 /* photoContainersFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoContainersFrame.swift; sourceTree = "<group>"; };
+		A7184B0325A50A3500AEEE20 /* systemFilesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = systemFilesWorker.swift; sourceTree = "<group>"; };
 		A71E15692476AE22005682BE /* CreateNewWikiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWikiView.swift; sourceTree = "<group>"; };
 		A71E156B2476C790005682BE /* WikiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiButton.swift; sourceTree = "<group>"; };
 		A721E2E3246DE7D8002166E9 /* redactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = redactor.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				A76DDA6425853E850064C220 /* coordinator.swift */,
 				A7816372258D4C9800B030B6 /* KeyBoardNotificationReader.swift */,
 				A76DDA6825853F6E0064C220 /* photoSelector.swift */,
+				A7184B0325A50A3500AEEE20 /* systemFilesWorker.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				A744E63A24769C2800238B98 /* NavIconStyle.swift in Sources */,
 				A757BF31247DBC2C0075145B /* draggable.swift in Sources */,
 				A757BF33247E746B0075145B /* strokedDashAnimated.swift in Sources */,
+				A7184B0425A50A3500AEEE20 /* systemFilesWorker.swift in Sources */,
 				A76DDA6525853E860064C220 /* coordinator.swift in Sources */,
 				A721E2E7246DE92A002166E9 /* redactor.swift in Sources */,
 				A744E63D24769CDE00238B98 /* SheetView.swift in Sources */,

@@ -67,7 +67,7 @@ struct transformTextContainer:Codable, Hashable {
 }
 
 struct styleTextContainer: Codable, Hashable {
-    var kern: CGFloat = 1
+    var kern: CGFloat = 0
     var obliqueness: CGFloat = 0
     var strokeWidth: CGFloat = 0
     var shadowBlurRadius: CGFloat = 0

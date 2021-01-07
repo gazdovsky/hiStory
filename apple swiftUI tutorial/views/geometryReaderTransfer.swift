@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct geometryReaderTransfer: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+//    @ObservedObject var settings: selectorContainerStore = .shared
     @State var geo: CGRect
     @State var geoStr: String
     
