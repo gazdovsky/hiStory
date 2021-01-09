@@ -174,8 +174,8 @@
             filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1021,8 +1021,8 @@
             filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1069,8 +1069,8 @@
             filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1133,10 +1133,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "getImagesFromFolder(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1149,10 +1149,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "getImagesFromFolder(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "75343F62-45B9-4DD6-8182-E60CC5614F14 - 791b8daa301cdad5"
@@ -1197,8 +1197,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
             <Locations>
@@ -1245,10 +1245,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "getImagesFromFolder(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1261,8 +1261,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
             <Locations>
@@ -1309,8 +1309,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
             <Locations>
@@ -1357,8 +1357,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
          </BreakpointContent>
@@ -1373,8 +1373,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
          </BreakpointContent>
@@ -1389,10 +1389,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "saveContainerImage(index:)"
-            landmarkType = "7">
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "3D6FB94D-DD98-455D-B5C6-6BAF7557BED6 - e60dc40d636d5c2a"
@@ -1437,10 +1437,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "saveTransformToFolder()"
-            landmarkType = "7">
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1453,10 +1453,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "saveTransformToFolder()"
-            landmarkType = "7">
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "CCBB9A89-56BB-4E93-9745-D9046506EBBC - e60dc40d636d5c81"
@@ -1501,10 +1501,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "saveTransformToFolder()"
-            landmarkType = "7">
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "7B0F3590-58ED-41BC-BFCE-B31AE26CB7B6 - e60dc40d636d5c4f"
@@ -1549,10 +1549,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "saveTransformToFolder()"
-            landmarkType = "7">
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "AB3E8AD6-96AE-4CEC-93F4-E3439BD46370 - e60dc40d636d5cae"
@@ -1597,8 +1597,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
          </BreakpointContent>
@@ -1613,8 +1613,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
             <Locations>
@@ -1661,8 +1661,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
          </BreakpointContent>
@@ -1677,8 +1677,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
             <Locations>
@@ -1725,8 +1725,8 @@
             filePath = "apple swiftUI tutorial/views/MainMenu/draftTemplates.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1804,8 +1804,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
          </BreakpointContent>
@@ -1820,8 +1820,8 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "selectorContainerStore"
             landmarkType = "3">
          </BreakpointContent>
@@ -1836,10 +1836,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "getImagesFromFolder(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "5DED1264-5CD8-46B0-81E5-C7C8D607E358 - 791b8daa301cd69a"
@@ -1884,10 +1884,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "getImagesFromFolder(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "67AD5F74-EE43-4108-B446-BD5B44131AB8 - 791b8daa301cd6d4"
@@ -1932,10 +1932,10 @@
             filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "getImagesFromFolder(folderName:)"
-            landmarkType = "7">
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "selectorContainerStore"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "EEFB5657-D4AD-45C2-978D-5DB05C9A2D4C - 791b8daa301cd77b"
@@ -2101,22 +2101,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "42A2BBEB-670D-46E4-8972-A789648035DC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "readPlst(_:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1EFB7005-9856-4B2D-B1BD-CF72A38DC8FE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2126,22 +2110,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "readPlst(_:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "05EBCEEC-1614-4C90-9821-12B3E267D438"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/DataFetching/storyTemplatePreviewDecoder.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
             landmarkName = "readPlst(_:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -2240,6 +2208,22 @@
             endingLineNumber = "4"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4DE09322-91F1-44CB-8B34-75DC315DD6C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/views/Redactor/redactor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

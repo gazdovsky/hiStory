@@ -10,12 +10,12 @@ import SwiftUI
 
 struct frame1: View {
     @ObservedObject var settings: selectorContainerStore = .shared
-    var tmp: [storyTemplate] {
-        readPlst(settings.templateName)
-    }
-    var crnts: [container] {
-        tmp[0].containers ?? readPlst("defaultContainer.json")
-    }
+//    var tmp: [storyTemplate] {
+//        readPlst(settings.templateName)
+//    }
+//    var crnts: [container] {
+//        tmp[0].containers ?? readPlst("defaultContainer.json")
+//    }
     let imgW = CGFloat(1080)
     @State var showButton: Bool = false
     @State var activateSomeRedactor: Bool = false
@@ -25,6 +25,12 @@ struct frame1: View {
     @State var restoreFromDrafts: Bool = false
 //    @State var storyImage: UIImage = UIImage()
 //    @State var tGeom: CGRect = CGRect()
+    @State var size: CGFloat = 0.1
+    var repeatingAnimation: Animation {
+            Animation
+                .linear(duration: 2)
+                .repeatForever()
+        }
     var body: some View {
         ZStack{
             Image(settings.templateImageName)
@@ -108,6 +114,7 @@ struct frame1: View {
 //                    }
                     textContainersFrame()
                 )
+                
             
             Image(settings.templateImageName)
                 .resizable()
@@ -118,13 +125,7 @@ struct frame1: View {
                 .opacity(0)
 //            Text("\(tGeom.debugDescription)")
         }
-        .onAppear(perform: {
-            if restoreFromDrafts {
-            settings.getImagesFromFolder(folderName:settings.templateImageName)
-            settings.getTransformFromFolder()
-        settings.getTransformTextFromFolder()
-            }
-        })
+        
     }
 }
 

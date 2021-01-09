@@ -28,6 +28,17 @@ class redactorViewData: ObservableObject{
     @Published var keyboardHeight: Int = 0
     @Published var supposedKeyboardHeight: Int = 260
     @Published var redactorOffset: Int = 0
+    func loadAllFromDraft(){
+        photoContainers.getImagesFromFolder(folderName: storyTemplate.templateImageName)
+        photoContainers.getTransformFromFolder()
+    }
+    func saveDraftPreview(){
+        let draftImage = frame1(restoreFromDrafts: true).asImage(width: 300)
+//        UIImageWriteToSavedPhotosAlbum(draftImage, nil, nil, nil)
+        
+        let newFolder = photoContainers.createFileDirectory(folderName: storyTemplate.templateImageName)
+        photoContainers.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
+    }
     
     func updateSupposedKeyboardHeight() {
         if keyboardHeight == 0{
@@ -57,6 +68,7 @@ struct redactor: View {
     @State var th: CGFloat = 0
     @State var needUpdate: Bool = false
     @State var saveScreenShot: Bool = false
+    @State var restoreFromDrafts: Bool = true
     var body: some View {
         ZStack{
  VStack{
@@ -81,9 +93,10 @@ struct redactor: View {
 //        }
         let draftImage = frame1(restoreFromDrafts: true).asImage()
         UIImageWriteToSavedPhotosAlbum(draftImage, nil, nil, nil)
+        redactor.saveDraftPreview()
         
-        let newFolder = redactor.photoContainers.createFileDirectory(folderName: redactor.storyTemplate.templateImageName)
-        redactor.photoContainers.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
+//        let newFolder = redactor.photoContainers.createFileDirectory(folderName: redactor.storyTemplate.templateImageName)
+//        redactor.photoContainers.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
     })
     .padding()
     }
@@ -95,6 +108,8 @@ struct redactor: View {
                 .overlay(
                     VStack{
                         Text("\(redactor.storyTemplate.tx.description) \(redactor.storyTemplate.ty.description) \(redactor.storyTemplate.tw.description) \(redactor.storyTemplate.th.description)")
+//                        Text("\(restoreFromDrafts.description)")
+//                        Text("\(redactor.photoContainers.containers.count)")
                     }
                 )
             ZStack{
@@ -158,6 +173,11 @@ struct redactor: View {
                         }
                     }
                 )
+                .onAppear {
+                    if redactor.storyTemplate.isOpenedDraft {
+                        redactor.loadAllFromDraft()
+                    }
+                }
 //                    .modifier(makeTransformingRedaktorView())
 //                .offset(x: 0, y: settings.redactorMode == .textEdit &&
 //                            settings.indexOfActiveTextContainer() != -1 &&
@@ -182,7 +202,7 @@ struct redactor: View {
         .navigationBarItems(trailing:
                                 HStack(alignment: .bottom){
                                     Button("Save"){
-                                        redactor.storyTemplate.saveTransformToFolder()
+                                        redactor.photoContainers.saveTransformToFolder()
                                         redactor.storyTemplate.saveTextContainersToFolder()
                                     }
                                     .foregroundColor(Color(hex: "f4d8c8"))
@@ -233,7 +253,7 @@ struct redactor: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            redactor()
+            redactor(restoreFromDrafts: false)
             //            .previewDevice("iPhone X")
         }
         .navigationBarColor(backgroundColor: UIColor.hexColor(hex: "#bb8a62"), tintColor: .black)

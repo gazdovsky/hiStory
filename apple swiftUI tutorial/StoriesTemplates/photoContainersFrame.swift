@@ -12,8 +12,17 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
     
     static var shared = photoContainersFrameData()
     @ObservedObject var storyTemplate: selectorContainerStore = .shared
+    var tmp: [storyTemplate] {
+        let template:[storyTemplate]  = readPlst(storyTemplate.templateName)
+        let containersCount = template[0].containers?.count ?? 1
+        if containers.count < containersCount {
+//            containers.append(photoSelector())
+            containers = Array(repeating:  photoSelector() , count: containersCount)
+        }
+       return template
+    }
     
-    @Published var containers:Array<photoSelector> = Array(repeating:  photoSelector() , count: 5)
+    @Published var containers:Array<photoSelector> = Array(repeating:  photoSelector() , count: 1)
     
     func indexOfActiveContainer() -> Int {
     var active = 0
@@ -53,7 +62,9 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
          saveImageToFolder(image: containers[index].imageInBlackBox, name:"t\(index).jpg", folder: newFolder)
     }
     func saveTransformToFolder(){
-        let transformData = [containers[0].transform, containers[1].transform]
+        let transformData = containers.map { (x: photoSelector) -> transformContainer in
+            return x.transform
+        }//[containers[0].transform, containers[1].transform]
         let encoder = JSONEncoder()
         let newFolder = createFileDirectory(folderName: storyTemplate.templateImageName) //story
 //        let newFolder = getDocumentsDirectory().appendingPathComponent(templateImageName)
@@ -64,48 +75,54 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
         } catch {
         }
     }
-//    func getTransformFromFolder(){
-//        let decoder = JSONDecoder()
-//        let folder = getDocumentsDirectory().appendingPathComponent(storyTemplate.templateImageName)
-//        let name = folder.appendingPathComponent("data.JSON")
-//        guard let transformData = try? Data(contentsOf: name) else { return }
-//        
-//        do{let file:[transformContainer] = try decoder.decode([transformContainer].self, from: transformData)
+    func getTransformFromFolder(){
+        let decoder = JSONDecoder()
+        let folder = getDocumentsDirectory().appendingPathComponent(storyTemplate.templateImageName)
+        let name = folder.appendingPathComponent("data.JSON")
+        guard let transformData = try? Data(contentsOf: name) else { return }
+        
+        do{
+            let file:[transformContainer] = try decoder.decode([transformContainer].self, from: transformData)
 //            containers[0].transform = file[0]
 //            containers[1].transform = file[1]
-////           savedStorys = getSavedTemplates()
-//        } catch {
-//        }
-//    }
-//    func getImagesFromFolder(folderName:String) -> Void {
-//        let folder = getDocumentsDirectory().appendingPathComponent(folderName)
-//        //      _rr = ("\(folder)")
-//        for i in 0...1 {
-//            let name = folder.appendingPathComponent("t\(i).jpg")
-//            let imageData = try? Data(contentsOf: name)
-//            let image = UIImage(data: imageData!)
-//          
-////            let attributes = try! FileManager.default.attributesOfItem(atPath: name.path)
-////            let creationDate1 = attributes[.creationDate] as! Date
-//            
-////            print(creationDate1)
-////            print(attributes[.creationDate] as! Date)
-//            containers[i].imageInBlackBox = image!
-//            containers[i].imageSelected = true
-//            containers[i].imageZIndex = 1
-//        }
-//    }
+            for i in 0...containers.count-1{
+                containers[i].transform = file[i]
+            }
+//           savedStorys = getSavedTemplates()
+        } catch {
+        }
+    }
+    func getImagesFromFolder(folderName:String) -> Void {
+        let folder = getDocumentsDirectory().appendingPathComponent(folderName)
+        //      _rr = ("\(folder)")
+        let containersCount = tmp[0].containers?.count ?? 1
+        for i in 0...containersCount - 1 {
+            let name = folder.appendingPathComponent("t\(i).jpg")
+            let imageData = try? Data(contentsOf: name)
+            if imageData == nil {
+                continue
+            } else {
+                let image = UIImage(data: imageData!)
+                                            containers[i].imageInBlackBox = image!
+                                            containers[i].imageSelected = true
+                                            containers[i].imageZIndex = 1
+            }
+                
+            
+            
+        }
+    }
 }
 
 struct photoContainersFrame: View {
 //    @ObservedObject var data: photoContainersFrameData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     let imgW = CGFloat(1080)
-    var tmp: [storyTemplate] {
-        readPlst(redactor.storyTemplate.templateName)
-    }
+//    var tmp: [storyTemplate] {
+//        readPlst(redactor.storyTemplate.templateName)
+//    }
     var crnts: [container] {
-        tmp[0].containers ?? readPlst("defaultContainer.json")
+        redactor.photoContainers.tmp[0].containers ?? readPlst("defaultContainer.json")
     }
     var body: some View {
         Image(redactor.storyTemplate.templateImageName)
@@ -142,8 +159,9 @@ struct photoContainersFrame: View {
                                     index: index)
                                     .onTapGesture {
                                         var activeCount = 0
-                                        for indexActive in 0...crnts.count{
+                                        for indexActive in 0...crnts.count-1{
                                             if indexActive != index {
+                                                
                                                 redactor.photoContainers.containers[indexActive].redactorActive = false
                                             }
                                             if redactor.photoContainers.containers[indexActive].redactorActive == true {activeCount += 1}
@@ -153,6 +171,9 @@ struct photoContainersFrame: View {
                                         if redactor.photoContainers.containers[index].redactorActive {
                                             redactor.redactorMode = .imageEdit
                                         } else {
+                                            redactor.photoContainers.saveTransformToFolder()
+                                            redactor.photoContainers.saveContainerImage(index: index)
+                                            redactor.saveDraftPreview()
                                             redactor.redactorMode = .nothing
                                         }
                                     }
@@ -172,6 +193,7 @@ struct photoContainersFrame: View {
                     }
                     .onAppear(perform: {
 //                            tGeom = g.frame(in: .global)
+                        
                     }
                     )
                 }

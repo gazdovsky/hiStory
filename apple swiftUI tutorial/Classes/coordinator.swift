@@ -29,6 +29,7 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
     @Published var lastActiveContainerIndex = -2
     @Published var templateName: String = "beige aesthetic 1.json"
     @Published var templateImageName: String = "beige aesthetic 1"
+    
     @Published var savedStorys:[String] = [""]
     @Published var navigateToRedactor: Bool = false
     @Published var templateOpacity: Bool = false
@@ -44,13 +45,14 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
     @Published var th: CGFloat = 1
     @Published var screenOffset: Double = 0
     @Published var redactorOffset: Int = 0
+    @Published var isOpenedDraft: Bool = false
     
     
+    @Published var containersCount: Int = 1
     
-    
-    var tmp: [storyTemplate] {
-        readPlst(templateName)
-    }
+//    var tmp: [storyTemplate] {
+//        readPlst(templateName)
+//    }
     var txtfld: [textFieldContainer] {
         if (Bundle.main.path(forResource: templateImageName + "texts.json", ofType: nil) != nil){
         return readPlst(templateImageName + "texts.json")
@@ -79,16 +81,16 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
 //        active = activeCount > 0 ? active : -1
 //        return active
 //    }
-    func clearAllContainers() -> Void{
-        for i in 0...containers.count-1{
-            containers[i] = photoSelector()
-        }
-    }
-    func clearContainer(index: Int) -> Void {
-        if index == -1 {return}
-        containers[index] = photoSelector()
-        templateOpacity = false
-    }
+//    func clearAllContainers() -> Void{
+//        for i in 0...containers.count-1{
+//            containers[i] = photoSelector()
+//        }
+//    }
+//    func clearContainer(index: Int) -> Void {
+//        if index == -1 {return}
+//        containers[index] = photoSelector()
+//        templateOpacity = false
+//    }
 //    func acceptContainerChanges(index: Int) -> Void {
 //        if index == -1 {return}
 //        containers[index].redactorActive = false
@@ -97,36 +99,36 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
 //        saveContainerImage(index: index)
 ////        savedStorys = getSavedTemplates()
 //    }
-    func saveContainerImage(index: Int) -> Void {
-        let newFolder = createFileDirectory(folderName: templateImageName) //story
-//        let newFolder = getDocumentsDirectory().appendingPathComponent(templateImageName)
-         saveImageToFolder(image: containers[index].imageInBlackBox, name:"t\(index).jpg", folder: newFolder)
-    }
-    func saveTransformToFolder(){
-        let transformData = [containers[0].transform, containers[1].transform]
-        let encoder = JSONEncoder()
-        let newFolder = createFileDirectory(folderName: templateImageName) //story
-//        let newFolder = getDocumentsDirectory().appendingPathComponent(templateImageName)
-        let filename = newFolder.appendingPathComponent("data.JSON")
-        do{let file = try encoder.encode(transformData)
-            try file.write(to: filename)
-//            savedStorys = getSavedTemplates()
-        } catch {
-        }
-    }
-    func getTransformFromFolder(){
-        let decoder = JSONDecoder()
-        let folder = getDocumentsDirectory().appendingPathComponent(templateImageName)
-        let name = folder.appendingPathComponent("data.JSON")
-        guard let transformData = try? Data(contentsOf: name) else { return }
-        
-        do{let file:[transformContainer] = try decoder.decode([transformContainer].self, from: transformData)
-            containers[0].transform = file[0]
-            containers[1].transform = file[1]
-//           savedStorys = getSavedTemplates()
-        } catch {
-        }
-    }
+//    func saveContainerImage(index: Int) -> Void {
+//        let newFolder = createFileDirectory(folderName: templateImageName) //story
+////        let newFolder = getDocumentsDirectory().appendingPathComponent(templateImageName)
+//         saveImageToFolder(image: containers[index].imageInBlackBox, name:"t\(index).jpg", folder: newFolder)
+//    }
+//    func saveTransformToFolder(){
+//        let transformData = [containers[0].transform, containers[1].transform]
+//        let encoder = JSONEncoder()
+//        let newFolder = createFileDirectory(folderName: templateImageName) //story
+////        let newFolder = getDocumentsDirectory().appendingPathComponent(templateImageName)
+//        let filename = newFolder.appendingPathComponent("data.JSON")
+//        do{let file = try encoder.encode(transformData)
+//            try file.write(to: filename)
+////            savedStorys = getSavedTemplates()
+//        } catch {
+//        }
+//    }
+//    func getTransformFromFolder(){
+//        let decoder = JSONDecoder()
+//        let folder = getDocumentsDirectory().appendingPathComponent(templateImageName)
+//        let name = folder.appendingPathComponent("data.JSON")
+//        guard let transformData = try? Data(contentsOf: name) else { return }
+//        
+//        do{let file:[transformContainer] = try decoder.decode([transformContainer].self, from: transformData)
+//            containers[0].transform = file[0]
+//            containers[1].transform = file[1]
+////           savedStorys = getSavedTemplates()
+//        } catch {
+//        }
+//    }
     
 //    func saveImageToFolder(image: UIImage, name:String, folder: URL){
 //        let data = image.jpegData(compressionQuality: 0.8)
@@ -138,24 +140,24 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
 //            
 //           }
 //    }
-    func getImagesFromFolder(folderName:String) -> Void {
-        let folder = getDocumentsDirectory().appendingPathComponent(folderName)
-        //      _rr = ("\(folder)")
-        for i in 0...1 {
-            let name = folder.appendingPathComponent("t\(i).jpg")
-            let imageData = try? Data(contentsOf: name)
-            let image = UIImage(data: imageData!)
-          
-//            let attributes = try! FileManager.default.attributesOfItem(atPath: name.path)
-//            let creationDate1 = attributes[.creationDate] as! Date
-            
-//            print(creationDate1)
-//            print(attributes[.creationDate] as! Date)
-            containers[i].imageInBlackBox = image!
-            containers[i].imageSelected = true
-            containers[i].imageZIndex = 1
-        }
-    }
+//    func getImagesFromFolder(folderName:String) -> Void {
+//        let folder = getDocumentsDirectory().appendingPathComponent(folderName)
+//        //      _rr = ("\(folder)")
+//        for i in 0...1 {
+//            let name = folder.appendingPathComponent("t\(i).jpg")
+//            let imageData = try? Data(contentsOf: name)
+//            let image = UIImage(data: imageData!)
+//
+////            let attributes = try! FileManager.default.attributesOfItem(atPath: name.path)
+////            let creationDate1 = attributes[.creationDate] as! Date
+//
+////            print(creationDate1)
+////            print(attributes[.creationDate] as! Date)
+//            containers[i].imageInBlackBox = image!
+//            containers[i].imageSelected = true
+//            containers[i].imageZIndex = 1
+//        }
+//    }
 //    func createFileDirectory(folderName: String) -> URL { 
 //        let documentsURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 //

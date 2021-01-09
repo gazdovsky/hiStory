@@ -85,13 +85,13 @@
 		A7A87AFE2589479B00BD6708 /* defaultTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A87AFD2589479B00BD6708 /* defaultTemplates.swift */; };
 		A7A8DF18257F7FCB0080E588 /* templatesCategorys.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF17257F7FCA0080E588 /* templatesCategorys.json */; };
 		A7A8DF22257F8D0B0080E588 /* color addict 3.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1A257F8D0A0080E588 /* color addict 3.json */; };
-		A7A8DF23257F8D0B0080E588 /* baige aesthetic 3.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1B257F8D0A0080E588 /* baige aesthetic 3.json */; };
-		A7A8DF24257F8D0B0080E588 /* baige aesthetic 2.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1C257F8D0A0080E588 /* baige aesthetic 2.json */; };
+		A7A8DF23257F8D0B0080E588 /* beige aesthetic 3.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1B257F8D0A0080E588 /* beige aesthetic 3.json */; };
+		A7A8DF24257F8D0B0080E588 /* beige aesthetic 2.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1C257F8D0A0080E588 /* beige aesthetic 2.json */; };
 		A7A8DF25257F8D0B0080E588 /* color addict 4.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1D257F8D0A0080E588 /* color addict 4.json */; };
 		A7A8DF26257F8D0B0080E588 /* color addict 2.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1E257F8D0A0080E588 /* color addict 2.json */; };
-		A7A8DF27257F8D0B0080E588 /* baige aesthetic 1.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1F257F8D0A0080E588 /* baige aesthetic 1.json */; };
+		A7A8DF27257F8D0B0080E588 /* beige aesthetic 1.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF1F257F8D0A0080E588 /* beige aesthetic 1.json */; };
 		A7A8DF28257F8D0B0080E588 /* color addict 1.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF20257F8D0B0080E588 /* color addict 1.json */; };
-		A7A8DF29257F8D0B0080E588 /* baige aesthetic 4.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF21257F8D0B0080E588 /* baige aesthetic 4.json */; };
+		A7A8DF29257F8D0B0080E588 /* beige aesthetic 4.json in Resources */ = {isa = PBXBuildFile; fileRef = A7A8DF21257F8D0B0080E588 /* beige aesthetic 4.json */; };
 		A7B07AD9246DDF6B00E3EF6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B07AD8246DDF6B00E3EF6D /* AppDelegate.swift */; };
 		A7B07ADB246DDF6B00E3EF6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B07ADA246DDF6B00E3EF6D /* SceneDelegate.swift */; };
 		A7B07ADF246DDF6C00E3EF6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B07ADE246DDF6C00E3EF6D /* Assets.xcassets */; };
@@ -196,13 +196,13 @@
 		A7A87AFD2589479B00BD6708 /* defaultTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultTemplates.swift; sourceTree = "<group>"; };
 		A7A8DF17257F7FCA0080E588 /* templatesCategorys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = templatesCategorys.json; sourceTree = "<group>"; };
 		A7A8DF1A257F8D0A0080E588 /* color addict 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color addict 3.json"; sourceTree = "<group>"; };
-		A7A8DF1B257F8D0A0080E588 /* baige aesthetic 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "baige aesthetic 3.json"; sourceTree = "<group>"; };
-		A7A8DF1C257F8D0A0080E588 /* baige aesthetic 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "baige aesthetic 2.json"; sourceTree = "<group>"; };
+		A7A8DF1B257F8D0A0080E588 /* beige aesthetic 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "beige aesthetic 3.json"; sourceTree = "<group>"; };
+		A7A8DF1C257F8D0A0080E588 /* beige aesthetic 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "beige aesthetic 2.json"; sourceTree = "<group>"; };
 		A7A8DF1D257F8D0A0080E588 /* color addict 4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color addict 4.json"; sourceTree = "<group>"; };
 		A7A8DF1E257F8D0A0080E588 /* color addict 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color addict 2.json"; sourceTree = "<group>"; };
-		A7A8DF1F257F8D0A0080E588 /* baige aesthetic 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "baige aesthetic 1.json"; sourceTree = "<group>"; };
+		A7A8DF1F257F8D0A0080E588 /* beige aesthetic 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "beige aesthetic 1.json"; sourceTree = "<group>"; };
 		A7A8DF20257F8D0B0080E588 /* color addict 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color addict 1.json"; sourceTree = "<group>"; };
-		A7A8DF21257F8D0B0080E588 /* baige aesthetic 4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "baige aesthetic 4.json"; sourceTree = "<group>"; };
+		A7A8DF21257F8D0B0080E588 /* beige aesthetic 4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "beige aesthetic 4.json"; sourceTree = "<group>"; };
 		A7B07AD5246DDF6B00E3EF6D /* apple swiftUI tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apple swiftUI tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B07AD8246DDF6B00E3EF6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7B07ADA246DDF6B00E3EF6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -296,7 +296,6 @@
 				A71E156B2476C790005682BE /* WikiButton.swift */,
 				A7980DF02594783D003F40D3 /* textLayer.swift */,
 				A7980DF32594E6CA003F40D3 /* geometryReaderTransfer.swift */,
-				A721E2E3246DE7D8002166E9 /* redactor.swift */,
 				A72E2605248C2DD600DEB420 /* multiFrames.swift */,
 				A72ED8172488364600182D38 /* pureFrame.swift */,
 			);
@@ -337,12 +336,12 @@
 		A757BF3E247FF2600075145B /* DataStoriesTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				A7A8DF1B257F8D0A0080E588 /* baige aesthetic 3.json */,
+				A7A8DF1B257F8D0A0080E588 /* beige aesthetic 3.json */,
 				A7FD2FF22592902500A0576E /* beige aesthetic 1texts.json */,
 				A7FD2FF6259382A400A0576E /* defaultText.json */,
-				A7A8DF21257F8D0B0080E588 /* baige aesthetic 4.json */,
-				A7A8DF1F257F8D0A0080E588 /* baige aesthetic 1.json */,
-				A7A8DF1C257F8D0A0080E588 /* baige aesthetic 2.json */,
+				A7A8DF21257F8D0B0080E588 /* beige aesthetic 4.json */,
+				A7A8DF1F257F8D0A0080E588 /* beige aesthetic 1.json */,
+				A7A8DF1C257F8D0A0080E588 /* beige aesthetic 2.json */,
 				A7A8DF20257F8D0B0080E588 /* color addict 1.json */,
 				A7A8DF1E257F8D0A0080E588 /* color addict 2.json */,
 				A7A8DF1A257F8D0A0080E588 /* color addict 3.json */,
@@ -407,6 +406,7 @@
 				A7816376258E041300B030B6 /* TextEditorPanel.swift */,
 				A781637E258E792500B030B6 /* ImageEditorPanel.swift */,
 				A781637B258E768400B030B6 /* MainEditorPanel.swift */,
+				A721E2E3246DE7D8002166E9 /* redactor.swift */,
 			);
 			path = Redactor;
 			sourceTree = "<group>";
@@ -581,7 +581,7 @@
 				A7FDE974255485B2002A974F /* defaultTextField.json in Resources */,
 				A7916EB22492AFCA00EF59B1 /* customTextFieldStructs.json in Resources */,
 				A7FD2FF32592902900A0576E /* beige aesthetic 1texts.json in Resources */,
-				A7A8DF29257F8D0B0080E588 /* baige aesthetic 4.json in Resources */,
+				A7A8DF29257F8D0B0080E588 /* beige aesthetic 4.json in Resources */,
 				A72E2608248D3D7000DEB420 /* testGeom.json in Resources */,
 				A7916EAB249164DC00EF59B1 /* FRSCRIPT.TTF in Resources */,
 				A7102A362486554500FDDE31 /* imgContainer.json in Resources */,
@@ -598,11 +598,11 @@
 				A7A8DF18257F7FCB0080E588 /* templatesCategorys.json in Resources */,
 				A7B07ADF246DDF6C00E3EF6D /* Assets.xcassets in Resources */,
 				A76DDA55258173680064C220 /* 11050.ttf in Resources */,
-				A7A8DF24257F8D0B0080E588 /* baige aesthetic 2.json in Resources */,
-				A7A8DF27257F8D0B0080E588 /* baige aesthetic 1.json in Resources */,
+				A7A8DF24257F8D0B0080E588 /* beige aesthetic 2.json in Resources */,
+				A7A8DF27257F8D0B0080E588 /* beige aesthetic 1.json in Resources */,
 				A7916EAC249164DC00EF59B1 /* ofont.ru_1 Amazone M.ttf in Resources */,
 				A7916EAA249164DC00EF59B1 /* Vanilla.ttf in Resources */,
-				A7A8DF23257F8D0B0080E588 /* baige aesthetic 3.json in Resources */,
+				A7A8DF23257F8D0B0080E588 /* beige aesthetic 3.json in Resources */,
 				A7A6E1742481416F00D1FBD6 /* storiesTemplates.plist in Resources */,
 				A7D5127325549F3300EB261E /* defaultContainer.json in Resources */,
 			);

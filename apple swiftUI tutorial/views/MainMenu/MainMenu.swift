@@ -110,10 +110,10 @@ struct mainMenuItem: View {
     @State  var color = Color.red
     @State  var w:CGFloat
     @State  var h:CGFloat
-    @State var isDraftItem: Bool = false
+    @State var isDraftItem: Bool
     @State var draftItemPreview: UIImage = UIImage()
     var previewImg: Image {
-        if isDraftItem {
+        if !isDraftItem {
         return Image(self.iPreview.image)
         } else {
             let folder = getDocumentsDirectory().appendingPathComponent(iPreview.name)
@@ -134,7 +134,7 @@ struct mainMenuItem: View {
         }
     }
     var body: some View {
-        NavigationLink(destination: redactor(), isActive: $isNavigate ){
+        NavigationLink(destination: redactor(restoreFromDrafts: isDraftItem), isActive: $isNavigate ){
             VStack{
                 Rectangle()
                     .frame(width: self.w, height: self.h)

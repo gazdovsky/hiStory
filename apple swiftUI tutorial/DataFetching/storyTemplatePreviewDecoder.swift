@@ -31,9 +31,9 @@ func readPlst<T: Decodable>(_ fileName: String) -> T {
     }
     let url = URL(fileURLWithPath: path)
     let data = try! Data(contentsOf: url)
-//    print(String(data: data, encoding: .utf8)!)
-//    let plst = try! PropertyListDecoder().decode([String: itemPreview].self, from: data) //for plist read
     let plst = try! JSONDecoder().decode(T.self, from: data) //for json read
+    
+    
     return plst
 }
 

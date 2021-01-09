@@ -66,14 +66,21 @@ extension UIImage {
 }
 
 extension View {
-    func asImage() -> UIImage {
+    func asImage(width: CGFloat = 1080) -> UIImage {
+        let baseWidth = width > 0 ? width : CGFloat(1080)
         let controller = UIHostingController(rootView: self)
 
         // locate far out of screen
         controller.view.frame = CGRect(x: 0, y: CGFloat(Int.max), width: 1, height: 1)
         UIApplication.shared.windows.first!.rootViewController?.view.addSubview(controller.view)
 
-        let size = controller.sizeThatFits(in: UIScreen.main.bounds.size)
+        var increasedSize = UIScreen.main.bounds.size
+        //increase size of saved screehshot
+        let increaser = (baseWidth)/increasedSize.width
+        increasedSize.width *= increaser
+        increasedSize.height *= increaser
+        let size = controller.sizeThatFits(in: increasedSize)
+        
         controller.view.bounds = CGRect(origin: .zero, size: size)
         controller.view.sizeToFit()
 

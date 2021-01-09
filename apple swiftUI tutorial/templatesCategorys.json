@@ -30,22 +30,22 @@
             "id": "b1",
             "name": "Spring mood 1",
             "image": "beige aesthetic 1",
-            "renderfile": "baige aesthetic 1.json"
+            "renderfile": "beige aesthetic 1.json"
         },{
             "id": "b2",
             "name": "Spring mood 2",
             "image": "beige aesthetic 2",
-            "renderfile": "baige aesthetic 2.json"
+            "renderfile": "beige aesthetic 2.json"
         },{
             "id": "b3",
             "name": "Spring mood 3",
-            "image": "bage aestetic 3",
-            "renderfile": "baige aesthetic 3.json"
+            "image": "beige aesthetic 3",
+            "renderfile": "beige aesthetic 3.json"
         },{
             "id": "b4",
             "name": "Spring mood 4",
-            "image": "bage aestetic 4",
-            "renderfile": "baige aesthetic 4.json"
+            "image": "beige aesthetic 4",
+            "renderfile": "beige aesthetic 4.json"
         }]
     }
    

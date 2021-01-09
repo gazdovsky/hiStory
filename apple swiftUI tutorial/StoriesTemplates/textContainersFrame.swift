@@ -12,7 +12,7 @@ class textContainersFrameData: ObservableObject{
     init() {
     }
     static var shared = textContainersFrameData()
-    @ObservedObject var storyTemplate: selectorContainerStore = .shared
+//    @ObservedObject var storyTemplate: selectorContainerStore = .shared
     @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 5)
 
     @Published var activeTextContainer = 0

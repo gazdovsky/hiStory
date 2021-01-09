@@ -19,11 +19,6 @@ struct SwiftUIPhotoSelector: View {
     @State var isShowingImagePicker = false
     @State var imageInBlackBox = UIImage()
     @State var imageSelected = false
-    {
-        didSet{
-            redactor.photoContainers.saveTransformToFolder()
-        }
-    }
     @State var imageZIndex = 0.0
     
     var body: some View{
@@ -95,6 +90,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
                 
                 let newFolder = parent.redactor.photoContainers.createFileDirectory(folderName: parent.redactor.storyTemplate.templateImageName) //story
                 parent.redactor.photoContainers.saveImageToFolder(image: selectedImageFromPicker, name:"t\(parent.index).jpg", folder: newFolder)
+                parent.redactor.saveDraftPreview()
                 
             }
             self.parent.isPresented = false

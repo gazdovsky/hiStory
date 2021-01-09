@@ -38,9 +38,10 @@ struct defaultTemplates: View {
                         Spacer(minLength: (screenWidth - itemW*2)/3)
                         ForEach(0 ..< dd[n].items.count){i in
                           VStack{
-                            mainMenuItem(iPreview:dd[n].items[i], isNavigate: $settings.navigateToRedactor, w:self.itemW , h: self.itemH)
+                            mainMenuItem(iPreview:dd[n].items[i], isNavigate: $settings.navigateToRedactor, w:self.itemW , h: self.itemH, isDraftItem: false)
                                 .overlay(
                                     Button(action:{
+                                        settings.isOpenedDraft = false
                                         settings.navigateToRedactor = true
                                         settings.templateName = dd[n].items[i].renderfile
                                         settings.templateImageName = dd[n].items[i].image

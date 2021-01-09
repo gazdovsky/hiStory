@@ -63,16 +63,20 @@ struct draftTemplates: View{
                         .foregroundColor(Color(hex: "#493412"))
                         .padding(.all)
                         
-                        mainMenuItem(iPreview:itemPreview(
+                        mainMenuItem(
+                            iPreview:itemPreview(
                                         id: "0",
                                         name: gettedSavedStoryes[n],
                                         image: gettedSavedStoryes[n],
                                         renderfile: gettedSavedStoryes[n] + ".json"),
-                                        isNavigate: $settings.navigateToRedactor, w:self.itemW , h: self.itemH)
+                                        isNavigate: $settings.navigateToRedactor, w:self.itemW , h: self.itemH,
+                            isDraftItem: true
+                            )
                             .overlay(
                                 Button(action:{
+                                    settings.isOpenedDraft = true
                                     settings.templateOpacity = false
-                                    settings.clearAllContainers()
+//                                    settings.clearAllContainers()
                                     settings.navigateToRedactor = true
                                     settings.templateName = gettedSavedStoryes[n] + ".json"
                                     settings.templateImageName = gettedSavedStoryes[n]
