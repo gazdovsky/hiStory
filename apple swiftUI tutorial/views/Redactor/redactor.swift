@@ -23,6 +23,9 @@ class redactorViewData: ObservableObject{
     @ObservedObject var storyTemplate: selectorContainerStore = .shared
     @ObservedObject var photoContainers: photoContainersFrameData = .shared
     @ObservedObject var textFields: textContainersFrameData = .shared
+  
+    
+    @ObservedObject var textEditor: textEditorPanelData = .shared
     @Published var redactorMode: redactorMode = .nothing
     @Published var templateOpacity: Bool = false
     @Published var keyboardHeight: Int = 0

@@ -12,6 +12,8 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
     
     static var shared = textContainersFrameData()
 //    @ObservedObject var storyTemplate: selectorContainerStore = .shared
+    
+   
     @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 2)
 
     @Published var activeTextContainer = 0

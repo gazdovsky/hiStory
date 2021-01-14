@@ -214,6 +214,10 @@ struct TextView: UIViewRepresentable {
                     self.parent.redactor.keyboardHeight = Int(state.height)
                     self.parent.redactor.updateSupposedKeyboardHeight()
                     print("key shows animate", state.height)
+                    if state.height > 0 {
+                        self.parent.redactor.textEditor.aTool = .nothing
+                    }
+                    
                 }
             }
             parent.redactor.textFields.activeTextContainer = parent.index

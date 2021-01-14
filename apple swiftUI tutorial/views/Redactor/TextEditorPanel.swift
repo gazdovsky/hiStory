@@ -25,13 +25,15 @@ enum keyboardState {
 class textEditorPanelData: ObservableObject{
     init() {
     }
-    @ObservedObject var redactor: redactorViewData = .shared
+    static var shared = textEditorPanelData()
+//    @ObservedObject var redactor: redactorViewData = .shared
     @Published var aTool: textRedactorToolType = .nothing
-    @State var keyboardState: keyboardState = .show
+//    @Published var keyboardState: keyboardState = .show
 }
 struct TextEditorPanel: View {
     //    @ObservedObject var settings: selectorContainerStore = .shared
     //    @ObservedObject var textData: textContainersFrameData = .shared
+    @ObservedObject var data: textEditorPanelData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     //    let gradientStep:CGFloat = 1/8
     let iconSize: CGFloat = 20
@@ -69,34 +71,34 @@ struct TextEditorPanel: View {
     //    }
     @State var val: CGFloat = 0
     
-    @State var aTool: textRedactorToolType = .nothing
-    {
-        didSet{
-            print("68 aTool: \(aTool), keyboardState: \(keyboardState), redactor.keyboardHeight: \(redactor.keyboardHeight), redactor.redactorOffset: \(redactor.redactorOffset)")
+//    @State var aTool: textRedactorToolType = .nothing
+//    {
+//        didSet{
+//            print("68 aTool: \(data.aTool), keyboardState: \(keyboardState), redactor.keyboardHeight: \(redactor.keyboardHeight), redactor.redactorOffset: \(redactor.redactorOffset)")
 //            if aTool != .nothing || redactor.keyboardHeight > 0{
 ////                redactor.redactorOffset = -redactor.supposedKeyboardHeight
 //            } else {
 ////                redactor.redactorOffset = 0
 //            }
 //            print("73 aTool: \(aTool), keyboardState: \(keyboardState), redactor.keyboardHeight: \(redactor.keyboardHeight), redactor.redactorOffset: \(redactor.redactorOffset)")
-        }
-    }
+//        }
+//    }
     @State var keyboardState: keyboardState = .show
     {
         didSet{
-            if aTool != .nothing || redactor.keyboardHeight > 0{
+            if data.aTool != .nothing || redactor.keyboardHeight > 0{
                 redactor.redactorOffset = -redactor.supposedKeyboardHeight
             } else {
                 redactor.redactorOffset = 0
             }
-            print("87 aTool: \(aTool), keyboardState: \(keyboardState), redactor.keyboardHeight: \(redactor.keyboardHeight), redactor.redactorOffset: \(redactor.redactorOffset)")
+            print("87 aTool: \(data.aTool), keyboardState: \(keyboardState), redactor.keyboardHeight: \(redactor.keyboardHeight), redactor.redactorOffset: \(redactor.redactorOffset)")
         }
     }
     var aContainer: Int{
 //                    print("aCont=\(redactor.textFields.activeTextContainer)")
-        print("92 aTool: \(aTool), keyboardState: \(keyboardState), redactor.keyboardHeight: \(redactor.keyboardHeight), redactor.redactorOffset: \(redactor.redactorOffset)")
+        print("92 aTool: \(data.aTool), keyboardState: \(keyboardState), redactor.keyboardHeight: \(redactor.keyboardHeight), redactor.redactorOffset: \(redactor.redactorOffset)")
         
-        if aTool != .nothing && redactor.keyboardHeight != 0 && redactor.textFields.textContainers[redactor.textFields.activeTextContainer].isActive == true  {
+        if data.aTool != .nothing && redactor.keyboardHeight != 0 && redactor.textFields.textContainers[redactor.textFields.activeTextContainer].isActive == true  {
             
                         DispatchQueue.main.async {
 //                        redactor.redactorOffset = 0
@@ -124,18 +126,18 @@ struct TextEditorPanel: View {
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
                 .padding([.leading, .trailing])
-                .opacity(aTool == .nothing || aTool == .size ? 1 : 0.2)
+                .opacity(data.aTool == .nothing || data.aTool == .size ? 1 : 0.2)
                 Spacer()
                 ToolbarButton(icon: "keyboard.chevron.compact.down", isSelected: true, size: iconSize){
                     if keyboardState == .show {
                         redactor.textFields.textContainers[aContainer].isFirstResponder = false
-                        aTool = .nothing
+                        data.aTool = .nothing
                         keyboardState = .hide
                         redactor.redactorOffset = 0
                     } else {
                         redactor.textFields.textContainers[aContainer].isFirstResponder = true
                         keyboardState = .show
-                        aTool = .nothing
+                        data.aTool = .nothing
                     }
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
@@ -143,10 +145,10 @@ struct TextEditorPanel: View {
                 .rotationEffect(keyboardState == .show ? Angle(degrees: 0) : Angle(degrees: 180))
                 
                 ToolbarButton(icon: "drop", isSelected: true, size: iconSize-5){
-                    if aTool == .colorPicker {
-                        aTool = .nothing
+                    if data.aTool == .colorPicker {
+                        data.aTool = .nothing
                     } else {
-                        aTool = .colorPicker
+                        data.aTool = .colorPicker
                         redactor.textFields.textContainers[aContainer].isFirstResponder = false
                         keyboardState = .hide
                     }
@@ -155,33 +157,33 @@ struct TextEditorPanel: View {
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
                 .padding([.leading,.trailing])
-                .opacity(aTool == .nothing || aTool == .colorPicker ? 1 : 0.2)
+                .opacity(data.aTool == .nothing || data.aTool == .colorPicker ? 1 : 0.2)
                 
                 ToolbarButton(icon: "slider.horizontal.3", isSelected: true, size: iconSize){  //icon_textAligment
-                    if aTool == .align {
-                        aTool = .nothing
+                    if data.aTool == .align {
+                        data.aTool = .nothing
                     } else {
-                        aTool = .align
+                        data.aTool = .align
                     }
                     redactor.textFields.textContainers[aContainer].isFirstResponder = false
                     keyboardState = .hide
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
                 .padding([.leading,.trailing])
-                .opacity(aTool == .nothing || aTool == .align ? 1 : 0.2)
+                .opacity(data.aTool == .nothing || data.aTool == .align ? 1 : 0.2)
                 
                 ToolbarButton(icon: "textformat", isSelected: true, size: iconSize){ //icon_textStyle
-                    if aTool == .format {
-                        aTool = .nothing
+                    if data.aTool == .format {
+                        data.aTool = .nothing
                     } else {
-                        aTool = .format
+                        data.aTool = .format
                     }
                     redactor.textFields.textContainers[aContainer].isFirstResponder = false
                     keyboardState = .hide
                 }
                 .foregroundColor(Color(hex: "f4d8c8"))
                 .padding([.leading,.trailing])
-                .opacity(aTool == .nothing || aTool == .format ? 1 : 0.2)
+                .opacity(data.aTool == .nothing || data.aTool == .format ? 1 : 0.2)
                 
                 Spacer()
                 
@@ -190,7 +192,7 @@ struct TextEditorPanel: View {
                     redactor.textFields.textContainers[aContainer].isActive = false
                     redactor.textFields.deactivateAllTextContainers()
                     redactor.redactorOffset = 0
-                    aTool = .nothing
+                    data.aTool = .nothing
                     redactor.redactorMode = .nothing
                     keyboardState = .show
                 }
@@ -198,7 +200,7 @@ struct TextEditorPanel: View {
             })
             
             Group{ () -> AnyView in
-                switch aTool{
+                switch data.aTool{
                 case .colorPicker: return AnyView(
                     VStack(alignment: .center, content: {
                         colorPickerHexWithSaturation(chosenColor: $redactor.textFields.textContainers[aContainer].fontColor)
