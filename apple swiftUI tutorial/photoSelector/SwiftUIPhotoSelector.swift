@@ -12,7 +12,7 @@ import PhotosUI
 import SwiftUI
 
 struct SwiftUIPhotoSelector: View {
-//    @ObservedObject var settings: selectorContainerStore = .shared
+    //    @ObservedObject var settings: selectorContainerStore = .shared
     @ObservedObject var settings2: photoContainersFrameData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     @State var index: Int = 0
@@ -20,7 +20,7 @@ struct SwiftUIPhotoSelector: View {
     @State var imageInBlackBox = UIImage()
     @State var imageSelected = false
     @State var imageZIndex = 0.0
-    
+    //    let screenW = UIScreen.main.bounds.width
     var body: some View{
         ZStack{
             Image(uiImage: redactor.photoContainers.containers[index].imageInBlackBox)
@@ -46,7 +46,7 @@ struct SwiftUIPhotoSelector: View {
             }
             )
             .opacity(redactor.photoContainers.containers[index].imageSelected ? 0 : 1)
-            .sheet(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker , content: {
+            .sheet(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker, content: {
                 ImagePickerView(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker,
                                 selectedImage: $redactor.photoContainers.containers[index].imageInBlackBox, index: index)
             }
@@ -56,8 +56,8 @@ struct SwiftUIPhotoSelector: View {
 }
 
 struct ImagePickerView: UIViewControllerRepresentable {
-//    @ObservedObject var settings: selectorContainerStore = .shared
-//    @ObservedObject var settings2: photoContainersFrameData = .shared
+    //    @ObservedObject var settings: selectorContainerStore = .shared
+    //    @ObservedObject var settings2: photoContainersFrameData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     @Binding var isPresented: Bool
     @Binding var selectedImage: UIImage
@@ -87,13 +87,20 @@ struct ImagePickerView: UIViewControllerRepresentable {
                                     [UIImagePickerController.InfoKey : Any]) {
             if let selectedImageFromPicker = info[.originalImage] as? UIImage {
                 self.parent.selectedImage = selectedImageFromPicker
-                
-                let newFolder = parent.redactor.photoContainers.createFileDirectory(folderName: parent.redactor.storyTemplate.templateImageName) //story
-                parent.redactor.photoContainers.saveImageToFolder(image: selectedImageFromPicker, name:"t\(parent.index).jpg", folder: newFolder)
-                parent.redactor.saveDraftPreview()
-                
+                DispatchQueue.main.async {
+                    let newFolder = self.parent.redactor.photoContainers.createFileDirectory(folderName: self.parent.redactor.storyTemplate.templateImageName)
+                    self.parent.redactor.photoContainers.saveImageToFolder(image: selectedImageFromPicker, name:"t\(self.parent.index).jpg", folder: newFolder)
+                }
             }
             self.parent.isPresented = false
+            //story
+            
+            self.parent.redactor.saveDraftPreview()
+            
+            
+        }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) -> Void{
+            self.parent.redactor.photoContainers.clearContainer(index: self.parent.index)
         }
     }
     
@@ -101,11 +108,13 @@ struct ImagePickerView: UIViewControllerRepresentable {
                                     ImagePickerView.UIViewControllerType, context:
                                         UIViewControllerRepresentableContext<ImagePickerView>) {
     }
+    
+    
 }
 
 
 struct photoSelectorWithParams: View{
-//    @ObservedObject var settings: selectorContainerStore = .shared
+    //    @ObservedObject var settings: selectorContainerStore = .shared
     var actualTemplateWith: CGFloat
     var actualTemplateHeight: CGFloat
     var konstantTemplateWith: CGFloat

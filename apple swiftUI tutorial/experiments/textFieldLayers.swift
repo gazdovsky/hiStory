@@ -17,6 +17,8 @@ struct textViewWrapper: View {
     @State var w: CGFloat = 100
     @State var h: CGFloat = 100
     
+    @State var increaser: CGFloat
+    
     @State var c1t: CGFloat = 0
     @State var c2t: CGFloat = 0
     @State var fieldHeight: CGFloat = 55
@@ -24,24 +26,26 @@ struct textViewWrapper: View {
         return w + widthIncreaser < 25 ? 0 : widthIncreaser
     }
     var body: some View{
-        HStack{
-            Circle()
-                .offset(CGSize(width: c1t, height: 0))
-                .frame(width: 20, height: 20)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .gesture(DragGesture()
-                            .onChanged({
-                                value in
-                                let increaser = updateWidth(widthIncreaser: -value.translation.width)
-                                if increaser != 0 {
-                                    c1t = value.translation.width
-                                    w += increaser
-                                }
-                            })
-                )
-                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
+        
+        HStack(alignment: .firstTextBaseline, content: {
+           
+//            Circle()
+//                .offset(CGSize(width: c1t, height: 0))
+//                .frame(width: 20, height: 20)
+//                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+//                .gesture(DragGesture()
+//                            .onChanged({
+//                                value in
+//                                let increaser = updateWidth(widthIncreaser: -value.translation.width)
+//                                if increaser != 0 {
+//                                    c1t = value.translation.width
+//                                    w += increaser
+//                                }
+//                            })
+//                )
+//                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
             TextView(fieldText: $textViewItem.fieldText,
-                     fontSize: $textViewItem.fontSize,
+                     fontSize: textViewItem.fontSize, // * increaser
                      textAlign: textViewItem.textAlign,
                      fontName: textViewItem.fontName,
                      fontColor: textViewItem.fontColor,
@@ -49,36 +53,52 @@ struct textViewWrapper: View {
                      activeTextContainer: $textViewItem.activeTextContainer,
                      isActive: $textViewItem.isActive,
                      isFirstResponder: $textViewItem.isFirstResponder,
-                     fieldHeight: $fieldHeight,
-                     fieldWidth: $w,
-                     kern: $textViewItem.kern,
-                     style: $textViewItem.style
+                     fieldHeight: $textViewItem.containerH,
+                     fieldWidth: $textViewItem.containerW,
+                     kern: textViewItem.kern,// * increaser
+                     style: $textViewItem.style,
+                     increaser: increaser
             )
+            .scaleEffect(increaser)
             .onTapGesture{
-                redactor.textFields.textContainers[index].isActive = true
-                redactor.textFields.textContainers[index].isFirstResponder = true
+//                redactor.textFields.textContainers[index].isActive = true
+//                redactor.textFields.textContainers[index].isFirstResponder = true
+                
+                textViewItem.isActive = true
+                textViewItem.isFirstResponder = true
+                
                 redactor.redactorMode = .textEdit
             }
             .zIndex(Double(4))
-            .frame(width: w, height: fieldHeight)
+            .frame(width: textViewItem.containerW, height: textViewItem.containerH) //* increaser
             .fixedSize()
+            .modifier(makeTransformingMultilineText(
+                        index : index,
+                        fontSize: redactor.textFields.textContainers[index].fontSize
+                ))
+//            Circle()
+//                .offset(CGSize(width: c2t, height: 0))
+//                .frame(width: 20, height: 20)
+//                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+//                .gesture(DragGesture()
+//                            .onChanged({
+//                                value in
+//                                let increaser = updateWidth(widthIncreaser: value.translation.width)
+//                                if increaser != 0 {
+//                                    c2t = value.translation.width
+//                                    w += increaser
+//                                }
+//                            })
+//                )
+//                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
             
-            Circle()
-                .offset(CGSize(width: c2t, height: 0))
-                .frame(width: 20, height: 20)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .gesture(DragGesture()
-                            .onChanged({
-                                value in
-                                let increaser = updateWidth(widthIncreaser: value.translation.width)
-                                if increaser != 0 {
-                                    c2t = value.translation.width
-                                    w += increaser
-                                }
-                            })
-                )
-                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
-        }
+        })
+        .position(x: redactor.textFields.textContainers[index].x * increaser, y: redactor.textFields.textContainers[index].y * increaser)
+         //textData.textContainers[index].transform.currentPosition.width * 2 * (1080/231)
+        //        Circle()
+//            .frame(width: 5, height: 5)
+//            .position(x: redactor.textFields.textContainers[index].x * increaser, y: redactor.textFields.textContainers[index].y * increaser)
+        
     }
 }
 
@@ -92,26 +112,26 @@ struct TextView: UIViewRepresentable {
 //    var textFields: textContainersFrameData = .shared
     var placeholderText: String = "666"
     @Binding var fieldText: String
-    @Binding var fontSize: CGFloat
+    var fontSize: CGFloat
     var textAlign: Int
     var fontName: String
     var fontColor: String
     var index: Int
     @Binding var activeTextContainer: Int
-    
     @Binding var isActive: Bool
     @Binding var isFirstResponder: Bool
     @Binding var fieldHeight: CGFloat
     @Binding var fieldWidth: CGFloat
-    @Binding var kern: CGFloat
+     var kern: CGFloat
     @Binding var style: styleTextContainer
+    var increaser: CGFloat
     //
     func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
         let textView = UITextView()
         textView.font = UIFont(name: fontName, size: CGFloat(fontSize))
         textView.text = placeholderText
         textView.textColor = Color(hex:fontColor).uiColor()
-        textView.backgroundColor = .none
+        textView.backgroundColor = .white//.none
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.allowsEditingTextAttributes = true
         
@@ -128,6 +148,7 @@ struct TextView: UIViewRepresentable {
             NSAttributedString.Key.strokeColor: Color.black.uiColor(),
             NSAttributedString.Key.foregroundColor: fontColor
         ]
+        
         return textView
     }
     
@@ -159,7 +180,6 @@ struct TextView: UIViewRepresentable {
         
         uiView.delegate = context.coordinator
         
-        
     }
     
     func makeCoordinator() -> TextView.Coordinator {
@@ -176,7 +196,14 @@ struct TextView: UIViewRepresentable {
         
         func textViewDidChange(_ textView: UITextView) {
             parent.fieldText = textView.text
-            
+            parent.kbHandler = KeyboardHandler { state in
+                let duration = state.animationDuration
+                UIView.animate(withDuration: duration) {
+                    self.parent.redactor.keyboardHeight = Int(state.height)
+//                    self.parent.redactor.updateSupposedKeyboardHeight()
+                    print("key hide animate", state.height)
+                }
+            }
             
             
         }

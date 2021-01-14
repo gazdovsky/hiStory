@@ -28,16 +28,34 @@ class redactorViewData: ObservableObject{
     @Published var keyboardHeight: Int = 0
     @Published var supposedKeyboardHeight: Int = 260
     @Published var redactorOffset: Int = 0
+    @Published var currentIncreaser: CGFloat = 2
     func loadAllFromDraft(){
         photoContainers.getImagesFromFolder(folderName: storyTemplate.templateImageName)
         photoContainers.getTransformFromFolder()
+//        textFields.importTextFields()
+        textFields.getTransformTextFromFolder(folderName: storyTemplate.templateImageName)
     }
-    func saveDraftPreview(){
-        let draftImage = frame1(restoreFromDrafts: true).asImage(width: 300)
+    func saveDraftPreview(dataforrestore:CGSize = .zero ){
+//        DispatchQueue.main.async { [self] in
+        let draftImage = frame1(restoreFromDrafts: true).asImage(width: 150)
 //        UIImageWriteToSavedPhotosAlbum(draftImage, nil, nil, nil)
         
+            let newFolder = self.photoContainers.createFileDirectory(folderName: self.storyTemplate.templateImageName)
+            self.photoContainers.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
+            self.textFields.saveTextContainersToFolder(folder: newFolder)
+            
+            textFields.textContainers[0].transform.currentPosition = dataforrestore
+//        }
+    }
+    
+    func saveAll(){
         let newFolder = photoContainers.createFileDirectory(folderName: storyTemplate.templateImageName)
-        photoContainers.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
+        photoContainers.saveTransformToFolder()
+        textFields.saveTextContainersToFolder(folder: newFolder)
+    }
+    
+    func loadAllFromTemplate(){
+        textFields.loadTextFieldsFromTemplate(templateImageName:storyTemplate.templateImageName)
     }
     
     func updateSupposedKeyboardHeight() {
@@ -74,6 +92,7 @@ struct redactor: View {
  VStack{
     HStack{
         ToolbarButton(icon: "chevron.backward", isSelected: true, size: 15) {
+            redactor.saveDraftPreview()
             redactor.storyTemplate.navigateToRedactor = false
             redactor.photoContainers.clearAllContainers()
         }
@@ -91,9 +110,19 @@ struct redactor: View {
 //        if let pngImage = image.toJPG() {
 //            UIImageWriteToSavedPhotosAlbum(pngImage, nil, nil, nil)
 //        }
-        let draftImage = frame1(restoreFromDrafts: true).asImage()
-        UIImageWriteToSavedPhotosAlbum(draftImage, nil, nil, nil)
-        redactor.saveDraftPreview()
+        let tempTransform = redactor.textFields.textContainers[0].transform.currentPosition
+        redactor.textFields.textContainers[0].transform.currentPosition.width *= ( 1080/231)
+        redactor.textFields.textContainers[0].transform.currentPosition.height *= ( 1080/231)
+        DispatchQueue.main.async {
+            
+            let draftImage = frame1(restoreFromDrafts: true).asImage()
+            UIImageWriteToSavedPhotosAlbum(draftImage, nil, nil, nil)
+            redactor.saveDraftPreview(dataforrestore: tempTransform)
+//            redactor.textFields.textContainers[0].transform.currentPosition = tempTransform
+            
+        }
+//
+        
         
 //        let newFolder = redactor.photoContainers.createFileDirectory(folderName: redactor.storyTemplate.templateImageName)
 //        redactor.photoContainers.saveImageToFolder(image: draftImage, name:"draftImage.jpg", folder: newFolder)
@@ -107,7 +136,7 @@ struct redactor: View {
                 .padding(0)
                 .overlay(
                     VStack{
-                        Text("\(redactor.storyTemplate.tx.description) \(redactor.storyTemplate.ty.description) \(redactor.storyTemplate.tw.description) \(redactor.storyTemplate.th.description)")
+                        Text("\(redactor.textFields.textContainers[0].transform.currentPosition.width.description) \(redactor.textFields.textContainers[0].transform.currentPosition.height.description) \(redactor.textFields.textContainers[1].transform.currentPosition.width.description) \(redactor.textFields.textContainers[1].transform.currentPosition.height.description)")
 //                        Text("\(restoreFromDrafts.description)")
 //                        Text("\(redactor.photoContainers.containers.count)")
                     }
@@ -176,6 +205,8 @@ struct redactor: View {
                 .onAppear {
                     if redactor.storyTemplate.isOpenedDraft {
                         redactor.loadAllFromDraft()
+                    } else {
+                        redactor.loadAllFromTemplate()
                     }
                 }
 //                    .modifier(makeTransformingRedaktorView())
@@ -202,9 +233,11 @@ struct redactor: View {
         .navigationBarItems(trailing:
                                 HStack(alignment: .bottom){
                                     Button("Save"){
-                                        redactor.photoContainers.saveTransformToFolder()
-                                        redactor.storyTemplate.saveTextContainersToFolder()
+//                                        redactor.photoContainers.saveTransformToFolder()
+//                                        redactor.textFields.saveTextContainersToFolder()
+                                        redactor.saveAll()
                                     }
+                                    
                                     .foregroundColor(Color(hex: "f4d8c8"))
                                     .padding(.trailing)
                                     .font(.custom("Times New Roman", size: 15))

@@ -52,6 +52,11 @@ struct textFieldContainer: Identifiable, Hashable, Codable {
     var activeTextContainer: Int = -1
     var isActive: Bool = false
     var isFirstResponder: Bool = false
+    var x: CGFloat = 0
+    var y: CGFloat = 0
+    var containerW: CGFloat = 100 //w 485 h 168
+    var containerH: CGFloat = 100
+    var z: Int = 0
     var transform: transformTextContainer = transformTextContainer()
     var style: styleTextContainer = styleTextContainer()
     var kern: CGFloat = 1
@@ -59,6 +64,7 @@ struct textFieldContainer: Identifiable, Hashable, Codable {
 
 struct transformTextContainer:Codable, Hashable {
     var currentPosition: CGSize = .zero
+    var currentContainerW: CGFloat = 100
     var rotate: Double = .zero
     func hash(into hasher: inout Hasher) {
         hasher.combine(currentPosition.width)

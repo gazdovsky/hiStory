@@ -18,8 +18,13 @@ struct ImageEditorPanel: View {
             
             //            Spacer()
             ToolbarButton(icon: "xmark", isSelected: true, size: 30){
-                redactor.photoContainers.clearContainer(index: redactor.photoContainers.indexOfActiveContainer())
+                let activeContainer = redactor.photoContainers.indexOfActiveContainer()
+                redactor.photoContainers.clearContainer(index: activeContainer)
                 redactor.redactorMode = .nothing
+                redactor.photoContainers.deleteContainerImageFromFolder(index: activeContainer)
+                redactor.photoContainers.containers[activeContainer] = photoSelector()
+                redactor.photoContainers.saveTransformToFolder()
+                redactor.saveDraftPreview()
             }
             //            Spacer()
             ToolbarButton(icon: "checkmark", isSelected: true, size: 30){

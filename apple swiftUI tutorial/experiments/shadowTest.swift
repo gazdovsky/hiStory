@@ -1,27 +1,27 @@
+////
+////  shadowTest.swift
+////  apple swiftUI tutorial
+////
+////  Created by David Gaz on 20.11.2020.
+////  Copyright © 2020 David Gaz. All rights reserved.
+////
 //
-//  shadowTest.swift
-//  apple swiftUI tutorial
+//import Foundation
+//import SwiftUI
 //
-//  Created by David Gaz on 20.11.2020.
-//  Copyright © 2020 David Gaz. All rights reserved.
+//struct Shadow: View {
+//    
+////    @ObservedObject var settings: selectorContainerStore = .shared
+//    var body: some View {
+//        HStack {
+////            Text(String())
+//           
+//        }
+//    }
+//}
 //
-
-import Foundation
-import SwiftUI
-
-struct Shadow: View {
-    
-//    @ObservedObject var settings: selectorContainerStore = .shared
-    var body: some View {
-        HStack {
-//            Text(String())
-           
-        }
-    }
-}
-
-struct Shadow_Previews: PreviewProvider {
-    static var previews: some View {
-        Shadow()
-    }
-}
+//struct Shadow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Shadow()
+//    }
+//}

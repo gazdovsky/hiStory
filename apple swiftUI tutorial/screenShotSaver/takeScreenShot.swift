@@ -66,7 +66,7 @@ extension UIImage {
 }
 
 extension View {
-    func asImage(width: CGFloat = 1080) -> UIImage {
+    func asImage(width: CGFloat = 2000) -> UIImage {
         let baseWidth = width > 0 ? width : CGFloat(1080)
         let controller = UIHostingController(rootView: self)
 

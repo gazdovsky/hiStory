@@ -24,9 +24,9 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
     static var shared = selectorContainerStore()
 //    var photoContainersFrames: photoContainersFrameData = .shared
     
-    @Published var score = 0
-    @Published var containers:Array<photoSelector> = Array(repeating:  photoSelector() , count: 5)
-    @Published var lastActiveContainerIndex = -2
+//    @Published var score = 0
+//    @Published var containers:Array<photoSelector> = Array(repeating:  photoSelector() , count: 5)
+//    @Published var lastActiveContainerIndex = -2
     @Published var templateName: String = "beige aesthetic 1.json"
     @Published var templateImageName: String = "beige aesthetic 1"
     
@@ -35,8 +35,8 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
     @Published var templateOpacity: Bool = false
 //    @Published var keyboardHeight: Int = 0
 //    @Published var supposedKeyboardHeight: Int = 260
-    @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 5)
-    @Published var activeTextContainer = 0
+//    @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 5)
+//    @Published var activeTextContainer = 0
 //    @Published var redactorMode: redactorMode = .nothing
     @Published var templateFrame: CGRect = CGRect()
     @Published var tx: CGFloat = 1
@@ -44,30 +44,30 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
     @Published var tw: CGFloat = 1
     @Published var th: CGFloat = 1
     @Published var screenOffset: Double = 0
-    @Published var redactorOffset: Int = 0
+//    @Published var redactorOffset: Int = 0
     @Published var isOpenedDraft: Bool = false
     
     
-    @Published var containersCount: Int = 1
+//    @Published var containersCount: Int = 1
     
 //    var tmp: [storyTemplate] {
 //        readPlst(templateName)
 //    }
-    var txtfld: [textFieldContainer] {
-        if (Bundle.main.path(forResource: templateImageName + "texts.json", ofType: nil) != nil){
-        return readPlst(templateImageName + "texts.json")
-        } else {
-            return readPlst("defaultText.json")
-        }
-    }
+//    var txtfld: [textFieldContainer] {
+//        if (Bundle.main.path(forResource: templateImageName + "texts.json", ofType: nil) != nil){
+//        return readPlst(templateImageName + "texts.json")
+//        } else {
+//            return readPlst("defaultText.json")
+//        }
+//    }
     
-    func importTextFields() -> Void{
-        if txtfld[0].fieldText != "default" {
-        for i in txtfld.indices {
-            textContainers[i] = txtfld[i]
-        }
-        }
-    }
+//    func importTextFields() -> Void{
+//        if txtfld[0].fieldText != "default" {
+//        for i in txtfld.indices {
+//            textContainers[i] = txtfld[i]
+//        }
+//        }
+//    }
 
 //        func indexOfActiveContainer() -> Int {
 //        var active = 0
@@ -239,27 +239,27 @@ class selectorContainerStore: systemFilesWorker, ObservableObject {
 //        return active
 //    }
     
-    func saveTextContainersToFolder(){
-        let transformTextData = [textContainers[0], textContainers[1]]
-        let encoderText = JSONEncoder()
-        let newFolder = createFileDirectory(folderName: templateImageName)
-        let filenameText = newFolder.appendingPathComponent("texts.JSON")
-        do{let file = try encoderText.encode(transformTextData)
-            try file.write(to: filenameText)
-        } catch {
-    }
-    }
-    func getTransformTextFromFolder(){
-        let decoder = JSONDecoder()
-        let folder = getDocumentsDirectory().appendingPathComponent(templateImageName)
-        let name = folder.appendingPathComponent("texts.JSON")
-        guard let transformData = try? Data(contentsOf: name) else { return }
-        do{let file:[textFieldContainer] = try decoder.decode([textFieldContainer].self, from: transformData)
-            textContainers[0] = file[0]
-            textContainers[1] = file[1]
-        } catch {
-        }
-    }
+//    func saveTextContainersToFolder(){
+//        let transformTextData = [textContainers[0], textContainers[1]]
+//        let encoderText = JSONEncoder()
+//        let newFolder = createFileDirectory(folderName: templateImageName)
+//        let filenameText = newFolder.appendingPathComponent("texts.JSON")
+//        do{let file = try encoderText.encode(transformTextData)
+//            try file.write(to: filenameText)
+//        } catch {
+//    }
+//    }
+//    func getTransformTextFromFolder(){
+//        let decoder = JSONDecoder()
+//        let folder = getDocumentsDirectory().appendingPathComponent(templateImageName)
+//        let name = folder.appendingPathComponent("texts.JSON")
+//        guard let transformData = try? Data(contentsOf: name) else { return }
+//        do{let file:[textFieldContainer] = try decoder.decode([textFieldContainer].self, from: transformData)
+//            textContainers[0] = file[0]
+//            textContainers[1] = file[1]
+//        } catch {
+//        }
+//    }
     
 //    func updateSupposedKeyboardHeight() {
 //        if keyboardHeight == 0{

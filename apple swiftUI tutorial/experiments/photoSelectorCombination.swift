@@ -6,7 +6,7 @@
 //  Copyright © 2020 David Gaz. All rights reserved.
 //
 
-import SwiftUI
+//import SwiftUI
 
 //struct photoSelectorCombination: View {
 //    var body: some View {

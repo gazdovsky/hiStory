@@ -76,6 +76,11 @@
 		A7916EB22492AFCA00EF59B1 /* customTextFieldStructs.json in Resources */ = {isa = PBXBuildFile; fileRef = A7916EB12492AFCA00EF59B1 /* customTextFieldStructs.json */; };
 		A7916EB42494115600EF59B1 /* transformingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7916EB32494115600EF59B1 /* transformingText.swift */; };
 		A794790925894BF200180914 /* draftTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794790825894BF200180914 /* draftTemplates.swift */; };
+		A797A63525ACB2BD009DF259 /* Abstract_Shapes3.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A63125ACB2BD009DF259 /* Abstract_Shapes3.json */; };
+		A797A63625ACB2BD009DF259 /* Abstract_Shapes4.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A63225ACB2BD009DF259 /* Abstract_Shapes4.json */; };
+		A797A63725ACB2BD009DF259 /* Abstract_Shapes.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A63325ACB2BD009DF259 /* Abstract_Shapes.json */; };
+		A797A63825ACB2BD009DF259 /* Abstract_Shapes2.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A63425ACB2BD009DF259 /* Abstract_Shapes2.json */; };
+		A797A63B25ACF4FE009DF259 /* Winter_magic2.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A63A25ACF4FE009DF259 /* Winter_magic2.json */; };
 		A7980DF12594783D003F40D3 /* textLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7980DF02594783D003F40D3 /* textLayer.swift */; };
 		A7980DF42594E6CA003F40D3 /* geometryReaderTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7980DF32594E6CA003F40D3 /* geometryReaderTransfer.swift */; };
 		A7A6E1742481416F00D1FBD6 /* storiesTemplates.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7A6E1732481416F00D1FBD6 /* storiesTemplates.plist */; };
@@ -187,6 +192,11 @@
 		A7916EB12492AFCA00EF59B1 /* customTextFieldStructs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customTextFieldStructs.json; sourceTree = "<group>"; };
 		A7916EB32494115600EF59B1 /* transformingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transformingText.swift; sourceTree = "<group>"; };
 		A794790825894BF200180914 /* draftTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = draftTemplates.swift; sourceTree = "<group>"; };
+		A797A63125ACB2BD009DF259 /* Abstract_Shapes3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Abstract_Shapes3.json; sourceTree = "<group>"; };
+		A797A63225ACB2BD009DF259 /* Abstract_Shapes4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Abstract_Shapes4.json; sourceTree = "<group>"; };
+		A797A63325ACB2BD009DF259 /* Abstract_Shapes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Abstract_Shapes.json; sourceTree = "<group>"; };
+		A797A63425ACB2BD009DF259 /* Abstract_Shapes2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Abstract_Shapes2.json; sourceTree = "<group>"; };
+		A797A63A25ACF4FE009DF259 /* Winter_magic2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Winter_magic2.json; sourceTree = "<group>"; };
 		A7980DF02594783D003F40D3 /* textLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textLayer.swift; sourceTree = "<group>"; };
 		A7980DF32594E6CA003F40D3 /* geometryReaderTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geometryReaderTransfer.swift; sourceTree = "<group>"; };
 		A7A6E1732481416F00D1FBD6 /* storiesTemplates.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = storiesTemplates.plist; sourceTree = "<group>"; };
@@ -336,6 +346,11 @@
 		A757BF3E247FF2600075145B /* DataStoriesTemplates */ = {
 			isa = PBXGroup;
 			children = (
+				A797A63A25ACF4FE009DF259 /* Winter_magic2.json */,
+				A797A63325ACB2BD009DF259 /* Abstract_Shapes.json */,
+				A797A63425ACB2BD009DF259 /* Abstract_Shapes2.json */,
+				A797A63125ACB2BD009DF259 /* Abstract_Shapes3.json */,
+				A797A63225ACB2BD009DF259 /* Abstract_Shapes4.json */,
 				A7A8DF1B257F8D0A0080E588 /* beige aesthetic 3.json */,
 				A7FD2FF22592902500A0576E /* beige aesthetic 1texts.json */,
 				A7FD2FF6259382A400A0576E /* defaultText.json */,
@@ -459,8 +474,8 @@
 				A762AA35255174A800D9BD65 /* Шаблон для настройки для резки (01).png */,
 				A76DDA6325853E2B0064C220 /* Classes */,
 				A762AA34255174A800D9BD65 /* Шаблон для настройки для резки (02).png */,
-				A757BF3A247FF05B0075145B /* framescopy.json */,
 				A7A8DF17257F7FCA0080E588 /* templatesCategorys.json */,
+				A757BF3A247FF05B0075145B /* framescopy.json */,
 				A76EB2F5256831910089FCAE /* extentions */,
 				A72ED8192488F41200182D38 /* icons */,
 				A721E2F82474631A002166E9 /* saveTest.swift */,
@@ -574,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E63C232483CCCA0078A881 /* framescopy.json in Resources */,
+				A797A63525ACB2BD009DF259 /* Abstract_Shapes3.json in Resources */,
 				A72ED8212488F62400182D38 /* Icon-1@2x.png in Resources */,
 				A7FD2FF7259382A400A0576E /* defaultText.json in Resources */,
 				A7A8DF28257F8D0B0080E588 /* color addict 1.json in Resources */,
@@ -582,8 +598,10 @@
 				A7916EB22492AFCA00EF59B1 /* customTextFieldStructs.json in Resources */,
 				A7FD2FF32592902900A0576E /* beige aesthetic 1texts.json in Resources */,
 				A7A8DF29257F8D0B0080E588 /* beige aesthetic 4.json in Resources */,
+				A797A63825ACB2BD009DF259 /* Abstract_Shapes2.json in Resources */,
 				A72E2608248D3D7000DEB420 /* testGeom.json in Resources */,
 				A7916EAB249164DC00EF59B1 /* FRSCRIPT.TTF in Resources */,
+				A797A63625ACB2BD009DF259 /* Abstract_Shapes4.json in Resources */,
 				A7102A362486554500FDDE31 /* imgContainer.json in Resources */,
 				A7B07AE5246DDF6C00E3EF6D /* LaunchScreen.storyboard in Resources */,
 				A757BF39247FE4D20075145B /* spring_mood.json in Resources */,
@@ -602,9 +620,11 @@
 				A7A8DF27257F8D0B0080E588 /* beige aesthetic 1.json in Resources */,
 				A7916EAC249164DC00EF59B1 /* ofont.ru_1 Amazone M.ttf in Resources */,
 				A7916EAA249164DC00EF59B1 /* Vanilla.ttf in Resources */,
+				A797A63B25ACF4FE009DF259 /* Winter_magic2.json in Resources */,
 				A7A8DF23257F8D0B0080E588 /* beige aesthetic 3.json in Resources */,
 				A7A6E1742481416F00D1FBD6 /* storiesTemplates.plist in Resources */,
 				A7D5127325549F3300EB261E /* defaultContainer.json in Resources */,
+				A797A63725ACB2BD009DF259 /* Abstract_Shapes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

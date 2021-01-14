@@ -61,6 +61,11 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
 //        let newFolder = getDocumentsDirectory().appendingPathComponent(templateImageName)
          saveImageToFolder(image: containers[index].imageInBlackBox, name:"t\(index).jpg", folder: newFolder)
     }
+    
+    func deleteContainerImageFromFolder(index: Int) -> Void{
+        let folder = createFileDirectory(folderName: storyTemplate.templateImageName) 
+        deleteFileFromFolder(name: "t\(index).jpg", folder: folder)
+    }
     func saveTransformToFolder(){
         let transformData = containers.map { (x: photoSelector) -> transformContainer in
             return x.transform
@@ -85,8 +90,11 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
             let file:[transformContainer] = try decoder.decode([transformContainer].self, from: transformData)
 //            containers[0].transform = file[0]
 //            containers[1].transform = file[1]
-            for i in 0...containers.count-1{
+            
+            for i in 0...containers.count-1 {
+                if i < file.count {
                 containers[i].transform = file[i]
+                }
             }
 //           savedStorys = getSavedTemplates()
         } catch {
@@ -147,7 +155,7 @@ struct photoContainersFrame: View {
                             if(i.id == "empty" ){
                                 return AnyView(EmptyView())
                             }
-                            
+                            if index < redactor.photoContainers.containers.count{
                             return AnyView  (
                                 photoSelectorWithParams(
                                     actualTemplateWith: g.size.width,
@@ -172,14 +180,17 @@ struct photoContainersFrame: View {
                                             redactor.redactorMode = .imageEdit
                                         } else {
                                             redactor.photoContainers.saveTransformToFolder()
-                                            redactor.photoContainers.saveContainerImage(index: index)
-                                            redactor.saveDraftPreview()
+//                                            redactor.photoContainers.saveContainerImage(index: index)
+//                                            redactor.saveDraftPreview()
                                             redactor.redactorMode = .nothing
                                         }
                                     }
                                     .disabled(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity)
                                     .zIndex(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity ? 0 : 2)
                             )
+                            } else {
+                                return AnyView(EmptyView())
+                            }
                         }
                         Image(redactor.storyTemplate.templateImageName)
                              .resizable()
@@ -191,11 +202,6 @@ struct photoContainersFrame: View {
                              )
                             .opacity(redactor.storyTemplate.templateOpacity ? 0.5 : 1)
                     }
-                    .onAppear(perform: {
-//                            tGeom = g.frame(in: .global)
-                        
-                    }
-                    )
                 }
             )
     }

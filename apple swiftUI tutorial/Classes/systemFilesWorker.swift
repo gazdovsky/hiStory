@@ -16,7 +16,7 @@ class systemFilesWorker {
     }
     
     func saveImageToFolder(image: UIImage, name:String, folder: URL){
-        let data = image.jpegData(compressionQuality: 0.8)
+        let data = image.jpegData(compressionQuality: 1)
 //               let filename = getDocumentsDirectory().appendingPathComponent(name)
         let filename = folder.appendingPathComponent(name)
            do{
@@ -24,6 +24,13 @@ class systemFilesWorker {
            } catch {
             
            }
+    }
+    func deleteFileFromFolder(name: String, folder: URL) -> Void {
+        do{
+            let fileForDelete = folder.appendingPathComponent(name)
+            try FileManager.default.removeItem(at: fileForDelete)
+        }catch{
+        }
     }
     
     func createFileDirectory(folderName: String) -> URL {
