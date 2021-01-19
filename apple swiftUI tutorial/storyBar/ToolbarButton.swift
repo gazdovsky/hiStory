@@ -27,7 +27,7 @@ struct ToolbarButton: View{
             HStack {
                 img
                     .resizable()
-                  .scaledToFill()
+                  .scaledToFit()
                     .frame(width: size, height: size)
                     .foregroundColor(isSelected ? Color(hex: "f4d8c8") : Color.gray)
             }

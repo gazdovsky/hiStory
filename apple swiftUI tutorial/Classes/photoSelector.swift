@@ -44,18 +44,20 @@ struct transformContainer:Codable, Hashable {
 struct textFieldContainer: Identifiable, Hashable, Codable {
     var id = UUID()
     var fieldText: String = "Your text"
-    var fontSize: CGFloat = 20
+    var fontSize: CGFloat = 80
     var fontName: String = "Arial"
     var fontColor: String = "ecc9af"
+    var backgroundColor: String = "ffffff"
+    var shadowColor: String = "cccccc"
     var textAlign: Int = 1
     var index: Int = -1
     var activeTextContainer: Int = -1
     var isActive: Bool = false
     var isFirstResponder: Bool = false
-    var x: CGFloat = 0
-    var y: CGFloat = 0
-    var containerW: CGFloat = 100 //w 485 h 168
-    var containerH: CGFloat = 100
+    var x: CGFloat = 1080/2
+    var y: CGFloat = 300
+    var containerW: CGFloat = 500 //w 485 h 168
+    var containerH: CGFloat = 180
     var z: Int = 0
     var transform: transformTextContainer = transformTextContainer()
     var style: styleTextContainer = styleTextContainer()
@@ -73,7 +75,7 @@ struct transformTextContainer:Codable, Hashable {
 }
 
 struct styleTextContainer: Codable, Hashable {
-    var kern: CGFloat = 0
+    var kern: CGFloat = 10
     var obliqueness: CGFloat = 0
     var strokeWidth: CGFloat = 0
     var shadowBlurRadius: CGFloat = 0

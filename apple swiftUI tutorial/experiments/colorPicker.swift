@@ -223,7 +223,7 @@ struct colorPickerHexWithSaturation: View {
                           alpha: 1.0))
         }
     }
-    var gradientWidth: CGFloat = 300
+    var gradientWidth: CGFloat =  UIScreen.main.bounds.width // 300
     var gradientHeight: CGFloat = 150
     var gradientResolution: CGFloat = 50
     
@@ -236,17 +236,15 @@ struct colorPickerHexWithSaturation: View {
     }
     
     @State var pickerPosition: CGSize = CGSize()
+    @State var newPickerPosition: CGSize = CGSize()
     // 1
     @State private var isDragging: Bool = false
-    
+    @GestureState var longPress = false
     // 2
     private var circleWidth: CGFloat {
-        isDragging ? 15 : 15
+        isDragging ? 30 : 20
     }
-    /// 2
-    /// Normalize our gesture to be between 0 and 200, where 200 is the height.
-    /// At 0, the users finger is on top and at 200 the users finger is at the bottom
-   
+
     
     @State private var startLocation: CGFloat = .zero // 2
     @State private var dragOffset: CGSize = .zero // 3
@@ -262,6 +260,7 @@ struct colorPickerHexWithSaturation: View {
                     .overlay(
                         ZStack{
                         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0, content: {
+                            Rectangle()
                             ForEach (0..<Int(gradientResolution)) { s in
                         LinearGradient(gradient: Gradient(colors: gradientGet(sat: CGFloat(s)/gradientResolution) ),
                                        startPoint: .leading,
@@ -277,17 +276,51 @@ struct colorPickerHexWithSaturation: View {
                             .padding(0)
                         }
                         }
+                        
+                        )
+                        .frame(width: gradientWidth, height: gradientHeight)
+                        .gesture(DragGesture()
+                                    .onChanged({value in
+                                        isDragging = true
+                                        pickerPosition = CGSize(
+                                            width: value.translation.width + newPickerPosition.width,
+                                            height: value.translation.height + newPickerPosition.height
+                                        )
+                                        chosenColor = self.currentColor.uiColor().toHexString()
+                                    }
+                                    )
+                                    .onEnded({ value in
+                                        isDragging = false
+                                        newPickerPosition = pickerPosition
+                                    })
                         )
                             Circle()
-                                .strokeBorder(currentColor, lineWidth: 8)
+                                .strokeBorder(Color.white, lineWidth: 3)
+                                .background(Circle().foregroundColor(currentColor))
                                 .frame(width: 20, height: 20)
                                 .offset(pickerPosition)
-                                .gesture(DragGesture()
-                                            .onChanged({value in
-                                                pickerPosition = value.translation
-                                                self.chosenColor = self.currentColor.uiColor().toHexString()
-                                            }
-                                            )
+//                                .gesture(DragGesture()
+//                                            .onChanged({value in
+//                                                isDragging = true
+//                                                pickerPosition = CGSize(
+//                                                    width: value.translation.width + newPickerPosition.width,
+//                                                    height: value.translation.height + newPickerPosition.height
+//                                                )
+//                                                chosenColor = self.currentColor.uiColor().toHexString()
+//                                            }
+//                                            )
+//                                            .onEnded({ value in
+//                                                isDragging = false
+//                                                newPickerPosition = pickerPosition
+//                                            })
+//                                )
+                                .overlay(
+                                    Circle()
+                                        .frame(width: circleWidth, height: circleWidth, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        .foregroundColor(self.currentColor)
+                                        .offset(x: pickerPosition.width, y: pickerPosition.height + (isDragging ? -40 : 0))
+                                        .contentShape(Circle().scale(0.001))
+                                        .opacity(isDragging ? 1 : 0)
                                 )
                         }
                     )
@@ -296,16 +329,160 @@ struct colorPickerHexWithSaturation: View {
     }
 }
 
+struct colorPickerHUE_SatBri:View {
+    
+    @State var huePosition: CGSize = CGSize()
+    var currentHue: Color {
+        Color(UIColor.init(hue: 0.5 + (1/(gradientWidth)) * huePosition.width,
+                           saturation:  1,
+                           brightness:  1,
+                           alpha: 1))
+    }
+    
+    func gradientGetBriSat(hue: CGFloat, bri: CGFloat) -> [Color] {
+        let satValues = Array(0...100)
+        return satValues.map { sat in
+            Color(UIColor(hue: hue,
+                          saturation: CGFloat(sat) / 100.0,
+                          brightness: 1 - bri,
+                          alpha: 1.0))
+        }
+    }
+    
+    private var colors: [Color] = {
+        let hueValues = Array(0...359)
+        return hueValues.map {
+            Color(UIColor(hue: CGFloat($0) / 359.0 ,
+                          saturation: 1.0,
+                          brightness: 1.0,
+                          alpha: 1.0))
+        }
+    }()
+    
+    var gradientWidth: CGFloat =  UIScreen.main.bounds.width // 300
+    var gradientHeight: CGFloat {
+        CGFloat(265) * mainRatio
+    }
+    var gradientResolution: CGFloat = 40
+    //265 1080
+    var mainRatio: CGFloat{ gradientWidth/1080 }
+    @Binding var chosenColor: String // 1
+    private var currentColor: Color {
+        Color(UIColor.init(hue: 0.5 + (1/(gradientWidth)) * huePosition.width,
+                           saturation:  0.5 + (1/(gradientWidth)) * pickerPosition.width ,
+                           brightness:  0.5 - (1/(gradientHeight)) * pickerPosition.height ,
+                           alpha: 1))
+    }
+    
+    @State var pickerPosition: CGSize = CGSize()
+    @State var newPickerPosition: CGSize = CGSize()
+    // 1
+    @State private var isDragging: Bool = false
+    // 2
+    private var circleWidth: CGFloat {
+        isDragging ? 30 : 20
+    }
+    
+    
+    @State private var startLocation: CGFloat = .zero // 2
+    @State private var dragOffset: CGSize = .zero // 3
+    // 4
+    init(chosenColor: Binding<String>) {
+        self._chosenColor = chosenColor
+    }
+    var body: some View{
+        
+            VStack(alignment: .center, spacing: 0, content: {
+                
+                LinearGradient(gradient: Gradient(colors: colors),
+                               startPoint: .leading,
+                               endPoint: .trailing)
+                    .frame(width: nil, height: 5)
+                    .padding([.top, .bottom])
+//                    .padding()
+                    .overlay(HStack{
+                        Circle()
+                            .strokeBorder(Color.white, lineWidth: 3)
+                            .background(Circle().foregroundColor(currentHue))
+                            .frame(width: 20, height: 20)
+                            .offset(huePosition)
+                            .gesture(DragGesture()
+                                        .onChanged({ value in
+                                            if abs(value.translation.width) < gradientWidth / 2 {
+                                            huePosition.width = value.translation.width
+                                            }
+                                        })
+                            )
+                    })
+                Rectangle()
+                    .foregroundColor(Color.white)
+                    .frame(width: gradientWidth, height: gradientHeight)
+                    .overlay(
+                        ZStack{
+                            VStack(alignment: .center, spacing: 0, content: {
+                                ForEach (0..<Int(gradientResolution)) { s in
+                                    LinearGradient(gradient: Gradient(colors: gradientGetBriSat(hue: 0.5 + (1/(gradientWidth)) * huePosition.width, bri: CGFloat(s)/gradientResolution) ),
+                                                   startPoint: .leading,
+                                                   endPoint: .trailing)
+                                        .frame(width: gradientWidth, height: gradientHeight/gradientResolution)
+                                        .padding(0)
+                                }
+                            }
+                            )
+                            .gesture(DragGesture()
+                                        .onChanged({value in
+                                            isDragging = true
+                                            if abs(value.translation.height + newPickerPosition.height) < gradientHeight / 2 {
+                                            pickerPosition.height = value.translation.height + newPickerPosition.height
+                                           }
+                                            
+                                            if abs(value.translation.width + newPickerPosition.width) < gradientWidth / 2 {
+                                                pickerPosition.width = value.translation.width + newPickerPosition.width
+                                           }
+                                            
+                                            
+                                            chosenColor = self.currentColor.uiColor().toHexString()
+                                        }
+                                        )
+                                        .onEnded({ value in
+                                            isDragging = false
+                                            newPickerPosition = pickerPosition
+                                        })
+                            )
+                            Circle()
+                                .strokeBorder(Color.white, lineWidth: 3)
+                                .background(Circle().foregroundColor(currentColor))
+                                .frame(width: 20, height: 20)
+                                .offset(pickerPosition)
+                                .overlay(
+                                    Circle()
+                                        .frame(width: circleWidth, height: circleWidth, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                        .foregroundColor(self.currentColor)
+                                        .offset(x: pickerPosition.width, y: pickerPosition.height + (isDragging ? -40 : 0))
+                                        .contentShape(Circle().scale(0.001))
+                                        .opacity(isDragging ? 1 : 0)
+                                )
+                        }
+                    )
+            })
+        
+    }
+}
+
+
+
 
 struct colorPickerHexTest: View{
     @Binding var color: String
+//    @Binding var color: Color
     var body: some View{
-        colorPickerHexWithSaturation(chosenColor: self.$color)
+        colorPickerHUE_SatBri(chosenColor: $color)
     }
 }
 
 struct colorPicker_Previews: PreviewProvider {
     static var previews: some View {
-        colorPickerHexTest(color: Binding.constant( "ecc9af"))
+//        colorPickerHexTest(color: Binding.constant( "ecc9af"))
+        colorPickerHexTest(color: Binding.constant("ecc9af"))
     }
 }

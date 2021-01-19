@@ -18,32 +18,6 @@ struct resisableTest: View {
     }
 }
 
-//struct makeResisableText: ViewModifier{
-//    @State var fontSize:   CGFloat
-//    @State  var newFontSize:   CGFloat
-//
-//
-//    func body(content: Content) -> some View{
-//        content
-//            .font(.system(size: fontSize))
-//            .gesture(
-//                MagnificationGesture(minimumScaleDelta: 0.01)
-//                    .onChanged({scaleValue in
-//                        self.fontSize = self.newFontSize * scaleValue
-//                    })
-//                    .onEnded({_ in
-//                        self.newFontSize = self.fontSize
-//                    }))
-//    }
-//}
-//
-//extension View{
-//    func resisableText(fontSize : CGFloat) -> some View{
-//
-//        self.modifier(makeResisableText(fontSize: fontSize, newFontSize: fontSize))
-//    }
-//}
-
 struct makeResisable: ViewModifier{
     @State private var currentScale:   CGFloat = 1.0
     @State private var     newScale:   CGFloat = 1.0

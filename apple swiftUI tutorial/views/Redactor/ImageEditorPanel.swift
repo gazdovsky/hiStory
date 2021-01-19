@@ -14,9 +14,7 @@ struct ImageEditorPanel: View {
     @ObservedObject var redactor: redactorViewData = .shared
     var body: some View {
         HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, content: {
-            
-            
-            //            Spacer()
+
             ToolbarButton(icon: "xmark", isSelected: true, size: 30){
                 let activeContainer = redactor.photoContainers.indexOfActiveContainer()
                 redactor.photoContainers.clearContainer(index: activeContainer)

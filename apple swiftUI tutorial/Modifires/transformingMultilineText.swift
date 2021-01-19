@@ -32,6 +32,7 @@ struct makeTransformingMultilineText: ViewModifier{
     //    @State var fontName: String
     @State var index: Int
     @State var fontSize: CGFloat
+//    @State var width: CGFloat
 //    @State var increaser: CGFloat
     @State var newFontSize: CGFloat = .zero
     
@@ -57,7 +58,7 @@ struct makeTransformingMultilineText: ViewModifier{
 //                if newFontSize * scaleValue < 400 &&  newFontSize * scaleValue > 6 {
 //                    textData.textContainers[index].fontSize = ( newFontSize * scaleValue)
 //                }
-                currentScaleValue = newSaleValue * scaleValue
+//                width = newSaleValue * scaleValue
                 
             })
             .onEnded({_ in
@@ -94,7 +95,7 @@ struct makeTransformingMultilineText: ViewModifier{
         return content
             .rotationEffect(Angle(degrees: textData.textContainers[index].transform.rotate * 180 / .pi))
             .offset(textData.textContainers[index].transform.currentPosition)
-            .scaleEffect(currentScaleValue)
+//            .scaleEffect(currentScaleValue)
             .gesture(multiGesture)
     }
 }

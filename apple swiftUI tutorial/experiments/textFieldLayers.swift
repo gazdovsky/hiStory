@@ -14,17 +14,17 @@ struct textViewWrapper: View {
     @ObservedObject var redactor: redactorViewData = .shared
     @Binding var textViewItem: textFieldContainer
     var index: Int
-    @State var w: CGFloat = 100
-    @State var h: CGFloat = 100
+//    @State var w: CGFloat = 100
+//    @State var h: CGFloat = 100
     
-    @State var increaser: CGFloat
+    var increaser: CGFloat
     
-    @State var c1t: CGFloat = 0
-    @State var c2t: CGFloat = 0
-    @State var fieldHeight: CGFloat = 55
-    func updateWidth(widthIncreaser: CGFloat) -> CGFloat{
-        return w + widthIncreaser < 25 ? 0 : widthIncreaser
-    }
+//    @State var c1t: CGFloat = 0
+//    @State var c2t: CGFloat = 0
+//    @State var fieldHeight: CGFloat = 55
+//    func updateWidth(widthIncreaser: CGFloat) -> CGFloat{
+//        return w + widthIncreaser < 25 ? 0 : widthIncreaser
+//    }
     var body: some View{
         
         HStack(alignment: .firstTextBaseline, content: {
@@ -44,19 +44,21 @@ struct textViewWrapper: View {
 //                            })
 //                )
 //                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
-            TextView(fieldText: $textViewItem.fieldText,
+            TextView(fieldText: textViewItem.fieldText, //
                      fontSize: textViewItem.fontSize, // * increaser
                      textAlign: textViewItem.textAlign,
                      fontName: textViewItem.fontName,
                      fontColor: textViewItem.fontColor,
+                     backgroundColor: textViewItem.backgroundColor,
+                     shadowColor: textViewItem.shadowColor,
                      index: index,
-                     activeTextContainer: $textViewItem.activeTextContainer,
-                     isActive: $textViewItem.isActive,
-                     isFirstResponder: $textViewItem.isFirstResponder,
-                     fieldHeight: $textViewItem.containerH,
-                     fieldWidth: $textViewItem.containerW,
+                     activeTextContainer: textViewItem.activeTextContainer, //
+                     isActive: textViewItem.isActive, //
+                     isFirstResponder: textViewItem.isFirstResponder, //
+                     fieldHeight: textViewItem.containerH, //
+                     fieldWidth: textViewItem.containerW,
                      kern: textViewItem.kern,// * increaser
-                     style: $textViewItem.style,
+                     style: textViewItem.style, //
                      increaser: increaser
             )
             .scaleEffect(increaser)
@@ -104,6 +106,8 @@ struct textViewWrapper: View {
 
 
 struct TextView: UIViewRepresentable {
+    
+    
     var kbHandler:KeyboardHandler?
     typealias UIViewType = UITextView
 //    var settings: selectorContainerStore = .shared
@@ -111,33 +115,35 @@ struct TextView: UIViewRepresentable {
     
 //    var textFields: textContainersFrameData = .shared
     var placeholderText: String = "666"
-    @Binding var fieldText: String
+    @State var fieldText: String //
     var fontSize: CGFloat
     var textAlign: Int
     var fontName: String
     var fontColor: String
+    var backgroundColor: String
+    var shadowColor: String
     var index: Int
-    @Binding var activeTextContainer: Int
-    @Binding var isActive: Bool
-    @Binding var isFirstResponder: Bool
-    @Binding var fieldHeight: CGFloat
-    @Binding var fieldWidth: CGFloat
+     var activeTextContainer: Int //
+     var isActive: Bool //
+     var isFirstResponder: Bool //
+     var fieldHeight: CGFloat //
+     var fieldWidth: CGFloat
      var kern: CGFloat
-    @Binding var style: styleTextContainer
+    var style: styleTextContainer //
     var increaser: CGFloat
     //
     func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
         let textView = UITextView()
         textView.font = UIFont(name: fontName, size: CGFloat(fontSize))
-        textView.text = placeholderText
+        textView.text = fieldText
         textView.textColor = Color(hex:fontColor).uiColor()
-        textView.backgroundColor = .white//.none
+        textView.backgroundColor = Color(hex:backgroundColor).uiColor()
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.allowsEditingTextAttributes = true
         
         let shadow = NSShadow()
-        shadow.shadowOffset = CGSize(width: 1, height: 1)
-        shadow.shadowColor = Color.gray.uiColor()
+        shadow.shadowOffset = CGSize(width: fontSize/10, height: fontSize/10)
+        shadow.shadowColor = Color(hex:shadowColor).uiColor()
         shadow.shadowBlurRadius = 1
         
         textView.typingAttributes = [
@@ -155,15 +161,24 @@ struct TextView: UIViewRepresentable {
     func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<TextView>) {
         
         uiView.allowsEditingTextAttributes = true
+        
+        let shadow = NSShadow()
+        shadow.shadowOffset = CGSize(width: fontSize/10, height: fontSize/10)
+        shadow.shadowColor = Color(hex:shadowColor).uiColor()
+        shadow.shadowBlurRadius = 1
+        
         uiView.typingAttributes = [
-            NSAttributedString.Key.kern: style.kern
+            NSAttributedString.Key.kern: style.kern,
+            NSAttributedString.Key.shadow: shadow
         ]
         
         
         if fieldText != "" || uiView.textColor == .label {
             uiView.text = fieldText
+            
             uiView.font = UIFont(name: fontName, size: CGFloat(fontSize))
             uiView.textColor = Color(hex:fontColor).uiColor()
+            uiView.backgroundColor = Color(hex:backgroundColor).uiColor()
             uiView.textAlignment = NSTextAlignment(rawValue: textAlign) ?? .center
         }
         if !isActive {
@@ -175,7 +190,8 @@ struct TextView: UIViewRepresentable {
             uiView.endEditing(true)
         }
         DispatchQueue.main.async {
-            self.fieldHeight = uiView.contentSize.height
+//            fieldHeight = uiView.contentSize.height
+            redactor.textFields.textContainers[index].containerH = uiView.contentSize.height
         }
         
         uiView.delegate = context.coordinator
@@ -212,13 +228,12 @@ struct TextView: UIViewRepresentable {
                 let duration = state.animationDuration
                 UIView.animate(withDuration: duration) {
                     self.parent.redactor.keyboardHeight = Int(state.height)
-                    self.parent.redactor.updateSupposedKeyboardHeight()
+//                    self.parent.redactor.updateSupposedKeyboardHeight()
                     print("key shows animate", state.height)
-                    if state.height > 0 {
-                        self.parent.redactor.textEditor.aTool = .nothing
-                    }
-                    
                 }
+            }
+            if self.parent.redactor.keyboardHeight > 0 {
+                self.parent.redactor.textEditor.aTool = .nothing
             }
             parent.redactor.textFields.activeTextContainer = parent.index
         }

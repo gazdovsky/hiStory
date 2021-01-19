@@ -13,6 +13,14 @@ struct pickerFontsUI: View {
     var body: some View{
         VStack{
             pickerFonts()
+//                .scaleEffect(0.1)
+//                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .fixedSize()
+                .border(Color.black, width: 1)
+                .mask(
+                Rectangle()
+                    .frame(width: nil, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                )
         }
     }
 }
@@ -36,8 +44,13 @@ struct pickerFonts: UIViewRepresentable {
     
     func makeUIView(context: UIViewRepresentableContext<pickerFonts>) -> UIPickerView {
         let picker = UIPickerView()
+            
+        
+        picker.clipsToBounds = true
+        
         picker.dataSource = context.coordinator
         picker.delegate = context.coordinator
+        
         return picker
     }
     
@@ -78,7 +91,6 @@ struct pickerFonts: UIViewRepresentable {
             pickerLabel.textAlignment = .center
             pickerLabel.font = UIFont(name: parent.dataSource[row], size: 18)
             pickerLabel.text = parent.dataSource[row]
-            
             view.addSubview(pickerLabel)
             
             return view
@@ -89,3 +101,5 @@ struct pickerFonts: UIViewRepresentable {
     
     
 }
+
+

@@ -55,7 +55,7 @@ struct MainMenu: View {
                 .frame(width: nil, height: hideButtons ? 0 : nil)
                 .padding(.bottom)
                 .opacity(hideButtons ? 0 : 1)
-                .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+//                .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
                 ZStack{
                 ScrollView(.vertical, showsIndicators: false, content: {
 //                    ZStack{
@@ -67,39 +67,30 @@ struct MainMenu: View {
                         
                         
                 }
-                
                 }
                 )
                 .offset(CGSize(width: activeButton ? 0 : -screenWidth, height: 10.0))
-            
                 ScrollView(.vertical, showsIndicators: false, content: {
                     ZStack{
                         Rectangle()
                             .cornerRadius(40)
                             .foregroundColor(.white)
                         draftTemplates()
-                        
                     }
-                    
                     })
                 .offset(CGSize(width: !activeButton ? 0 : screenWidth, height: 10.0))
                 }
                 .animation(.easeIn)
-            .navigationBarColor(backgroundColor: UIColor.hexColor(hex: "#bb8a62"), tintColor: .white)
+            .navigationBarColor(backgroundColor: UIColor.hexColor(hex: "#a07554"), tintColor: .white)
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.all)
         }
             .background(
-                Color(hex: "#bb8a62")
+                Color(hex: "#a07554")
                             .edgesIgnoringSafeArea(.all)
-                    
             )
-        
         }
-        
-       
-    
 }
 }
 
@@ -126,10 +117,6 @@ struct mainMenuItem: View {
             }
             catch {
             }
-            
-            
-//            let image = UIImage(data: imageData!)
-           
             return Image(self.iPreview.image)
         }
     }
