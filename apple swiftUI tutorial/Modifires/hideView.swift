@@ -15,9 +15,11 @@ struct hidebleView: View {
     var body: some View {
         VStack{
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .hideCondition(isHidden: $hid)
+//            .hideCondition(isHidden: $hid)
+            .modifier(hideViewState(isHidden: hid))
 //            .resisableText(fontSize: 40)
         Toggle("is hidden", isOn: $hid)
+            Text("\(hid.description)")
         }
     }
 }
@@ -34,7 +36,21 @@ struct hideView: ViewModifier{
         } else {
              content
         }
-       
+    }
+}
+
+struct hideViewState: ViewModifier{
+    @State var isHidden: Bool
+   
+    @ViewBuilder
+    func body(content: Content) -> some View{
+        if isHidden {
+           content
+            .frame(height: 0)
+                .opacity(0)
+        } else {
+             content
+        }
     }
 }
 

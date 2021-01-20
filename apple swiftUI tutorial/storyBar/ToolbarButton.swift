@@ -12,7 +12,8 @@ struct ToolbarButton: View{
     var icon = "textformat"
     var isSelected = false
     var isPlus = false
-    var size:CGFloat = 40 
+    var size:CGFloat = 40
+    var color: String =  "f4d8c8"
     var action: (()->()) = {}
     var body: some View{
         var img: Image
@@ -29,7 +30,7 @@ struct ToolbarButton: View{
                     .resizable()
                   .scaledToFit()
                     .frame(width: size, height: size)
-                    .foregroundColor(isSelected ? Color(hex: "f4d8c8") : Color.gray)
+                    .foregroundColor(isSelected ? Color(hex: color) : Color.gray)
             }
         }
     }

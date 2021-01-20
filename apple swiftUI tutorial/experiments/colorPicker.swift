@@ -364,7 +364,6 @@ struct colorPickerHUE_SatBri:View {
         CGFloat(265) * mainRatio
     }
     var gradientResolution: CGFloat = 40
-    //265 1080
     var mainRatio: CGFloat{ gradientWidth/1080 }
     @Binding var chosenColor: String // 1
     private var currentColor: Color {
@@ -376,17 +375,15 @@ struct colorPickerHUE_SatBri:View {
     
     @State var pickerPosition: CGSize = CGSize()
     @State var newPickerPosition: CGSize = CGSize()
-    // 1
+
     @State private var isDragging: Bool = false
-    // 2
+
     private var circleWidth: CGFloat {
         isDragging ? 30 : 20
     }
-    
-    
     @State private var startLocation: CGFloat = .zero // 2
     @State private var dragOffset: CGSize = .zero // 3
-    // 4
+
     init(chosenColor: Binding<String>) {
         self._chosenColor = chosenColor
     }
@@ -411,6 +408,7 @@ struct colorPickerHUE_SatBri:View {
                                             if abs(value.translation.width) < gradientWidth / 2 {
                                             huePosition.width = value.translation.width
                                             }
+                                            chosenColor = self.currentColor.uiColor().toHexString()
                                         })
                             )
                     })
