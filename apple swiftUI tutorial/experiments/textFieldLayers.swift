@@ -17,14 +17,15 @@ struct textViewWrapper: View {
 //    @State var w: CGFloat = 100
 //    @State var h: CGFloat = 100
     
-    var increaser: CGFloat
-    
+    @State var increaser: CGFloat
 //    @State var c1t: CGFloat = 0
 //    @State var c2t: CGFloat = 0
 //    @State var fieldHeight: CGFloat = 55
 //    func updateWidth(widthIncreaser: CGFloat) -> CGFloat{
 //        return w + widthIncreaser < 25 ? 0 : widthIncreaser
 //    }
+    @State var dash: Bool = true
+    
     var body: some View{
         
         HStack(alignment: .firstTextBaseline, content: {
@@ -57,63 +58,64 @@ struct textViewWrapper: View {
                      isFirstResponder: textViewItem.isFirstResponder, //
                      fieldHeight: textViewItem.containerH, //
                      fieldWidth: textViewItem.containerW,
-                     kern: textViewItem.kern,// * increaser
                      style: textViewItem.style, //
                      increaser: increaser
             )
+            .modifier(StrokeDashAnimation(isVisible: $textViewItem.isActive))
             .scaleEffect(increaser)
             .onTapGesture{
-//                redactor.textFields.textContainers[index].isActive = true
-//                redactor.textFields.textContainers[index].isFirstResponder = true
-                
                 textViewItem.isActive = true
                 textViewItem.isFirstResponder = true
-                
                 redactor.redactorMode = .textEdit
             }
             .zIndex(Double(4))
+            
             .frame(width: textViewItem.containerW, height: textViewItem.containerH) //* increaser
+            
             .fixedSize()
+            
             .modifier(makeTransformingMultilineText(
                         index : index,
-                        fontSize: redactor.textFields.textContainers[index].fontSize
+                        fontSize: redactor.textFields.textContainers[index].fontSize,
+                increaser: increaser
                 ))
-//            Circle()
-//                .offset(CGSize(width: c2t, height: 0))
-//                .frame(width: 20, height: 20)
-//                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-//                .gesture(DragGesture()
-//                            .onChanged({
-//                                value in
-//                                let increaser = updateWidth(widthIncreaser: value.translation.width)
-//                                if increaser != 0 {
-//                                    c2t = value.translation.width
-//                                    w += increaser
-//                                }
-//                            })
-//                )
-//                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
+//            .gesture(MagnificationGesture(minimumScaleDelta: 1)
+//                        .onChanged({ newScale in
+//                            textViewItem.containerW = textViewItem.containerW * newScale
+//                        })
+//            )
+        })
+        .onAppear(perform: {
+//            print("TEXT x: ",x,", y: ",y)
+//            textViewItem = redactor.textFields.textContainers[index]
             
         })
-        .position(x: redactor.textFields.textContainers[index].x * increaser, y: redactor.textFields.textContainers[index].y * increaser)
-         //textData.textContainers[index].transform.currentPosition.width * 2 * (1080/231)
-        //        Circle()
-//            .frame(width: 5, height: 5)
-//            .position(x: redactor.textFields.textContainers[index].x * increaser, y: redactor.textFields.textContainers[index].y * increaser)
-        
+        .position(x: x, y: y)
     }
+
+    var x: CGFloat{
+        if increaser < 0.1 {
+            return redactor.textFields.textContainers[index].x
+        } else {
+            return redactor.textFields.textContainers[index].x * increaser
+        }
+    }
+    var y: CGFloat{
+        if increaser < 0.1 {
+            return redactor.textFields.textContainers[index].y
+        } else {
+            return redactor.textFields.textContainers[index].y * increaser
+        }
+    }
+
 }
 
 
 struct TextView: UIViewRepresentable {
     
-    
     var kbHandler:KeyboardHandler?
     typealias UIViewType = UITextView
-//    var settings: selectorContainerStore = .shared
     @ObservedObject var redactor: redactorViewData = .shared
-    
-//    var textFields: textContainersFrameData = .shared
     var placeholderText: String = "666"
     @State var fieldText: String //
     var fontSize: CGFloat
@@ -123,23 +125,25 @@ struct TextView: UIViewRepresentable {
     var backgroundColor: String
     var shadowColor: String
     var index: Int
-     var activeTextContainer: Int //
-     var isActive: Bool //
-     var isFirstResponder: Bool //
-     var fieldHeight: CGFloat //
-     var fieldWidth: CGFloat
-     var kern: CGFloat
-    var style: styleTextContainer //
+    var activeTextContainer: Int
+    var isActive: Bool
+    var isFirstResponder: Bool
+    var fieldHeight: CGFloat
+    var fieldWidth: CGFloat
+    var style: styleTextContainer
     var increaser: CGFloat
     //
     func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
         let textView = UITextView()
+        
         textView.font = UIFont(name: fontName, size: CGFloat(fontSize))
-        textView.text = fieldText
+        textView.text = redactor.textFields.textContainers[index].fieldText
         textView.textColor = Color(hex:fontColor).uiColor()
         textView.backgroundColor = Color(hex:backgroundColor).uiColor()
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.allowsEditingTextAttributes = true
+       
+        
         
         let shadow = NSShadow()
         shadow.shadowOffset = CGSize(width: fontSize/10, height: fontSize/10)
@@ -152,9 +156,11 @@ struct TextView: UIViewRepresentable {
             NSAttributedString.Key.shadow: shadow,
             NSAttributedString.Key.strokeWidth: 0,
             NSAttributedString.Key.strokeColor: Color.black.uiColor(),
-            NSAttributedString.Key.foregroundColor: fontColor
+            NSAttributedString.Key.foregroundColor: fontColor,
+            NSAttributedString.Key.underlineStyle: style.underlineStyle,
+            NSAttributedString.Key.strikethroughStyle: style.strikethroughStyle
         ]
-        
+//        print("textView", textView.text, "made")
         return textView
     }
     
@@ -169,11 +175,13 @@ struct TextView: UIViewRepresentable {
         
         uiView.typingAttributes = [
             NSAttributedString.Key.kern: style.kern,
-            NSAttributedString.Key.shadow: shadow
+            NSAttributedString.Key.shadow: shadow,
+            NSAttributedString.Key.underlineStyle: style.underlineStyle,
+            NSAttributedString.Key.strikethroughStyle: style.strikethroughStyle
         ]
         
         
-        if fieldText != "" || uiView.textColor == .label {
+        if fieldText != "" {
             uiView.text = fieldText
             
             uiView.font = UIFont(name: fontName, size: CGFloat(fontSize))
@@ -190,12 +198,11 @@ struct TextView: UIViewRepresentable {
             uiView.endEditing(true)
         }
         DispatchQueue.main.async {
-//            fieldHeight = uiView.contentSize.height
             redactor.textFields.textContainers[index].containerH = uiView.contentSize.height
         }
-        
+        redactor.textFields.textContainers[index].fieldText = fieldText
         uiView.delegate = context.coordinator
-        
+//        print("textView", redactor.textFields.textContainers[index].fieldText, "update")
     }
     
     func makeCoordinator() -> TextView.Coordinator {
@@ -217,7 +224,7 @@ struct TextView: UIViewRepresentable {
                 UIView.animate(withDuration: duration) {
                     self.parent.redactor.keyboardHeight = Int(state.height)
 //                    self.parent.redactor.updateSupposedKeyboardHeight()
-                    print("key hide animate", state.height)
+//                    print("key hide animate", state.height)
                 }
             }
             
@@ -229,7 +236,7 @@ struct TextView: UIViewRepresentable {
                 UIView.animate(withDuration: duration) {
                     self.parent.redactor.keyboardHeight = Int(state.height)
 //                    self.parent.redactor.updateSupposedKeyboardHeight()
-                    print("key shows animate", state.height)
+//                    print("key shows animate", state.height)
                 }
             }
             if self.parent.redactor.keyboardHeight > 0 {

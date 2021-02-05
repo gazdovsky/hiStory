@@ -53,7 +53,7 @@ struct draftTemplates: View{
             Text("Черновиков: \(gettedSavedStoryes.count)")
             ForEach(0..<10 ){ n  in
                 VStack(alignment: .leading){
-                    if ( n >= gettedSavedStoryes.count  || gettedSavedStoryes.count == 0){
+                    if ( n >= gettedSavedStoryes.count || gettedSavedStoryes.count == 0){
                          Text("ff")
                             .frame(width: 0, height: 0)
                     } else {
@@ -80,6 +80,7 @@ struct draftTemplates: View{
                                     settings.navigateToRedactor = true
                                     settings.templateName = gettedSavedStoryes[n] + ".json"
                                     settings.templateImageName = gettedSavedStoryes[n]
+                                    
                                 }, label:{
                                     Rectangle()
                                         .opacity(0.0)
@@ -88,6 +89,7 @@ struct draftTemplates: View{
 //                                .frame(width: n > settings.getSavedTemplates().count - 1 ? 0 : nil, height: n > settings.getSavedTemplates().count  ? 0 : nil)
 //                                .disabled(n > settings.getSavedTemplates().count ? true : false)
                             )
+                        Text("\(gettedSavedStoryes[n])")
 //Text("\(settings.getCreationDateByTemplateName(name: savedStorys[n]) )")
 //                    Button("yyy"){
 //                        print(settings.getSavedTemplates())

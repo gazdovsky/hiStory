@@ -22,12 +22,13 @@ struct makeTransformingImage: ViewModifier{
     @State var needSynchronizeDrag: Bool = true
     @State var needSynchronizeAngle: Bool = true
     @Binding var transforming: Bool
-    
+    @State var increaser: CGFloat
+    var centerizeDelta: CGFloat = 10
     
     func body(content: Content) -> some View{
         
         
-        let mGesture =  MagnificationGesture(minimumScaleDelta: 0.1)
+        let mGesture =  MagnificationGesture(minimumScaleDelta: 0.5)
             .onChanged({scaleValue in
                 if !transforming {return}
                 if  needSynchronizeMagnification {
@@ -46,23 +47,29 @@ struct makeTransformingImage: ViewModifier{
                 if !transforming {return}
                 
                 if  needSynchronizeDrag &&
-                    abs( data.containers[index].transform.currentPosition.width - value.translation.width) > 5 &&
-                    abs( data.containers[index].transform.currentPosition.height - value.translation.height) > 5 &&
+                    abs(data.containers[index].transform.currentPosition.width - value.translation.width) > 5 &&
+                    abs(data.containers[index].transform.currentPosition.height - value.translation.height) > 5 &&
                         data.containers[index].transform.currentPosition.width > 5
                 {
                      newPosition =  data.containers[index].transform.currentPosition
                      needSynchronizeDrag = false
                 }
+                let supposedWidth = value.translation.width + newPosition.width
+                let supposedHeight = value.translation.height + newPosition.height
+                let centerX = CGFloat(0.0)//(increaser * 1080) / 2 + (data.containers[index].imageInBlackBox.size.width * increaser) / 2
+                let centerY = CGFloat(0.0)//(increaser * 1920) / 2
+                
                 data.containers[index].transform.currentPosition = CGSize(
-                    width: value.translation.width +  newPosition.width,
-                    height: value.translation.height +  newPosition.height)
+                    width: centerX - centerizeDelta...centerX + centerizeDelta ~= supposedWidth ? centerX : supposedWidth,
+                    height: centerY - centerizeDelta...centerY + centerizeDelta ~= supposedHeight ? centerY : supposedHeight
+                )
             })
             .onEnded({ value in
                 if !transforming {return}
-                 newPosition =  data.containers[index].transform.currentPosition
+                 newPosition = data.containers[index].transform.currentPosition
             })
         
-        let rGesture = RotationGesture()
+        let rGesture = RotationGesture(minimumAngleDelta: Angle(degrees: 5))
             .onChanged({degrees in
                 if !transforming {return}
                 if  needSynchronizeAngle {
@@ -76,22 +83,22 @@ struct makeTransformingImage: ViewModifier{
             })
         
         let multiGesture = dGesture.simultaneously(with: mGesture).simultaneously(with: rGesture)
-        //         settings.saveTransformToFolder()
+//        let multiGesture = dGesture.simultaneously(with: mGesture)
+//        let multiGesture = dGesture.simultaneously(with: rGesture)
+//        let multiGesture = dGesture
+//        let multiGesture = dGesture.sequenced(before: mGesture)
         return content
-            .scaleEffect( data.containers[index].transform.currentScale)
-            .rotationEffect(Angle(degrees:  data.containers[index].transform.rotate * 180 / .pi) )
-            .offset( data.containers[index].transform.currentPosition)
-            .gesture(multiGesture)
-//            .overlay(
-//                ZStack{
-//
-//                    VStack{Text("w:\(Int( settings.containers[index].transform.currentPosition.width)) h:\(Int( settings.containers[index].transform.currentPosition.height))")
-//                        Text("x:\(Int(UnitPoint.center.x)) y:\(Int(UnitPoint.center.y))")
-//
-//
-//                    }
-//                }
-//            )
+            .scaleEffect(data.containers[index].transform.currentScale)
+            .rotationEffect(Angle(degrees: data.containers[index].transform.rotate * 180 / .pi))
+            .offset(offset)
+            .gesture(transforming ? multiGesture : nil)
+    }
+    var offset: CGSize {
+        if increaser == 1 || increaser < 0.1 {
+            return CGSize(width: data.containers[index].transform.currentPosition.width * data.increaser, height: data.containers[index].transform.currentPosition.height * data.increaser)
+        } else {
+            return data.containers[index].transform.currentPosition
+        }
     }
 }
 

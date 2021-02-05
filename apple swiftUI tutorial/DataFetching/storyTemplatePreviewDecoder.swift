@@ -26,7 +26,7 @@ let StoryPreviewsCategory:[itemPreviewCategory] = readPlst("templatesCategorys.j
 
 func readPlst<T: Decodable>(_ fileName: String) -> T {
     guard let path =  Bundle.main.path(forResource: fileName, ofType: nil) else {
-        print(fileName)
+//        print(fileName)
         fatalError("Couldn't find  in main bundle.")
     }
     let url = URL(fileURLWithPath: path)

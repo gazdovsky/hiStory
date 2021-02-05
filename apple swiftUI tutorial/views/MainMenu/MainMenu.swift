@@ -90,7 +90,9 @@ struct MainMenu: View {
                 Color(hex: "#a07554")
                             .edgesIgnoringSafeArea(.all)
             )
+            
         }
+        
 }
 }
 
@@ -135,7 +137,9 @@ struct mainMenuItem: View {
                     )
             }
             .shadow(radius: 10.0)
+            
         }
+        
     }
 }
 

@@ -23,6 +23,8 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
     }
     
     @Published var containers:Array<photoSelector> = Array(repeating:  photoSelector() , count: 1)
+    @Published var increaser: CGFloat = 1
+    
     
     func indexOfActiveContainer() -> Int {
     var active = 0
@@ -47,7 +49,16 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
         containers[index] = photoSelector()
         storyTemplate.templateOpacity = false
     }
-//    
+//
+    
+    func refreshPhotoContainer() {
+        let activeContainer = indexOfActiveContainer()
+        clearContainer(index: activeContainer)
+        deleteContainerImageFromFolder(index: activeContainer)
+        containers[activeContainer] = photoSelector()
+        saveTransformToFolder()
+    }
+    
     func acceptContainerChanges(index: Int) -> Void {
         if index == -1 {return}
         containers[index].redactorActive = false
@@ -102,7 +113,6 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
     }
     func getImagesFromFolder(folderName:String) -> Void {
         let folder = getDocumentsDirectory().appendingPathComponent(folderName)
-        //      _rr = ("\(folder)")
         let containersCount = tmp[0].containers?.count ?? 1
         for i in 0...containersCount - 1 {
             let name = folder.appendingPathComponent("t\(i).jpg")
@@ -111,15 +121,19 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
                 continue
             } else {
                 let image = UIImage(data: imageData!)
-                                            containers[i].imageInBlackBox = image!
-                                            containers[i].imageSelected = true
-                                            containers[i].imageZIndex = 1
+                containers[i].imageInBlackBox = image!
+                containers[i].imageSelected = true
+                containers[i].imageZIndex = 1
             }
-                
-            
-            
         }
     }
+    
+    func deactivateAllCContainers(){
+        for indexActive in 0...containers.count-1{
+             containers[indexActive].redactorActive = false
+        }
+    }
+    
 }
 
 struct photoContainersFrame: View {
@@ -137,15 +151,17 @@ struct photoContainersFrame: View {
             .resizable()
             .aspectRatio(1080/1920, contentMode: .fit)
             .opacity(0)
+            
             .overlay(
                 GeometryReader{ g in
+                    let w = g.size.width / CGFloat(1080)
                     ZStack{
                         Rectangle()
                             .resisable()
                             .shadow(radius: 20)
                             
                             .foregroundColor(Color.white)
-                            .opacity(0.3)
+                            .opacity(0.0)
                             
                         ForEach(crnts.indices){ index -> AnyView in
                             if(crnts.count <= index ){
@@ -156,6 +172,21 @@ struct photoContainersFrame: View {
                                 return AnyView(EmptyView())
                             }
                             if index < redactor.photoContainers.containers.count{
+//                                var relativeW: CGFloat {
+//                                    return  g.size.width / imgW
+//                                }
+//                                var w: CGFloat{
+//                                    return relativeW * (i.w)
+//                                }
+//                                var h: CGFloat{
+//                                    return relativeW * (i.h)
+//                                }
+//                                var x: CGFloat{
+//                                    return relativeW * (i.x) + w / 2
+//                                }
+//                                var y: CGFloat{
+//                                    return relativeW * (i.y) + h / 2
+//                                }
                             return AnyView  (
                                 photoSelectorWithParams(
                                     actualTemplateWith: g.size.width,
@@ -164,12 +195,13 @@ struct photoContainersFrame: View {
                                     container: i,
                                     redactorActive: $redactor.photoContainers.containers[index].redactorActive,
                                     templateOpacity: $redactor.storyTemplate.templateOpacity,
-                                    index: index)
+                                    index: index,
+                                    increaser: w)
                                     .onTapGesture {
+                                        print("tap", redactor.storyTemplate.templateOpacity, redactor.photoContainers.containers[index].redactorActive )
                                         var activeCount = 0
                                         for indexActive in 0...crnts.count-1{
                                             if indexActive != index {
-                                                
                                                 redactor.photoContainers.containers[indexActive].redactorActive = false
                                             }
                                             if redactor.photoContainers.containers[indexActive].redactorActive == true {activeCount += 1}
@@ -185,13 +217,29 @@ struct photoContainersFrame: View {
                                             redactor.redactorMode = .nothing
                                         }
                                     }
-                                    .disabled(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity)
+//                                    .disabled(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity)
                                     .zIndex(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity ? 0 : 2)
+                                   
+//                                    .overlay(Rectangle()
+//                                                .opacity(0)
+//                                                .modifier(StrokeDashAnimation(isVisible: $redactor.photoContainers.containers[index].redactorActive))
+//                                                .frame(width: w, height: h)
+//                                                .position(x: x, y: y)
+//                                    )
                             )
                             } else {
                                 return AnyView(EmptyView())
                             }
                         }
+                        .onAppear(
+                            perform: {
+                                if g.size.width < 1080 && redactor.photoContainers.increaser == 1 {
+                                    redactor.photoContainers.increaser = 1080 / g.size.width
+//                                    data.increaser = 1080 / g.size.width
+//                                    print("Text w:", g.size.width)
+                                }
+                            }
+                            )
                         Image(redactor.storyTemplate.templateImageName)
                              .resizable()
                              .zIndex(3)
@@ -200,9 +248,11 @@ struct photoContainersFrame: View {
                                  Rectangle()
                                      .size(CGSize(width: 1.0, height: 1.0))
                              )
-                            .opacity(redactor.storyTemplate.templateOpacity ? 0.5 : 1)
+//                            .opacity(redactor.storyTemplate.templateOpacity ? 0 : 1)
                     }
+                   
                 }
+                
             )
     }
 }

@@ -55,7 +55,9 @@ struct defaultTemplates: View {
                                     }
 )
                                 )
+                                
                           }
+                          
                         }
                         Spacer(minLength: (screenWidth - itemW*2)/3)
                     }
@@ -73,6 +75,7 @@ struct defaultTemplates: View {
 //            .foregroundColor(.white)
 //            .frame(width: nil, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
+        
     }
 }
 

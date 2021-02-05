@@ -14,9 +14,11 @@ struct ads: View {
     var body: some View{
         HStack{
             Rectangle()
-                .frame(width: nil, height: 50)
+                .frame( height: 50)
+                .cornerRadius(20)
+                .padding([.leading,.trailing])
                 .foregroundColor(Color(hex: "ecc9af"))
-//                .cornerRadius(20)
+                
         }
     }
 }

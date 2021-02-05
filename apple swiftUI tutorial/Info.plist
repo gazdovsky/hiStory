@@ -6,6 +6,39 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>AppIcon-2</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Icon-2</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>AppIcon-3</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>Icon-3</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon-1</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -20,8 +53,31 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Paste photo directly to template</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save and updait templates</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Save and updait templates</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>This app use your photoalbums</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Eleventh-Square.otf</string>
+		<string>Dita-Sweet.otf</string>
+		<string>Days.otf</string>
+		<string>Cuprum-BoldItalic.ttf</string>
+		<string>Cuprum-Italic.ttf</string>
+		<string>Cuprum-Regular.ttf</string>
+		<string>Cuprum-Bold.ttf</string>
+		<string>Bender-BoldItalic.otf</string>
+		<string>Bender-Italic.otf</string>
+		<string>Bender-Bold.otf</string>
+		<string>Bender.otf</string>
+		<string>Ardeco.ttf</string>
+		<string>20db.otf</string>
+		<string>Accuratist.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -59,50 +115,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>Icon-1</string>
-			</array>
-			<key>UIPrerenderedIcon</key>
-			<false/>
-		</dict>
-		<key>CFBundleAlternateIcons</key>
-		<dict>
-			<key>AppIcon-2</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Icon-2</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-			<key>AppIcon-3</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>Icon-3</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
-			</dict>
-		</dict>
-	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Paste photo directly to template</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Save and updait templates</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Save and updait templates</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>11050.ttf</string>
-		<string>Vanilla.ttf</string>
 	</array>
 </dict>
 </plist>

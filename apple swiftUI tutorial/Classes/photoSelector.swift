@@ -14,15 +14,7 @@ struct photoSelector: Identifiable, Hashable {
     let id: UUID = UUID()
     var isShowingImagePicker:Bool = false
     var imageInBlackBox:UIImage = UIImage()
-    {
-        didSet{
-//            var settings: selectorContainerStore = .shared
-//            selectorContainerStore.shared.saveTransformToFolder()
-//            selectorContainerStore.shared.saveContainerImage(index: 0)
-//            selectorContainerStore.shared.saveContainerImage(index: 1)
-            print("image is set")
-        }
-    }
+
     var imageSelected:Bool = false
     var imageZIndex:Double = 0
     var redactorActive:Bool = false
@@ -41,27 +33,46 @@ struct transformContainer:Codable, Hashable {
 }
 
 
+
 struct textFieldContainer: Identifiable, Hashable, Codable {
     var id = UUID()
-    var fieldText: String = "Your text"
+    var fieldText: String = "hello fr"
     var fontSize: CGFloat = 80
-    var fontName: String = "Arial"
+    var fontName: String = "Helvetica"
     var fontColor: String = "ecc9af"
-    var backgroundColor: String = "ffffff"
-    var shadowColor: String = "cccccc"
+    var backgroundColor: String = "00ffffff"
+    var shadowColor: String = "00cccccc"
     var textAlign: Int = 1
     var index: Int = -1
     var activeTextContainer: Int = -1
     var isActive: Bool = false
     var isFirstResponder: Bool = false
-    var x: CGFloat = 1080/2
-    var y: CGFloat = 300
+    var x: CGFloat = 500
+    var y: CGFloat = 750
     var containerW: CGFloat = 500 //w 485 h 168
     var containerH: CGFloat = 180
     var z: Int = 0
     var transform: transformTextContainer = transformTextContainer()
     var style: styleTextContainer = styleTextContainer()
     var kern: CGFloat = 1
+    
+    mutating func setWeight(_ weight: fontWeights){
+//        let fontWeights: fontWeights = weight
+        if fontName.contains("-"){
+            if let dotRange = fontName.range(of: "-") {
+                fontName.removeSubrange(dotRange.lowerBound..<fontName.endIndex)
+            }
+        }
+        let fontsList = fontsNamesGlobal
+        switch weight {
+        case .regular: fontName += fontsList.names[fontName]?.regular ?? ""
+        case .bold: fontName += fontsList.names[fontName]?.bold ?? "-Bold"
+        case .italic: fontName += fontsList.names[fontName]?.italic ?? "-Italic"
+        case .boldItalic:
+            fontName += fontsList.names[fontName]?.bolditalic ?? "-BoldItalic"
+        }
+
+    }
 }
 
 struct transformTextContainer:Codable, Hashable {
@@ -75,12 +86,14 @@ struct transformTextContainer:Codable, Hashable {
 }
 
 struct styleTextContainer: Codable, Hashable {
-    var kern: CGFloat = 10
+    var kern: CGFloat = 1
     var obliqueness: CGFloat = 0
     var strokeWidth: CGFloat = 0
     var shadowBlurRadius: CGFloat = 0
     var shadowOffsetHorizontal: CGFloat = 0
     var shadowOffsetVertical: CGFloat = 0
+    var underlineStyle: CGFloat = 0 //1 - regular, 2 - bold, 10 - double
+    var strikethroughStyle: CGFloat = 0
 }
 
 

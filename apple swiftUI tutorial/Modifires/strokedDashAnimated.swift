@@ -39,17 +39,18 @@ struct StrokeDashAnimation: ViewModifier{
     func body(content: Content) -> some View {
         
         content
-            .overlay(GeometryReader{g in
+            .overlay(
+                GeometryReader{g in
                 RoundedRectangle(cornerRadius: 2)
-                    .stroke(style: StrokeStyle(lineWidth: 1, miterLimit: CGFloat(10.7), dash: [5,5], dashPhase: self.moveAlong ? 0 : 30))
+                    .stroke(style: StrokeStyle(lineWidth: 1, miterLimit: CGFloat(10.7), dash: [15,15], dashPhase: self.moveAlong ? 0 : 15 ))
+                    .stroke(Color.white)
                     .frame(width: isVisible ? g.size.width : 0, height: isVisible ? g.size.height : 0)
-                .fixedSize()
-                    .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false).speed(2), value: self.moveAlong)
+                    .fixedSize()
+//                    .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false).speed(2), value: self.moveAlong)
                     
-                    .onAppear(){
-                        self.moveAlong.toggle()
-                }
-                
+//                    .onAppear(){
+//                        self.moveAlong.toggle()
+//                }
                 }
         )
 //        .rotationEffect(Angle(degrees: 0)) //This modifier for some reason prevent  animation of moving strokedDashAnimated when use both of them

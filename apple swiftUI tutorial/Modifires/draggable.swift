@@ -41,7 +41,7 @@ struct MakeDraggable: ViewModifier{
     
     @State private var currentPosition: CGSize = .zero
     @State private var     newPosition: CGSize = .zero
-    var callback:()->() = {print("r")}
+//    var callback:()->() = {print("r")}
     func body(content: Content) -> some View {
         content
             .offset(self.currentPosition)
@@ -49,7 +49,7 @@ struct MakeDraggable: ViewModifier{
                 .onChanged({value in
                     self.currentPosition = CGSize(width: value.translation.width + self.newPosition.width,
                                                   height: value.translation.height + self.newPosition.height)
-                    self.callback()
+//                    self.callback()
                 })
                 .onEnded({ value in
                     self.newPosition = self.currentPosition
@@ -59,7 +59,7 @@ struct MakeDraggable: ViewModifier{
 
 extension View{
     func draggable(callback: @escaping ()->() = {}) -> some View{
-        self.modifier(MakeDraggable(callback: callback))
+        self.modifier(MakeDraggable())
     }
 }
 

@@ -174,8 +174,8 @@
             filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1005,106 +1005,10 @@
             filePath = "apple swiftUI tutorial/storyBar/ToolbarButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "body"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "719AC6FC-AF3F-4678-A746-6A4D032B00E1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "719AC6FC-AF3F-4678-A746-6A4D032B00E1 - 7585a1702aa0e086"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in apple_swiftUI_tutorial.frame1.body.getter : some"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "615">
-               </Location>
-               <Location
-                  uuid = "719AC6FC-AF3F-4678-A746-6A4D032B00E1 - 53efc5e5bf2f6ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in (extension in apple_swiftUI_tutorial_PreviewReplacement_frame_6):apple_swiftUI_tutorial.frame1.(__preview__body in _171B0355CA869F2F124743EF394E7F27).getter : some"
-                  moduleName = "frame.6.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "615">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ED40ECB6-5331-4B1D-AF10-B54C06332E4E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/StoriesTemplates/frame.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "ED40ECB6-5331-4B1D-AF10-B54C06332E4E - 7585a1702aa0e325"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in apple_swiftUI_tutorial.frame1.body.getter : some"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "476">
-               </Location>
-               <Location
-                  uuid = "ED40ECB6-5331-4B1D-AF10-B54C06332E4E - 53efc5e5bf2f54e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.AnyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.AnyView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.opacity(Swift.Double) -&gt; some&gt;&gt;.0)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.overlay&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0 in (extension in apple_swiftUI_tutorial_PreviewReplacement_frame_6):apple_swiftUI_tutorial.frame1.(__preview__body in _171B0355CA869F2F124743EF394E7F27).getter : some"
-                  moduleName = "frame.6.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/StoriesTemplates/frame.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "476">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1126,598 +1030,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4DF13D73-105C-4F0B-9FEF-AE92F83B7222"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "75343F62-45B9-4DD6-8182-E60CC5614F14"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "75343F62-45B9-4DD6-8182-E60CC5614F14 - 791b8daa301cdad5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "555">
-               </Location>
-               <Location
-                  uuid = "75343F62-45B9-4DD6-8182-E60CC5614F14 - 537751968d6c8252"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "529">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6679E218-C85E-4999-B53F-6D22DA75DE0E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "6679E218-C85E-4999-B53F-6D22DA75DE0E - daaf70f1bbf394fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.createFileDirectory(folderName: Swift.String) -&gt; Foundation.URL"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "1070">
-               </Location>
-               <Location
-                  uuid = "6679E218-C85E-4999-B53F-6D22DA75DE0E - 1536f60078756e04"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__createFileDirectory in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; Foundation.URL"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "847">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "074C7F43-A2BE-4827-8985-D198EB06FD65"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C51F773D-87A0-471D-A8BD-557F27BDB936"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "C51F773D-87A0-471D-A8BD-557F27BDB936 - daaf70f1bbf3957f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.createFileDirectory(folderName: Swift.String) -&gt; Foundation.URL"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "128"
-                  endingLineNumber = "128"
-                  offsetFromSymbolStart = "1487">
-               </Location>
-               <Location
-                  uuid = "C51F773D-87A0-471D-A8BD-557F27BDB936 - 1536f60078756f80"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__createFileDirectory in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; Foundation.URL"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "128"
-                  endingLineNumber = "128"
-                  offsetFromSymbolStart = "1640">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E93839C4-1085-47D5-9995-4EA271F6284A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "E93839C4-1085-47D5-9995-4EA271F6284A - daaf70f1bbf39621"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.createFileDirectory(folderName: Swift.String) -&gt; Foundation.URL"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "1911">
-               </Location>
-               <Location
-                  uuid = "E93839C4-1085-47D5-9995-4EA271F6284A - 1536f60078756cde"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__createFileDirectory in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; Foundation.URL"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "1980">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "499B245E-BEDA-4F06-AC42-0579258F1D30"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8967DAD9-62ED-4F09-A732-9206CF1F2871"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D6FB94D-DD98-455D-B5C6-6BAF7557BED6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "3D6FB94D-DD98-455D-B5C6-6BAF7557BED6 - e60dc40d636d5c2a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "377">
-               </Location>
-               <Location
-                  uuid = "3D6FB94D-DD98-455D-B5C6-6BAF7557BED6 - 803790c44fa2f1a0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "246">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D2E47E17-2A1B-4631-9C5D-486CFAE782F2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CCBB9A89-56BB-4E93-9745-D9046506EBBC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "CCBB9A89-56BB-4E93-9745-D9046506EBBC - e60dc40d636d5c81"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "1317">
-               </Location>
-               <Location
-                  uuid = "CCBB9A89-56BB-4E93-9745-D9046506EBBC - 803790c44fa2f10b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "1468">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7B0F3590-58ED-41BC-BFCE-B31AE26CB7B6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "7B0F3590-58ED-41BC-BFCE-B31AE26CB7B6 - e60dc40d636d5c4f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "1077">
-               </Location>
-               <Location
-                  uuid = "7B0F3590-58ED-41BC-BFCE-B31AE26CB7B6 - 803790c44fa2f1c5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "1090">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB3E8AD6-96AE-4CEC-93F4-E3439BD46370"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "AB3E8AD6-96AE-4CEC-93F4-E3439BD46370 - e60dc40d636d5cae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.saveTransformToFolder() -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1165">
-               </Location>
-               <Location
-                  uuid = "AB3E8AD6-96AE-4CEC-93F4-E3439BD46370 - 803790c44fa2f124"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__saveTransformToFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1310">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0C16943E-6999-42F3-838F-9009C6B6A2AC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C57FB496-3498-401B-826B-77B550BAA115"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "C57FB496-3498-401B-826B-77B550BAA115 - ea55b267c8cffd35"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getSavedTemplates() -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "160"
-                  endingLineNumber = "160"
-                  offsetFromSymbolStart = "259">
-               </Location>
-               <Location
-                  uuid = "C57FB496-3498-401B-826B-77B550BAA115 - ff034981243985c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getSavedTemplates in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "166"
-                  endingLineNumber = "166"
-                  offsetFromSymbolStart = "111">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DE6C929D-445E-45E1-BEEA-B4B7395BCC6A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EE5C65D7-228D-4BBE-9A85-34A073FCF366"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "EE5C65D7-228D-4BBE-9A85-34A073FCF366 - ea55b267c8cffaea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getSavedTemplates() -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "842">
-               </Location>
-               <Location
-                  uuid = "EE5C65D7-228D-4BBE-9A85-34A073FCF366 - ff034981243981c6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getSavedTemplates in _5AAAB02E8F24D12BB9A514766A6A6C0E)() -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "743">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6D664A2E-D022-4DA9-A5C0-1B28328D1FE0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1725,8 +1037,8 @@
             filePath = "apple swiftUI tutorial/views/MainMenu/draftTemplates.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1776,214 +1088,6 @@
                   offsetFromSymbolStart = "10833">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "51D748BB-9DF0-4937-B6E8-4A15F64A0C8C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/photoSelector.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "imageInBlackBox"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E04F5820-C0DE-4B54-BB95-0A83E586F938"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5A0015EB-A6EC-44F8-AF84-3866A1F1402F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5DED1264-5CD8-46B0-81E5-C7C8D607E358"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "5DED1264-5CD8-46B0-81E5-C7C8D607E358 - 791b8daa301cd69a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "3970">
-               </Location>
-               <Location
-                  uuid = "5DED1264-5CD8-46B0-81E5-C7C8D607E358 - 537751968d6c8ffc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "2261">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "67AD5F74-EE43-4108-B446-BD5B44131AB8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "67AD5F74-EE43-4108-B446-BD5B44131AB8 - 791b8daa301cd6d4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "3106">
-               </Location>
-               <Location
-                  uuid = "67AD5F74-EE43-4108-B446-BD5B44131AB8 - 537751968d6c8e53"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "1850">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EEFB5657-D4AD-45C2-978D-5DB05C9A2D4C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "selectorContainerStore"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "EEFB5657-D4AD-45C2-978D-5DB05C9A2D4C - 791b8daa301cd77b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.getImagesFromFolder(folderName: Swift.String) -&gt; ()"
-                  moduleName = "apple swiftUI tutorial"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "4159">
-               </Location>
-               <Location
-                  uuid = "EEFB5657-D4AD-45C2-978D-5DB05C9A2D4C - 537751968d6c8ffc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in apple_swiftUI_tutorial_PreviewReplacement_coordinator_7):apple_swiftUI_tutorial.selectorContainerStore.(__preview__getImagesFromFolder in _5AAAB02E8F24D12BB9A514766A6A6C0E)(folderName: Swift.String) -&gt; ()"
-                  moduleName = "coordinator.7.preview-thunk.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "2261">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "97BB9ACB-708A-440A-8107-7F144A54ED0E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/Classes/photoSelector.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "imageInBlackBox"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2220,8 +1324,8 @@
             filePath = "apple swiftUI tutorial/views/Redactor/redactor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -2245,38 +1349,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7C553023-C03E-419A-9E5C-A12A492DA2FB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/views/Redactor/redactor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7060C3E2-75FC-4047-8D0B-FB402BF04A5E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "apple swiftUI tutorial/views/Redactor/redactor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "47D89DB6-DD06-4E0F-A865-28AD1442A875"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2284,8 +1356,8 @@
             filePath = "apple swiftUI tutorial/views/Redactor/redactor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -2300,8 +1372,8 @@
             filePath = "apple swiftUI tutorial/experiments/textFieldLayers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "textViewDidChange(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2316,8 +1388,8 @@
             filePath = "apple swiftUI tutorial/experiments/textFieldLayers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "updateUIView(_:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2332,10 +1404,26 @@
             filePath = "apple swiftUI tutorial/experiments/textFieldLayers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "makeUIView(context:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BA5C5C3-4B2D-432C-AE40-B9BC6A0CD55A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/fontsNames.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fontCases"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -15,8 +15,8 @@ class systemFilesWorker {
         return paths[0]
     }
     
-    func saveImageToFolder(image: UIImage, name:String, folder: URL){
-        let data = image.jpegData(compressionQuality: 1)
+    func saveImageToFolder(image: UIImage, name:String, folder: URL, compressionQuality: CGFloat = 1){
+        let data = image.jpegData(compressionQuality: compressionQuality)
 //               let filename = getDocumentsDirectory().appendingPathComponent(name)
         let filename = folder.appendingPathComponent(name)
            do{
@@ -74,18 +74,21 @@ class systemFilesWorker {
     func getSavedTemplates(source: String) -> [String]{
         var folders: [URL]
         var names: [String] = []
+        var dates: [Date] = []
         do{
             folders = try getDocumentsDirectory().subDirectories()
             folders.sort(by: {
-                return $0.appendingPathComponent("data.JSON").customModificationDate?.compare($1.appendingPathComponent("data.JSON").customModificationDate ?? Date()) == .orderedDescending
+                return $0.appendingPathComponent("draftImage.jpg").customModificationDate?.compare($1.appendingPathComponent("draftImage.jpg").customModificationDate ?? Date()) == .orderedDescending
             })
             folders.forEach{
                 names.append($0.lastPathComponent)
+                dates.append($0.appendingPathComponent("draftImage.jpg").customModificationDate ?? Date())
             }
-         print(source, names)
+         
         } catch {
         }
-//        print(names)
+//        print(source, names, dates)
+
         return names
     }
 }

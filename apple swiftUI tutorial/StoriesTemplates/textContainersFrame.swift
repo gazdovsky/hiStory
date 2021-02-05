@@ -13,19 +13,52 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
     static var shared = textContainersFrameData()
 //    @ObservedObject var storyTemplate: selectorContainerStore = .shared
     
-   
-    @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 2)
+    @Published var textContainers:Array<textFieldContainer> = Array(repeating:  textFieldContainer() , count: 1)
 
     @Published var activeTextContainer = 0
     
+    @Published var centerXLineVisible: Bool = false
+    @Published var centerYLineVisible: Bool = false
+    
+    @Published var activeFontIndex: Int = 0
+    @Published var activeFontFamilyName: String = "Arial"
+    @Published var isBoldFontWeightEnable: Bool = false
+    @Published var isItalicFontWeightEnable: Bool = false
+    
+    @Published var increaser: CGFloat = 1
+    
+    func updateWeghtsEnable(){
+        let fontsList = fontsNamesGlobal
+        if fontsList.names[activeFontFamilyName]?.bold == "" {
+            isBoldFontWeightEnable = false
+        } else {
+            isBoldFontWeightEnable = true
+        }
+        if fontsList.names[activeFontFamilyName]?.italic == "" {
+            isItalicFontWeightEnable = false
+        } else {
+            isItalicFontWeightEnable = true
+        }
+        
+    }
+    func clearAllContainers() -> Void{
+        for i in 0...textContainers.count-1{
+            textContainers[i] = textFieldContainer()
+        }
+    }
+    func deleteActiveTextContainer() -> Void {
+        textContainers[activeTextContainer].fieldText = "."
+        textContainers[activeTextContainer].fontColor = "00000000"
+        textContainers[activeTextContainer].backgroundColor = "00000000"
+        textContainers[activeTextContainer].shadowColor = "00000000"
+        textContainers[activeTextContainer].fontSize = 0.0001
+        textContainers[activeTextContainer].x = -1000
+}
     
     func loadTextFieldsFromTemplate(templateImageName: String) -> Void {
-        if (Bundle.main.path(forResource: templateImageName + "texts.json", ofType: nil) != nil){
-            textContainers = readPlst(templateImageName + "texts.json")
-           
-            
+        if (Bundle.main.path(forResource: templateImageName + "texts.JSON", ofType: nil) != nil){
+            textContainers = readPlst(templateImageName + "texts.JSON")
         } else {
-           
         }
     }
     
@@ -46,6 +79,7 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
         activeTextContainer = 0
         for i in 0..<textContainers.count {
             self.textContainers[i].isActive = false
+            self.textContainers[i].isFirstResponder = false
         }
     }
     func importTextFields() -> Void{
@@ -65,69 +99,89 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
             try file.write(to: filenameText)
         } catch {
     }
+        
     }
     func getTransformTextFromFolder(folderName: String){
+        
         let decoder = JSONDecoder()
         let folder = getDocumentsDirectory().appendingPathComponent(folderName)
         let name = folder.appendingPathComponent("texts.JSON")
-//        textContainers[0].transform.currentPosition.width *= 2 * (1080/231)
-//        textContainers[0].transform.currentPosition.height *= 2 * (1080/231)
+        //        textContainers[0].transform.currentPosition.width *= 2 * (1080/231)
+        //        textContainers[0].transform.currentPosition.height *= 2 * (1080/231)
         guard let transformData = try? Data(contentsOf: name) else { return }
         do{
             let textData:[textFieldContainer] = try decoder.decode([textFieldContainer].self, from: transformData)
             for i in 0...textContainers.count-1{
                 textContainers[i] = textData[i]
+//                print(textData[i].fieldText)
             }
-
-//            textContainers[0] = file[0]
-//            textContainers[1] = file[1]
         } catch {
         }
+        
     }
 }
 
 struct textContainersFrame: View {
     @ObservedObject var data: textContainersFrameData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
+    
     var body: some View {
         Image(redactor.storyTemplate.templateImageName)
             .resizable()
             .aspectRatio(1080/1920, contentMode: .fit)
             .opacity(0)
             .overlay(
-               
-//                    var w = g.frame.
-                ZStack{
+//                ZStack{
                     GeometryReader{ g in
-                    let w = g.size.width / CGFloat(1080)
-                        
-                    ForEach(redactor.textFields.textContainers.indices){ u in
-                       return
-                        textViewWrapper(
-                        textViewItem: $redactor.textFields.textContainers[u],
-                        index: u,
-                            increaser: w)
-//                            .modifier(makeTransformingMultilineText(
-//                                        index : u,
-//                                        fontSize: redactor.textFields.textContainers[u].fontSize
-//                                ))
-//                            .position(x: redactor.textFields.textContainers[u].x * w, y: redactor.textFields.textContainers[u].y * w)
-//                            .overlay(
-//                                VStack(alignment: .trailing , content: {
-//                                        Text("current W: \(g.size.width.description) w/1080 = \(g.size.width / CGFloat(1080))")
-//                                    Text("font W: \(data.textContainers[u].fontSize)")
-//                                        .background(Color.white)
-//                                }
-//                                )
-//                            )
-                            .opacity(u == 0 ? 1 : 0)
-                            
-                        
+                        let w = g.size.width / CGFloat(1080)
+                        ForEach(0 ..< redactor.textFields.textContainers.count, id: \.self){ u -> AnyView in //
+                            if u < redactor.textFields.textContainers.count {
+                                return AnyView(
+                                    textViewWrapper(
+                                        textViewItem: $redactor.textFields.textContainers[u],
+                                        index: u,
+                                        increaser: w)
+                                )
+                            } else {
+                                return AnyView(EmptyView())
+                            }
+                        }
+                        .onAppear(
+                            perform: {
+                                if g.size.width < 1080 && redactor.storyTemplate.increaser == 1 {
+                                    redactor.storyTemplate.increaser = 1080 / g.size.width
+                                    data.increaser = 1080 / g.size.width
+//                                    print("w:", g.size.width)
+                                }
+                             
+                            }
+                        )
                     }
-                }
-                
+//                }
+            )
+            .overlay(
+                ZStack{
+                    Group{
+                        Rectangle()
+                            .frame(width: 1, height: 1500)
+                            .opacity(redactor.textFields.centerXLineVisible ? 1 : 0)
+                        Rectangle()
+                            .frame(width: 1500 , height: 1)
+                            .opacity(redactor.textFields.centerYLineVisible ? 1 : 0)
+                    }
+                    .foregroundColor(Color.gray)
                 }
             )
+//            .mask(Rectangle().frame(width: 300, height: 550))
+            .onAppear {
+    //                     unkomment before build
+                if redactor.storyTemplate.isOpenedDraft {
+                    redactor.loadAllFromDraft()
+                    
+                } else {
+                    redactor.loadAllFromTemplate()
+                }
+            }
     }
 }
 

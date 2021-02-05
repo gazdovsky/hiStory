@@ -30,6 +30,7 @@ class uiColors: ObservableObject{
         "939597",
         "363945",
     ]
+
 }
 
 struct colorsCodes: View {

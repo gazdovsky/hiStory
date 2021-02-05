@@ -13,8 +13,6 @@ extension URL {
         
         let attributes = try? FileManager.default.attributesOfItem(atPath: self.path)
 //        let creationDate = attributes[.creationDate] as! Date
-        
-        
         return attributes?[.modificationDate] as? Date
     }
 }

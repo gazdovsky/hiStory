@@ -95,7 +95,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
             self.parent.isPresented = false
             //story
             
-            self.parent.redactor.saveDraftPreview()
+//            self.parent.redactor.saveDraftPreview()
             
             
         }
@@ -118,10 +118,11 @@ struct photoSelectorWithParams: View{
     var actualTemplateWith: CGFloat
     var actualTemplateHeight: CGFloat
     var konstantTemplateWith: CGFloat
-    var container:container
+    @State var container:container
     @Binding var redactorActive: Bool
     @Binding var templateOpacity: Bool
     var index: Int
+    @State var increaser: CGFloat
     var relativeW: CGFloat {
         return actualTemplateWith / konstantTemplateWith
     }
@@ -141,18 +142,27 @@ struct photoSelectorWithParams: View{
         
         SwiftUIPhotoSelector(index: index)
             .frame(width: w, height: h)
-            .modifier(makeTransformingImage(index: index, transforming: $redactorActive))
+            
+            .modifier(makeTransformingImage(index: index, transforming: $redactorActive, increaser: increaser))
+            
             .mask(
                 Rectangle()
                     .frame(width : redactorActive ? actualTemplateWith : w, height: redactorActive ? actualTemplateHeight : h)
-                    .offset(CGSize(width: redactorActive ?  (actualTemplateWith / 2) - x : 0, height: redactorActive ? (actualTemplateHeight / 2) - y : 0))
+                    .offset(CGSize(width: redactorActive ? (actualTemplateWith / 2) - x : 0, height: redactorActive ? (actualTemplateHeight / 2) - y : 0))
             )
+//            .fixedSize()
+//            .modifier(StrokeDashAnimation(isVisible: $redactorActive))
             .contentShape(
                 Rectangle()
             )
             .position(x: x, y: y)
-            .opacity(!redactorActive && templateOpacity ? 0.5 : 1)
+//            .opacity(!redactorActive && templateOpacity ? 0.5 : 1)
             .zIndex(2)
+//            .overlay(
+//            Rectangle()
+//                .frame(width: w, height: h)
+//            )
+//
     }
 }
 
