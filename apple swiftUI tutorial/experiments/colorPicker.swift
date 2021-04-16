@@ -24,7 +24,7 @@ struct colorPicker: View {
         }
     }()
     var linearGradientHeight: CGFloat = 200
-    @State var hexColor: String = "ecc9af"
+    @State var hexColor: String = "f4d8c8"
     @Binding var chosenColor: Color
     private var currentColor: Color {
         Color(UIColor.init(hue: self.normalizeGesture() / linearGradientHeight, saturation: 1.0, brightness: 1.0, alpha: 1.0))
@@ -164,7 +164,8 @@ struct colorPickerHex: View {
                             .onChanged({ (value) in
                                 self.dragOffset = value.translation
                                 self.startLocation = value.startLocation.x
-                                self.chosenColor = self.currentColor.uiColor().toHexString()
+                                self.chosenColor = self.currentColor.uiColor2().toHexString()
+                                
                                 self.isDragging = true
                             })
                             .onEnded({ (_) in
@@ -286,7 +287,7 @@ struct colorPickerHexWithSaturation: View {
                                                 width: value.translation.width + newPickerPosition.width,
                                                 height: value.translation.height + newPickerPosition.height
                                             )
-                                            chosenColor = self.currentColor.uiColor().toHexString()
+                                            chosenColor = self.currentColor.uiColor2().toHexString()
                                         }
                                         )
                                         .onEnded({ value in
@@ -330,10 +331,12 @@ struct colorPickerHexWithSaturation: View {
 }
 
 struct colorPickerHUE_SatBri:View {
-    @ObservedObject var data: textEditorColorPickerData = .shared
+    @ObservedObject var data: textEditorcolorPickerData3 = .shared
+    @ObservedObject var editorData: textEditorPanelData = .shared
     @State var huePosition: CGSize = CGSize()
+    @State var newHuePosition: CGSize = CGSize()
     var currentHue: Color {
-        Color(UIColor.init(hue: 0.5 + (1/(gradientWidth)) * huePosition.width,
+        Color(UIColor.init(hue: 0.5 + (1/(hueLineWidth)) * huePosition.width,
                            saturation:  1,
                            brightness:  1,
                            alpha: 1))
@@ -358,7 +361,7 @@ struct colorPickerHUE_SatBri:View {
                           alpha: 1.0))
         }
     }()
-    
+   @State var hueLineWidth: CGFloat = 0
     var gradientWidth: CGFloat =  UIScreen.main.bounds.width // 300
     var gradientHeight: CGFloat {
         CGFloat(265) * mainRatio
@@ -367,7 +370,7 @@ struct colorPickerHUE_SatBri:View {
     var mainRatio: CGFloat{ gradientWidth/1080 }
     @Binding var chosenColor: String // 1
     private var currentColor: Color {
-        Color(UIColor.init(hue: 0.5 + (1/(gradientWidth)) * huePosition.width,
+        Color(UIColor.init(hue: 0.5 + (1/(hueLineWidth)) * huePosition.width,
                            saturation:  0.5 + (1/(gradientWidth)) * pickerPosition.width ,
                            brightness:  0.5 - (1/(gradientHeight)) * pickerPosition.height ,
                            alpha: 1))
@@ -383,27 +386,42 @@ struct colorPickerHUE_SatBri:View {
     }
     @State private var startLocation: CGFloat = .zero // 2
     @State private var dragOffset: CGSize = .zero // 3
-    
+    @State var hexStringOffset: CGFloat = 0
     init(chosenColor: Binding<String>) {
         self._chosenColor = chosenColor
     }
     var body: some View{
         
-        VStack(alignment: .center, spacing: 0, content: {
+        VStack(alignment: .center,  content: {
             HStack{
-                TextField("hex:" , text:  $chosenColor)
+                TextField("hex:", text: $chosenColor, onEditingChanged: { isFieldActive in
+                    if isFieldActive {
+                        editorData.activeInputGroup = .color
+                        
+                    } else {
+                        editorData.activeInputGroup = .nothing
+                    }
+                }
+                )
+//                TextField("hex:" , text:  $chosenColor)
                     .font(.custom("menlo", size: 15))
                     .fixedSize()
                     .padding([.top, .bottom], 5)
                     .padding([.leading, .trailing], 10)
-                    .background(Color.white)
+                .background(Color(hex: UIColor.systemBackground.toHexString() ))
                     .cornerRadius(5)
                     .padding([.leading], 6)
+//                    .offset(x: 0, y: hexStringOffset)
+//                    .onTapGesture {
+//                        editorData.activeInputGroup = .color
+//                    }
+                GeometryReader { geometry in
+                    
                 
                 LinearGradient(gradient: Gradient(colors: colors),
                                startPoint: .leading,
                                endPoint: .trailing)
-                    .frame(width: nil, height: 5)
+                    .frame(width: geometry.frame(in: .local).width, height: 5)
                     .padding([.top, .bottom])
                     //                    .padding()
                     .overlay(
@@ -415,14 +433,24 @@ struct colorPickerHUE_SatBri:View {
                             .offset(huePosition)
                             .gesture(DragGesture()
                                         .onChanged({ value in
-                                            if abs(value.translation.width) < gradientWidth / 2 {
-                                                huePosition.width = value.translation.width
+                                            if abs( newHuePosition.width + value.translation.width) < geometry.frame(in: .local).width / 2 {
+                                                huePosition.width = newHuePosition.width + value.translation.width
                                             }
-                                            chosenColor = self.currentColor.uiColor().toHexString()
+                                            chosenColor = self.currentColor.uiColor2().toHexString()
+//                                            let str = String(describing: self.currentColor)
+//                                            let keys = matches(for: #"(\d+\.\d+|\d+)"#, in: str )
+//                                                print(keys)
+//                                            print(keys)
+                                        })
+                                        .onEnded({ value in
+                                            newHuePosition.width = huePosition.width
                                         })
                             )
                     })
-                
+                    .onAppear(perform: {
+                        hueLineWidth = geometry.frame(in: .local).width
+                    })
+                }
                 
                 Button(action: {
                     data.colorPickerType = .colorCircles
@@ -439,7 +467,7 @@ struct colorPickerHUE_SatBri:View {
                     ZStack{
                         VStack(alignment: .center, spacing: 0, content: {
                             ForEach (0..<Int(gradientResolution)) { s in
-                                LinearGradient(gradient: Gradient(colors: gradientGetBriSat(hue: 0.5 + (1/(gradientWidth)) * huePosition.width, bri: CGFloat(s)/gradientResolution) ),
+                                LinearGradient(gradient: Gradient(colors: gradientGetBriSat(hue: 0.5 + (1/(hueLineWidth)) * huePosition.width, bri: CGFloat(s)/gradientResolution) ),
                                                startPoint: .leading,
                                                endPoint: .trailing)
                                     .frame(width: gradientWidth, height: gradientHeight/gradientResolution)
@@ -459,7 +487,7 @@ struct colorPickerHUE_SatBri:View {
                                         }
                                         
                                         
-                                        chosenColor = self.currentColor.uiColor().toHexString()
+                                        chosenColor = self.currentColor.uiColor2().toHexString()
                                     }
                                     )
                                     .onEnded({ value in
@@ -482,6 +510,9 @@ struct colorPickerHUE_SatBri:View {
                             )
                     }
                 )
+               
+                .frame(width: nil, height: editorData.activeInputGroup == .color ? 0 : nil)
+                .opacity(editorData.activeInputGroup == .color ? 0 : 1)
         })
         
     }
@@ -502,8 +533,8 @@ struct colorPicker_Previews: PreviewProvider {
     static var previews: some View {
         //        colorPickerHexTest(color: Binding.constant( "ecc9af"))
         ZStack{
-            Color(hex: "a07554")
-            colorPickerHexTest(color: Binding.constant("ecc9af"))
+            Color.mainBeige
+            colorPickerHexTest(color: Binding.constant("f4d8c8"))
         }
     }
 }

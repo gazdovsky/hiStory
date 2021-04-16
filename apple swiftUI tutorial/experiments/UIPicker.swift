@@ -55,6 +55,15 @@ struct pickerFonts: UIViewRepresentable {
         picker.dataSource = context.coordinator
         
         picker.delegate = context.coordinator
+        
+        let fontFamily = textFields.textContainers[activeTextContainer].getFontFamily()
+        
+        for (index, name ) in dataSource.enumerated() {
+            if name[0] == fontFamily {
+                textFields.activeFontIndex = index
+            }
+        }
+        
         picker.selectRow(textFields.activeFontIndex, inComponent: 0, animated: false)
         return picker
     }

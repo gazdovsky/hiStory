@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "hiStoriesMainScreen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "hiStoriesMainScreen.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

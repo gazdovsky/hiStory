@@ -73,8 +73,9 @@ struct mainNavigationButton: View {
             action()
         }, label: {
             Text(text)
-                .font(.custom("Baskerville", size: 20))
-                .fontWeight(.medium)
+                .frame(width: 100, height: nil)
+                .font(.custom("Times New Roman", size: 22))
+                
                 .foregroundColor(.white)
                 
                 

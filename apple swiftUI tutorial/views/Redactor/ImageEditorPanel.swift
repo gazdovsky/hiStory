@@ -37,7 +37,7 @@ struct ImageEditorPanel: View {
         
         )
         .padding([.top,.bottom],10)
-        .background(Color(hex:"a98162")
+        .background(Color.mainBeige
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/ )
         )
         

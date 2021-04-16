@@ -16,7 +16,6 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
         let template:[storyTemplate]  = readPlst(storyTemplate.templateName)
         let containersCount = template[0].containers?.count ?? 1
         if containers.count < containersCount {
-//            containers.append(photoSelector())
             containers = Array(repeating:  photoSelector() , count: containersCount)
         }
        return template
@@ -24,6 +23,21 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
     
     @Published var containers:Array<photoSelector> = Array(repeating:  photoSelector() , count: 1)
     @Published var increaser: CGFloat = 1
+    
+    @Published var horizontalAtignLineY: CGFloat = 0
+    @Published var horizontalAtignLineX: CGFloat = 0
+    @Published var horizontalAtignHeight: CGFloat = 200
+    @Published var horizontalAtignVisible: Bool = false
+    
+    @Published var verticalAtignLineY: CGFloat = 0
+    @Published var verticalAtignLineX: CGFloat = 0
+    @Published var verticalAtignWidth: CGFloat = 200
+    @Published var verticalAtignVisible: Bool = false
+    
+    @Published var activeContainerSize: CGSize = CGSize(width: 0, height: 0)
+    @Published var activeContainerPointX: CGFloat = 0
+    @Published var activeContainerPointY: CGFloat = 0
+    @Published var sheetPresent: Bool = false
     
     
     func indexOfActiveContainer() -> Int {
@@ -38,11 +52,20 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
     active = activeCount > 0 ? active : -1
     return active
 }
-//    
+//
+    func deactivateAllPhotoContainers(){
+        for i in 0..<containers.count {
+            containers[i].redactorActive = false
+            
+        }
+    }
     func clearAllContainers() -> Void{
-        for i in 0...containers.count-1{
+        for i in containers.indices {
             containers[i] = photoSelector()
         }
+//        for i in 0...containers.count-1{
+//            containers[i] = photoSelector()
+//        }
     }
     func clearContainer(index: Int) -> Void {
         if index == -1 {return}
@@ -114,6 +137,7 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
     func getImagesFromFolder(folderName:String) -> Void {
         let folder = getDocumentsDirectory().appendingPathComponent(folderName)
         let containersCount = tmp[0].containers?.count ?? 1
+        if containersCount > 0 {
         for i in 0...containersCount - 1 {
             let name = folder.appendingPathComponent("t\(i).jpg")
             let imageData = try? Data(contentsOf: name)
@@ -127,9 +151,10 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
             }
         }
     }
+    }
     
     func deactivateAllCContainers(){
-        for indexActive in 0...containers.count-1{
+        for indexActive in 0...containers.count-1 {
              containers[indexActive].redactorActive = false
         }
     }
@@ -137,7 +162,7 @@ class photoContainersFrameData:systemFilesWorker, ObservableObject{
 }
 
 struct photoContainersFrame: View {
-//    @ObservedObject var data: photoContainersFrameData = .shared
+    @ObservedObject var data: photoContainersFrameData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     let imgW = CGFloat(1080)
 //    var tmp: [storyTemplate] {
@@ -146,24 +171,31 @@ struct photoContainersFrame: View {
     var crnts: [container] {
         redactor.photoContainers.tmp[0].containers ?? readPlst("defaultContainer.json")
     }
+    var templateImage: Image { Image(redactor.storyTemplate.templateImageName )} // + "_PREVIEW"
+    @State var templateInFront: Bool = true
+    
+    
+    @State var dashRadius: CGFloat = 3
+   
+    var templateWidth: CGFloat
     var body: some View {
-        Image(redactor.storyTemplate.templateImageName)
+//        Image(templateImage)
+        templateImage
             .resizable()
             .aspectRatio(1080/1920, contentMode: .fit)
             .opacity(0)
-            
             .overlay(
                 GeometryReader{ g in
-                    let w = g.size.width / CGFloat(1080)
+//                    let w = g.size.width / CGFloat(1080)
                     ZStack{
                         Rectangle()
-                            .resisable()
+//                            .resisable()
                             .shadow(radius: 20)
                             
                             .foregroundColor(Color.white)
                             .opacity(0.0)
                             
-                        ForEach(crnts.indices){ index -> AnyView in
+                        ForEach(crnts.indices, id: \.self){ index -> AnyView in
                             if(crnts.count <= index ){
                                 return AnyView(EmptyView())
                             }
@@ -172,36 +204,24 @@ struct photoContainersFrame: View {
                                 return AnyView(EmptyView())
                             }
                             if index < redactor.photoContainers.containers.count{
-//                                var relativeW: CGFloat {
-//                                    return  g.size.width / imgW
-//                                }
-//                                var w: CGFloat{
-//                                    return relativeW * (i.w)
-//                                }
-//                                var h: CGFloat{
-//                                    return relativeW * (i.h)
-//                                }
-//                                var x: CGFloat{
-//                                    return relativeW * (i.x) + w / 2
-//                                }
-//                                var y: CGFloat{
-//                                    return relativeW * (i.y) + h / 2
-//                                }
-                            return AnyView  (
+                            return AnyView (
                                 photoSelectorWithParams(
-                                    actualTemplateWith: g.size.width,
+                                    actualTemplateWith: templateWidth ,
                                     actualTemplateHeight: g.size.height,
                                     konstantTemplateWith: imgW,
                                     container: i,
                                     redactorActive: $redactor.photoContainers.containers[index].redactorActive,
                                     templateOpacity: $redactor.storyTemplate.templateOpacity,
                                     index: index,
-                                    increaser: w)
+                                    increaser: templateWidth / 1080)
+                                  
                                     .onTapGesture {
-                                        print("tap", redactor.storyTemplate.templateOpacity, redactor.photoContainers.containers[index].redactorActive )
+                                        
                                         var activeCount = 0
                                         for indexActive in 0...crnts.count-1{
+                                            
                                             if indexActive != index {
+                                                
                                                 redactor.photoContainers.containers[indexActive].redactorActive = false
                                             }
                                             if redactor.photoContainers.containers[indexActive].redactorActive == true {activeCount += 1}
@@ -209,28 +229,88 @@ struct photoContainersFrame: View {
                                         redactor.photoContainers.containers[index].redactorActive.toggle()
                                         redactor.storyTemplate.templateOpacity = activeCount == 0 ? true : false
                                         if redactor.photoContainers.containers[index].redactorActive {
+                                            
                                             redactor.redactorMode = .imageEdit
                                         } else {
+                                            
                                             redactor.photoContainers.saveTransformToFolder()
-//                                            redactor.photoContainers.saveContainerImage(index: index)
-//                                            redactor.saveDraftPreview()
                                             redactor.redactorMode = .nothing
                                         }
+                                        if data.containers[index].imageSelected {
+//                                                                                    templateInFront.toggle()
+                                                                                } else {
+                                                                                    
+                                                                                    data.containers[index].isShowingImagePicker = true
+                                                                                    
+                                                                                }
+                                        print(!data.containers[index].redactorActive ? Double(i.z) : 15, redactor.photoContainers.indexOfActiveContainer() == -1 ? 16 : 10, !data.containers[index].redactorActive && data.containers[index].imageSelected ? 0 : 1, index, activeCount, redactor.photoContainers.containers[index].redactorActive, data.containers[index].imageSelected, data.containers[index].isShowingImagePicker)
                                     }
-//                                    .disabled(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity)
-                                    .zIndex(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity ? 0 : 2)
-                                   
-//                                    .overlay(Rectangle()
-//                                                .opacity(0)
-//                                                .modifier(StrokeDashAnimation(isVisible: $redactor.photoContainers.containers[index].redactorActive))
-//                                                .frame(width: w, height: h)
-//                                                .position(x: x, y: y)
+//                                    .zIndex(!redactor.photoContainers.containers[index].redactorActive && redactor.storyTemplate.templateOpacity ? 0 : 3)
+//                                    .contentShape(
+//                                        Rectangle()
 //                                    )
+//                                    .sheet(isPresented: $data.sheetPresent, content: {
+//                                        PhotoPickerUIView(isPresented: $data.containers[index].isShowingImagePicker,
+//                                                         index: index)
+//                                    })
+//                                    .sheet(isPresented: $data.containers[index].isShowingImagePicker, content: {
+//                                        PhotoPickerUIView(isPresented: $data.containers[index].isShowingImagePicker,
+//                                                         index: index)
+//                                    })
+//                                    .onTapGesture {
+//                                        print(index, templateInFront ? 2 : 3 * index)
+//                                        if data.containers[index].imageSelected {
+//                                            templateInFront.toggle()
+//                                        } else {
+//                                            data.containers[index].isShowingImagePicker = true
+//                                        }
+//                                    }
+                                    .zIndex(!data.containers[index].redactorActive ? Double(i.z) : 15)
+                                    
+//                                    .zIndex(Double(templateInFront ? 2 : 3 + index))
+                                   
                             )
+
                             } else {
                                 return AnyView(EmptyView())
                             }
                         }
+                        .mask(
+                            ZStack{
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                Rectangle()
+                                    .foregroundColor(.black)
+                                    .mask(
+                                        templateImage
+                                            .resizable()
+                                            .scaledToFill()
+                                    )
+                            }
+                            .compositingGroup()
+                            .luminanceToAlpha()
+                        )
+//                        .overlay(
+//                            //check photo container
+//                        Rectangle()
+//                            .border(Color.green, width: 1)
+//                            .frame(width: data.activeContainerSize.width, height: data.activeContainerSize.height)
+//                            .position(x: data.activeContainerPointX, y: data.activeContainerPointY)
+//                            .foregroundColor(Color.clear)
+//                        )
+                        .overlay(
+                            ZStack{
+                            Rectangle()
+                                .foregroundColor(Color(hex: "00FFFF"))
+                                .frame(width: 1, height: data.horizontalAtignHeight)
+                                .position(x: data.horizontalAtignLineX, y: data.horizontalAtignLineY)
+                                .opacity(data.horizontalAtignVisible ? 1 : 0)
+                            Rectangle()
+                                .foregroundColor(Color(hex: "00FFFF"))
+                                .frame(width: data.verticalAtignWidth , height: 1)
+                                .position(x: data.verticalAtignLineX, y: data.verticalAtignLineY)
+                                .opacity(data.verticalAtignVisible ? 1 : 0)
+                        })
                         .onAppear(
                             perform: {
                                 if g.size.width < 1080 && redactor.photoContainers.increaser == 1 {
@@ -240,14 +320,28 @@ struct photoContainersFrame: View {
                                 }
                             }
                             )
-                        Image(redactor.storyTemplate.templateImageName)
+                        
+//                        Image(redactor.storyTemplate.templateImageName)
+                        templateImage
                              .resizable()
-                             .zIndex(3)
+                             .zIndex(redactor.photoContainers.indexOfActiveContainer() == -1 ? 16 : 10)
                              .aspectRatio(1080/1920, contentMode: .fit)
                              .contentShape(
                                  Rectangle()
-                                     .size(CGSize(width: 1.0, height: 1.0))
+                                    .size(.zero)
                              )
+//                            .blendMode(templateInFront ? .normal : .sourceAtop)
+                       
+//                        mask(
+//                        maskView()
+                //            .compositingGroup()
+                //            .luminanceToAlpha()
+//                            )
+//                            .opacity(0)
+//                            .disabled(true)
+//                            .allowsHitTesting(false)
+                        
+                        
 //                            .opacity(redactor.storyTemplate.templateOpacity ? 0 : 1)
                     }
                    
@@ -257,8 +351,8 @@ struct photoContainersFrame: View {
     }
 }
 
-struct photoContainersFrame_Previews: PreviewProvider {
-    static var previews: some View {
-        photoContainersFrame()
-    }
-}
+//struct photoContainersFrame_Previews: PreviewProvider {
+//    static var previews: some View {
+//        photoContainersFrame()
+//    }
+//}

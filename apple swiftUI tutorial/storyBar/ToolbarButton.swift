@@ -11,8 +11,11 @@ struct buttons: View{
     @State var buttonBackgroundOpacity: CGFloat = 0.1
     var body: some View{
         ZStack{
-            Color(hex: "a98162")
+            Color.mainBeige
         VStack{
+            HStack{
+//                gradientButton()
+            }
             HStack{
                 ToolbarButton(isSelected: true)
                 ToolbarButton()
@@ -37,31 +40,75 @@ struct buttons: View{
     }
     }
 }
+
+struct gradientButton: View{
+    let gradient: [Color]
+    let action: () -> ()
+    init(_ gradient: [Color] = [.blue, .purple, .red, .orange, .yellow], action: @escaping () -> ()) {
+        self.gradient = gradient
+        self.action = action
+    }
+    var body: some View{
+        colorCircleChoser3(color: "00ffffff"){
+            action()
+        }
+        .background(
+            LinearGradient(gradient: Gradient(colors: gradient), startPoint: .bottomLeading, endPoint: .topTrailing)
+                .mask(colorCircleChoser3(color: "ffffff"){})
+                
+        )
+        
+    }
+}
 struct ToolbarButton: View{
     var icon = "textformat"
     var isSelected = false
     var isPlus = false
+    @State var activate: Bool = false
     var size:CGFloat = 40
+    var minTappableArrea : CGFloat = 44
     var color: String =  "f4d8c8"
     var action: (()->()) = {}
     var body: some View{
         var img: Image
+        var aspectSize: CGSize
+        var scale: CGFloat = 1
         if UIImage(systemName: "\(self.icon)") == nil {
+            if UIImage(named: "\(self.icon)") != nil {
+                aspectSize = UIImage(named: "\(self.icon)")!.size
+                scale = aspectSize.height > aspectSize.width ? size / aspectSize.height : size / aspectSize.width
+            } else {
+                print("dont find ", self.icon)
+            }
             img = Image(self.icon)
         } else {
+            aspectSize = UIImage(systemName: "\(self.icon)")!.size
+            scale = aspectSize.height > aspectSize.width ? size / aspectSize.height : size / aspectSize.width
             img = Image(systemName: "\(self.icon)")
         }
         return Button(action: {
+            
             self.action()
         }) {
-            HStack {
+//            HStack {
                 img
-                    .resizable()
-                    .scaledToFit()
+//                    .resizable()
+//                    .aspectRatio(CGFloat(ratio), contentMode: .fit)
+//                    .aspectRatio(aspectSize, contentMode: .fit)
+
+//                    .scaledToFit()
+//                                        .frame(width: w, height: h)
+                   
+//                    .font(.system(size: 1, weight: .regular))
+                    .scaleEffect(scale)
                     .frame(width: size, height: size)
+                    .padding((minTappableArrea - size)/2 )
                     .foregroundColor(isSelected ? Color(hex: color) : Color.gray)
                     .contentShape(Rectangle())
-            }
+//                    .fixedSize()
+                    
+                  
+//            }
         }
     }
 }

@@ -23,26 +23,37 @@ struct makeTransformingImage: ViewModifier{
     @State var needSynchronizeAngle: Bool = true
     @Binding var transforming: Bool
     @State var increaser: CGFloat
+    @GestureState var isScale: Bool = false
+    @GestureState var isDrag: Bool = false
+    @GestureState var isRotate: Bool = false
+    @State var updateGesture: Bool = false
     var centerizeDelta: CGFloat = 10
-    
+//    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     func body(content: Content) -> some View{
         
         
-        let mGesture =  MagnificationGesture(minimumScaleDelta: 0.5)
-            .onChanged({scaleValue in
-                if !transforming {return}
-                if  needSynchronizeMagnification {
-                     newScale =  data.containers[index].transform.currentScale
-                     needSynchronizeMagnification = false
-                }
-                data.containers[index].transform.currentScale =  newScale * scaleValue
-            })
-            .onEnded({_ in
-                if !transforming {return}
-                 newScale =  data.containers[index].transform.currentScale
-            })
+//        let mGesture =  MagnificationGesture(minimumScaleDelta: 0.1)
+//            .updating( $isScale, body: { currentState, gestureState, transaction in
+//                gestureState = true
+//            })
+//            .onChanged({scaleValue in
+//                if !transforming {return}
+//                if  needSynchronizeMagnification {
+//                     newScale =  data.containers[index].transform.currentScale
+//                     needSynchronizeMagnification = false
+//                }
+//                data.containers[index].transform.currentScale =  newScale * scaleValue
+//            })
+//            .onEnded({_ in
+//                if !transforming {return}
+//                 newScale =  data.containers[index].transform.currentScale
+//            })
         
         let dGesture = DragGesture(minimumDistance: 5)
+            .updating( $isDrag, body: { currentState, gestureState, transaction in
+                gestureState = true
+            })
             .onChanged({value in
                 if !transforming {return}
                 
@@ -69,29 +80,72 @@ struct makeTransformingImage: ViewModifier{
                  newPosition = data.containers[index].transform.currentPosition
             })
         
-        let rGesture = RotationGesture(minimumAngleDelta: Angle(degrees: 5))
-            .onChanged({degrees in
-                if !transforming {return}
-                if  needSynchronizeAngle {
-                     newrotate =  data.containers[index].transform.rotate
-                     needSynchronizeAngle = false
-                }
-                data.containers[index].transform.rotate =  newrotate + Double(degrees.degrees / 180 * .pi)
-            })
-            .onEnded({ degrees in
-                 newrotate =  data.containers[index].transform.rotate
-            })
+//        let rGesture = RotationGesture(minimumAngleDelta: Angle(degrees: 5))
+//            .updating( $isRotate, body: { currentState, gestureState, transaction in
+//                gestureState = true
+//            })
+//            .onChanged({degrees in
+//                if !transforming {return}
+//                if  needSynchronizeAngle {
+//                     newrotate =  data.containers[index].transform.rotate
+//                     needSynchronizeAngle = false
+//                }
+//                
+//                var supposedDegree = newrotate + Double(degrees.degrees / 180 * .pi)
+//                if supposedDegree > Double.pi * 2 {
+//                    supposedDegree = supposedDegree - Double.pi * 2
+//                } else if supposedDegree < -Double.pi * 2 {
+//                        supposedDegree = supposedDegree + Double.pi * 2
+//                    }
+//                
+//                //
+//                let deltaDegree = Double(0.1)
+//                
+//                func newAngle() -> Double {
+//                    let fixPointsNumber: Int = 8
+//                    var fixPoints: [Double] = []
+//                    let fixStep: Double = (2 * Double.pi) / Double(fixPointsNumber)
+//                    var aligns: [ClosedRange<Double>] = []
+//                    for i in 0..<fixPointsNumber {
+//                        fixPoints.append(fixStep * Double(i))
+//                        aligns.append(fixPoints[i] - deltaDegree...fixPoints[i] + deltaDegree)
+//                        if aligns[i] ~= abs(supposedDegree) {
+//                        return fixPoints[i] * (abs(supposedDegree) / supposedDegree)
+//                        }
+//                    }
+//                    return supposedDegree
+//                }
+//                
+////               print(supposedDegree)
+//                
+//                data.containers[index].transform.rotate = newAngle()
+//                
+////                data.containers[index].transform.rotate =  newrotate + Double(degrees.degrees / 180 * .pi)
+//            })
+//            .onEnded({ degrees in
+//                 newrotate = data.containers[index].transform.rotate
+//            })
         
-        let multiGesture = dGesture.simultaneously(with: mGesture).simultaneously(with: rGesture)
+//        let multiGesture = dGesture.simultaneously(with: mGesture).simultaneously(with: rGesture)
 //        let multiGesture = dGesture.simultaneously(with: mGesture)
 //        let multiGesture = dGesture.simultaneously(with: rGesture)
 //        let multiGesture = dGesture
 //        let multiGesture = dGesture.sequenced(before: mGesture)
+//        let multiGesture = mGesture
+//        print(isScale, isRotate, isDrag)
         return content
             .scaleEffect(data.containers[index].transform.currentScale)
             .rotationEffect(Angle(degrees: data.containers[index].transform.rotate * 180 / .pi))
             .offset(offset)
-            .gesture(transforming ? multiGesture : nil)
+//            .gesture(transforming ? multiGesture : nil)
+//            .onReceive(timer) { input in
+//                if isScale == false && isRotate == false && isDrag == false {
+//                    transforming = false
+//                    transforming = true
+////                    updateGesture
+////                    transforming.toggle()
+//                }
+//                        }
     }
     var offset: CGSize {
         if increaser == 1 || increaser < 0.1 {

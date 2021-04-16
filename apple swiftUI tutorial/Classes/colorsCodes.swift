@@ -31,11 +31,126 @@ class uiColors: ObservableObject{
         "363945",
     ]
 
+    @Published var standartColors: [String] = [
+    "161616",
+        "404040",
+        "7f7f7f",
+        "bebebe",
+        "dedede",
+        "fefefe",
+        "01596f",
+        "0096b9",
+        "03c3ea",
+        "6edaf4",
+        "9ce7f7",
+        "caf2fa",
+        "090e60",
+        "1022aa",
+        "2732f0",
+        "725af6",
+        "9685f6",
+        
+        
+        "c0b6fd",
+        "500935",
+        "8d1761",
+        "c32e8a",
+        "d07cb0",
+        "d096ba",
+        "e7c4da",
+        "691400",
+        "af2a01",
+        "db5120",
+        "e39179",
+        "e3a694",
+        "f2d4ca",
+        "6b3f00",
+        "b76f00",
+        "ea9901",
+        "eebf71",
+        "eecc93",
+        "f9e6c8",
+        "726b00",
+        "bdb401",
+        "e4db00",
+        "eae67a",
+        "eae799",
+        "f9f7da",
+        "3d5300",
+        "6c8f00",
+        "99c228",
+        "b9d07e",
+        "c2d09d",
+        "dfe9c7"
+        
+    ]
+    
+    @Published var opacityColors: [String] = [
+        "20FDAC53",
+        "409BB7D4",
+        "60B55A30",
+        "cfF5DF4D",
+        "ac0072B5",
+        "ccA0DAA9",
+        "c0E9897E",
+        "f400A170",
+        "2f926AA6",
+        "1aD2386C",
+        "a69A8B4F",
+        "c0E0B589",
+        "80EFE1CE",
+        "b0939597",
+        "a8363945",
+    ]
+    
+//    var c7 = hexColor(hex: "f4d9c9")
+//    var c3 = hexColor(hex: "f4d8c8")
+//    var c2 = hexColor(hex: "ecc9af")
+//    var c10 = hexColor(hex: "a98162")
+//    var c11 = hexColor(hex: "bb8a62")
+//    var c4 = hexColor(hex: "a07554")
+//    var c6 = hexColor(hex: "7d3704")
+//    var c8 = hexColor(hex: "59361c")
+//    var c9 = hexColor(hex: "493412")
+    
 }
 
 struct colorsCodes: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            HStack (spacing: 0, content:{
+            Rectangle()
+                .foregroundColor(Color.white)
+            Rectangle()
+                .background(Color.black)
+            })
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    VStack{
+                        Group{
+                        Rectangle()
+                            .foregroundColor(Color(hex: "f4d8c8"))
+                        Rectangle()
+                            .foregroundColor(Color.lightBeige)
+                        
+                        Rectangle()
+                            .foregroundColor(Color(hex: "a98162"))
+                        Rectangle()
+                            .foregroundColor(Color.mainBeige)
+                        
+                        Rectangle()
+                            .foregroundColor(Color(hex: "7d3704"))
+                        Rectangle()
+                            .foregroundColor(Color.textAccent )
+                        
+                        Rectangle()
+                            .foregroundColor(Color(hex: "59361c"))
+                        Rectangle()
+                            .foregroundColor(Color.elementAccent )
+                        }
+                        .frame(width: 200, height: 50)
+                    }
+        }
+
     }
 }
 

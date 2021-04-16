@@ -19,31 +19,24 @@ struct frame1: View {
     @State var activeContainerid:String = ""
     @State var restoreFromDrafts: Bool = false
     @State var size: CGFloat = 0.1
+    let screenW = UIScreen.main.bounds.width
     var body: some View {
-        ZStack{
+//        ZStack{
             Image(settings.templateImageName)
                 .resizable()
                 .aspectRatio(1080/1920, contentMode: .fit)
                 .background(
-                    Color(hex: "#bbbbbb")
+                    Color(hex: "bbbbbb")
                 )
                 .opacity(settings.templateOpacity ? 0 : 0) 
                 .overlay(
-                    photoContainersFrame()
+                    photoContainersFrame(templateWidth: screenW / 1.7)
                 )
                 .overlay(
-                    textContainersFrame()
+                    textContainersFrame(templateWidth: screenW / 1.7)
                 )
-//            Image(settings.templateImageName)
-//                .resizable()
-//                .aspectRatio(1080/1920, contentMode: .fit)
-//                .background(
-//                    Color(hex: "#bbbbbb")
-//                )
-//                .opacity(0)
-        }
-       
-        
+//        }
+      
     }
 }
 

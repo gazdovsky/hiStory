@@ -65,26 +65,44 @@ extension UIImage {
     }
 }
 
+enum imageResolution {
+    case low
+    case normal
+    case high
+    case ultra
+}
+
+
 extension View {
-    func asImage(width: CGFloat = 1080) -> UIImage {
-        let baseWidth = width > 0 ? width : CGFloat(1080)
+    func asImage(resolution: imageResolution ) -> UIImage {
+//        let baseWidth = width > 0 ? width : CGFloat(1080)
         let controller = UIHostingController(rootView: self)
-
+        
+      
+        var increasedSize: CGSize {
+            switch resolution {
+            case .low: return CGSize(width: 540, height: 960)
+            case .normal: return CGSize(width: 1080, height: 1920)
+            case .high: return CGSize(width: 2160, height: 3840)
+            case .ultra:  return CGSize(width: 3240, height: 5760)
+            }
+        }
         // locate far out of screen
-        controller.view.frame = CGRect(x: 0, y: CGFloat(Int.max), width: 1, height: 1)
+//        controller.view.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+        controller.view.frame = CGRect(origin: CGPoint(x: 1000, y: 1000), size: increasedSize)
         UIApplication.shared.windows.first!.rootViewController?.view.addSubview(controller.view)
-
-        var increasedSize = UIScreen.main.bounds.size
+        
+        //        var increasedSize = CGSize(width: 540, height: 960 ) //UIScreen.main.bounds.size
         //increase size of saved screehshot
-        let increaser = (baseWidth)/increasedSize.width
-        increasedSize.width *= increaser
-        increasedSize.height *= increaser
+//        let increaser = (baseWidth)/increasedSize.width
+//        increasedSize.width *= increaser
+//        increasedSize.height *= increaser
         let size = controller.sizeThatFits(in: increasedSize)
         
         controller.view.bounds = CGRect(origin: .zero, size: size)
         controller.view.sizeToFit()
 
-        let image = controller.view.asImage()
+        let image = controller.view.asImage(size: size)
         controller.view.removeFromSuperview()
         return image
     }

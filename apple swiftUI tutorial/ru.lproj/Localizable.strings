@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  apple swiftUI tutorial
+
+  Created by David Gaz on 06.02.2021.
+  Copyright © 2021 David Gaz. All rights reserved.
+*/
+"TEXT" = "ТЕКСТ";
+"FRAME" = "РАМКА";
+"DOUBLE" = "ТЕНЬ";
+"NEON" = "НЕОН";
+"STROKE" = "ОБВОДКА";
+"SIZE" = "РАЗМЕР";
+"FONT" = "ШРИФТ";
+"FORMAT" = "ФОРМАТ";
+"COLOR" = "ЦВЕТ";
+
+"About us" = "О нас";
+"Rate in app store" = "Оценить в App store";
+"Instagram" = "Instagram";
+"Feedback" = "Написать нам";
+
+"version" = "версия";
+
+"Upgrade\nyour stories\nwith hiStorys PRO" = "Прокачай\nсвои сториз с\nhiStorys PRO";
+
+"Over 100 unique photo frames" = "Более 100 дизайнерских шаблонов";
+"Over 30 fonts - all with Cyrillic support!" = "Более 50 шрифтов с кириллицей";
+"Effects and styles for text with the ability to add shadows, neon, frames and strokes" = "Текстовые эффекты";
+"Ultra HD 4K quality" = "Ultra HD 4K качество";
+"Exclusive templates designs" = "Эксклюзивные дизайны";

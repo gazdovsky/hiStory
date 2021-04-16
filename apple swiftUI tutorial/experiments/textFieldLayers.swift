@@ -17,7 +17,12 @@ struct textViewWrapper: View {
 //    @State var w: CGFloat = 100
 //    @State var h: CGFloat = 100
     
-    @State var increaser: CGFloat
+//    var testW: CGFloat
+    var increaser: CGFloat
+    var actualTemplateWidth: CGFloat {
+       
+        return increaser * 1080
+    }
 //    @State var c1t: CGFloat = 0
 //    @State var c2t: CGFloat = 0
 //    @State var fieldHeight: CGFloat = 55
@@ -26,71 +31,148 @@ struct textViewWrapper: View {
 //    }
     @State var dash: Bool = true
     
+    @State var anchor: UnitPoint = .center
+    @State var offset: CGSize = .zero
+    @State var isPinching: Bool = false
+    @State var scalerPosiition: CGSize = .zero
+    @State var needSynchronizeDrag: Bool = true
+    @State var tempFontSize: CGFloat = 1
+    @State var tempContainerW: CGFloat = 1
+    @State var needSynchronizeWidthDrag: Bool = true
+    var borderWidthForTest: CGFloat = 0
+    @State var newrotate: Double = 0.0
     var body: some View{
         
-        HStack(alignment: .firstTextBaseline, content: {
-           
-//            Circle()
-//                .offset(CGSize(width: c1t, height: 0))
-//                .frame(width: 20, height: 20)
-//                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-//                .gesture(DragGesture()
-//                            .onChanged({
-//                                value in
-//                                let increaser = updateWidth(widthIncreaser: -value.translation.width)
-//                                if increaser != 0 {
-//                                    c1t = value.translation.width
-//                                    w += increaser
-//                                }
-//                            })
-//                )
-//                .opacity(redactor.textFields.activeTextContainer == index && redactor.textFields.indexOfActiveTextContainer() != -1 ? 1 : 0)
-            TextView(fieldText: textViewItem.fieldText, //
-                     fontSize: textViewItem.fontSize, // * increaser
+        
+        
+        ZStack(content: {
+            TextView(fieldText: textViewItem.fieldText,
+                     isUppercased: textViewItem.isUppercased,
+                     fontSize: textViewItem.fontSize,
                      textAlign: textViewItem.textAlign,
                      fontName: textViewItem.fontName,
                      fontColor: textViewItem.fontColor,
                      backgroundColor: textViewItem.backgroundColor,
+                     frameCornerRadius: textViewItem.frameCornerRadius,
                      shadowColor: textViewItem.shadowColor,
+                     glowColor: textViewItem.glowColor,
+                     strokeColor: textViewItem.strokeColor,
                      index: index,
-                     activeTextContainer: textViewItem.activeTextContainer, //
-                     isActive: textViewItem.isActive, //
-                     isFirstResponder: textViewItem.isFirstResponder, //
-                     fieldHeight: textViewItem.containerH, //
+                     activeTextContainer: textViewItem.activeTextContainer,
+                     isActive: textViewItem.isActive,
+                     isFirstResponder: textViewItem.isFirstResponder,
+                     fieldHeight: textViewItem.containerH,
                      fieldWidth: textViewItem.containerW,
-                     style: textViewItem.style, //
+                     style: textViewItem.style,
                      increaser: increaser
             )
-            .modifier(StrokeDashAnimation(isVisible: $textViewItem.isActive))
+            
+            .clipShape(RoundedRectangle(cornerRadius: textViewItem.frameCornerRadius))
+            .modifier(StrokeDashAnimation(isVisible: $textViewItem.isActive, radius: $textViewItem.frameCornerRadius))
             .scaleEffect(increaser)
             .onTapGesture{
+                redactor.textFields.deactivateAllTextContainers()
+                redactor.textFields.activeTextContainer = index
                 textViewItem.isActive = true
                 textViewItem.isFirstResponder = true
+                
                 redactor.redactorMode = .textEdit
+                
             }
-            .zIndex(Double(4))
-            
-            .frame(width: textViewItem.containerW, height: textViewItem.containerH) //* increaser
-            
+//            .zIndex(Double(4))
+            .frame(width: textViewItem.containerW, height: textViewItem.containerH)
             .fixedSize()
-            
-            .modifier(makeTransformingMultilineText(
-                        index : index,
-                        fontSize: redactor.textFields.textContainers[index].fontSize,
-                increaser: increaser
-                ))
-//            .gesture(MagnificationGesture(minimumScaleDelta: 1)
-//                        .onChanged({ newScale in
-//                            textViewItem.containerW = textViewItem.containerW * newScale
-//                        })
-//            )
+//            Text("\(textViewItem.z)")
+            Rectangle()
+                .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.clear)
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: borderWidthForTest)
+                .contentShape(Rectangle())
+                .overlay(
+                    Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
+                        .zIndex(5)
+                )
+                .offset(x: textViewItem.containerW/2 * increaser , y: textViewItem.containerH/2 * increaser )
+                .gesture(DragGesture()
+                            .onChanged({ value in
+                                if needSynchronizeDrag {
+                                    tempFontSize = redactor.textFields.textContainers[index].fontSize
+                                    tempContainerW = redactor.textFields.textContainers[index].containerW
+                                    needSynchronizeDrag = false
+                                }
+                                scalerPosiition.width = value.translation.width
+                                scalerPosiition.height = value.translation.width * (textViewItem.containerH / textViewItem.containerW)
+                                
+                                
+                                redactor.textFields.textContainers[index].containerW = tempContainerW + (value.translation.width / increaser ) * 2
+                                
+                                redactor.textFields.textContainers[index].fontSize = tempFontSize * ( redactor.textFields.textContainers[index].containerW / tempContainerW )
+                                    
+//                 print((textViewItem.containerW * increaser + value.translation.width) , textViewItem.containerW * increaser)
+                            })
+                            .onEnded({ _ in
+                                tempFontSize = redactor.textFields.textContainers[index].fontSize
+                                tempContainerW = redactor.textFields.textContainers[index].containerW
+                            })
+                )
+                .opacity(textViewItem.isActive ? 1 : 0)
+            Rectangle()
+                .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.clear)
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: borderWidthForTest)
+                .contentShape(Rectangle())
+                .overlay(
+            Image(systemName: "arrow.left.and.right.circle.fill")
+                )
+                .offset(x: -textViewItem.containerW/2 * increaser, y: 0)
+                .gesture(DragGesture(minimumDistance: 0)
+                            .onChanged{ value in
+                                if  needSynchronizeWidthDrag {
+                                tempContainerW = redactor.textFields.textContainers[index].containerW
+                                    needSynchronizeWidthDrag = false
+                                }
+                                redactor.textFields.textContainers[index].containerW = tempContainerW - (value.translation.width / increaser ) * 2
+                            }
+                            .onEnded{_ in
+                                
+                                tempContainerW = redactor.textFields.textContainers[index].containerW
+                            }
+                )
+                .opacity(textViewItem.isActive ? 1 : 0)
+//            Image(systemName: "arrow.counterclockwise.circle.fill")
+//                .offset(x: textViewItem.containerW/2 * increaser, y: -textViewItem.containerH/2 * increaser)
+//                .gesture(DragGesture()
+//                            .onChanged{value in
+//                                
+//                                var deltaX = value.translation.width;
+//                                var deltaY = value.translation.height;
+//                                var rad = atan2(deltaX, deltaY); // In radians
+//                                
+//                                
+//                                var supposedDegree = newrotate + Double( rad) //Double(rad / 180 * .pi)
+//                                if supposedDegree > Double.pi * 2 {
+//                                    supposedDegree = supposedDegree - Double.pi * 2
+//                                } else if supposedDegree < -Double.pi * 2 {
+//                                        supposedDegree = supposedDegree + Double.pi * 2
+//                                    }
+//                                
+//                                
+//                                redactor.textFields.textContainers[index].transform.rotate = supposedDegree
+//                            }
+//                )
+//                .opacity(textViewItem.isActive ? 1 : 0)
+                
         })
-        .onAppear(perform: {
-//            print("TEXT x: ",x,", y: ",y)
-//            textViewItem = redactor.textFields.textContainers[index]
-            
-        })
+        .modifier(makeTransformingMultilineText(
+            index : index,
+            increaser: increaser,
+            activeContainer: $textViewItem
+        ))
+//        .fixedSize()
+//        .border(Color.black, width: 1)
+        
         .position(x: x, y: y)
+        
     }
 
     var x: CGFloat{
@@ -118,12 +200,16 @@ struct TextView: UIViewRepresentable {
     @ObservedObject var redactor: redactorViewData = .shared
     var placeholderText: String = "666"
     @State var fieldText: String //
+    var isUppercased: Bool
     var fontSize: CGFloat
     var textAlign: Int
     var fontName: String
     var fontColor: String
     var backgroundColor: String
+    var frameCornerRadius: CGFloat
     var shadowColor: String
+    var glowColor: String
+    var strokeColor: String
     var index: Int
     var activeTextContainer: Int
     var isActive: Bool
@@ -132,93 +218,209 @@ struct TextView: UIViewRepresentable {
     var fieldWidth: CGFloat
     var style: styleTextContainer
     var increaser: CGFloat
+    var strokewidth: CGFloat = -2
     //
-    func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
+    @State var anchor: UnitPoint = .center
+    @State var offset: CGSize = .zero
+    @State var isPinching: Bool = false
+//    var pinchZoom: PinchZoom = PinchZoom(anchor: $anchor, offset: <#Binding<CGSize>#>, isPinching: <#Binding<Bool>#>)
+//     var startLocation: CGPoint = .zero
+//    var location: CGPoint = .zero
+//    var numberOfTouches: Int = 0
+    var textFontSize: CGFloat = 1
+    var kern: CGFloat = 1
+    var startX: CGFloat = 0
+    var startY: CGFloat = 0
+    
+    var blurStyle: UIBlurEffect.Style = .systemUltraThinMaterialLight
+    
+      
+    
+    func makeShadow() -> NSShadow {
+        let shadow = NSShadow()
+        shadow.shadowOffset = shadowColor == "00000000" ? .zero : CGSize(width: fontSize/15, height: fontSize/15)
+        shadow.shadowColor =  shadowColor == "00000000" ? Color(hex:glowColor).uiColor() : Color(hex:shadowColor).uiColor()
+        shadow.shadowBlurRadius = shadowColor == "00000000" ? fontSize/10 : 1
+        return shadow
+    }
+    var shadow: NSShadow{ makeShadow()}
+    
+     func makeUIView(context: UIViewRepresentableContext<TextView>) -> UITextView {
         let textView = UITextView()
+        var isshadowup: Bool = false
+//        bufText = redactor.textFields.textContainers[index].fieldText
         
         textView.font = UIFont(name: fontName, size: CGFloat(fontSize))
-        textView.text = redactor.textFields.textContainers[index].fieldText
+//        textView.autocapitalizationType = .allCharacters
+//        textView.text = redactor.textFields.textContainers[index].fieldText
+        switch isUppercased {
+        case false:
+            textView.text = redactor.textFields.textContainers[index].fieldText
+        case true:
+            textView.text = redactor.textFields.textContainers[index].fieldText.uppercased()
+        }
+        
+        
+
         textView.textColor = Color(hex:fontColor).uiColor()
-        textView.backgroundColor = Color(hex:backgroundColor).uiColor()
+        
+        textView.backgroundColor = Color(hex:backgroundColor).uiColor() //UIColor(hex: backgroundColor)
+       
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.allowsEditingTextAttributes = true
+        
        
         
-        
-        let shadow = NSShadow()
-        shadow.shadowOffset = CGSize(width: fontSize/10, height: fontSize/10)
-        shadow.shadowColor = Color(hex:shadowColor).uiColor()
-        shadow.shadowBlurRadius = 1
-        
+      
         textView.typingAttributes = [
             NSAttributedString.Key.kern: style.kern,
-            NSAttributedString.Key.obliqueness: 0,
-            NSAttributedString.Key.shadow: shadow,
-            NSAttributedString.Key.strokeWidth: 0,
-            NSAttributedString.Key.strokeColor: Color.black.uiColor(),
+//            NSAttributedString.Key.obliqueness: 0,
+            NSAttributedString.Key.shadow: isshadowup ? nil : shadow,
+
+            NSAttributedString.Key.strokeWidth: strokewidth,
+            NSAttributedString.Key.strokeColor: Color(hex: strokeColor).uiColor(),
+           
             NSAttributedString.Key.foregroundColor: fontColor,
             NSAttributedString.Key.underlineStyle: style.underlineStyle,
             NSAttributedString.Key.strikethroughStyle: style.strikethroughStyle
         ]
 //        print("textView", textView.text, "made")
+        DispatchQueue.main.async {
+            if index < redactor.textFields.textContainers.count{
+                redactor.textFields.textContainers[index].containerH = textView.contentSize.height
+                isshadowup = true
+            }
+            }
+        
+        let tapGesture = UIPinchGestureRecognizer(target: context.coordinator,
+               action: #selector(Coordinator.handleTap(gesture:)))
+        textView.addGestureRecognizer(tapGesture)
+//         return v
+        
+//        let contentSize = textView.sizeThatFits(textView.bounds.size)
+//        textView.frame.size = textView.sizeThatFits(textView.bounds.size)
+
+        
+//        print("textView", textView.text, "made")
         return textView
     }
     
     func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<TextView>) {
-        
+        let selectedRange = uiView.selectedRange
         uiView.allowsEditingTextAttributes = true
         
-        let shadow = NSShadow()
-        shadow.shadowOffset = CGSize(width: fontSize/10, height: fontSize/10)
-        shadow.shadowColor = Color(hex:shadowColor).uiColor()
-        shadow.shadowBlurRadius = 1
+//        let shadow = NSShadow()
+//        shadow.shadowOffset = shadowColor == "00000000" ? .zero : CGSize(width: fontSize/10, height: fontSize/10)
+//        shadow.shadowColor =  shadowColor == "00000000" ? Color(hex:glowColor).uiColor() : Color(hex:shadowColor).uiColor()
+//        shadow.shadowBlurRadius = shadowColor == "00000000" ? fontSize/5 : 1
+//        uiView.autocapitalizationType = .allCharacters
         
         uiView.typingAttributes = [
             NSAttributedString.Key.kern: style.kern,
             NSAttributedString.Key.shadow: shadow,
+            NSAttributedString.Key.strokeWidth: strokewidth,
+            NSAttributedString.Key.strokeColor: Color(hex: strokeColor).uiColor(),
+            
+    
             NSAttributedString.Key.underlineStyle: style.underlineStyle,
             NSAttributedString.Key.strikethroughStyle: style.strikethroughStyle
         ]
         
         
-        if fieldText != "" {
-            uiView.text = fieldText
+//        if fieldText != "" {
+      
+//        uiView.text = redactor.textFields.textContainers[index].fieldText.uppercased()
+//            uiView.text = redactor.textFields.textContainers[index].fieldText //fieldText
             
             uiView.font = UIFont(name: fontName, size: CGFloat(fontSize))
             uiView.textColor = Color(hex:fontColor).uiColor()
-            uiView.backgroundColor = Color(hex:backgroundColor).uiColor()
+        
+
+        uiView.backgroundColor = Color(hex:backgroundColor).uiColor() //UIColor(hex: backgroundColor)
+//        if style.backgroundBlur != -1 && backgroundColor == "00000000"{
+//            uiView.addBlurredBackground(style: UIBlurEffect.Style(rawValue: style.backgroundBlur ) ?? .regular )
+            
+//            uiView.addSubview( UIImageView(image: UIImage(named: "tOp")))
+            
+//        }
+        
+        
             uiView.textAlignment = NSTextAlignment(rawValue: textAlign) ?? .center
-        }
+//        }
         if !isActive {
             uiView.endEditing(true)
         }
         if isFirstResponder {
-            uiView.becomeFirstResponder()
+//            uiView.becomeFirstResponder()
+           
         } else {
             uiView.endEditing(true)
         }
+      
         DispatchQueue.main.async {
-            redactor.textFields.textContainers[index].containerH = uiView.contentSize.height
+            if index < redactor.textFields.textContainers.count && redactor.textFields.textContainers[index].containerH != uiView.contentSize.height {
+                redactor.textFields.textContainers[index].containerH = uiView.contentSize.height
+            }
+            }
+
+//        redactor.textFields.textContainers[index].fieldText = uiView.text // break capitalisation if turn on
+
+        
+        switch isUppercased {
+        case false:
+            uiView.text = redactor.textFields.textContainers[index].fieldText
+        case true:
+            uiView.text = redactor.textFields.textContainers[index].fieldText.uppercased()
         }
-        redactor.textFields.textContainers[index].fieldText = fieldText
+        
+//       print(redactor.textFields.textContainers[index].fieldText)
+//        print(uiView.text)
         uiView.delegate = context.coordinator
-//        print("textView", redactor.textFields.textContainers[index].fieldText, "update")
+        uiView.selectedRange = selectedRange
+//        print("update", redactor.textFields.textContainers[index].fieldText)
     }
     
-    func makeCoordinator() -> TextView.Coordinator {
+    func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
     class Coordinator: NSObject, UITextViewDelegate {
+        
+        @objc func handleTap(gesture: UIPinchGestureRecognizer) {
+
+            switch gesture.state {
+            case .began:
+                parent.textFontSize = parent.redactor.textFields.textContainers[parent.index].fontSize
+                parent.fieldWidth = parent.redactor.textFields.textContainers[parent.index].containerW
+                parent.frameCornerRadius = parent.redactor.textFields.textContainers[parent.index].frameCornerRadius
+                parent.kern = parent.redactor.textFields.textContainers[parent.index].style.kern
+                
+                parent.startX = parent.redactor.textFields.textContainers[parent.index].x
+                parent.startY = parent.redactor.textFields.textContainers[parent.index].y
+                
+            case .changed:
+                parent.redactor.textFields.textContainers[parent.index].fontSize = parent.textFontSize * gesture.scale
+                parent.redactor.textFields.textContainers[parent.index].containerW = parent.fieldWidth * gesture.scale
+                parent.redactor.textFields.textContainers[parent.index].frameCornerRadius = parent.frameCornerRadius * gesture.scale
+                parent.redactor.textFields.textContainers[parent.index].style.kern =  parent.kern * gesture.scale
+         
+            case .ended, .cancelled, .failed: break
+            default:
+                break
+            }
+          }
+        
+        
+        
         var parent: TextView;
         
         
         init(_ parent: TextView) {
             self.parent = parent
         }
-        
+      
         func textViewDidChange(_ textView: UITextView) {
-            parent.fieldText = textView.text
+            parent.redactor.textFields.textContainers[parent.index].fieldText = textView.text
             parent.kbHandler = KeyboardHandler { state in
                 let duration = state.animationDuration
                 UIView.animate(withDuration: duration) {
@@ -227,25 +429,34 @@ struct TextView: UIViewRepresentable {
 //                    print("key hide animate", state.height)
                 }
             }
-            
+           
             
         }
         func textViewDidBeginEditing(_ textView: UITextView) {
+
             parent.kbHandler = KeyboardHandler { state in
                 let duration = state.animationDuration
                 UIView.animate(withDuration: duration) {
                     self.parent.redactor.keyboardHeight = Int(state.height)
 //                    self.parent.redactor.updateSupposedKeyboardHeight()
-//                    print("key shows animate", state.height)
                 }
             }
             if self.parent.redactor.keyboardHeight > 0 {
                 self.parent.redactor.textEditor.aTool = .nothing
             }
+            if parent.redactor.textFields.textContainers[parent.index].fieldText == "Your text"{
+                parent.redactor.textFields.textContainers[parent.index].fieldText = ""
+            }
             parent.redactor.textFields.activeTextContainer = parent.index
         }
         
+        func textViewShouldEndEditing (_ textView: UITextView) -> Bool {
+
+            return true
+        }
+        
         func textViewDidEndEditing(_ textView: UITextView) {
+
             if textView.text == "" {
                 textView.text = parent.placeholderText
             }
@@ -253,4 +464,21 @@ struct TextView: UIViewRepresentable {
     }
 }
 
-
+extension UIView{
+func addBlurredBackground(style: UIBlurEffect.Style) {
+    deleteBlurredBackground()
+    let blurEffect = UIBlurEffect(style: style)
+    let blurView = UIVisualEffectView(effect: blurEffect)
+    blurView.frame = self.frame
+//    blurView.alpha = 0.5
+    blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    self.addSubview(blurView)
+    self.sendSubviewToBack(blurView)
+}
+    func deleteBlurredBackground(){
+        if self.subviews.filter({$0 is UIVisualEffectView}).count > 0 {
+        self.subviews.filter{$0 is UIVisualEffectView}[0].removeFromSuperview()
+        }
+    }
+    
+}

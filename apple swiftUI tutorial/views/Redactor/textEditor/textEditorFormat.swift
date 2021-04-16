@@ -22,7 +22,7 @@ enum textAlignToggler: String {
 class textEditorFormat_Data: ObservableObject{
     init(){}
     static var shared = textEditorFormat_Data()
-    @Published var colorPickerTarget: colorPickerTarget = .nothing
+//    @Published var colorPickerTarget: colorPickerTarget = .nothing
     @Published var isFontSizeEditing: Bool = false
     @Published var isFontKernEditing: Bool = false
 }
@@ -45,9 +45,12 @@ struct textEditorFormat: View {
     @State var underline: toggler = .off
     @State var strikethrough: toggler = .off
     @State var textAlign: textAlignToggler = .left
+    @State var capitalisation: toggler = .off
+    
+    
     var body: some View {
         ZStack{
-            Color(hex: "a98162")
+            Color.mainBeige
                 .shadow(radius: 10 )
             HStack{
                 VStack{
@@ -117,11 +120,40 @@ struct textEditorFormat: View {
                             }
                             
                         }
-                        textStyleButton(icon: "a", isSelected: false, size: iconSize)
+                        textStyleButton(icon: "a", isSelected: capitalisation == .on ? true : false, size: iconSize){
+                            if capitalisation == .off {
+                                capitalisation = .on
+                                textContainers.textContainers[aContainer].isUppercased = true
+                            } else if capitalisation == .on {
+                                capitalisation = .off
+                                textContainers.textContainers[aContainer].isUppercased = false
+                            }
+                        }
+                        
                     })
                     .padding([.leading, .trailing])
+                    .onAppear {
+                        let weight = textContainers.textContainers[aContainer].getWeight()
+                        underline = textContainers.textContainers[aContainer].style.underlineStyle == 1 ? .on : .off
+                        bold = weight == .bold || weight == .boldItalic ? .on : .off
+                        italic = weight == .italic || weight == .boldItalic ? .on : .off
+                        strikethrough = textContainers.textContainers[aContainer].style.strikethroughStyle == 1 ? .on : .off
+                        textAlign = getTextAlignment()
+                        capitalisation = textContainers.textContainers[aContainer].isUppercased == true ? .on : .off
+                    }
+                    
                 }
             }
+        }
+    }
+    func getTextAlignment() -> textAlignToggler {
+        switch textContainers.textContainers[aContainer].textAlign{
+        case 0 :  return .left
+        case 1 :  return .center
+        case 2 :  return .right
+        case 3 :  return .justify
+        default:
+            return .center
         }
     }
 }

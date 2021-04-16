@@ -16,7 +16,7 @@ struct hidebleView: View {
         VStack{
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 //            .hideCondition(isHidden: $hid)
-            .modifier(hideViewState(isHidden: hid))
+            .modifier(hideViewState(isHidden: $hid))
 //            .resisableText(fontSize: 40)
         Toggle("is hidden", isOn: $hid)
             Text("\(hid.description)")
@@ -40,7 +40,7 @@ struct hideView: ViewModifier{
 }
 
 struct hideViewState: ViewModifier{
-    @State var isHidden: Bool
+    @Binding var isHidden: Bool
    
     @ViewBuilder
     func body(content: Content) -> some View{

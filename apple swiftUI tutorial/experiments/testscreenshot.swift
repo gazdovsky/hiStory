@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 
 
-//extension View {
+extension View {
 //    func asImage() -> UIImage {
 //        let controller = UIHostingController(rootView: self)
 //
@@ -23,14 +23,14 @@ import UIKit
 //        controller.view.bounds = CGRect(origin: .zero, size: size)
 //        controller.view.sizeToFit()
 //
-//        let image = controller.view.asImage()
+//        let image = controller.view.asImage(size: size)
 //        controller.view.removeFromSuperview()
 //        return image
 //    }
-//}
+}
 
 extension UIView {
-    func asImage() -> UIImage {
+    func asImage1() -> UIImage {
         let renderer = UIGraphicsImageRenderer(bounds: bounds)
         return renderer.image { rendererContext in
 // [!!] Uncomment to clip resulting image
@@ -41,11 +41,19 @@ extension UIView {
 // As commented by @MaxIsom below in some cases might be needed
 // to make this asynchronously, so uncomment below DispatchQueue
 // if you'd same met crash
-//            DispatchQueue.main.async {
-                layer.render(in: rendererContext.cgContext)
-//            }
+            DispatchQueue.main.async {
+                self.layer.render(in: rendererContext.cgContext)
+            }
         }
     }
+    func asImage(size: CGSize) -> UIImage {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        return UIGraphicsImageRenderer(size: size, format: format).image { context in
+                self.layer.render(in: context.cgContext)
+        }
+    }
+
 }
 
 

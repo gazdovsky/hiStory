@@ -19,7 +19,7 @@ struct dataFetchTest: View {
     var scale:CGFloat = 0.2
     var body: some View {
         ZStack{
-            Image(StoryPreviews[5].image)
+            Image(StoryPreviews[5].name)
                 .opacity(0.2)
 //                .scaleEffect(self.scl)
           

@@ -9,146 +9,154 @@
 import SwiftUI
 import UIKit
 
-enum textRedactorToolType {
-    case colorPicker
-    case format
-    case sliders
-    case font
+enum textRedactorToolType: String  {
+    case textColor = "COLOR"
+    case background = "FRAME"
+    case double = "DOUBLE"
+    case neon = "NEON"
+    case stroke = "STROKE"
+    case format = "FORMAT"
+    case size = "SIZE"
+    case font = "FONT"
+    case nothing = "NOTHING"
+}
+enum sizeRedactorTarget {
+    case fontSize
+    case kernSize
+    case roundCornerSize
     case nothing
 }
-
+enum activeInputGroup {
+    case color
+    case size
+    case nothing
+}
 enum keyboardState {
     case show
     case hide
 }
 
-enum colorPickerTarget {
-    case text, background, shadow, nothing
-}
+
 
 class textEditorPanelData: ObservableObject{
     init() {
     }
     static var shared = textEditorPanelData()
-    //    @ObservedObject var redactor: redactorViewData = .shared
     @Published var aTool: textRedactorToolType = .nothing
-    //    @Published var colorPickerTarget: colorPickerTarget = .nothing
     
     
     @Published var isFontSizeEditing: Bool = false
     @Published var isFontKernEditing: Bool = false
-    //    @Published var keyboardState: keyboardState = .show
     
+    @Published var colorPickerTarget: colorPickerTarget = .nothing
+    @Published var activeInputGroup: activeInputGroup = .nothing
+    @Published var sizeRedactorTarget: sizeRedactorTarget = .nothing
 }
 
-class redactorProxy: ObservableObject{
-    init() {
-    }
-    static var shared = redactorProxy()
-    @ObservedObject var redactor: redactorViewData = .shared
-}
 
 struct TextEditorPanel: View {
-    
-    //    @ObservedObject var textContainers: textContainersFrameData = .shared
     @ObservedObject var data: textEditorPanelData = .shared
-    @ObservedObject var redactorProxy: redactorProxy = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     
     let iconSize: CGFloat = 25
     
     @State var keyboardState: keyboardState = .show
-    {
-        didSet{
-            if data.aTool != .nothing || redactor.keyboardHeight > 0{
-                redactor.redactorOffset = Int(-redactor.supposedKeyboardHeight)
-            } else {
-                redactor.redactorOffset = 0
+        {
+            didSet{
+                if data.aTool != .nothing || redactor.keyboardHeight > 0{
+                    redactor.redactorOffset = Int(-redactor.supposedKeyboardHeight)
+                } else {
+                    redactor.redactorOffset = 0
+                }
             }
         }
-    }
     var aContainer: Int{
         return redactor.textFields.activeTextContainer
     }
-    let fontList = ["CourierNewPSMT", "Arial", "Cochin-BoldItalic", "Didot", "Georgia", "Helvetica", "Helvetica-Light", "HelveticaNeue-UltraLight", "HoeflerText-BlackItalic", "HoeflerText-Italic", "IowanOldStyle-BoldItalic", "MarkerFelt-Thin", "Noteworthy-Bold", "Palatino-BoldItalic"]
-    //    @State  var selectedFontIndex = 0
     
-    
+    func calculateToolbarHeight() -> CGFloat {
+        
+        if redactor.keyboardHeight == 0 && keyboardState == .show {
+//            print("1",redactor.keyboardHeight)
+        return CGFloat(redactor.keyboardHeight)
+        }
+        else if redactor.keyboardHeight == 0 {
+//            print("2", redactor.keyboardHeight)
+          return CGFloat(redactor.supposedKeyboardHeight)
+        } else if data.activeInputGroup != .nothing{
+           return CGFloat(redactor.keyboardHeight + 60)
+        }
+//        print("last", redactor.keyboardHeight)
+        return CGFloat(redactor.keyboardHeight)
+    }
+   
     var body: some View {
         
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0, content: {
-            HStack(alignment: .center, content: {
-                Spacer()
-                ToolbarButton(icon: "drop", isSelected: true, size: iconSize-5){
-                    if data.aTool == .colorPicker {
-                        data.aTool = .nothing
-                    } else {
-                        data.aTool = .colorPicker
-                        redactor.textFields.textContainers[aContainer].isFirstResponder = false
-                        keyboardState = .hide
+            ScrollView(.horizontal, showsIndicators: true, content: {
+                HStack(alignment: .center, content: {
+                    Group{
+                        enumPanelButton(buttonCase: .textColor){
+                            redactor.colorPickerData.colorPickerTarget = .text
+                        }
+                        enumPanelButton(buttonCase: .format)
+                        enumPanelButton(buttonCase: .size)
+                        enumPanelButton(buttonCase: .font)
+                        enumPanelButton(buttonCase: .background){
+                            redactor.colorPickerData.colorPickerTarget = .background
+                        }
+                        enumPanelButton(buttonCase: .double){
+                            redactor.colorPickerData.colorPickerTarget = .shadow
+                        }
+                        enumPanelButton(buttonCase: .neon){
+                            redactor.colorPickerData.colorPickerTarget = .glow
+                        }
+                        enumPanelButton(buttonCase: .stroke){
+                            redactor.colorPickerData.colorPickerTarget = .stroke
+                        }
                     }
-                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
-                    keyboardState = .hide
-                }
-                .foregroundColor(Color(hex: "f4d8c8"))
-                .padding([.leading,.trailing])
-                .opacity(data.aTool == .nothing || data.aTool == .colorPicker ? 1 : 0.2)
-                ToolbarButton(icon: "bold.underline", isSelected: true, size: iconSize){
-                    if data.aTool == .format {
-                        data.aTool = .nothing
-                    } else {
-                        data.aTool = .format
-                    }
-                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
-                    keyboardState = .hide
-                }
-                .foregroundColor(Color(hex: "f4d8c8"))
-                .padding([.leading,.trailing])
-                .opacity(data.aTool == .nothing || data.aTool == .format ? 1 : 0.2)
-                ToolbarButton(icon: "slider.horizontal.3", isSelected: true, size: iconSize){  //icon_textAligment
-                    if data.aTool == .sliders {
-                        data.aTool = .nothing
-                    } else {
-                        data.aTool = .sliders
-                    }
-                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
-                    keyboardState = .hide
-                }
-                .foregroundColor(Color(hex: "f4d8c8"))
-                .padding([.leading,.trailing])
-                .opacity(data.aTool == .nothing || data.aTool == .sliders ? 1 : 0.2)
-                ToolbarButton(icon: "textformat", isSelected: true, size: iconSize){
-                    if data.aTool == .font {
-                        data.aTool = .nothing
-                    } else {
-                        data.aTool = .font
-                    }
-                    redactor.textFields.textContainers[aContainer].isFirstResponder = false
-                    keyboardState = .hide
-                }
-                .foregroundColor(Color(hex: "f4d8c8"))
-                .padding([.leading,.trailing])
-                .opacity(data.aTool == .nothing || data.aTool == .font ? 1 : 0.2)
-                Spacer()
+                    .padding([.top,.bottom],10)
+                    .simultaneousGesture(TapGesture(count: 1 )
+                                            .onEnded{
+                                                redactor.textFields.textContainers[aContainer].isFirstResponder = false
+                                                keyboardState = .hide
+                                            })
+                })
             })
-            .padding([.top,.bottom], 10)
-            .background(Color(hex:"a98162")
+//            .frame(width: nil, height: 0) //
+            .background(Color.mainBeige
                             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/ )
             )
+            .mask(Rectangle()
+                    .offset(x: 0, y: 9)
+            )
+            .offset(x: 0, y: 7)
             Group{ () -> AnyView in
                 switch data.aTool{
-                case .colorPicker: return AnyView(
-                    textEditorColorPicker()
+                case .textColor: return AnyView(
+                    textEditorColorPicker3()
+                )
+                case .background: return AnyView(
+                    textEditorColorPicker3()
+                )
+                case .double: return AnyView(
+                    textEditorColorPicker3()
+                )
+                case .neon: return AnyView(
+                    textEditorColorPicker3()
+                )
+                case .stroke: return AnyView(
+                    textEditorColorPicker3()
                 )
                 case .format: return AnyView(
                     textEditorFormat()
                 )
-                case .sliders: return AnyView(
+                case .size: return AnyView(
                     textEditorSliders()
                 )
                 case .font: return AnyView(
                     ZStack{
-                        Color(hex: "a98162")
+                        Color.mainBeige
                             .shadow(radius: 10 )
                         VStack(alignment: .center, content: {
                             pickerFonts()
@@ -163,13 +171,38 @@ struct TextEditorPanel: View {
                         })
                     }
                 )
-                case .nothing: return AnyView(EmptyView())
+                case .nothing: return AnyView(
+                    Rectangle()
+                        .foregroundColor(Color.mainBeige)
+                )
                 }
             }
-            .frame(width: nil, height: data.isFontSizeEditing ? nil : CGFloat(redactor.supposedKeyboardHeight))
+//            .transition(.slide)
+            .frame(width: nil, height: calculateToolbarHeight())
+            
+           
         })
     }
 }
+
+struct enumPanelButton: View {
+    @ObservedObject var data: textEditorPanelData = .shared
+    @State var buttonCase: textRedactorToolType
+    var action: () -> () = {}
+    var body: some View {
+        
+        Button(action: {
+            data.aTool = buttonCase
+            action()
+        }){
+            Text(NSLocalizedString(buttonCase.rawValue, comment: "Text format"))
+                .padding([.leading,.trailing])
+                .padding([.top,.bottom],12)
+                .foregroundColor(data.aTool == buttonCase ? Color.textAccent : Color.lightBeige)
+        }
+    }
+}
+
 
 struct TextEditorPanel_Previews: PreviewProvider {
     static var previews: some View {

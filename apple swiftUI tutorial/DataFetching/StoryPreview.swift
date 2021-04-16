@@ -22,7 +22,7 @@ struct container:  Codable, Identifiable, Hashable {
     let y:CGFloat
     let w:CGFloat
     let h:CGFloat
-    var angle:Int = 0
+    var angle:Double = 0
     let z:Int
 }
 

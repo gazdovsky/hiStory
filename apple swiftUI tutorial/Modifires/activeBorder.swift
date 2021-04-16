@@ -23,7 +23,7 @@ struct activeBorderTest: View {
                 Rectangle()
             )
             .position(x: 150, y: 150)
-            .modifier(StrokeDashAnimation(isVisible: $dash))
+//            .modifier(StrokeDashAnimation(isVisible: $dash))
             .onTapGesture {
                 dash.toggle()
             }

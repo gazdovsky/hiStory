@@ -1,127 +1,106 @@
 [
     {
-        "id":"dd1",
-        "name":"COLOR ADDICT",
-        "items": [{
-            "id": "color addict 5",
-            "name": "color addict 5",
-            "image": "color addict 5",
-            "renderfile": "color addict 5.json"
-          },
-          {
-            "id": "color addict 4",
-            "name": "color addict 4",
-            "image": "color addict 4",
-            "renderfile": "color addict 4.json"
-          },
-          {
-            "id": "color addict 1",
-            "name": "color addict 1",
-            "image": "color addict 1",
-            "renderfile": "color addict 1.json"
-          },
-          {
-            "id": "color addict 2",
-            "name": "color addict 2",
-            "image": "color addict 2",
-            "renderfile": "color addict 2.json"
-          },
-          {
-            "id": "color addict 3",
-            "name": "color addict 3",
-            "image": "color addict 3",
-            "renderfile": "color addict 3.json"
-          }]
-    },{
-        "id":"dd2",
-        "name":"BEIGE AESTHETIC",
-        "items": [{
-            "id": "bage aestetic 5",
-            "name": "bage aestetic 5",
-            "image": "bage aestetic 5",
-            "renderfile": "bage aestetic 5.json"
-          }, {
-            "id": "bage aestetic 4",
-            "name": "bage aestetic 4",
-            "image": "bage aestetic 4",
-            "renderfile": "bage aestetic 4.json"
-          }, {
-            "id": "bage aestetic 3",
-            "name": "bage aestetic 3",
-            "image": "bage aestetic 3",
-            "renderfile": "bage aestetic 3.json"
-          }, {
-            "id": "beige aesthetic 2",
-            "name": "beige aesthetic 2",
-            "image": "beige aesthetic 2",
-            "renderfile": "beige aesthetic 2.json"
-          }, {
-            "id": "beige aesthetic 1",
-            "name": "beige aesthetic 1",
-            "image": "beige aesthetic 1",
-            "renderfile": "beige aesthetic 1.json"
-          }]
-    },{
-        "id":"dd3",
+        "name" : "SUMMER VIBES",
+        "items": [
+            "summer vibes 1",
+            "summer vibes 2",
+            "summer vibes 3",
+            "summer vibes 4",
+            "summer vibes 5",
+            "summer vibes 6",
+            "summer vibes 7",
+            "summer vibes 8",
+            "summer vibes 9",
+            "summer vibes 10"
+        ]
+    },
+    {
+        "name" : "BOHO",
+        "items": [
+            "boho1",
+            "boho2",
+            "boho3",
+            "boho4",
+            "boho5"
+        ]
+    },
+    {
+    "name" : "COLOR SPLASH",
+    "items": [
+    "color splash 1",
+    "color splash 2",
+    "color splash 3",
+    "color splash 4",
+    "color splash 5",
+    "color splash 6",
+    "color splash 7",
+    "color splash 8"
+    ]
+},
+    {
+    "name" : "INTERFACE",
+    "items": [
+    "interface 1",
+    "interface 2",
+    "interface 3",
+    "interface 4",
+    "interface 5",
+    "interface 6"
+    ]
+},
+    {
+    "name":"TRAVEL",
+    "items": [
+      "travel 1", "travel 10","travel 9","travel 8","travel 7","travel 6","travel 5","travel 4","travel 3","travel 2"
+    ]
+},
+    {
         "name":"ABSTRACT SHAPES",
-        "items": [{
-            "id": "bw1",
-            "name": "Abstract_Shapes",
-            "image": "Abstract_Shapes",
-            "renderfile": "Abstract_Shapes.json"
-        },{
-            "id": "bw2",
-            "name": "Abstract_Shapes2",
-            "image": "Abstract_Shapes2",
-            "renderfile": "Abstract_Shapes2.json"
-        },{
-            "id": "bw3",
-            "name": "Abstract_Shapes3",
-            "image": "Abstract_Shapes3",
-            "renderfile": "Abstract_Shapes3.json"
-        },{
-            "id": "bw4",
-            "name": "Abstract_Shapes4",
-            "image": "Abstract_Shapes4",
-            "renderfile": "Abstract_Shapes4.json"
-        }]
-    },{
-        "id":"dd5",
+        "items": [
+            "Abstract Shapes10","Abstract Shapes9","Abstract Shapes8","Abstract Shapes7","Abstract Shapes6","Abstract Shapes5","Abstract Shapes4","Abstract Shapes3","Abstract Shapes2","Abstract Shapes 1"
+        ]
+    },
+    {
         "name":"SPRING MOOD",
-        "items": [{
-            "id": "spring mood4",
-            "name": "spring mood4",
-            "image": "spring mood4",
-            "renderfile": "spring mood4.json"
-          },{
-        "id": "spring mood3",
-        "name": "spring mood3",
-        "image": "spring mood3",
-        "renderfile": "spring mood3.json"
-        },{
-        "id": "spring mood5",
-        "name": "spring mood5",
-        "image": "spring mood5",
-        "renderfile": "spring mood5.json"
-        },{
-        "id": "spring mood",
-        "name": "spring mood",
-        "image": "spring mood",
-        "renderfile": "spring mood.json"
-        },{
-        "id": "spring mood2",
-        "name": "spring mood2",
-        "image": "spring mood2",
-        "renderfile": "spring mood2.json"
-        }]
-    },{
-        "id":"dd4",
-        "name":"WINTER MAGIC",
-        "items": [{
-            "id": "bw1",
-            "name": "Winter_magic2",
-            "image": "Winter_magic2",
-            "renderfile": "Winter_magic2.json"
-        }]
+        "items": [
+            "spring mood4","spring mood3","spring mood10","spring mood9","spring mood8","spring mood7","spring mood6","spring mood5","spring mood 1","spring mood2"
+        ]
+    },
+    {
+        "name":"BAGE AESTETIC",
+        "items": [
+            "bage aestetic 8","bage aestetic 10","bage aestetic 9","bage aestetic 7","bage aestetic 6","bage aestetic 5","bage aestetic 4","bage aestetic 3","beige aesthetic 1"
+        ]
+    },
+    {
+        "name":"COLOR ADDICT",
+        "items": [
+            "color addict10","color addict9","color addict8","color addict7","color addict 6","color addict 5","color addict 4","color addict 1","color addict 2","color addict 3"
+        ]
+    },
+    {
+        "name":"MINIMALISM",
+        "items": [
+          "minimalism","minimalism2","minimalism3","minimalism4","minimalism5","minimalism6","minimalism7","minimalism8","minimalism9","minimalism10","minimalism11"
+        ]
+    },
+    {
+        "name":"CREATIVE CHANNEL",
+        "items": [
+            "creative channel1",
+            "creative channel2",
+            "creative channel3",
+            "creative channel4",
+            "creative channel5",
+            "creative channel6",
+            "creative channel7",
+            "creative channel8",
+            "creative channel9",
+            "creative channel10",
+            "creative channel11",
+            "creative channel12",
+            "creative channel13",
+            "creative channel14"
+        ]
     }
 ]

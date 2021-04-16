@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>hiStory</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
@@ -63,11 +65,42 @@
 	<string>This app use your photoalbums</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>northrup-regular.ttf</string>
+		<string>Bombardier.ttf</string>
+		<string>YesevaOne.ttf</string>
+		<string>Wes.otf</string>
+		<string>USSRSTENCIL.otf</string>
+		<string>Underdog.otf</string>
+		<string>Stig.otf</string>
+		<string>RussoOne.ttf</string>
+		<string>Romochka.otf</string>
+		<string>Prosto.ttf</string>
+		<string>Philosopher-Regular.ttf</string>
+		<string>Philosopher-Italic.ttf</string>
+		<string>Philosopher-BoldItalic.ttf</string>
+		<string>Philosopher-Bold.ttf</string>
+		<string>PeaceSans.otf</string>
+		<string>Oranienbaum.ttf</string>
+		<string>NixieOne.ttf</string>
+		<string>Neucha.otf</string>
+		<string>Molot.otf</string>
+		<string>Metro.otf</string>
+		<string>Matias.otf</string>
+		<string>MagnoliaScript.otf</string>
+		<string>Lumberjack.otf</string>
+		<string>London.otf</string>
+		<string>LemonTuesday.otf</string>
+		<string>Kazmann.ttf</string>
+		<string>Imperial.ttf</string>
+		<string>Hitchhike.otf</string>
+		<string>Frenchpress.otf</string>
+		<string>Freeride.otf</string>
+		<string>Flow.otf</string>
+		<string>Flow-Bold.otf</string>
 		<string>Eleventh-Square.otf</string>
 		<string>Dita-Sweet.otf</string>
 		<string>Days.otf</string>
 		<string>Cuprum-BoldItalic.ttf</string>
-		<string>Cuprum-Italic.ttf</string>
 		<string>Cuprum-Regular.ttf</string>
 		<string>Cuprum-Bold.ttf</string>
 		<string>Bender-BoldItalic.otf</string>
@@ -106,8 +139,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

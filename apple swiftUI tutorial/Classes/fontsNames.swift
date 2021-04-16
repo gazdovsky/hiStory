@@ -54,7 +54,7 @@ class fonts {
     
     var names: [String : fontCases] = [
         "AmericanTypewriter" : fontCases(regular: "", bold: "Bold", italic: ""),
-        "Arial" : fontCases(regular: "", bold: "BoldMT", italic: "italicMT", bolditalic: "BoldItalicMT"),
+        "Arial" : fontCases(regular: "", bold: "BoldMT", italic: "ItalicMT", bolditalic: "BoldItalicMT"),
         "Bradley Hand" : fontCases(regular: "", bold: "", italic: ""),
         "ChalkboardSE" : fontCases(regular: "-Regular", bold: "Bold", italic: ""),
         "Cochin" : fontCases(),
@@ -63,7 +63,7 @@ class fonts {
         "DINCondensed" : fontCases(regular: "-Bold", bold: "", italic: ""),
         "Didot" : fontCases(regular: "", bold: "Bold", italic: "Italic", bolditalic: ""),
         "Georgia" : fontCases(),
-        "GillSans" : fontCases(),
+        "GillSans" : fontCases(regular: "", bold: "UltraBold", italic: "BoldItalic", bolditalic: ""),
         "Helvetica" : fontCases(regular: "", bold: "Bold", italic: "Oblique"),
         "HoeflerText": fontCases(regular: "-Regular", bold: "Black", italic: "Italic"),
         "Menlo" : fontCases(),
@@ -78,13 +78,56 @@ class fonts {
         // JOVANNY FONTS
         "20db" : fontCases(regular: "", bold: "", italic: ""),
         "Accuratist" : fontCases(regular: "", bold: "", italic: ""),
-        
         "Ardeco" : fontCases(regular: "", bold: "", italic: ""),
         "Bender" : fontCases(),
         "Cuprum" : fontCases(regular: "-Regular", bold: "Bold", italic: "Italic"),
         "Days" : fontCases(regular: "", bold: "", italic: ""),
         "DitaSweet" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
-        "EleventhSquare" : fontCases(regular: "", bold: "", italic: "")
+        "EleventhSquare" : fontCases(regular: "", bold: "", italic: ""),
+        "Flow" : fontCases(regular: "", bold: "Bold", italic: "", bolditalic: ""),
+        "Freeride" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Frenchpress" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Hitchhike" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Imperial One" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Kazmann Sans" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "LemonTuesday" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "London" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Lumberjack" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Magnolia Script" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Matias" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Metro" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Molot" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Neucha" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "NixieOne" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Oranienbaum" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "PeaceSans" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Philosopher" : fontCases(),
+        "Prosto" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Romochka" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "RussoOne" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Stig" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Underdog" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "USSR STENCIL" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Wes" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "YesevaOne" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        
+        //fontesk
+        "Bombardier" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        "Northrup" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+//        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        //        "" : fontCases(regular: "", bold: "", italic: "", bolditalic: ""),
+        
+        
+        
     ]
     
 }
