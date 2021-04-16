@@ -8,14 +8,21 @@
 
 import SwiftUI
 
+enum colorPickerTarget {
+    case text, background, shadow, glow, stroke, nothing
+}
+
 class textEditorColorPickerData: ObservableObject{
     init(){}
     static var shared = textEditorColorPickerData()
-    @Published var colorPickerTarget: colorPickerTarget = .text
+    @Published var colorPickerTarget: colorPickerTarget = .nothing
     @Published var colorPickerType: colorPickerType = .colorCircles
-//    @Published var recentColors: String = UserDefaults.standard.string(forKey: "recentColors") ?? "fff"
-//    @Published var recentColors: [String] = ["fff","ccc"]
+    //    @Published var recentColors: String = UserDefaults.standard.string(forKey: "recentColors") ?? "fff"
+    //    @Published var recentColors: [String] = ["fff","ccc"]
     @Published var newRecentColors: [String] = UserDefaults.standard.stringArray(forKey: "newRecentColors") ?? ["fff"]
+
+   
+    
 }
 
 enum colorPickerType {
@@ -33,154 +40,131 @@ struct textEditorColorPicker: View {
     var aContainer: Int{
         return redactor.textFields.activeTextContainer
     }
+    
+    var colorTarget: String {
+        switch redactor.colorPickerData.colorPickerTarget {
+        case .text:
+            return textContainers.textContainers[aContainer].fontColor
+        case .background:
+            return textContainers.textContainers[aContainer].backgroundColor
+        case .shadow:
+            return textContainers.textContainers[aContainer].shadowColor
+        case .glow:
+            return textContainers.textContainers[aContainer].glowColor
+        case .stroke:
+            return textContainers.textContainers[aContainer].strokeColor
+        case .nothing:
+            return textContainers.textContainers[aContainer].fontColor
+        }
+    }
+   
+    func setColorFromSaved(index: Int){
+        if index < data.newRecentColors.count{
+        switch   redactor.colorPickerData.colorPickerTarget {
+        
+        case .text:
+            textContainers.textContainers[aContainer].fontColor = data.newRecentColors[index]
+        case .background:
+            textContainers.textContainers[aContainer].backgroundColor = data.newRecentColors[index]
+        case .shadow:
+            textContainers.textContainers[aContainer].glowColor = "00000000"
+            textContainers.textContainers[aContainer].shadowColor = data.newRecentColors[index]
+        case .nothing:
+            textContainers.textContainers[aContainer].fontColor = data.newRecentColors[index]
+        case .glow:
+            textContainers.textContainers[aContainer].shadowColor = "00000000"
+            textContainers.textContainers[aContainer].glowColor = data.newRecentColors[index]
+        case .stroke:
+            textContainers.textContainers[aContainer].strokeColor = data.newRecentColors[index]
+        }
+    }
+    }
+    func clearColor(){
+        switch redactor.colorPickerData.colorPickerTarget {
+        case .text:textContainers.textContainers[aContainer].fontColor = "fff"
+        case .background:textContainers.textContainers[aContainer].backgroundColor = "00000000"
+        case .shadow:textContainers.textContainers[aContainer].shadowColor = "00000000"
+        case .nothing:break
+        case .glow:textContainers.textContainers[aContainer].glowColor = "00000000"
+        case .stroke:textContainers.textContainers[aContainer].strokeColor = "00000000"
+        }
+    }
+    func setRecomendColor(index: Int){
+        switch redactor.colorPickerData.colorPickerTarget{
+        case .text:textContainers.textContainers[aContainer].fontColor = uiColors.chosableColors[index]
+        case .background:textContainers.textContainers[aContainer].backgroundColor = uiColors.chosableColors[index]
+        case .shadow:textContainers.textContainers[aContainer].glowColor = "00000000"
+            textContainers.textContainers[aContainer].shadowColor = uiColors.chosableColors[index]
+        case .nothing: break
+        case .glow:textContainers.textContainers[aContainer].shadowColor = "00000000"
+            textContainers.textContainers[aContainer].glowColor = uiColors.chosableColors[index]
+        case .stroke:textContainers.textContainers[aContainer].strokeColor = uiColors.chosableColors[index]
+        }
+    }
+    
     var body: some View {
         ZStack{
-            Color(hex: "a98162")
+            Color.mainBeige
                 .shadow(radius: 10 )
             VStack(alignment: .center, content: {
                 Group{
                     switch data.colorPickerType{
                     case .colorCircles:
                         HStack{
-                            textButtonWithColorIndicateDot(text: "TEXT", color: textContainers.textContainers[aContainer].fontColor) {
-                                data.colorPickerTarget = .text
-                            }
-                            .foregroundColor(data.colorPickerTarget == .text ? Color(hex: "7d3704") : Color(hex: "f4d9c9"))
-                            textButtonWithColorIndicateDot(text: "FRAME", color: textContainers.textContainers[aContainer].backgroundColor) {
-                                data.colorPickerTarget = .background
-                            }
-                            .foregroundColor(data.colorPickerTarget == .background ? Color(hex: "7d3704") : Color(hex: "f4d9c9"))
-                            textButtonWithColorIndicateDot(text: "DOUBLE", color: textContainers.textContainers[aContainer].shadowColor) {
-                                data.colorPickerTarget = .shadow
-                            }
-                            .foregroundColor(data.colorPickerTarget == .shadow ? Color(hex: "7d3704") : Color(hex: "f4d9c9"))
-                        }
-                        HStack{
                             ToolbarButton(icon: "eyedropper", isSelected: true, size: iconSize){
                                 data.colorPickerType = .gradient
                             }
-                            Group{
-                            switch data.colorPickerTarget {
-                            case .text:
-                                colorCircleChoser(color: textContainers.textContainers[aContainer].fontColor ) {
-//                                    textContainers.textContainers[aContainer].fontColor = data.recentColors
-                                }
-                            case .background:
-                                colorCircleChoser(color: textContainers.textContainers[aContainer].backgroundColor ) {
-//                                    textContainers.textContainers[aContainer].backgroundColor = data.recentColors
-                                }
-                            case .shadow:
-                                colorCircleChoser(color: textContainers.textContainers[aContainer].shadowColor ) {
-//                                    textContainers.textContainers[aContainer].shadowColor = data.recentColors
-                                }
-                            case .nothing:  colorCircleChoser(color: textContainers.textContainers[aContainer].fontColor ) {}
-                            }
-                            }
-                            .padding([.trailing,.leading],6)
-                            ToolbarButton(icon: "arrow.right.circle", isSelected: true, size: iconSize) {
-//                                print(UserDefaults.standard.stringArray(forKey: "newRecentColors"))
-                                switch data.colorPickerTarget {
-                                case .text:
-//                                  UserDefaults.standard.set(textContainers.textContainers[aContainer].fontColor, forKey: "recentColors")
-//                                    data.recentColors.append("118899")
+                            colorCircleChoser(color: colorTarget, action: {})
+                            .simultaneousGesture(
+                                TapGesture(count: 2)
+                                           .onEnded {
                                     var newRecentColors = data.newRecentColors
-                                    newRecentColors.append(textContainers.textContainers[aContainer].fontColor)
+                                    newRecentColors.append(colorTarget)
                                     UserDefaults.standard.set(newRecentColors, forKey:"newRecentColors")
                                     data.newRecentColors = UserDefaults.standard.stringArray(forKey: "newRecentColors") ?? ["ccc"]
-                                
-                                case .background:
-//                                    UserDefaults.standard.set(textContainers.textContainers[aContainer].backgroundColor, forKey: "recentColors")
-//                                    data.recentColors.append(textContainers.textContainers[aContainer].backgroundColor)
-                                    UserDefaults.standard.set(["aaa"], forKey:"newRecentColors")
-                                case .shadow:
-//                                    UserDefaults.standard.set(textContainers.textContainers[aContainer].shadowColor, forKey: "recentColors")
-//                                    data.recentColors.append(textContainers.textContainers[aContainer].shadowColor)
-                                return
-                                case .nothing:
-//                                    UserDefaults.standard.set(textContainers.textContainers[aContainer].fontColor, forKey: "recentColors")
-//                                    data.recentColors.append(textContainers.textContainers[aContainer].fontColor)
-                                    return
                                 }
-//                                data.recentColors = UserDefaults.standard.string(forKey: "recentColors") ?? ["fff"]
-                            }
-                            .padding([.leading],4)
+                            )
+                            .padding([.trailing,.leading],6)
                             ScrollView(.horizontal, showsIndicators: false, content: {
                                 HStack(spacing: 12, content:{
                                     ForEach(data.newRecentColors.indices.reversed(), id: \.self){ u in
                                         colorCircleChoser(color: data.newRecentColors[u]) {
-                                            switch data.colorPickerTarget {
-                                            
-                                            case .text:
-                                                textContainers.textContainers[aContainer].fontColor = data.newRecentColors[u]
-                                            case .background:
-                                                textContainers.textContainers[aContainer].backgroundColor = data.newRecentColors[u]
-                                            case .shadow:
-                                                textContainers.textContainers[aContainer].shadowColor = data.newRecentColors[u]
-                                            case .nothing:
-                                                textContainers.textContainers[aContainer].fontColor = data.newRecentColors[u]
-                                            }
+                                            setColorFromSaved(index: u)
                                         }
-//                                        switch data.colorPickerTarget {
-//                                        case .text:
-//                                            colorCircleChoser(color: textContainers.textContainers[aContainer].fontColor ) {
-//                                                textContainers.textContainers[aContainer].fontColor = data.recentColors[u]
-//                                            }
-//                                        case .background:
-//                                            colorCircleChoser(color: textContainers.textContainers[aContainer].backgroundColor ) {
-//                                                textContainers.textContainers[aContainer].backgroundColor = data.recentColors[u]
-//                                            }
-//                                        case .shadow:
-//                                            colorCircleChoser(color: textContainers.textContainers[aContainer].shadowColor ) {
-//                                                textContainers.textContainers[aContainer].shadowColor = data.recentColors[u]
-//                                            }
-//                                        case .nothing: colorCircleChoser(color: textContainers.textContainers[aContainer].fontColor ) {}
-//                                        }
-                                    }
-                                    ToolbarButton(icon: "minus.circle", isSelected: true, size: iconSize) {
-                                        var newRecentColors = data.newRecentColors
-                                        newRecentColors.remove(at: data.newRecentColors.count - 1)
-                                        UserDefaults.standard.set(newRecentColors, forKey:"newRecentColors")
-                                        data.newRecentColors = UserDefaults.standard.stringArray(forKey: "newRecentColors") ?? ["ccc"]
+                                        .simultaneousGesture(
+                                            TapGesture(count: 2)
+                                                .onEnded {
+                                                    var newRecentColors = data.newRecentColors
+                                                    newRecentColors.remove(at: u)
+                                                    UserDefaults.standard.set(newRecentColors, forKey:"newRecentColors")
+                                                    data.newRecentColors = UserDefaults.standard.stringArray(forKey: "newRecentColors") ?? ["ccc"]
+                                                }
+                                        )
                                     }
                                 })
                                 .padding([.leading],6)
                             })
                         }
                         .padding([.trailing,.leading],12)
+                        
                         ScrollView(.horizontal, showsIndicators: false, content: {
                             HStack(spacing: 12, content:{
-                                colorCircleChoser(color: "fff", eraser: data.colorPickerTarget == .text ? false : true){
-                                    switch data.colorPickerTarget {
-                                    case .text:
-                                        textContainers.textContainers[aContainer].fontColor = "fff"
-                                    case .background:
-                                        textContainers.textContainers[aContainer].backgroundColor = "00000000"
-                                    case .shadow:
-                                        textContainers.textContainers[aContainer].shadowColor = "00000000"
-                                    case .nothing:
-                                        break
-                                    }
+                                colorCircleChoser(color: "fff", eraser: redactor.colorPickerData.colorPickerTarget == .text ? false : true){
+                                   clearColor()
                                 }
                                 ForEach(uiColors.chosableColors.indices){ u in
                                     colorCircleChoser(color: uiColors.chosableColors[u]){
-                                        switch data.colorPickerTarget {
-                                        case .text: textContainers.textContainers[aContainer].fontColor = uiColors.chosableColors[u]
-                                        case .background:
-                                            textContainers.textContainers[aContainer].backgroundColor = uiColors.chosableColors[u]
-                                        case .shadow:
-                                            textContainers.textContainers[aContainer].shadowColor = uiColors.chosableColors[u]
-                                        case .nothing: break
-                                        }
+                                        setRecomendColor(index: u)
                                     }
                                 }
                             })
-                            //                            .padding([.trailing,.leading],12)
                         })
                         .padding([.trailing,.leading],12)
                         .padding(.top,6)
+                        
                     case .gradient:
                         Group{
-                            switch data.colorPickerTarget {
+                            switch redactor.colorPickerData.colorPickerTarget {
                             case .text:  AnyView(
                                 colorPickerHUE_SatBri(chosenColor:$textContainers.textContainers[aContainer].fontColor)
                             )
@@ -191,22 +175,16 @@ struct textEditorColorPicker: View {
                                 colorPickerHUE_SatBri(chosenColor:$textContainers.textContainers[aContainer].shadowColor)
                             )
                             case .nothing:  AnyView(EmptyView())
+                            case .glow: colorPickerHUE_SatBri(chosenColor:$textContainers.textContainers[aContainer].glowColor)
+                            case .stroke: colorPickerHUE_SatBri(chosenColor:$textContainers.textContainers[aContainer].strokeColor)
                             }
                         }
-                    //                        .overlay(
-                    //                            HStack(alignment: .top, content: {
-                    //                            Spacer()
-                    //                                ToolbarButton(icon: "checkmark.circle", isSelected: true, size: 25, color: "fff", action: {
-                    //                                    data.colorPickerType = .colorCircles
-                    //                                })
-                    //                                .padding()
-                    //                            })
-                    //                        )
                     }
                 }
             })
         }
     }
+    
 }
 
 struct textButtonWithColorIndicateDot: View{
@@ -230,7 +208,7 @@ struct textButtonWithColorIndicateDot: View{
 struct colorCircleChoser: View{
     var color: String
     
-    var circleSize: CGFloat = 25
+    var circleSize: CGFloat = 40
     var eraser: Bool = false
     var action: () -> ()
     
@@ -250,14 +228,19 @@ struct colorCircleChoser: View{
                             .rotationEffect(Angle.degrees(30))
                             .opacity(eraser ? 1 : 0)
                     )
+                    
                 
             })
     }
 }
 
-struct textEditorColorPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        textEditorColorPicker()
-            .frame(height: 180)
-    }
-}
+//struct textEditorColorPicker_Previews: PreviewProvider {
+////    @ObservedObject var uiColors: uiColors = .shared
+////    @ObservedObject var textContainers: textContainersFrameData = .shared
+////    @ObservedObject var data: textEditorColorPickerData = .shared
+////    @ObservedObject var redactor: redactorViewData = .shared
+//    static var previews: some View {
+//        textEditorColorPicker().environmentObject(textContainersFrameData())
+//            .frame(height: 180)
+//    }
+//}
