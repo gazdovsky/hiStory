@@ -22,7 +22,7 @@ case size, kern, corner, nothing
     }
 }
 struct textEditorSliders: View {
-    @ObservedObject var textContainers: textContainersFrameData = .shared
+    @ObservedObject var textContainers: textContainersFrameData = .shared // slower
     @ObservedObject var redactorData: textEditorPanelData = .shared
     @ObservedObject var data: textEditorFormat_Data = .shared
     @ObservedObject var redactor: redactorViewData = .shared
@@ -41,9 +41,9 @@ struct textEditorSliders: View {
             VStack{
                 if stateCheck(.size) {
                     HStack{
-                        Text("size")
-                            .foregroundColor(Color.lightBeige)
-                            .frame(width: 50, height: nil)
+                         
+                        sliderTitle(NSLocalizedString("Size", comment: "Size") )
+                          
                         Slider(
                             value: $redactor.textFields.textContainers[aContainer].fontSize,
                             in: 15...300
@@ -69,9 +69,7 @@ struct textEditorSliders: View {
                 }
                 if stateCheck(.kern) {
                     HStack{
-                        Text("kern")
-                            .foregroundColor(Color.lightBeige)
-                            .frame(width: 50, height: nil)
+                        sliderTitle(NSLocalizedString("Kern", comment: "Kern") )
                         Slider(
                             value: $redactor.textFields.textContainers[aContainer].style.kern,
                             in: 0...50
@@ -97,9 +95,8 @@ struct textEditorSliders: View {
                 
                 if stateCheck(.corner){
                     HStack{
-                        Text("radius")
-                            .foregroundColor(Color.lightBeige)
-                            .frame(width: 50, height: nil)
+                        sliderTitle(NSLocalizedString("Radius", comment: "Radius") )
+                           
                         Slider(
                             value: $redactor.textFields.textContainers[aContainer].frameCornerRadius ,
                             in: 0...50
@@ -124,6 +121,24 @@ struct textEditorSliders: View {
                 }
             }
         .padding()
+        })
+    }
+}
+
+struct sliderTitle: View {
+    let titleText: String
+    init(_ titleText: String) {
+        self.titleText = titleText
+    }
+    var body: some View{
+        HStack(content: {
+            Text(titleText)
+                .foregroundColor(Color.lightBeige)
+                
+                .frame(width: 50, height: nil)
+                .font(.custom("Arial", size: 15))
+
+//            Spacer()
         })
     }
 }

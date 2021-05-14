@@ -30,6 +30,8 @@ struct newSingleTemplatesCategory: Codable{
 let StoryPreviews:[itemPreview] = readPlst("framescopy.json")
 let StoryPreviewsCategory:[itemPreviewCategory] = readPlst("templatesCategorys.json")
 let TemplatesCategorys:[newTemplatesCategorys] = readPlst("newTemplatesCategorys.json")
+
+let templateWidthDivider = 1.5
 //let TestGeo:[TestContainer] = readPlst("testGeom.json")
 
 func readPlst<T: Decodable>(_ fileName: String) -> T {
@@ -40,8 +42,11 @@ func readPlst<T: Decodable>(_ fileName: String) -> T {
    
     let url = URL(fileURLWithPath: path)
     let data = try! Data(contentsOf: url)
-   
+
     
+//    let responseDict = try! JSONSerialization.jsonObject(with: data,
+//                                                         options: JSONSerialization.ReadingOptions.allowFragments) as! [NSDictionary]
+//    print(responseDict[0].allKeys[0] )
 
     let plst = try! JSONDecoder().decode(T.self, from: data) //for json read
     

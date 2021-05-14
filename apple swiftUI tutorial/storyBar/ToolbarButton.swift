@@ -78,7 +78,7 @@ struct ToolbarButton: View{
                 aspectSize = UIImage(named: "\(self.icon)")!.size
                 scale = aspectSize.height > aspectSize.width ? size / aspectSize.height : size / aspectSize.width
             } else {
-                print("dont find ", self.icon)
+//                print("dont find ", self.icon)
             }
             img = Image(self.icon)
         } else {

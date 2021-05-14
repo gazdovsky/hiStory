@@ -36,6 +36,7 @@ struct setPROLabel: ViewModifier{
                         )
                 
                 })
+                .opacity(isPro ? 1 : 0)
             )
         }
         

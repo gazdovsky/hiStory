@@ -33,7 +33,7 @@ struct SwiftUIPhotoSelector: View {
                 .zIndex(redactor.photoContainers.containers[index].imageZIndex)
             Button(action: {
                 if  !redactor.photoContainers.containers[index].imageSelected && redactor.redactorMode == .nothing {
-                    redactor.photoContainers.containers[index].isShowingImagePicker.toggle()
+//                    redactor.photoContainers.containers[index].isShowingImagePicker.toggle()
                     redactor.photoContainers.containers[index].imageZIndex = 1
                     redactor.photoContainers.containers[index].imageSelected = true
                 }
@@ -46,11 +46,11 @@ struct SwiftUIPhotoSelector: View {
             }
             )
             .opacity(redactor.photoContainers.containers[index].imageSelected ? 0 : 1)
-            .sheet(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker, content: {
-                ImagePickerView(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker,
-                                selectedImage: $redactor.photoContainers.containers[index].imageInBlackBox, index: index)
-            }
-            )
+//            .sheet(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker, content: {
+//                ImagePickerView(isPresented: $redactor.photoContainers.containers[index].isShowingImagePicker,
+//                                selectedImage: $redactor.photoContainers.containers[index].imageInBlackBox, index: index)
+//            }
+//            )
         }
     }
 }
@@ -107,23 +107,24 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
 
 struct photoSelectorWithParams: View{
-//    @ObservedObject var testPhoto: photoAdderData = .shared
+    //    @ObservedObject var testPhoto: photoAdderData = .shared
     @ObservedObject var settings2: photoContainersFrameData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     var actualTemplateWith: CGFloat
-    var actualTemplateHeight: CGFloat
+    //    var actualTemplateHeight: CGFloat
     var konstantTemplateWith: CGFloat
     @State var container:container
     @Binding var redactorActive: Bool
     @Binding var templateOpacity: Bool
-   @State var index: Int
+    @State var isPresentPhotoPicker: Bool = false
+    @State var index: Int
     @State var increaser: CGFloat
     @State var dashRadius: CGFloat = 3
     var relativeW: CGFloat {
         return actualTemplateWith / konstantTemplateWith
     }
     var w: CGFloat{
-//        print("increaser: ",increaser)
+        //        print("increaser: ",increaser)
         return relativeW * (container.w)
     }
     var h: CGFloat{
@@ -139,8 +140,8 @@ struct photoSelectorWithParams: View{
         if increaser == 2 || increaser == 0.5 {
 //            print( "1", actualTemplateWith, increaser, settings2.increaser, redactor.photoContainers.containers[index].transform.currentPosition.debugDescription )
             return CGSize(
-                width: redactor.photoContainers.containers[index].transform.currentPosition.width * settings2.increaser * (actualTemplateWith / 1080), //8.747152
-                height: redactor.photoContainers.containers[index].transform.currentPosition.height * settings2.increaser * (actualTemplateWith / 1080))
+                width: redactor.photoContainers.containers[index].transform.currentPosition.width * increaser * redactor.photoContainers.photoIncreaser, //8.747152
+                height: redactor.photoContainers.containers[index].transform.currentPosition.height * increaser * redactor.photoContainers.photoIncreaser)
         } else {
 //            print( "2", actualTemplateWith, increaser, settings2.increaser, redactor.photoContainers.containers[index].transform.currentPosition.debugDescription )
             return redactor.photoContainers.containers[index].transform.currentPosition
@@ -163,10 +164,7 @@ struct photoSelectorWithParams: View{
                     .frame(width : redactorActive ? w : w, height: redactorActive ? h : h)
                     .rotationEffect(Angle(degrees: Double(container.angle)))
             )
-            .sheet(isPresented: $settings2.containers[index].isShowingImagePicker, content: {
-                PhotoPickerUIView(isPresented: $settings2.containers[index].isShowingImagePicker,
-                                 index: index)
-            })
+            
             .overlay(
                 customPhotoContainer(index: $index, x: x, y: y, w: w, h: h)
             .rotationEffect(Angle(degrees: Double(container.angle)))
@@ -193,14 +191,24 @@ struct photoSelectorWithParams: View{
 //            .opacity(0.3)
 //            .opacity(redactorActive ? 1 : 0)
          )
-//            .overlay(
-//                ToolbarButton(icon: "plus", isSelected: true, size: 25, action: {
-//                    print("clear container tap")
-//                    settings2.containers[index].isShowingImagePicker  = true
-//
-//                })
+            .overlay(
+                ToolbarButton(icon: "plus", isSelected: true, size: 25, action: {
+//                    print("clear container tap at index: ", index)
+//                    if settings2.containers[index].isShowingImagePicker != true {
+//                        settings2.containers[index].isShowingImagePicker = true
+//                    }
+                    settings2.deactivateAllPhotoContainers()
+                    settings2.containers[index].redactorActive = true
+                    settings2.containers[index].isShowingImagePicker = true
+                    //                    isPresentPhotoPicker = true
+                })
+                .opacity(settings2.containers[index].imageSelected ? 0 : 1 )
+                )
 //                
-//                .opacity(settings2.containers[index].imageSelected ? 0 : 1 )
+            .sheet(isPresented: $settings2.containers[index].isShowingImagePicker, content: {
+                PhotoPickerUIView()
+            })
+            
 //            )
             
             
@@ -230,14 +238,15 @@ struct photoSelectorWithParams: View{
 //                }
 //            )
             .position(x: x, y: y)
-            .onAppear(perform: {
+//            .onAppear(perform: {
+//                print("photoSelectorWithParams", actualTemplateWith)
                                              //check photo container
 //                settings2.activeContainerSize = CGSize(width: w, height: h)
 //                settings2.activeContainerPointX = x
 //                settings2.activeContainerPointY = y
-                print("load")
+//                print("load")
                 
-            })
+//            })
             
             
 

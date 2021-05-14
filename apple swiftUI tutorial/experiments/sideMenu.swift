@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct sideMenu: View {
-    var aboutText = "Привет! Мы создатели приложения hiStories, Давид и Настя. Идея создать hiStory пришла к нам весной 2020, когда мы начали изучать язык Swift и UX/UI дизайн. Со временем наш небольшой, но любимый проект стал полноценным приложением. Мы постарались сделать его таким, чтобы процесс создания сторис стал еще более скоростным качественным и разнообразным. Будем рады обратной связи, и спасибо за поддержку!"
+    var aboutText = "Hello! We are creators of the hiStory app, David and Anastasia. The idea to create hiStory came to us in the spring of 2020, when we started learning Swift and UX / UI design. Over time, our pet project became a full-fledged application. We aim to make it in such a way that the process of creating stories becomes even more high-speed, high-quality and diverse. We'd love to get any feedback, and thanks for your support!"
     @State var showAboutUs: Bool = false
     var body: some View {
         VStack( spacing: 0, content:{
@@ -20,16 +20,11 @@ struct sideMenu: View {
                 sideMenuButton(text: NSLocalizedString("About us", comment: "About us")){
                     showAboutUs =  true
                 }
-                sideMenuButton(text: NSLocalizedString("Rate in app store", comment: "Rate in app store"))
-                sideMenuButton(text: NSLocalizedString("Instagram", comment: "Instagram")){
-                    if let url = URL(string: "https://www.instagram.com/hi.story.app/") {
-                           UIApplication.shared.open(url)
-                       }
-                }
-                
-                Spacer()
-                sideMenuButton(text: NSLocalizedString("Feedback", comment: "Feedback"))
-                Spacer()
+//                sideMenuButton(text: NSLocalizedString("Rate in app store", comment: "Rate in app store"))
+//                
+//                Spacer()
+//                sideMenuButton(text: NSLocalizedString("Feedback", comment: "Feedback"))
+//                Spacer()
                 HStack{
                     HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                         Group{
@@ -37,12 +32,12 @@ struct sideMenu: View {
                             Text("0.2")
                         }
                             .font(.custom("Times New Roman", size: 12))
-                            .foregroundColor(Color.lightBeige.opacity(0.7))
+                            .foregroundColor(Color(hex: "f4d8c8").opacity(0.7))
                     })
                     Spacer()
                    Image(systemName: "suit.heart.fill")
                     
-                    .foregroundColor(Color.lightBeige.opacity(0.7))
+                    .foregroundColor(Color(hex: "f4d8c8").opacity(0.7))
                 }
                 .padding(30)
          
@@ -54,13 +49,18 @@ struct sideMenu: View {
                   .padding()
                     .overlay(
                         VStack{
-                            ToolbarButton(icon: "xmark.circle", isSelected: true, size: 30, color: "000", action: {
+                            ToolbarButton(icon: "xmark.circle", isSelected: true, size: 30, color: "f4d8c8", action: {
                                 showAboutUs = false
                             })
-                            Text(aboutText)
-                                .padding()
-                                .padding()
+                            .padding(.top)
+                            Text(NSLocalizedString(aboutText, comment: "About us") )
+                                .foregroundColor(Color(hex: "f4d8c8"))
+                                .padding([.leading,.trailing,.bottom])
+                                .padding([.leading,.trailing,.bottom])
+                            Spacer()
                         }
+                        
+                        .background(Color(hex: "59361c"))
                         
                     )
                     .opacity(showAboutUs ? 1 : 0)
@@ -68,7 +68,7 @@ struct sideMenu: View {
             
             })
         .frame(width: 270, alignment: .center)
-        .background(Color.elementAccent)
+        .background(Color(hex: "59361c"))
     }
 }
 
@@ -86,10 +86,10 @@ struct sideMenuButton: View {
                     .padding(.leading, 35)
                     .padding(.bottom, 9)
                     .font(.custom("Times New Roman", size: 18))
-                    .foregroundColor(Color.lightBeige)
+                    .foregroundColor(Color(hex: "f4d8c8"))
             })
             Divider()
-                .background(Color.lightBeige)
+                .background(Color(hex: "f4d8c8"))
                 .padding([.leading])
         })
         

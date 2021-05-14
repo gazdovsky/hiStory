@@ -46,10 +46,12 @@ class func hexColor(hex:String) -> UIColor {
         cString.remove(at: cString.startIndex)
     }
 
-    if ((cString.count) != 6) {
-        return UIColor.gray
+    if ((cString.count) == 7) {
+        cString = String(cString.dropFirst(1))
     }
-
+    if ((cString.count) == 8) {
+        cString = String(cString.dropFirst(2))
+    }
     var rgbValue:UInt64 = 0
     Scanner(string: cString).scanHexInt64(&rgbValue)
 

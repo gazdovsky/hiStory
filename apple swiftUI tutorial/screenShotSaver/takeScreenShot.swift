@@ -100,6 +100,8 @@ extension View {
         let size = controller.sizeThatFits(in: increasedSize)
         
         controller.view.bounds = CGRect(origin: .zero, size: size)
+        controller.view.backgroundColor = UIColor.clear
+        controller.view.isOpaque = true
         controller.view.sizeToFit()
 
         let image = controller.view.asImage(size: size)

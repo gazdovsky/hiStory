@@ -20,7 +20,7 @@ class redactorViewData: ObservableObject{
         }
     
     static var shared = redactorViewData()
-    @ObservedObject var storyTemplate: selectorContainerStore = .shared
+    @ObservedObject var storyTemplate: selectorContainer = .shared
     @ObservedObject var photoContainers: photoContainersFrameData = .shared
     @ObservedObject var textFields: textContainersFrameData = .shared
     @ObservedObject var textEditor: textEditorPanelData = .shared
@@ -39,6 +39,8 @@ class redactorViewData: ObservableObject{
     @Published var centerPhotoXLineVisible: Bool = false
     @Published var centerPhotoYLineVisible: Bool = true
     @Published var progress: CGFloat = 1
+    
+    @Published var isAnySheetPresent: Bool = false
     
     func getTemplateOffset() -> CGFloat{
         switch redactorMode {
@@ -67,9 +69,9 @@ class redactorViewData: ObservableObject{
         photoContainers.getTransformFromFolder()
 //        textFields.importTextFields()
         textFields.getTransformTextFromFolder(folderName: storyTemplate.templateImageName)
-        print("Load text: ", textFields.textContainers.count)
+//        print("Load text: ", textFields.textContainers.count)
         textFields.getTransformCustomPhotoFromFolder()
-        print("Load custom photos: ", textFields.customPhotoContainers.count)
+//        print("Load custom photos: ", textFields.customPhotoContainers.count)
     }
     func saveTextContainersToItsFolder(){
         let newFolder = photoContainers.createFileDirectory(folderName: storyTemplate.templateImageName)
@@ -91,6 +93,14 @@ class redactorViewData: ObservableObject{
         //        photoContainers.containers = transformPhotoContainerForRestore
         //        textFields.textContainers = transformTextForRestore
         //        print(textFields.textContainers)
+  
+//        var newRecentColors = data.newRecentColors
+//        newRecentColors.append(colorTarget)
+//        UserDefaults.standard.set(newRecentColors, forKey:"newRecentColors")
+//        data.newRecentColors = UserDefaults.standard.stringArray(forKey: "newRecentColors") ?? ["ccc"]
+        
+        storyTemplate.draftStories.addNameToDrafts(storyTemplate.templateImageName)
+       
     }
     
     func saveQualityScreenShot(){
@@ -99,7 +109,7 @@ class redactorViewData: ObservableObject{
         let draftView = testTextframe(resolution: .high)
 //        loadAllFromDraft()
         let draftImage = draftView.asImage(resolution: .high)
-        photoContainers.saveImageToFolder(image: draftImage, name:"finImage.png", folder: newFolder, compressionQuality: 1)
+        photoContainers.savePngImageToFolder(image: draftImage, name:"finImage.png", folder: newFolder, compressionQuality: 1)
         //save to albums
         UIImageWriteToSavedPhotosAlbum(draftImage, nil, nil, nil)
     }
@@ -173,6 +183,7 @@ class redactorViewData: ObservableObject{
 struct redactor: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject var redactor: redactorViewData = .shared
+    
 //    @ObservedObject var settings: selectorContainerStore =  .shared
     @State var h:CGFloat = 330
     @State var w:CGFloat = 180
@@ -191,11 +202,15 @@ struct redactor: View {
     @State var saveScreenShot: Bool = false
     @State var restoreFromDrafts: Bool = true
     @State var redactorOffset: CGFloat = 0
-    
+    @Binding var isNavigateToRedactor: Bool {
+        didSet{
+            print("back tap")
+        }
+    }
     var verticalScrollLimit: ClosedRange<CGFloat> {
         if redactor.keyboardHeight > 0 {
-            print(screenH , redactor.storyTemplate.ty , redactor.storyTemplate.th , CGFloat(redactor.keyboardHeight))
-            let limit = (screenH - redactor.storyTemplate.ty - redactor.storyTemplate.th - CGFloat(redactor.keyboardHeight) - 60)
+//            print(screenH , redactor.storyTemplate.ty , redactor.storyTemplate.th , CGFloat(redactor.keyboardHeight))
+            let limit = (screenH - redactor.storyTemplate.ty - redactor.storyTemplate.th - CGFloat(redactor.supposedKeyboardHeight) - 60)
             if limit > 0 {
                 return 0...limit
             } else {
@@ -214,7 +229,7 @@ struct redactor: View {
     
     var isTemplateScrollNeeded: Bool {
         
-        print( screenH , redactor.storyTemplate.ty , redactor.storyTemplate.th , redactor.getTemplateOffset(),  CGFloat(redactor.keyboardHeight))
+//        print( screenH , redactor.storyTemplate.ty , redactor.storyTemplate.th , redactor.getTemplateOffset(),  CGFloat(redactor.keyboardHeight))
         var isKeyboardOverlapTemplate: Bool {
             redactor.keyboardHeight > 0 &&
                 screenH - redactor.storyTemplate.ty - (redactor.storyTemplate.th + redactor.getTemplateOffset()) < CGFloat(redactor.keyboardHeight) + 60
@@ -246,12 +261,15 @@ struct redactor: View {
                         // go to menu
                         
                         redactor.saveDraftPreview()
-                        redactor.storyTemplate.navigateToRedactor = false
-                        redactor.storyTemplate.templateReserveName = ""
+//                        redactor.storyTemplate.navigateToRedactor = false
+                        isNavigateToRedactor = false
+                        redactor.storyTemplate.templateReserveName = "zero"
                         // clear all containers
                         redactor.photoContainers.clearAllContainers()
                         redactor.textFields.clearAllContainers()
 //                        redactor.textFields.clearAllCustomPhotoContainers()
+                        
+                        
                         redactor.updateAll()
                     }
                     .padding(7)
@@ -298,22 +316,28 @@ struct redactor: View {
                             ToolbarButton(icon: "square.and.arrow.down", isSelected: true, size: 25) {
                                 redactor.startRender()
                             }
+                            
                             .opacity(redactor.progress == 1 ? 1 : 0)
                         }
                         .animation(.easeInOut)
                     }
+//                    .zIndex(100)
                     .padding(10)
                 }
+              
                 
                 .padding([.leading,.trailing])
                 //    .padding(.top, 19)
                 .frame(width: screenW )
-                ads()
-                    .overlay(
-                        Text("\(redactor.templateOffset)")
-                    )
-                    .padding([.leading,.trailing])
-                    .cornerRadius(15)
+//                ads()
+//                    .overlay(
+//                        Text("\(redactor.templateOffset)")
+//                    )
+//                    .padding([.leading,.trailing])
+//                    .cornerRadius(15)
+//                Rectangle()
+//                    .foregroundColor(Color(hex: "#a07554"))
+//                    .frame(height: 20)
                 ZStack(alignment: .top, content: {
                    
                     Color(hex: "#a07554")
@@ -334,7 +358,7 @@ struct redactor: View {
                         .simultaneousGesture(
                             DragGesture(minimumDistance: 0)
                                 .onChanged{ val in
-                                    print(verticalScrollLimit, redactor.newTemplateOffset + val.translation.height)
+//                                    print(verticalScrollLimit, redactor.newTemplateOffset + val.translation.height)
                                     if verticalScrollLimit ~= redactor.newTemplateOffset + val.translation.height {
                                         redactor.templateOffset = redactor.newTemplateOffset + val.translation.height
                                     }
@@ -345,32 +369,18 @@ struct redactor: View {
                                     }
                                 }
                         )
-                    
+//                    Rectangle()
+//                        .frame(width: screenW / 1.7, height: screenW / 1.7 * 1.7777777)
+//                        .foregroundColor(Color(hex: "#a07554"))
+////                        .opacity(0)
+//                        .shadow(radius: 10)
+//                        .offset(x: 0, y: redactor.getTemplateOffset() )
                     frame1(restoreFromDrafts: restoreFromDrafts)
-                        .frame(width: screenW / 1.7)
+                        .frame(width: screenW / CGFloat(templateWidthDivider))
                         .aspectRatio(contentMode: .fit)
-                        .overlay(
-                            GeometryReader{ geo in
-                                ZStack{
-                                    Rectangle()
-                                        .opacity(0)
-                                        .contentShape(
-                                            Rectangle()
-                                                .size(CGSize(width: 1.0, height: 1.0))
-                                        )
-                                        .zIndex(0)
-                                        .onAppear(perform: {
-                                            if(geo.frame(in: .global).midX > 0){
-                                                redactor.storyTemplate.tx = geo.frame(in: .global).midX
-                                                redactor.storyTemplate.ty = geo.frame(in: .global).minY
-                                                redactor.storyTemplate.tw = geo.frame(in: .global).width
-                                                redactor.storyTemplate.th = geo.frame(in: .global).height
-                                            }
-                                        })
-                                }
-                            }
-                        )
+
                         .onAppear {
+                            
                             //                     unkomment before build
                             if redactor.storyTemplate.isOpenedDraft {
                                 redactor.loadAllFromDraft()
@@ -378,14 +388,17 @@ struct redactor: View {
                                 redactor.loadAllFromTemplate()
                             }
                         }
-//                        .background(
-//                            Color(hex: "#a07554")
-//                                .aspectRatio(1080/1920, contentMode: .fit)
-//                                .shadow(radius: 8)
-//                        )
-                        .mask(Rectangle())
-                        .offset(x: 0, y: redactor.getTemplateOffset() )
+                        .background(
+                            Color(hex: "#a07554")
+                                .aspectRatio(1080/1920, contentMode: .fit)
+                                
+                        )
                         
+                        .mask(Rectangle())
+//                        .contentShape(Rectangle())
+                        .offset(x: 0, y: redactor.getTemplateOffset() )
+                        .shadow(radius: 8)
+                        .padding(.top)
                     
                     
                 })
@@ -460,6 +473,7 @@ struct redactor: View {
             //            .padding([.top, .bottom], 5)
             .edgesIgnoringSafeArea(.bottom)
         })
+       
     }
 }
 
@@ -481,15 +495,15 @@ struct topPanelButton: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        NavigationView {
-            redactor(restoreFromDrafts: false)
-            //            .previewDevice("iPhone X")
-        }
-        .navigationBarColor(backgroundColor: Color.mainBeige.uiColor(), tintColor: .black)
-        .previewDevice("iPhone 8 plus")
-        //    redactor()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        NavigationView {
+//            redactor(restoreFromDrafts: false)
+//            //            .previewDevice("iPhone X")
+//        }
+//        .navigationBarColor(backgroundColor: Color.mainBeige.uiColor(), tintColor: .black)
+//        .previewDevice("iPhone 8 plus")
+//        //    redactor()
+//    }
+//}

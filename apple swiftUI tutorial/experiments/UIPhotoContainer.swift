@@ -76,7 +76,7 @@ struct customPhotoContainer: UIViewRepresentable{
         mainView.addGestureRecognizer(rotate)
         mainView.addGestureRecognizer(pan)
         
-    
+//        print("customPhotoContainer", w)
 //        mainView.addSubview(imageView)
 //        mainView.addSubview(button)
 //        imageView.center = button.center
@@ -105,13 +105,13 @@ struct customPhotoContainer: UIViewRepresentable{
         }
         
         @objc func buttonAction(sender: UIButton!) {
-            print("Button tapped")
+//            print("Button tapped")
             parent.buttonHide = true
         }
         @objc func toggleButtonAction(sender: UIButton!) {
-            print("Button untapped")
+//            print("Button untapped")
             parent.buttonHide.toggle()
-            parent.data.containers[parent.index].isShowingImagePicker  = true
+//            parent.data.containers[parent.index].isShowingImagePicker = true
         }
         
         @objc func handleScale(gesture: UIPinchGestureRecognizer) {
@@ -138,9 +138,9 @@ struct customPhotoContainer: UIViewRepresentable{
             case .changed:
                
                 let centerizeDelta: CGFloat = 5
-                let supposedWidth = gesture.translation(in: UIApplication.shared.keyWindow).x + parent.position.width
-                let supposedHeight = gesture.translation(in: UIApplication.shared.keyWindow).y + parent.position.height
-
+                let supposedWidth = gesture.translation(in: UIApplication.shared.windows.filter {$0.isKeyWindow}.first).x + parent.position.width
+                let supposedHeight = gesture.translation(in: UIApplication.shared.windows.filter {$0.isKeyWindow}.first).y + parent.position.height
+//alternative is: UIApplication.shared.keyWindow
                 
             
                 let image = parent.redactor.photoContainers.containers[parent.index].imageInBlackBox
@@ -209,7 +209,7 @@ struct customPhotoContainer: UIViewRepresentable{
                     width: magnetPosition(.w),
                     height: magnetPosition(.h)
                 )
-                print("draging:", parent.index, parent.redactor.photoContainers.containers[parent.index].transform.currentPosition.debugDescription)
+//                print("draging:", parent.index, parent.redactor.photoContainers.containers[parent.index].transform.currentPosition.debugDescription)
             case .ended:
                 parent.position = parent.redactor.photoContainers.containers[parent.index].transform.currentPosition
                 parent.data.verticalAtignVisible = false
@@ -316,14 +316,27 @@ struct customPhotoContainer: UIViewRepresentable{
 struct PhotoPickerUIView: UIViewControllerRepresentable {
     @ObservedObject var testPhoto: photoAdderData = .shared
     @ObservedObject var redactor: redactorViewData = .shared
-    @Binding var isPresented: Bool
-    var index:Int
+    @ObservedObject var data: photoContainersFrameData = .shared
+//    @State var isPresented: Bool {
+//        didSet{
+//            print("isPresented is change from: ", oldValue, " to: ", isPresented)
+//        }
+//    }
+//    @Binding var index: Int
     
     func makeUIViewController(context:
                                 UIViewControllerRepresentableContext<PhotoPickerUIView>) ->
     UIViewController {
         let controller = UIImagePickerController()
+//        navigationBar.tintColor
+//        controller.navigationBar.barTintColor = UIColor.black
+        
+        UINavigationBar.appearance().tintColor = UIColor.link
+        
         controller.delegate = context.coordinator
+        controller.definesPresentationContext = true
+//        print("sheet present fo container at index: ", data.indexOfActiveContainer())
+        
         return controller
     }
     
@@ -341,10 +354,11 @@ struct PhotoPickerUIView: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:
                                     [UIImagePickerController.InfoKey : Any]) {
             if let selectedImageFromPicker = info[.originalImage] as? UIImage {
-                parent.redactor.photoContainers.containers[parent.index].imageInBlackBox = selectedImageFromPicker
-                parent.redactor.photoContainers.containers[parent.index].imageSelected = true
+                parent.redactor.photoContainers.containers[parent.data.indexOfActiveContainer()].imageInBlackBox = selectedImageFromPicker
+                parent.redactor.photoContainers.containers[parent.data.indexOfActiveContainer()].imageSelected = true
                 let newFolder = parent.redactor.photoContainers.createFileDirectory(folderName: parent.redactor.storyTemplate.templateImageName)
-                parent.redactor.photoContainers.saveImageToFolder(image: selectedImageFromPicker, name:"t\(parent.index).jpg", folder: newFolder)
+                parent.redactor.photoContainers.saveImageToFolder(image: selectedImageFromPicker, name:"t\(parent.data.indexOfActiveContainer()).jpg", folder: newFolder)
+//                print("image is set to container:", parent.data.indexOfActiveContainer())
                 //                parent.redactor.textFields.customPhotoContainers[parent.index].imageInBlackBox = selectedImageFromPicker
                 //                let imageView: UIImageView = UIImageView()
                 //                imageView.image = selectedImageFromPicker
@@ -358,15 +372,25 @@ struct PhotoPickerUIView: UIViewControllerRepresentable {
                 //                imageView.contentMode = .center
                 //                parent.redactor.textFields.saveCustomPhotoContainerImage(index: parent.index)
             }
-            self.parent.isPresented = false
+//            self.parent.isPresented = false
+            self.parent.data.containers[self.parent.data.indexOfActiveContainer()].isShowingImagePicker = false // experiment
         }
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) -> Void{
+//            self.parent.isPresented = false
+//            self.parent.redactor.photoContainers.clearContainer(index: self.parent.index)
+            self.parent.redactor.photoContainers.clearContainer(index: self.parent.data.indexOfActiveContainer()) //dinamyc get active container
+            self.parent.redactor.redactorMode = .nothing
+            
+            self.parent.redactor.photoContainers.deactivateAllCContainers()
+//            self.parent.data.containers[self.parent.index].isShowingImagePicker = false // experiment
         }
     }
     
     func updateUIViewController(_ uiViewController:
                                     PhotoPickerUIView.UIViewControllerType, context:
                                         UIViewControllerRepresentableContext<PhotoPickerUIView>) {
+//        print("active container has index: ", data.indexOfActiveContainer() )
+        UINavigationBar.appearance().tintColor = UIColor.link
     }
     
     

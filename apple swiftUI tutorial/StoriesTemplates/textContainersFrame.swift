@@ -15,7 +15,7 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
     
     static var shared = textContainersFrameData()
     //    @ObservedObject var storyTemplate: selectorContainerStore = .shared
-    @ObservedObject var storyTemplate: selectorContainerStore = .shared
+    @ObservedObject var storyTemplate: selectorContainer = .shared
     @Published var textContainers: Array<textFieldContainer> = Array(repeating:  textFieldContainer(), count: 0)
     @Published var customPhotoContainers: Array<customImageDataHolder> = Array(repeating:  customImageDataHolder(), count: 0)
     
@@ -43,8 +43,8 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
     @Published var isBoldFontWeightEnable: Bool = false
     @Published var isItalicFontWeightEnable: Bool = false
     
-    @Published var textIncreaser: CGFloat = 1080 / (UIScreen.main.bounds.width / 1.7)
-    var smallIncreaser: CGFloat = (UIScreen.main.bounds.width / 1.7) / 1080
+    @Published var textIncreaser: CGFloat = 1080 / (UIScreen.main.bounds.width / CGFloat(templateWidthDivider))
+    var smallIncreaser: CGFloat = (UIScreen.main.bounds.width / CGFloat(templateWidthDivider)) / 1080
     var containersPairIndexesForCopy: Array<Int> = Array( repeating: 0, count: 0)
     
     func moveTextLayer(direction: directionOfLayerMovement){
@@ -126,14 +126,9 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
                 glowColor: aproximateColorbyHex(originalContainer.glowColor, firstCopyOfContainer.glowColor),
                 strokeColor: aproximateColorbyHex(originalContainer.strokeColor, firstCopyOfContainer.strokeColor),
                 textAlign: firstCopyOfContainer.textAlign,
-//                index: textContainers.count,
-                //            activeTextContainer: <#T##Int#>,
-                //            isActive: <#T##Bool#>,
-                //            isFirstResponder: <#T##Bool#>,
                 x: aproximateCGFloat(originalContainer.x, firstCopyOfContainer.x) + (firstCopyOfContainer.containerW - originalContainer.containerW),
                 y: aproximateCGFloat(originalContainer.y, firstCopyOfContainer.y) + (firstCopyOfContainer.containerH - originalContainer.containerH),
                 containerW: aproximateCGFloat(originalContainer.containerW, firstCopyOfContainer.containerW) ,
-                //                            containerH: <#T##CGFloat#>,
                 z: getNextZIndex(),
                 transform: transformTextContainer(
                     currentPosition: CGSize(
@@ -197,22 +192,44 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
         if(cs1 == "00000000" || cs2 == "00000000"){
             return cs1
         }
+        if cs1 == cs2 {
+            return cs1
+        }
         let c1 = UIColor.hexColor(hex:cs1)
         let c2 = UIColor.hexColor(hex:cs2)
+        
         var h1: CGFloat = 0, s1: CGFloat = 0, b1: CGFloat = 0, a1: CGFloat = 0
         c1.getHue(&h1, saturation: &s1, brightness: &b1, alpha: &a1)
         
         var h2: CGFloat = 0, s2: CGFloat = 0, b2: CGFloat = 0, a2: CGFloat = 0
         c2.getHue(&h2, saturation: &s2, brightness: &b2, alpha: &a2)
         
+     
+        a1 = CGFloat(getClearAlphaFromHexString(cs1)) / 255
+        a2 = CGFloat(getClearAlphaFromHexString(cs2)) / 255
+//print("a1: ", a1," a2: ", a2)
+        
         let h3: CGFloat = aproximateCGFloatBelowOne(h1,h2)
         let s3: CGFloat = aproximateCGFloatBelowOne(s1,s2)
         let b3: CGFloat = aproximateCGFloatBelowOne(b1,b2)
         let a3: CGFloat = aproximateCGFloatBelowOne(a1,a2)
+        print("hex1: ", cs1, " a1: ", a1," a2: ", a2, " a3: ", a3)
+        let newColor = UIColor(hue: h3, saturation: s3, brightness: b3, alpha: 1).toHexString()
+
+        var alpha = String(Int(a3*255), radix: 16)
+        alpha.append(newColor)
+        return alpha
         
-        let newColor = UIColor(hue: h3, saturation: s3, brightness: b3, alpha: a3).toHexString()
-//        print(newColor)
-        return newColor
+    }
+
+    func getClearAlphaFromHexString(_ hex: String) -> Int {
+        let hexWithoutSharp = hex.hasPrefix("#") ? String(hex.dropFirst(1)) : hex
+        
+        
+        if hexWithoutSharp.count == 6 || hexWithoutSharp.count == 3 {return 255}
+        let value: Int = Int(hexWithoutSharp.dropLast(6), radix: 16) ?? 255
+        
+        return value
     }
     
     func updateWeghtsEnable(){
@@ -297,14 +314,14 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
         }
     }
     func saveTextContainersToFolder(folder: URL){
-        var textData = textContainers
-        for i in textData.indices {
-            textData[i].x += textData[i].transform.currentPosition.width / smallIncreaser
-            textData[i].y += textData[i].transform.currentPosition.height / smallIncreaser
-            
-            textData[i].transform.currentPosition.width = 0
-            textData[i].transform.currentPosition.height = 0
-        }
+        let textData = textContainers
+//        for i in textData.indices {
+//            textData[i].x += textData[i].transform.currentPosition.width / smallIncreaser
+//            textData[i].y += textData[i].transform.currentPosition.height / smallIncreaser
+//            
+//            textData[i].transform.currentPosition.width = 0
+//            textData[i].transform.currentPosition.height = 0
+//        }
         let encoderText = JSONEncoder()
         let newFolder = folder//createFileDirectory(folderName: templateImageName)
         let filenameText = newFolder.appendingPathComponent("texts.JSON")
@@ -394,14 +411,11 @@ class textContainersFrameData:systemFilesWorker, ObservableObject{
         } catch {
         }
     }
-    
-   
-    
 }
 
 struct textContainersFrame: View {
     let screenW = UIScreen.main.bounds.width
-    @ObservedObject var data: textContainersFrameData = .shared
+    @ObservedObject var data: textContainersFrameData = .shared // slower
     @ObservedObject var redactor: redactorViewData = .shared
 //    var customPhotoContainers: [customImageDataHolder] {
 //        redactor.textFields.customPhotoContainers
@@ -429,7 +443,7 @@ struct textContainersFrame: View {
                         return AnyView(EmptyView())
                     }
                     if u < redactor.textFields.textContainers.count && redactor.textFields.textContainers[u].fieldText != "invisibletextview" {
-                        print("increaser", templateWidth / 1080)
+//                        print("increaser", templateWidth / 1080)
                         return AnyView(
                             textViewWrapper(
                                 textViewItem: $redactor.textFields.textContainers[u],
@@ -464,12 +478,12 @@ struct textContainersFrame: View {
                                 .frame(width: 1, height: 1500)
                                 Group{
                                     Rectangle()
-                                        .offset(x: 0, y: -templateWidth * 1.7777/2 + 40)
+                                        .offset(x: 0, y: -templateWidth * CGFloat(1.7777)/2 + 40) // 1.7777
                                         .opacity(redactor.textFields.topYLineVisible ? 1 : 0)
                                     Rectangle()
                                         .opacity(redactor.textFields.centerYLineVisible ? 1 : 0)
                                     Rectangle()
-                                        .offset(x: 0, y: templateWidth * 1.7777/2 - 40)
+                                        .offset(x: 0, y: templateWidth * CGFloat(1.7777)/2 - 40) // 1.7777
                                         .opacity(redactor.textFields.bottomYLineVisible ? 1 : 0)
                                 }
                                 .frame(width: 1500 , height: 1)

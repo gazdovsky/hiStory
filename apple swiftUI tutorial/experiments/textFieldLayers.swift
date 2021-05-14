@@ -12,6 +12,7 @@ import UIKit
 struct textViewWrapper: View {
 //    @ObservedObject var settings: selectorContainerStore = .shared
     @ObservedObject var redactor: redactorViewData = .shared
+//    @ObservedObject var data: textContainersFrameData = .shared
     @Binding var textViewItem: textFieldContainer
     var index: Int
 //    @State var w: CGFloat = 100
@@ -38,9 +39,35 @@ struct textViewWrapper: View {
     @State var needSynchronizeDrag: Bool = true
     @State var tempFontSize: CGFloat = 1
     @State var tempContainerW: CGFloat = 1
+    @State var tempFrameCornerRadius: CGFloat = 0
     @State var needSynchronizeWidthDrag: Bool = true
     var borderWidthForTest: CGFloat = 0
+    var additionComandButtonOffset: CGFloat = 22
     @State var newrotate: Double = 0.0
+    @State var additionalHorizontalOffset: CGFloat = 0
+    @State var additionalDiagonalOffset: CGFloat = 0
+    
+    @State var center: CGPoint = CGPoint(x: 0, y: 0)
+     var dot: CGPoint { CGPoint(x: textViewItem.containerW/2 * increaser, y: -textViewItem.containerH/2 * increaser) }
+    @State var newDot: CGPoint = CGPoint(x: 0, y: 0)
+    @State var newRotate: Angle = .zero
+    @State var supDegree: Double = .zero
+    
+    var diagonalScaleIcon: String {
+        if #available(iOS 14.0, *) {
+            return "arrow.up.backward.and.arrow.down.forward.circle.fill"
+        } else {
+            return "arrow.left.and.right.circle.fill"
+        }
+    }
+    var diagonalScaleIconRotation: Double {
+        if #available(iOS 14.0, *) {
+        return 0
+        } else {
+            return 45
+        }
+    }
+    let gragientColors = Gradient(colors: [.purple,.yellow])
     var body: some View{
         
         
@@ -66,6 +93,10 @@ struct textViewWrapper: View {
                      style: textViewItem.style,
                      increaser: increaser
             )
+            .rotationEffect(newRotate)
+//            .background(
+//                LinearGradient(gradient: gragientColors, startPoint: .bottomLeading, endPoint: .topTrailing)
+//            )
             
             .clipShape(RoundedRectangle(cornerRadius: textViewItem.frameCornerRadius))
             .modifier(StrokeDashAnimation(isVisible: $textViewItem.isActive, radius: $textViewItem.frameCornerRadius))
@@ -79,58 +110,77 @@ struct textViewWrapper: View {
                 redactor.redactorMode = .textEdit
                 
             }
-//            .zIndex(Double(4))
+
             .frame(width: textViewItem.containerW, height: textViewItem.containerH)
             .fixedSize()
-//            Text("\(textViewItem.z)")
+            
             Rectangle()
                 .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.clear)
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: borderWidthForTest)
                 .contentShape(Rectangle())
                 .overlay(
-                    Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
+                    Image(systemName: diagonalScaleIcon)
+                        .rotationEffect(Angle(degrees: diagonalScaleIconRotation))
                         .zIndex(5)
+                        .foregroundColor(Color(UIColor.label))
                 )
                 .offset(x: textViewItem.containerW/2 * increaser , y: textViewItem.containerH/2 * increaser )
+                .offset(x: additionalDiagonalOffset, y: additionalDiagonalOffset)
                 .gesture(DragGesture()
                             .onChanged({ value in
                                 if needSynchronizeDrag {
                                     tempFontSize = redactor.textFields.textContainers[index].fontSize
                                     tempContainerW = redactor.textFields.textContainers[index].containerW
+                                    tempFrameCornerRadius = redactor.textFields.textContainers[index].frameCornerRadius
                                     needSynchronizeDrag = false
                                 }
+                                withAnimation{ additionalDiagonalOffset = getAdditionalComandButtonOffset(.diagonal)}
+                                withAnimation{ additionalHorizontalOffset = getAdditionalComandButtonOffset(.horizontal)}
+                               
+//                                if value.translation.width * (textViewItem.containerH / textViewItem.containerW) < 3 {
+//                                    return
+//                                }
+                                
                                 scalerPosiition.width = value.translation.width
                                 scalerPosiition.height = value.translation.width * (textViewItem.containerH / textViewItem.containerW)
                                 
-                                
                                 redactor.textFields.textContainers[index].containerW = tempContainerW + (value.translation.width / increaser ) * 2
-                                
                                 redactor.textFields.textContainers[index].fontSize = tempFontSize * ( redactor.textFields.textContainers[index].containerW / tempContainerW )
-                                    
-//                 print((textViewItem.containerW * increaser + value.translation.width) , textViewItem.containerW * increaser)
+                                redactor.textFields.textContainers[index].frameCornerRadius = tempFrameCornerRadius * ( redactor.textFields.textContainers[index].containerW / tempContainerW )
                             })
                             .onEnded({ _ in
                                 tempFontSize = redactor.textFields.textContainers[index].fontSize
                                 tempContainerW = redactor.textFields.textContainers[index].containerW
+                                tempFrameCornerRadius = redactor.textFields.textContainers[index].frameCornerRadius
                             })
                 )
                 .opacity(textViewItem.isActive ? 1 : 0)
+
             Rectangle()
                 .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.clear)
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: borderWidthForTest)
                 .contentShape(Rectangle())
                 .overlay(
-            Image(systemName: "arrow.left.and.right.circle.fill")
+                    Image(systemName: "arrow.left.and.right.circle.fill")
+                        .foregroundColor(Color(UIColor.label))
                 )
-                .offset(x: -textViewItem.containerW/2 * increaser, y: 0)
+                .offset(x: -textViewItem.containerW/2 * increaser , y: 0)
+                .offset(x: -additionalHorizontalOffset)
                 .gesture(DragGesture(minimumDistance: 0)
                             .onChanged{ value in
                                 if  needSynchronizeWidthDrag {
                                 tempContainerW = redactor.textFields.textContainers[index].containerW
                                     needSynchronizeWidthDrag = false
                                 }
+                                withAnimation{ additionalHorizontalOffset = getAdditionalComandButtonOffset(.horizontal)}
+                                withAnimation{ additionalDiagonalOffset = getAdditionalComandButtonOffset(.diagonal)}
+                                if tempContainerW - (value.translation.width / increaser ) * 2 < 3 {
+                                    return
+                                }
+                                
+                                
                                 redactor.textFields.textContainers[index].containerW = tempContainerW - (value.translation.width / increaser ) * 2
                             }
                             .onEnded{_ in
@@ -139,30 +189,46 @@ struct textViewWrapper: View {
                             }
                 )
                 .opacity(textViewItem.isActive ? 1 : 0)
-//            Image(systemName: "arrow.counterclockwise.circle.fill")
-//                .offset(x: textViewItem.containerW/2 * increaser, y: -textViewItem.containerH/2 * increaser)
-//                .gesture(DragGesture()
-//                            .onChanged{value in
-//                                
-//                                var deltaX = value.translation.width;
-//                                var deltaY = value.translation.height;
-//                                var rad = atan2(deltaX, deltaY); // In radians
-//                                
-//                                
-//                                var supposedDegree = newrotate + Double( rad) //Double(rad / 180 * .pi)
-//                                if supposedDegree > Double.pi * 2 {
-//                                    supposedDegree = supposedDegree - Double.pi * 2
-//                                } else if supposedDegree < -Double.pi * 2 {
-//                                        supposedDegree = supposedDegree + Double.pi * 2
-//                                    }
-//                                
-//                                
-//                                redactor.textFields.textContainers[index].transform.rotate = supposedDegree
-//                            }
-//                )
-//                .opacity(textViewItem.isActive ? 1 : 0)
+            
+            Rectangle()
+                .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.clear)
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: borderWidthForTest)
+                .contentShape(Rectangle())
+                .overlay(
+                    Image(systemName: "arrow.counterclockwise.circle.fill")
+                        .foregroundColor(Color(UIColor.label))
+                )
+                .offset(x: textViewItem.containerW/2 * increaser , y: -textViewItem.containerH/2 * increaser )
+                .offset(x: additionalDiagonalOffset, y: -additionalDiagonalOffset)
+                .opacity(textViewItem.isActive ? 1 : 0)
+                .gesture(DragGesture()
+                            .onChanged{value in
+                                newDot = CGPoint(x: value.translation.width, y: value.translation.height)
+                                let dotVelocity = CGPoint(x: value.translation.width + dot.x, y: value.translation.height + dot.y)
+                                let degrees = Angle(degrees: Double(
+                                    atan2(center.y - dotVelocity.y, center.x - dotVelocity.x) -
+                                    atan2(dotVelocity.y - dot.y, dotVelocity.x - dot.x)
+                                ))
+                                
+                                var supposedDegree = Double(degrees.degrees)
+//                                if supposedDegree > .pi {
+//                                    supposedDegree = supposedDegree - .pi
+//                                } else if supposedDegree < -.pi {
+//                                    supposedDegree = supposedDegree + .pi
+//                                }
+                                supDegree = abs(supposedDegree)
+                                newRotate = Angle(radians: supposedDegree)
+                              print(supDegree, newRotate ,newDot)
+                                
+                            }
+                            .onEnded { _ in
+                                redactor.textFields.textContainers[index].transform.rotate = 0
+                            }
+                                )
                 
         })
+      
         .modifier(makeTransformingMultilineText(
             index : index,
             increaser: increaser,
@@ -189,7 +255,37 @@ struct textViewWrapper: View {
             return redactor.textFields.textContainers[index].y * increaser
         }
     }
-
+    
+    var isTextFieldSmall: Bool {
+        if textViewItem.containerW * increaser < 80 {
+            return true
+        }
+        return false
+    }
+//    var additionComandButtonHorizontalOffset: CGFloat {
+//        return isTextFieldSmall ? additionComandButtonOffset : 0
+//    }
+//    var additionComandButtonDiagonalOffset: CGFloat {
+//        let bc: CGFloat = additionComandButtonOffset
+//        let ac: CGFloat = sqrt((bc * bc) / 2)
+//        return isTextFieldSmall ? ac : 0
+//    }
+    enum comandButtonDirection {
+        case horizontal, diagonal
+    }
+    func getAdditionalComandButtonOffset(_ direction: comandButtonDirection) -> CGFloat {
+        if !isTextFieldSmall {
+            return 0
+        }
+        switch direction {
+        case .diagonal:
+            let bc: CGFloat = additionComandButtonOffset
+            let ac: CGFloat = sqrt((bc * bc) / 2)
+            return ac
+        case .horizontal:
+            return additionComandButtonOffset
+        }
+    }
 }
 
 

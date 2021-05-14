@@ -11,7 +11,13 @@ import SwiftUI
 enum colorPickerTarget3 {
     case text, background, shadow, glow, stroke, nothing
 }
-
+enum colorPickerTarget {
+    case text, background, shadow, glow, stroke, nothing
+}
+enum colorPickerType {
+    case colorCircles
+    case gradient
+}
 class textEditorcolorPickerData3: ObservableObject{
     init(){}
     static var shared = textEditorcolorPickerData3()
@@ -19,7 +25,7 @@ class textEditorcolorPickerData3: ObservableObject{
     @Published var colorPickerType: colorPickerType = .colorCircles
     //    @Published var recentColors: String = UserDefaults.standard.string(forKey: "recentColors") ?? "fff"
     //    @Published var recentColors: [String] = ["fff","ccc"]
-    @Published var newRecentColors: [String] = UserDefaults.standard.stringArray(forKey: "newRecentColors") ?? ["fff"]
+    @Published var newRecentColors: [String] = UserDefaults.standard.stringArray(forKey: "newRecentColors") ?? ["ffffff"]
 
    
     
@@ -32,7 +38,7 @@ enum colorPickerType3 {
 
 struct textEditorColorPicker3: View {
     @ObservedObject var uiColors: uiColors = .shared
-    @ObservedObject var textContainers: textContainersFrameData = .shared
+    @ObservedObject var textContainers: textContainersFrameData = .shared // slower
     @ObservedObject var data: textEditorcolorPickerData3 = .shared
     @ObservedObject var redactor: redactorViewData = .shared
     let iconSize: CGFloat = 20
@@ -61,7 +67,7 @@ struct textEditorColorPicker3: View {
    
     func setColorFromSaved(index: Int){
         if index < data.newRecentColors.count{
-            print(data.newRecentColors[index])
+//            print(data.newRecentColors[index])
             switch   redactor.colorPickerData.colorPickerTarget {
        
         case .text:
@@ -83,7 +89,7 @@ struct textEditorColorPicker3: View {
     }
     func clearColor(){
         switch redactor.colorPickerData.colorPickerTarget {
-        case .text:textContainers.textContainers[aContainer].fontColor = "fff"
+        case .text:textContainers.textContainers[aContainer].fontColor = "ffffff"
         case .background:textContainers.textContainers[aContainer].backgroundColor = "00000000"
         case .shadow:textContainers.textContainers[aContainer].shadowColor = "00000000"
         case .nothing:break
@@ -92,7 +98,7 @@ struct textEditorColorPicker3: View {
         }
     }
     func setRecomendColor(index: Int){
-        print(uiColors.chosableColors[index])
+//        print(uiColors.chosableColors[index])
         switch redactor.colorPickerData.colorPickerTarget{
         case .text:textContainers.textContainers[aContainer].fontColor = uiColors.chosableColors[index]
         case .background:textContainers.textContainers[aContainer].backgroundColor = uiColors.chosableColors[index]
@@ -106,7 +112,7 @@ struct textEditorColorPicker3: View {
     }
     
     func setOpacityColor(index: Int){
-        print(uiColors.opacityColors[index])
+//        print(uiColors.opacityColors[index])
         switch redactor.colorPickerData.colorPickerTarget{
         case .text:textContainers.textContainers[aContainer].fontColor = uiColors.opacityColors[index]
         case .background:textContainers.textContainers[aContainer].backgroundColor = uiColors.opacityColors[index]
@@ -160,7 +166,7 @@ struct textEditorColorPicker3: View {
 //                        .padding(.bottom,5)
                         HStack{
                             VStack(alignment: .center, content:{
-                                colorPalleteTitle("Pallete")
+                                colorPalleteTitle(NSLocalizedString( "Pallete", comment: "Pallete") )
                                     .border(Color.red, width: border)
                             gradientButton {
                                 data.colorPickerType = .gradient
@@ -168,7 +174,7 @@ struct textEditorColorPicker3: View {
                             })
                             .border(Color.red, width: border)
                             VStack(alignment: .center, content:{
-                                colorPalleteTitle("Current")
+                                colorPalleteTitle(NSLocalizedString( "Current", comment: "Current") )
                                     .border(Color.red, width: border)
                             colorCircleChoser3(color: colorTarget, action: {})
                             .simultaneousGesture(
@@ -187,12 +193,12 @@ struct textEditorColorPicker3: View {
                             })
                             .border(Color.red, width: border)
                             VStack(alignment: .center, content:{
-                                colorPalleteTitle("Saved colors")
+                                colorPalleteTitle(NSLocalizedString( "Saved colors", comment: "Saved colors") )
                                     .border(Color.red, width: border)
                                 ScrollView(.horizontal, showsIndicators: false, content: {
                                 HStack(spacing: 12, content:{
                                     Group{
-                                    Text("Double tap to save color")
+                                    Text(NSLocalizedString( "Double tap to save color", comment: "Double tap to save color") )
                                         .padding(6)
                                     }
                                     .foregroundColor(Color.white)
@@ -230,7 +236,7 @@ struct textEditorColorPicker3: View {
                         }
                         .padding([.trailing,.leading],12)
                         
-                        colorPalleteTitle("Standart Colors")
+                        colorPalleteTitle(NSLocalizedString("Standart Colors", comment: "Standart Colors") )
                         .padding(.top)
                         .padding(.bottom,5)
                             lazyStack(elements: uiColors.standartColors.count, elementsInRow: 6
@@ -241,7 +247,7 @@ struct textEditorColorPicker3: View {
                             }
                         .padding([.trailing,.leading],12)
                         
-                        colorPalleteTitle("Color palette 2021")
+                        colorPalleteTitle(NSLocalizedString("Color palette 2021", comment: "Color palette 2021") )
 //                        .padding(.leading, colorPalleteTitleLeadingPadding)
                         .padding(.top)
                         .padding(.bottom,5)
@@ -255,7 +261,7 @@ struct textEditorColorPicker3: View {
                         
                        
                         
-                        colorPalleteTitle("Opacity Colors")
+                        colorPalleteTitle(NSLocalizedString("Opacity Colors", comment: "Opacity Colors") )
                         .padding(.top)
                         .padding(.bottom,5)
                             lazyStack(elements: uiColors.opacityColors.count, elementsInRow: 6) { e in
@@ -266,7 +272,7 @@ struct textEditorColorPicker3: View {
                         .padding([.trailing,.leading],12)
 
                         
-                        colorCircleChoser(color: "fff", eraser: redactor.colorPickerData.colorPickerTarget == .text ? false : true){
+                        colorCircleChoser(color: "ffffff", eraser: redactor.colorPickerData.colorPickerTarget == .text ? false : true){
                            clearColor()
                         }
                         .padding(.top)

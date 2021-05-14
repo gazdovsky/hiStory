@@ -50,35 +50,35 @@ struct makeTransformingImage: ViewModifier{
 //                 newScale =  data.containers[index].transform.currentScale
 //            })
         
-        let dGesture = DragGesture(minimumDistance: 5)
-            .updating( $isDrag, body: { currentState, gestureState, transaction in
-                gestureState = true
-            })
-            .onChanged({value in
-                if !transforming {return}
-                
-                if  needSynchronizeDrag &&
-                    abs(data.containers[index].transform.currentPosition.width - value.translation.width) > 5 &&
-                    abs(data.containers[index].transform.currentPosition.height - value.translation.height) > 5 &&
-                        data.containers[index].transform.currentPosition.width > 5
-                {
-                     newPosition =  data.containers[index].transform.currentPosition
-                     needSynchronizeDrag = false
-                }
-                let supposedWidth = value.translation.width + newPosition.width
-                let supposedHeight = value.translation.height + newPosition.height
-                let centerX = CGFloat(0.0)//(increaser * 1080) / 2 + (data.containers[index].imageInBlackBox.size.width * increaser) / 2
-                let centerY = CGFloat(0.0)//(increaser * 1920) / 2
-                
-                data.containers[index].transform.currentPosition = CGSize(
-                    width: centerX - centerizeDelta...centerX + centerizeDelta ~= supposedWidth ? centerX : supposedWidth,
-                    height: centerY - centerizeDelta...centerY + centerizeDelta ~= supposedHeight ? centerY : supposedHeight
-                )
-            })
-            .onEnded({ value in
-                if !transforming {return}
-                 newPosition = data.containers[index].transform.currentPosition
-            })
+//        let dGesture = DragGesture(minimumDistance: 5)
+//            .updating( $isDrag, body: { currentState, gestureState, transaction in
+//                gestureState = true
+//            })
+//            .onChanged({value in
+//                if !transforming {return}
+//                
+//                if  needSynchronizeDrag &&
+//                    abs(data.containers[index].transform.currentPosition.width - value.translation.width) > 5 &&
+//                    abs(data.containers[index].transform.currentPosition.height - value.translation.height) > 5 &&
+//                        data.containers[index].transform.currentPosition.width > 5
+//                {
+//                     newPosition =  data.containers[index].transform.currentPosition
+//                     needSynchronizeDrag = false
+//                }
+//                let supposedWidth = value.translation.width + newPosition.width
+//                let supposedHeight = value.translation.height + newPosition.height
+//                let centerX = CGFloat(0.0)//(increaser * 1080) / 2 + (data.containers[index].imageInBlackBox.size.width * increaser) / 2
+//                let centerY = CGFloat(0.0)//(increaser * 1920) / 2
+//                
+//                data.containers[index].transform.currentPosition = CGSize(
+//                    width: centerX - centerizeDelta...centerX + centerizeDelta ~= supposedWidth ? centerX : supposedWidth,
+//                    height: centerY - centerizeDelta...centerY + centerizeDelta ~= supposedHeight ? centerY : supposedHeight
+//                )
+//            })
+//            .onEnded({ value in
+//                if !transforming {return}
+//                 newPosition = data.containers[index].transform.currentPosition
+//            })
         
 //        let rGesture = RotationGesture(minimumAngleDelta: Angle(degrees: 5))
 //            .updating( $isRotate, body: { currentState, gestureState, transaction in

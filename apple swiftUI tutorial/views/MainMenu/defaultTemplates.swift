@@ -10,11 +10,13 @@ import Foundation
 import SwiftUI
 
 struct defaultTemplates: View {
-    @ObservedObject var settings: selectorContainerStore =  .shared
+    @ObservedObject var settings: selectorContainer =  .shared
 //    @State var tt = StoryPreviews
     @State var dd = StoryPreviewsCategory
     @State var categorys = TemplatesCategorys
     @State var screenWidth:CGFloat = UIScreen.main.bounds.width
+    @ObservedObject var proTemplates: proTemplates = .shared
+    @ObservedObject var manager: manager = .shared
     var itemW:CGFloat{
         screenWidth*0.28 //screenWidth*0.41
     }
@@ -23,6 +25,7 @@ struct defaultTemplates: View {
         itemW/baseRatio
     }
     @State var counter: Int = 0
+    
     var body: some View{
         VStack{
             Spacer(minLength: 20)
@@ -40,39 +43,57 @@ struct defaultTemplates: View {
 //                        Spacer(minLength : screenWidth * 0.03) //                        Spacer(minLength: (screenWidth - itemW*3)/4)
 
                         ForEach(0 ..< dd[n].items.count){i in
-                                mainMenuItem(iPreview:dd[n].items[i],  w:self.itemW , h: self.itemH, isDraftItem: false) //isNavigate: $settings.navigateToRedactor,
-                                    .overlay(
-                                        Button(action:{
-                                            settings.isOpenedDraft = false
-                                            settings.navigateToRedactor = true
-                                            settings.templateName = dd[n].items[i] + ".json"
-                                            settings.templateImageName = dd[n].items[i]
-                                        }, label:{
-                                            Rectangle()
-                                                .opacity(0.0)
-                                        }
-                                        )
-                                    )
-                                    .onAppear {
-                                        counter += 1
-                                        print(counter)
-                                    }
+                            mainMenuItem(iPreview:  dd[n].items[i]  ,  w:self.itemW , h: self.itemH, isDraftItem: false,
+                                         isPro: (proTemplates.names.firstIndex(of: dd[n].items[i]) != nil) &&
+                                         (!UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Year") &&
+                                           !UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Month")) ,
+                                         newPreviewImg: Image(dd[n].items[i] + "_PREVIEW")
+                                         ) //isNavigate: $settings.navigateToRedactor,
+//                                    .overlay(
+//                                        Button(action:{
+//                                            if proTemplates.names.firstIndex(of: dd[n].items[i]) != nil &&
+//                                                (!UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Year") &&
+//                                                  !UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Month"))
+//                                                {
+//                                                settings.showProPurchase = true
+//                                            } else {
+//                                                print("item tap")
+//                                                settings.isOpenedDraft = false
+//                                                settings.navigateToRedactor = true
+//                                                
+//                                                settings.templateName = dd[n].items[i] + ".json"
+//                                                settings.templateImageName = dd[n].items[i]
+//                                                settings.templateReserveName = dd[n].items[i]
+//                                            }
+//                                         
+//                                        }, label:{
+//                                            Rectangle()
+//                                                .opacity(0.0)
+//                                        }
+//                                        )
+//                                    )
+//                                    .onAppear {
+//                                        counter += 1
+//                                        print(counter)
+//                                    }
                         }
 //                        Spacer(minLength: 100) //Spacer(minLength: (screenWidth - itemW*2)/3)
                     })
-                    .onAppear(perform: {
-                        print(dd[n].items.count)
-                    })
-                    .padding(.leading, screenWidth * 0.03)
+//                    .onAppear(perform: {
+//                        print(dd[n].items.count)
+//                    })
+                    .padding([.leading, .trailing], screenWidth * 0.03)
                 })
 
             }
             .padding(.bottom)
+            
             Divider()
                 
         }
         
         }
+       
     }
     
 //    var body: some View{

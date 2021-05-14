@@ -50,6 +50,7 @@
 		A7184AF925A487BE00AEEE20 /* textContainersFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7184AF825A487BE00AEEE20 /* textContainersFrame.swift */; };
 		A7184AFD25A4B7A700AEEE20 /* photoContainersFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7184AFC25A4B7A700AEEE20 /* photoContainersFrame.swift */; };
 		A7184B0425A50A3500AEEE20 /* systemFilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7184B0325A50A3500AEEE20 /* systemFilesWorker.swift */; };
+		A7215F61264D170B0086EF19 /* rotateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7215F60264D170B0086EF19 /* rotateTest.swift */; };
 		A721E2E7246DE92A002166E9 /* redactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E2E3246DE7D8002166E9 /* redactor.swift */; };
 		A721E2F12470192D002166E9 /* SwiftUIPhotoSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E2F02470192D002166E9 /* SwiftUIPhotoSelector.swift */; };
 		A721E2F92474631A002166E9 /* saveTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E2F82474631A002166E9 /* saveTest.swift */; };
@@ -202,8 +203,6 @@
 		A797A53E26022335008A1734 /* Abstract Shapes5.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A53C26022335008A1734 /* Abstract Shapes5.json */; };
 		A797A53F26022335008A1734 /* Abstract Shapes6.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A53D26022335008A1734 /* Abstract Shapes6.json */; };
 		A797A5442606618A008A1734 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A797A5432606618A008A1734 /* StoreKit.framework */; };
-		A797A54726066802008A1734 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A54626066802008A1734 /* IAPHelper.swift */; };
-		A797A54B26066827008A1734 /* hiStory products.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A54A26066827008A1734 /* hiStory products.swift */; };
 		A797A55A26079F4F008A1734 /* creative channel1.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A54E26079F4D008A1734 /* creative channel1.json */; };
 		A797A55B26079F4F008A1734 /* creative channel7.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A54F26079F4D008A1734 /* creative channel7.json */; };
 		A797A55C26079F4F008A1734 /* creative channel2.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A55026079F4D008A1734 /* creative channel2.json */; };
@@ -264,12 +263,27 @@
 		A7D5127325549F3300EB261E /* defaultContainer.json in Resources */ = {isa = PBXBuildFile; fileRef = A7D5127225549F3300EB261E /* defaultContainer.json */; };
 		A7D51276255542EF00EB261E /* testscreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D51275255542EF00EB261E /* testscreenshot.swift */; };
 		A7DAC7552479704400CAC530 /* frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DAC7542479704400CAC530 /* frame.swift */; };
-		A7DF922A260CE09900249894 /* purchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF9229260CE09900249894 /* purchaseButton.swift */; };
-		A7DF922D260CF28F00249894 /* purchasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF922C260CF28F00249894 /* purchasePage.swift */; };
+		A7DF922A260CE09900249894 /* purButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF9229260CE09900249894 /* purButton.swift */; };
+		A7DF922D260CF28F00249894 /* purPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DF922C260CF28F00249894 /* purPage.swift */; };
 		A7E31F0A2608D5C80037A0AC /* creative channel10.json in Resources */ = {isa = PBXBuildFile; fileRef = A7E31F082608D5C80037A0AC /* creative channel10.json */; };
 		A7E31F0B2608D5C80037A0AC /* creative channel11.json in Resources */ = {isa = PBXBuildFile; fileRef = A7E31F092608D5C80037A0AC /* creative channel11.json */; };
-		A7E31F0E260BAC9D0037A0AC /* storeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E31F0D260BAC9D0037A0AC /* storeManager.swift */; };
+		A7E31F0E260BAC9D0037A0AC /* manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E31F0D260BAC9D0037A0AC /* manager.swift */; };
 		A7E63C232483CCCA0078A881 /* framescopy.json in Resources */ = {isa = PBXBuildFile; fileRef = A757BF3A247FF05B0075145B /* framescopy.json */; };
+		A7F6E2C826399AB40022BA0C /* color splash 3.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2C726399AB40022BA0C /* color splash 3.json */; };
+		A7F6E2CC26399B330022BA0C /* color splash 8.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2CB26399B330022BA0C /* color splash 8.json */; };
+		A7F6E2D12639A0970022BA0C /* interface 1.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2D02639A0970022BA0C /* interface 1.json */; };
+		A7F6E2D42639A0D80022BA0C /* interface 3.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2D32639A0D80022BA0C /* interface 3.json */; };
+		A7F6E2D8263AAE4B0022BA0C /* color splash 8texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2D7263AAE4B0022BA0C /* color splash 8texts.json */; };
+		A7F6E2DB263AB2800022BA0C /* color splash 2texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2DA263AB2800022BA0C /* color splash 2texts.json */; };
+		A7F6E2DE263AB3600022BA0C /* color splash 3texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2DD263AB3600022BA0C /* color splash 3texts.json */; };
+		A7F6E2E1263AB4670022BA0C /* color splash 6texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2E0263AB4670022BA0C /* color splash 6texts.json */; };
+		A7F6E2E4263AB54D0022BA0C /* color splash 7texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2E3263AB54D0022BA0C /* color splash 7texts.json */; };
+		A7F6E2E7263ABB320022BA0C /* interface 1texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2E6263ABB320022BA0C /* interface 1texts.json */; };
+		A7F6E2EA263B0C470022BA0C /* interface 2texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2E9263B0C470022BA0C /* interface 2texts.json */; };
+		A7F6E2ED263B0D4F0022BA0C /* interface 3texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2EC263B0D4F0022BA0C /* interface 3texts.json */; };
+		A7F6E2F0263B0FC80022BA0C /* interface 6texts.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2EF263B0FC80022BA0C /* interface 6texts.json */; };
+		A7F6E2F3263B11340022BA0C /* minimalism11.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F6E2F2263B11340022BA0C /* minimalism11.json */; };
+		A7F6E2F6263C08500022BA0C /* proTemplatesNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F6E2F5263C08500022BA0C /* proTemplatesNames.swift */; };
 		A7FD2FF025914B2100A0576E /* pickerFromList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD2FEF25914B1100A0576E /* pickerFromList.swift */; };
 		A7FD2FF7259382A400A0576E /* defaultText.json in Resources */ = {isa = PBXBuildFile; fileRef = A7FD2FF6259382A400A0576E /* defaultText.json */; };
 		A7FDE974255485B2002A974F /* defaultTextField.json in Resources */ = {isa = PBXBuildFile; fileRef = A7FDE973255485B2002A974F /* defaultTextField.json */; };
@@ -320,6 +334,7 @@
 		A7184AF825A487BE00AEEE20 /* textContainersFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textContainersFrame.swift; sourceTree = "<group>"; };
 		A7184AFC25A4B7A700AEEE20 /* photoContainersFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoContainersFrame.swift; sourceTree = "<group>"; };
 		A7184B0325A50A3500AEEE20 /* systemFilesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = systemFilesWorker.swift; sourceTree = "<group>"; };
+		A7215F60264D170B0086EF19 /* rotateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotateTest.swift; sourceTree = "<group>"; };
 		A721E2E3246DE7D8002166E9 /* redactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = redactor.swift; sourceTree = "<group>"; };
 		A721E2F02470192D002166E9 /* SwiftUIPhotoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPhotoSelector.swift; sourceTree = "<group>"; };
 		A721E2F82474631A002166E9 /* saveTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveTest.swift; sourceTree = "<group>"; };
@@ -472,8 +487,6 @@
 		A797A53C26022335008A1734 /* Abstract Shapes5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Abstract Shapes5.json"; sourceTree = "<group>"; };
 		A797A53D26022335008A1734 /* Abstract Shapes6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Abstract Shapes6.json"; sourceTree = "<group>"; };
 		A797A5432606618A008A1734 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		A797A54626066802008A1734 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
-		A797A54A26066827008A1734 /* hiStory products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hiStory products.swift"; sourceTree = "<group>"; };
 		A797A54E26079F4D008A1734 /* creative channel1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "creative channel1.json"; sourceTree = "<group>"; };
 		A797A54F26079F4D008A1734 /* creative channel7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "creative channel7.json"; sourceTree = "<group>"; };
 		A797A55026079F4D008A1734 /* creative channel2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "creative channel2.json"; sourceTree = "<group>"; };
@@ -538,11 +551,26 @@
 		A7D5127225549F3300EB261E /* defaultContainer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultContainer.json; sourceTree = "<group>"; };
 		A7D51275255542EF00EB261E /* testscreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testscreenshot.swift; sourceTree = "<group>"; };
 		A7DAC7542479704400CAC530 /* frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = frame.swift; sourceTree = "<group>"; };
-		A7DF9229260CE09900249894 /* purchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purchaseButton.swift; sourceTree = "<group>"; };
-		A7DF922C260CF28F00249894 /* purchasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purchasePage.swift; sourceTree = "<group>"; };
+		A7DF9229260CE09900249894 /* purButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purButton.swift; sourceTree = "<group>"; };
+		A7DF922C260CF28F00249894 /* purPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purPage.swift; sourceTree = "<group>"; };
 		A7E31F082608D5C80037A0AC /* creative channel10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "creative channel10.json"; sourceTree = "<group>"; };
 		A7E31F092608D5C80037A0AC /* creative channel11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "creative channel11.json"; sourceTree = "<group>"; };
-		A7E31F0D260BAC9D0037A0AC /* storeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeManager.swift; sourceTree = "<group>"; };
+		A7E31F0D260BAC9D0037A0AC /* manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manager.swift; sourceTree = "<group>"; };
+		A7F6E2C726399AB40022BA0C /* color splash 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color splash 3.json"; sourceTree = "<group>"; };
+		A7F6E2CB26399B330022BA0C /* color splash 8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color splash 8.json"; sourceTree = "<group>"; };
+		A7F6E2D02639A0970022BA0C /* interface 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "interface 1.json"; sourceTree = "<group>"; };
+		A7F6E2D32639A0D80022BA0C /* interface 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "interface 3.json"; sourceTree = "<group>"; };
+		A7F6E2D7263AAE4B0022BA0C /* color splash 8texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color splash 8texts.json"; sourceTree = "<group>"; };
+		A7F6E2DA263AB2800022BA0C /* color splash 2texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color splash 2texts.json"; sourceTree = "<group>"; };
+		A7F6E2DD263AB3600022BA0C /* color splash 3texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color splash 3texts.json"; sourceTree = "<group>"; };
+		A7F6E2E0263AB4670022BA0C /* color splash 6texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color splash 6texts.json"; sourceTree = "<group>"; };
+		A7F6E2E3263AB54D0022BA0C /* color splash 7texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "color splash 7texts.json"; sourceTree = "<group>"; };
+		A7F6E2E6263ABB320022BA0C /* interface 1texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "interface 1texts.json"; sourceTree = "<group>"; };
+		A7F6E2E9263B0C470022BA0C /* interface 2texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "interface 2texts.json"; sourceTree = "<group>"; };
+		A7F6E2EC263B0D4F0022BA0C /* interface 3texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "interface 3texts.json"; sourceTree = "<group>"; };
+		A7F6E2EF263B0FC80022BA0C /* interface 6texts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "interface 6texts.json"; sourceTree = "<group>"; };
+		A7F6E2F2263B11340022BA0C /* minimalism11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minimalism11.json; sourceTree = "<group>"; };
+		A7F6E2F5263C08500022BA0C /* proTemplatesNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = proTemplatesNames.swift; sourceTree = "<group>"; };
 		A7FD2FEF25914B1100A0576E /* pickerFromList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerFromList.swift; sourceTree = "<group>"; };
 		A7FD2FF6259382A400A0576E /* defaultText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultText.json; sourceTree = "<group>"; };
 		A7FDE973255485B2002A974F /* defaultTextField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultTextField.json; sourceTree = "<group>"; };
@@ -629,7 +657,7 @@
 			children = (
 				A7A87AFC2589477A00BD6708 /* MainMenu */,
 				A7B09049256D134F004DA7C7 /* advertise.swift */,
-				A7DF9228260CE07100249894 /* Purchase */,
+				A7DF9228260CE07100249894 /* Pur */,
 				A7816375258E03B900B030B6 /* Redactor */,
 			);
 			path = views;
@@ -655,6 +683,7 @@
 				A7B3348225D0817F00657B47 /* lazyStack.swift */,
 				A7B3348825D13C0900657B47 /* SwiftUIest.swift */,
 				A74DA40A26249B5000AC793F /* geometryReaderTest.swift */,
+				A7215F60264D170B0086EF19 /* rotateTest.swift */,
 			);
 			path = experiments;
 			sourceTree = "<group>";
@@ -737,10 +766,16 @@
 		A76C10722620F17D00405D51 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				A7F6E2D02639A0970022BA0C /* interface 1.json */,
+				A7F6E2E6263ABB320022BA0C /* interface 1texts.json */,
 				A76C10752620F1AD00405D51 /* interface 2.json */,
+				A7F6E2E9263B0C470022BA0C /* interface 2texts.json */,
+				A7F6E2D32639A0D80022BA0C /* interface 3.json */,
+				A7F6E2EC263B0D4F0022BA0C /* interface 3texts.json */,
 				A76C10742620F1AC00405D51 /* interface 4.json */,
 				A76C10762620F1AD00405D51 /* interface 5.json */,
 				A76C10732620F1AC00405D51 /* interface 6.json */,
+				A7F6E2EF263B0FC80022BA0C /* interface 6texts.json */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -748,12 +783,19 @@
 		A76C107C2620F22C00405D51 /* Color Splash */ = {
 			isa = PBXGroup;
 			children = (
+				A7F6E2CB26399B330022BA0C /* color splash 8.json */,
+				A7F6E2D7263AAE4B0022BA0C /* color splash 8texts.json */,
 				A76C107E2620F35900405D51 /* color splash 1.json */,
+				A7F6E2C726399AB40022BA0C /* color splash 3.json */,
+				A7F6E2DD263AB3600022BA0C /* color splash 3texts.json */,
 				A76C10832620F35A00405D51 /* color splash 2.json */,
+				A7F6E2DA263AB2800022BA0C /* color splash 2texts.json */,
 				A76C10802620F35900405D51 /* color splash 4.json */,
 				A76C107F2620F35900405D51 /* color splash 5.json */,
 				A76C10812620F35A00405D51 /* color splash 6.json */,
+				A7F6E2E0263AB4670022BA0C /* color splash 6texts.json */,
 				A76C10822620F35A00405D51 /* color splash 7.json */,
+				A7F6E2E3263AB54D0022BA0C /* color splash 7texts.json */,
 			);
 			path = "Color Splash";
 			sourceTree = "<group>";
@@ -765,6 +807,7 @@
 				A7816372258D4C9800B030B6 /* KeyBoardNotificationReader.swift */,
 				A76DDA6825853F6E0064C220 /* photoSelector.swift */,
 				A7ABBBA625B709C10068CC76 /* colorsCodes.swift */,
+				A7F6E2F5263C08500022BA0C /* proTemplatesNames.swift */,
 				A76B901525BC23AA00792414 /* fontsNames.swift */,
 			);
 			path = Classes;
@@ -966,6 +1009,7 @@
 				A797A529260148DE008A1734 /* minimalism8.json */,
 				A797A526260148DD008A1734 /* minimalism9.json */,
 				A797A52A260148DE008A1734 /* minimalism10.json */,
+				A7F6E2F2263B11340022BA0C /* minimalism11.json */,
 			);
 			path = Minimalism;
 			sourceTree = "<group>";
@@ -978,14 +1022,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A797A545260667E2008A1734 /* purshase */ = {
+		A797A545260667E2008A1734 /* pur */ = {
 			isa = PBXGroup;
 			children = (
-				A797A54626066802008A1734 /* IAPHelper.swift */,
-				A797A54A26066827008A1734 /* hiStory products.swift */,
-				A7E31F0D260BAC9D0037A0AC /* storeManager.swift */,
+				A7E31F0D260BAC9D0037A0AC /* manager.swift */,
 			);
-			path = purshase;
+			path = pur;
 			sourceTree = "<group>";
 		};
 		A797A54D26079F3C008A1734 /* Creative channel */ = {
@@ -1051,7 +1093,7 @@
 				A74DA4182628C21400AC793F /* templatesCategorys.json */,
 				A797A49525FCB3C9008A1734 /* newTemplatesCategorys.json */,
 				A757BF3A247FF05B0075145B /* framescopy.json */,
-				A797A545260667E2008A1734 /* purshase */,
+				A797A545260667E2008A1734 /* pur */,
 				A76EB2F5256831910089FCAE /* extentions */,
 				A72ED8192488F41200182D38 /* icons */,
 				A721E2F82474631A002166E9 /* saveTest.swift */,
@@ -1089,13 +1131,13 @@
 			path = StoriesTemplates;
 			sourceTree = "<group>";
 		};
-		A7DF9228260CE07100249894 /* Purchase */ = {
+		A7DF9228260CE07100249894 /* Pur */ = {
 			isa = PBXGroup;
 			children = (
-				A7DF9229260CE09900249894 /* purchaseButton.swift */,
-				A7DF922C260CF28F00249894 /* purchasePage.swift */,
+				A7DF9229260CE09900249894 /* purButton.swift */,
+				A7DF922C260CF28F00249894 /* purPage.swift */,
 			);
-			path = Purchase;
+			path = Pur;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1189,6 +1231,7 @@
 				A708C1652615DADA006D53D6 /* travel 3texts.json in Resources */,
 				A797A49625FCB3C9008A1734 /* newTemplatesCategorys.json in Resources */,
 				A797A56026079F4F008A1734 /* creative channel13.json in Resources */,
+				A7F6E2EA263B0C470022BA0C /* interface 2texts.json in Resources */,
 				A797A4D12601396E008A1734 /* bage aestetic 4.json in Resources */,
 				A76C10862620F35A00405D51 /* color splash 4.json in Resources */,
 				A76C10662620E84A00405D51 /* summer vibes 2.json in Resources */,
@@ -1214,17 +1257,21 @@
 				A708C19E26186F16006D53D6 /* PeaceSans.otf in Resources */,
 				A797A4D32601396E008A1734 /* bage aestetic 9.json in Resources */,
 				A7D1F9DD25C1FB3D001674DA /* Cuprum-BoldItalic.ttf in Resources */,
+				A7F6E2DB263AB2800022BA0C /* color splash 2texts.json in Resources */,
 				A74DA4202628C5B400AC793F /* bage aestetic 5texts.json in Resources */,
 				A708C18926186DFD006D53D6 /* MagnoliaScript.otf in Resources */,
+				A7F6E2E7263ABB320022BA0C /* interface 1texts.json in Resources */,
 				A797A536260148DF008A1734 /* minimalism4.json in Resources */,
 				A797A51C26014598008A1734 /* travel 3.json in Resources */,
 				A708C1B32618704A006D53D6 /* Stig.otf in Resources */,
 				A74A78EE262984790059246E /* boho1.json in Resources */,
+				A7F6E2D8263AAE4B0022BA0C /* color splash 8texts.json in Resources */,
 				A797A531260148DF008A1734 /* minimalism6.json in Resources */,
 				A797A4A726013927008A1734 /* spring mood9.json in Resources */,
 				A797A55A26079F4F008A1734 /* creative channel1.json in Resources */,
 				A797A4AB26013927008A1734 /* spring mood4.json in Resources */,
 				A797A55E26079F4F008A1734 /* creative channel8.json in Resources */,
+				A7F6E2F3263B11340022BA0C /* minimalism11.json in Resources */,
 				A708C19826186EBD006D53D6 /* NixieOne.ttf in Resources */,
 				A72E2608248D3D7000DEB420 /* testGeom.json in Resources */,
 				A797A4BC2601394D008A1734 /* color addict 1.json in Resources */,
@@ -1259,11 +1306,14 @@
 				A797A56526079F4F008A1734 /* creative channel12.json in Resources */,
 				A76C10872620F35A00405D51 /* color splash 6.json in Resources */,
 				A762AA37255174A800D9BD65 /* Шаблон для настройки для резки (01).png in Resources */,
+				A7F6E2CC26399B330022BA0C /* color splash 8.json in Resources */,
+				A7F6E2F0263B0FC80022BA0C /* interface 6texts.json in Resources */,
 				A743B5C826187A5E00B4E1AB /* Imperial.ttf in Resources */,
 				A708C1BC2618709D006D53D6 /* USSRSTENCIL.otf in Resources */,
 				A74A78D82628D6790059246E /* color addict8texts.json in Resources */,
 				A7A6E1762481442200D1FBD6 /* storiesPreviewTemplates.plist in Resources */,
 				A76C106E2620F0BC00405D51 /* summer vibes 8.json in Resources */,
+				A7F6E2DE263AB3600022BA0C /* color splash 3texts.json in Resources */,
 				A797A51E26014598008A1734 /* travel 2.json in Resources */,
 				A762AA36255174A800D9BD65 /* Шаблон для настройки для резки (02).png in Resources */,
 				A7D1F9D725C1FAFE001674DA /* Bender-Italic.otf in Resources */,
@@ -1273,12 +1323,14 @@
 				A708C1B92618707B006D53D6 /* Underdog.otf in Resources */,
 				A797A50526014575008A1734 /* Abstract Shapes3.json in Resources */,
 				A797A4B92601394D008A1734 /* color addict 3.json in Resources */,
+				A7F6E2C826399AB40022BA0C /* color splash 3.json in Resources */,
 				A797A539260148DF008A1734 /* minimalism3.json in Resources */,
 				A797A51826014598008A1734 /* travel 9.json in Resources */,
 				A76C10792620F1AD00405D51 /* interface 2.json in Resources */,
 				A797A51726014598008A1734 /* travel 8.json in Resources */,
 				A797A4BB2601394D008A1734 /* color addict9.json in Resources */,
 				A797A4A326013927008A1734 /* spring mood 1.json in Resources */,
+				A7F6E2E1263AB4670022BA0C /* color splash 6texts.json in Resources */,
 				A797A4AC26013927008A1734 /* spring mood2.json in Resources */,
 				A7D1F9E025C1FB3D001674DA /* Cuprum-Regular.ttf in Resources */,
 				A797A4A926013927008A1734 /* spring mood3.json in Resources */,
@@ -1315,6 +1367,7 @@
 				A76C10882620F35A00405D51 /* color splash 7.json in Resources */,
 				A797A538260148DF008A1734 /* minimalism.json in Resources */,
 				A797A4CF2601396E008A1734 /* bage aestetic 10.json in Resources */,
+				A7F6E2D12639A0970022BA0C /* interface 1.json in Resources */,
 				A74A78CE2628D27E0059246E /* bage aestetic 9texts.json in Resources */,
 				A7E31F0A2608D5C80037A0AC /* creative channel10.json in Resources */,
 				A7A6E1742481416F00D1FBD6 /* storiesTemplates.plist in Resources */,
@@ -1334,9 +1387,12 @@
 				A797A4D72601396E008A1734 /* bage aestetic 3.json in Resources */,
 				A74A78E12628DF3E0059246E /* spring mood7texts.json in Resources */,
 				A797A51926014598008A1734 /* travel 6.json in Resources */,
+				A7F6E2ED263B0D4F0022BA0C /* interface 3texts.json in Resources */,
+				A7F6E2E4263AB54D0022BA0C /* color splash 7texts.json in Resources */,
 				A708C1AA26187003006D53D6 /* Prosto.ttf in Resources */,
 				A708C16B26185F59006D53D6 /* Flow-Bold.otf in Resources */,
 				A797A4A526013927008A1734 /* spring mood10.json in Resources */,
+				A7F6E2D42639A0D80022BA0C /* interface 3.json in Resources */,
 				A708C1622615DADA006D53D6 /* travel 1texts.json in Resources */,
 				A708C18326186D9D006D53D6 /* London.otf in Resources */,
 				A797A55D26079F4F008A1734 /* creative channel6.json in Resources */,
@@ -1383,7 +1439,6 @@
 				A7D47D2325E39E8200A68029 /* conditionalDissapear.swift in Sources */,
 				A7409AB225DB045C006AF0D7 /* textEditorColorPicker3.0.swift in Sources */,
 				A7DAC7552479704400CAC530 /* frame.swift in Sources */,
-				A797A54B26066827008A1734 /* hiStory products.swift in Sources */,
 				A743653F258A3EC70035D930 /* getCreationDateByURL.swift in Sources */,
 				A757BF2E247DBB290075145B /* textFieldLayers.swift in Sources */,
 				A76DDA5C25824AAD0064C220 /* colorPicker.swift in Sources */,
@@ -1393,7 +1448,7 @@
 				A7D011402487EE590092F85A /* resisableText.swift in Sources */,
 				A7D0A78425B874C400350BA8 /* enumInFuncCall.swift in Sources */,
 				A7184AFD25A4B7A700AEEE20 /* photoContainersFrame.swift in Sources */,
-				A7DF922D260CF28F00249894 /* purchasePage.swift in Sources */,
+				A7DF922D260CF28F00249894 /* purPage.swift in Sources */,
 				A7816373258D4C9A00B030B6 /* KeyBoardNotificationReader.swift in Sources */,
 				A76EB2F7256831BF0089FCAE /* toHexColorConverter.swift in Sources */,
 				A7FD2FF025914B2100A0576E /* pickerFromList.swift in Sources */,
@@ -1408,6 +1463,7 @@
 				A749C35B25B1F90700C5DEF1 /* hideView.swift in Sources */,
 				A7184AF925A487BE00AEEE20 /* textContainersFrame.swift in Sources */,
 				A76B901925BC7AC500792414 /* textEditorSliders.swift in Sources */,
+				A7F6E2F6263C08500022BA0C /* proTemplatesNames.swift in Sources */,
 				A709970C2565A32000AA14AF /* TemplateRedactor.swift in Sources */,
 				A7102A3824866C6500FDDE31 /* dataFetchTest.swift in Sources */,
 				A7A87AFE2589479B00BD6708 /* defaultTemplates.swift in Sources */,
@@ -1418,22 +1474,22 @@
 				A76B901625BC23AB00792414 /* fontsNames.swift in Sources */,
 				A7D51276255542EF00EB261E /* testscreenshot.swift in Sources */,
 				A757BF40247FF5FF0075145B /* StoryPreview.swift in Sources */,
-				A7DF922A260CE09900249894 /* purchaseButton.swift in Sources */,
+				A7DF922A260CE09900249894 /* purButton.swift in Sources */,
 				A757BF37247F09DD0075145B /* MainMenu.swift in Sources */,
 				A7B0904A256D1350004DA7C7 /* advertise.swift in Sources */,
 				A721E2F12470192D002166E9 /* SwiftUIPhotoSelector.swift in Sources */,
 				A7B07ADB246DDF6B00E3EF6D /* SceneDelegate.swift in Sources */,
 				A76DDA492581434B0064C220 /* addDoneButton.swift in Sources */,
 				A757BF31247DBC2C0075145B /* draggable.swift in Sources */,
+				A7215F61264D170B0086EF19 /* rotateTest.swift in Sources */,
 				A74A8A2225EE87B700FCF5A2 /* UIViewPhotoAddQuestion.swift in Sources */,
 				A757BF33247E746B0075145B /* strokedDashAnimated.swift in Sources */,
-				A797A54726066802008A1734 /* IAPHelper.swift in Sources */,
 				A7184B0425A50A3500AEEE20 /* systemFilesWorker.swift in Sources */,
 				A76DDA6525853E860064C220 /* coordinator.swift in Sources */,
 				A721E2E7246DE92A002166E9 /* redactor.swift in Sources */,
 				A7ACA1D425EA5B1E0087FB12 /* UIColors.swift in Sources */,
 				A7ACA1D125E9929B0087FB12 /* sideMenu.swift in Sources */,
-				A7E31F0E260BAC9D0037A0AC /* storeManager.swift in Sources */,
+				A7E31F0E260BAC9D0037A0AC /* manager.swift in Sources */,
 				A743B5DC2619AA0F00B4E1AB /* progressIcon.swift in Sources */,
 				A76EB2F32567B55E0089FCAE /* activeBorder.swift in Sources */,
 				A794790925894BF200180914 /* draftTemplates.swift in Sources */,
@@ -1599,6 +1655,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"apple swiftUI tutorial/Preview Content\"";
 				DEVELOPMENT_TEAM = YQ8UXB3CWP;
 				ENABLE_ONLY_ACTIVE_RESOURCES = NO;
@@ -1623,6 +1680,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"apple swiftUI tutorial/Preview Content\"";
 				DEVELOPMENT_TEAM = YQ8UXB3CWP;
 				ENABLE_ONLY_ACTIVE_RESOURCES = NO;

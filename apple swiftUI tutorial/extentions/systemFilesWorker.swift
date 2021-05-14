@@ -15,6 +15,11 @@ struct savedTemplatesData{
     var dates: [Date] = [Date()]
     var images: [Image] = [Image( systemName: "goforward")]
 }
+struct savedStoryTemplateData {
+    var name: String
+    var date: Date
+    var image: Image
+}
 
 class systemFilesWorker {
     func getDocumentsDirectory() -> URL {
@@ -77,33 +82,8 @@ class systemFilesWorker {
     }
     }
     
-    func clearDraftByName(_ name: String){
-        var folders: [URL]
-        do{
-            folders = try getDocumentsDirectory().subDirectories()
-            do {
-                try folders.forEach{
-                    if $0.lastPathComponent == name {
-                    try FileManager.default.removeItem(at: $0)
-                        return
-                    }
-                }
-            } catch {
-            }
-        } catch {
-        }
-    }
     
-    func clearDrafts(){
-        var folders: [URL]
-        do{
-            folders = try getDocumentsDirectory().subDirectories()
-            do{
-                try folders.forEach{ try FileManager.default.removeItem(at: $0)}
-            }catch{
-            }
-        } catch {
-        }
-    }
+    
+   
   
 }

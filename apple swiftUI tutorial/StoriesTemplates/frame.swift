@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct frame1: View {
-    @ObservedObject var settings: selectorContainerStore = .shared
+    @ObservedObject var settings: selectorContainer = .shared
 //    @ObservedObject var textFields: textContainersFrameData = .shared
     let imgW = CGFloat(1080)
     @State var showButton: Bool = false
@@ -30,11 +30,14 @@ struct frame1: View {
                 )
                 .opacity(settings.templateOpacity ? 0 : 0) 
                 .overlay(
-                    photoContainersFrame(templateWidth: screenW / 1.7)
+                    photoContainersFrame(templateWidth: screenW / CGFloat(templateWidthDivider))
                 )
                 .overlay(
-                    textContainersFrame(templateWidth: screenW / 1.7)
+                    textContainersFrame(templateWidth: screenW / CGFloat(templateWidthDivider))
                 )
+//                .onAppear {
+//                    print("frame", screenW / CGFloat(templateWidthDivider) )
+//                }
 //        }
       
     }

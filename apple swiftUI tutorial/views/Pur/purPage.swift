@@ -1,5 +1,5 @@
 //
-//  purchasePage.swift
+//  pPage.swift
 //  apple swiftUI tutorial
 //
 //  Created by David Gaz on 25.03.2021.
@@ -16,12 +16,12 @@ enum selectedItemToPurchase {
     case year, month
 }
 
-struct purchasePage: View {
+struct pPage: View {
     @State var activeButton: selectedItemToPurchase = .month
     @State var yearActive: Bool = true
     @State var monthActive: Bool = false
     
-    @ObservedObject var storeManager:StoreManager = .shared
+    @ObservedObject var manager:manager = .shared
     let productIDs = [
      "com.davagaz.historyPro.Month",
      "com.davagaz.historyPro.Year"
@@ -29,6 +29,15 @@ struct purchasePage: View {
     
     
     var body: some View {
+        ZStack{
+            Color(hex: "59361c")
+                            .edgesIgnoringSafeArea(.all)
+            LinearGradient(
+                gradient: .init(colors: [.clear,.black]),
+                startPoint: .init(x: 0.5, y: 0),
+                endPoint: .init(x: 0.5, y: 0.6)
+              )
+            
         VStack{
 //            Text("Прокачай свои сториз с hiStory PRO")
 //                .lineSpacing(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
@@ -44,7 +53,7 @@ struct purchasePage: View {
             VStack(alignment: .leading , spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                 Group{
                 featureRow(NSLocalizedString("Over 100 unique photo frames", comment: "Over 100 unique photo frames")) //over 100 unique photo frames
-                featureRow(NSLocalizedString("Over 30 fonts - all with Cyrillic support!", comment: "Over 30 fonts - all with Cyrillic support!")) //over 30 fonts - all with Cyrillic support!
+                featureRow(NSLocalizedString("Over 50 fonts - all with Cyrillic support!", comment: "Over 30 fonts - all with Cyrillic support!")) //over 30 fonts - all with Cyrillic support!
                 featureRow(NSLocalizedString("Effects and styles for text with the ability\nto add shadows, neon, frames and strokes", comment: "Effects")) //effects and styles for text with the ability to add shadows, neon, frames and strokes
                 featureRow(NSLocalizedString("Ultra HD 4K quality", comment: "Ultra HD!")) //Ultra HD 4K quality
                 featureRow(NSLocalizedString("Exclusive templates designs", comment: "Exclusive templates designs"))//smart copying to create color style and mood
@@ -57,12 +66,12 @@ struct purchasePage: View {
             
             
             VStack{
-                let yearArr = storeManager.myProducts.filter {
+                let yearArr = manager.myProducts.filter {
                     $0.productIdentifier == "com.davagaz.historyPro.Year"
                 }
                 let year = yearArr.count > 0 ? yearArr[0] : SKProduct()
                 let yearPrice = yearArr.count > 0 ? year.localizedPrice : "0"
-                let monthArr = storeManager.myProducts.filter {
+                let monthArr = manager.myProducts.filter {
                     $0.productIdentifier == "com.davagaz.historyPro.Month"
                 }
                 let month = monthArr.count > 0 ? monthArr[0] : SKProduct()
@@ -70,13 +79,13 @@ struct purchasePage: View {
                 
                 let sale = (( 1 - (year.price as Decimal) / ( (month.price as Decimal) * 12)) * 100)
                 HStack {
-                    purchaseButton(isSelected: $yearActive, title: year.localizedTitle , price: yearPrice, info: "*\(NSLocalizedString("only", comment: "word before calculated price of year subscription divided on 12 month")) \( ((year.price as Decimal)/12).rounded(2, NSDecimalNumber.RoundingMode.plain) ) / \(NSLocalizedString("month", comment: "month"))", sale:
+                    pButton(isSelected: $yearActive, title: year.localizedTitle , price: yearPrice, info: "*\(NSLocalizedString("only", comment: "word before calculated price of year subscription divided on 12 month")) \( ((year.price as Decimal)/12).rounded(2, NSDecimalNumber.RoundingMode.plain) ) / \(NSLocalizedString("month", comment: "month"))", sale:
                                     "\(sale.rounded(0, NSDecimalNumber.RoundingMode.down ))"
                     ){
                 yearActive = true
                 monthActive = false
             }
-                    purchaseButton(isSelected: $monthActive, title: month.localizedTitle , price: monthPrice , info: ""){
+                    pButton(isSelected: $monthActive, title: month.localizedTitle , price: monthPrice , info: ""){
                 yearActive = false
                 monthActive = true
             }
@@ -84,9 +93,9 @@ struct purchasePage: View {
             
             Button(action: {
                 if yearActive {
-                    storeManager.purchaseProduct(product: year)
+                    manager.purchaseProduct(product: year)
                 } else if monthActive{
-                    storeManager.purchaseProduct(product: month)
+                    manager.purchaseProduct(product: month)
 
                 }
                 
@@ -100,7 +109,7 @@ struct purchasePage: View {
             })
 
                 Button(action: {
-                    storeManager.restoreProducts()
+                    manager.restoreProducts()
                 }, label: {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(height: 60)
@@ -114,12 +123,15 @@ struct purchasePage: View {
             
             .fixedSize()
         }
+      
         .fixedSize()
+        
         .onAppear(perform: {
-                          storeManager.getProducts(productIDs: productIDs)
-            SKPaymentQueue.default().add(storeManager)
+                          manager.getProducts(productIDs: productIDs)
+            SKPaymentQueue.default().add(manager)
             
                       })
+    }
     }
 }
 
@@ -163,7 +175,7 @@ struct splitedTextViewUI: UIViewRepresentable {
             NSAttributedString.Key.paragraphStyle: paragraphStyle
         ]
         textv.font = UIFont(name: "Arial", size: CGFloat(39))
-        textv.text = NSLocalizedString("Upgrade\nyour stories\nwith hiStorys PRO", comment: "Upgrade") //upgrade your stories with hiStorys PRO
+        textv.text = NSLocalizedString("Upgrade\nyour stories\nwith hiStory PRO", comment: "Upgrade") //upgrade your stories with hiStorys PRO
         textv.textColor = .white
         textv.backgroundColor = .clear
         textv.isScrollEnabled = false
@@ -203,7 +215,7 @@ class splitedTextView: UITextView, NSLayoutManagerDelegate {
     }
 }
 
-struct purchasePage_Previews: PreviewProvider {
+struct pPage_Previews: PreviewProvider {
     var grad:LinearGradient = LinearGradient(
         gradient: .init(colors: [.clear,.black]),
         startPoint: .init(x: 0.5, y: 0),
@@ -216,7 +228,7 @@ struct purchasePage_Previews: PreviewProvider {
                 .resizable()
                 .scaledToFill()
             Group{
-            Color.elementAccent
+                Color(hex: "59361c")
             LinearGradient(
                 gradient: .init(colors: [.clear,.black]),
                 startPoint: .init(x: 0.5, y: 0),
@@ -225,7 +237,7 @@ struct purchasePage_Previews: PreviewProvider {
             }
            
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            purchasePage()
+            pPage()
 //                .opacity(0.3)
         }
      

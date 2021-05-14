@@ -82,7 +82,7 @@ struct lazyStackText: View{
     
     var body: some View {
         lazyStack(elements: chosableColors.count, elementsInRow: 2) {e in
-            colorCircleChoser2(color: chosableColors[e]){
+            colorCircleChoser3(color: chosableColors[e]){
                 
             }
         }

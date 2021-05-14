@@ -1,5 +1,5 @@
 //
-//  purchaseButton.swift
+//  pButton.swift
 //  apple swiftUI tutorial
 //
 //  Created by David Gaz on 25.03.2021.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct purchaseButton: View {
+struct pButton: View {
     var radius:CGFloat = 10
     @Binding var isSelected: Bool
     @State private var amount: CGFloat = 2
@@ -45,19 +45,19 @@ struct purchaseButton: View {
                     VStack(alignment:.leading ,content:{
                         Text(title)
                             .font(.custom("Arial", size: 10) )
-                            .foregroundColor(.elementAccent)
+                            .foregroundColor(Color(hex: "59361c"))
 //                            .kerning(amount)
                         
                         Text(price)
                             .font(.custom("Arial", size: 22) )
                             .kerning(amount)
                             .padding([.top,.bottom], 10)
-                            .foregroundColor(.elementAccent)
+                            .foregroundColor(Color(hex: "59361c"))
                            
                         
                         Text(info)
                             .font(.custom("Arial", size: 10) )
-                            .foregroundColor(.elementAccent)
+                            .foregroundColor(Color(hex: "59361c"))
 //                            .kerning(amount)
                     })
                     
@@ -90,15 +90,15 @@ struct purchaseButton: View {
 }
 
 
-struct purchaseButtonWrap: View {
+struct pButtonWrap: View {
     @State var active : Bool = true
     var body: some View {
-        purchaseButton(isSelected: $active)
+        pButton(isSelected: $active)
     }
 }
 
 
-struct purchaseButton_Previews: PreviewProvider {
+struct pButton_Previews: PreviewProvider {
     
     static var previews: some View {
         ZStack{
@@ -107,7 +107,7 @@ struct purchaseButton_Previews: PreviewProvider {
                 .scaledToFill()
 
 //            Color.gray
-//            purchaseButtonWrap()
+//            pButtonWrap()
 //                        .opacity(0.7)
         }
     }

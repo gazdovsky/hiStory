@@ -3,4 +3,190 @@
    uuid = "BC4A1280-1147-4544-8277-423531C61D54"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5FB4974-DB52-44DC-8511-55F0840E1E14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/StoriesTemplates/photoContainersFrame.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C95327D-D38D-407E-9671-0C472467BE92"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "apple swiftUI tutorial/Classes/coordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "templateReserveName"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - 44718df061fe448"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of apple_swiftUI_tutorial.selectorContainerStore.templateReserveName : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - a26ffbae3ce23018"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.templateReserveName.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - b736a01a74e0b7e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.templateReserveName.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "151">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - 56809e002e04d4cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.templateReserveName.modify : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - a26749ba2dbc275"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.templateReserveName.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - bd144f925356f920"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.$templateReserveName.getter : Combine.Published&lt;Swift.Optional&lt;Swift.String&gt;&gt;.Publisher"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - 4195091a6003a3ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.$templateReserveName.setter : Combine.Published&lt;Swift.Optional&lt;Swift.String&gt;&gt;.Publisher"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "233">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - edea6b7b6e152a2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.$templateReserveName.modify : Combine.Published&lt;Swift.Optional&lt;Swift.String&gt;&gt;.Publisher"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - 8518be8218290e55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.$templateReserveName.modify : Combine.Published&lt;Swift.Optional&lt;Swift.String&gt;&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  uuid = "0C95327D-D38D-407E-9671-0C472467BE92 - 4dd181990f967d11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "apple_swiftUI_tutorial.selectorContainerStore.init() -&gt; apple_swiftUI_tutorial.selectorContainerStore"
+                  moduleName = "apple swiftUI tutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidgaz/Documents/Swift/apple%20swiftUI%20tutorial/apple%20swiftUI%20tutorial/Classes/coordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1233">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

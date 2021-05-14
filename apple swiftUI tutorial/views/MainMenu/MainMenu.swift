@@ -9,8 +9,9 @@
 import SwiftUI
 import StoreKit
 
+
 struct MainMenu: View {
-    @ObservedObject var settings: selectorContainerStore =  .shared
+    @ObservedObject var settings: selectorContainer =  .shared
     @State var dd = StoryPreviewsCategory
     
     @State var screenWidth: CGFloat = UIScreen.main.bounds.width
@@ -20,18 +21,18 @@ struct MainMenu: View {
        -(270 + (screenWidth - 270)/2)
     }
     var mainMenuOffset2: CGFloat {
-        print((screenWidth - 270)/2)
+//        print((screenWidth - 270)/2)
 return        (screenWidth - 270)/2
     }
     
     @State var activeButton: Bool = true
     @State var hideButtons: Bool = false
     @State var showSideMenu: Bool = false
-    @State var showProPurchase: Bool = false
+    
     @State var scroll: CGFloat = 0.0
     var baseRatio: CGFloat = 1080/1920
     
-    @ObservedObject var storeManager:StoreManager = .shared
+    @ObservedObject var storeManager:manager = .shared
    let productIDs = [
     "com.davagaz.historyPro.Month",
     "com.davagaz.historyPro.Year"
@@ -45,50 +46,45 @@ return        (screenWidth - 270)/2
     var itemH: CGFloat{
         itemW/baseRatio
     }
+    
+    var proButton: String {
+        if #available(iOS 14.0, *) {
+            return "crown.fill"
+        } else {
+            return "star.fill"
+        }
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
                 HStack{
                 Group {
-                    Spacer()
+//                    Spacer()
                     ToolbarButton(icon: "line.horizontal.3", isSelected: true, size: 25) {
                         showSideMenu.toggle()
                     }
                     .scaleEffect(CGSize(width: 1.0, height: 1.3), anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .padding(10)
-                    Spacer()
-                    mainNavigationButton(text: "Templates", color: settings.activeMainPage == .templates ? Color.elementAccent :  Color.white.opacity(0)) {
+//                    Spacer()
+                    mainNavigationButton(text: NSLocalizedString( "Templates", comment: "Templates"), color: settings.activeMainPage == .templates ? Color(hex: "59361c") :  Color.white.opacity(0)) {
                         showSideMenu = false
                         settings.activeMainPage = .templates
                         settings.update.toggle()
                     }
-                    mainNavigationButton(text: "My stories", color: settings.activeMainPage == .draft ? Color.elementAccent :  Color.white.opacity(0)){
+                    mainNavigationButton(text: NSLocalizedString( "My stories", comment: "My stories") , color: settings.activeMainPage == .draft ? Color(hex: "59361c") :  Color.white.opacity(0)){
                         showSideMenu = false
+//                        settings.draftStories.drafts = settings.draftStories.getSavedTemplates()
                         settings.activeMainPage = .draft
-                        settings.update.toggle()
+//                        settings.update.toggle()
                     }
-                    Spacer()
-                    Group{
-                        if #available(iOS 14.0, *) {
-                            ToolbarButton(icon: "crown.fill", isSelected: true, size: 25, color: "eba147") {
-                                showProPurchase =  true
+//                    Spacer()
+                            ToolbarButton(icon: proButton, isSelected: true, size: 25, color: "eba147") {
+                                settings.showProPurchase = true
                             }
-                        } else {
-                            Button {
-                                showProPurchase =  true
-
-                            } label: {
-                                Text("PRO")
-                                    .padding(2)
-                                    .background(Color(hex: "eba147" ))
-                                    .clipShape(RoundedRectangle(cornerRadius: 2) )
-                            }
-
-                        }
-                    }
-                    
-                        .padding(10)
-                    Spacer()
+//                        .padding(10)
+//                    .border(Color.red, width: 1)
+//                    Spacer()
                }
                 }
                 .frame(width: nil, height: hideButtons ? 0 : nil)
@@ -133,7 +129,7 @@ return        (screenWidth - 270)/2
                                 
                             
                             defaultTemplates()
-                            
+                                
                                
                             
                             
@@ -166,12 +162,7 @@ return        (screenWidth - 270)/2
                     })
                     .animation(.easeIn)
                     .offset(CGSize(width: settings.activeMainPage == .draft ? 0 : screenWidth, height: 0))
-                    
-//                    sideMenu()
-//                                                .offset(x: showSideMenu ? 0 : -270, y: 0)
-//                                                .animation(.linear, value: showSideMenu)
-//                                                .transition(.move(edge: .leading))
-                    
+ 
                 })
                 .overlay(
                     ZStack(alignment: .topLeading , content: {
@@ -190,17 +181,16 @@ return        (screenWidth - 270)/2
             .background(
                 Color.mainBeige
                     .edgesIgnoringSafeArea(.all)
-                    
             )
         }
-        
+      
         .overlay(
             ZStack{
                 VStack{
                     HStack{
                         Spacer()
                         ToolbarButton(icon: "xmark.circle", isSelected: true, size: 30, color: "000", action: {
-                            showProPurchase = false
+                            settings.showProPurchase = false
                         })
                         .padding()
                     }
@@ -219,13 +209,13 @@ return        (screenWidth - 270)/2
                 }
                
                     .edgesIgnoringSafeArea(.all)
-                purchasePage()
+                pPage()
 //                    .resizable()
 //                    .scaledToFill()
                 }
             )
-            .offset(x: 0, y: showProPurchase ? 0 : screenHeigth + 100)
-            .animation(.linear, value: showProPurchase)
+            .offset(x: 0, y: settings.showProPurchase ? 0 : screenHeigth + 100)
+            .animation(.linear, value: settings.showProPurchase)
             .transition(.move(edge: .top))
 //            .onAppear(perform: {
 //                print(getDocumentsDirectory().absoluteString)
@@ -255,34 +245,31 @@ extension UIImage {
 }
 
 struct mainMenuItem: View {
-    @ObservedObject var settings: selectorContainerStore =  .shared
+    @ObservedObject var settings: selectorContainer =  .shared
+//    @ObservedObject var draftStories: draftTemplatesData = .shared
+    @ObservedObject var proTemplates: proTemplates = .shared
    @State var iPreview: String? = "bage aestetic 3"
-//    @Binding var isNavigate: Bool
+    
 //    @State var color = Color.red
     @State var w: CGFloat
     @State var h: CGFloat
     @State var isDraftItem: Bool
+    @State var isPro: Bool = false
 //    @State var draftItemPreview: UIImage = UIImage()
-    
-    
+    @State var isNavigate: Bool = false
+    @State var newPreviewImg: Image
     var previewImg: Image {
 //        print(settings.templateReserveName, iPreview)
         if !isDraftItem {
-            return Image(self.iPreview! + "_PREVIEW" ?? "22")
-//            let bundlePath = Bundle.main.path(forResource: iPreview, ofType: "")
-//            let image = UIImage(contentsOfFile: bundlePath!)
-//            return Image(uiImage: UIImage(contentsOfFile: bundlePath! )!)
-//            return Image( uiImage: (UIImage(named: iPreview)?.getThumbnail())! )
+            return Image(self.iPreview! + "_PREVIEW")
         } else {
             let folder = getDocumentsDirectory().appendingPathComponent(iPreview!)
             let name = folder.appendingPathComponent("draftImage.jpg")
+//            print(name)
             do {
                 // note it runs in current thread
                 let imageData = try Data(contentsOf: name)
                 return Image(uiImage: UIImage(data: imageData)! )
-                
-               
-                
             }
             catch {
             }
@@ -290,25 +277,60 @@ struct mainMenuItem: View {
         }
     }
     var body: some View {
-        NavigationLink(destination: redactor(restoreFromDrafts: isDraftItem), tag: iPreview ?? "02", selection: $settings.templateReserveName ){
+        NavigationLink(destination: redactor(restoreFromDrafts: isDraftItem, isNavigateToRedactor: $isNavigate), isActive: $isNavigate){ //, tag: iPreview ?? "02", selection: $settings.templateReserveName
             VStack{
                 Rectangle()
                     .frame(width: self.w, height: self.h) // 169 x 301 iphone 8
+//                    .border(Color.red, width: 1)
                     .opacity(0)
                     .background(
-                        previewImg
+                        newPreviewImg
                             .renderingMode(.original)
                             .resizable()
                             .scaledToFit()
+//                            .border(Color.blue, width: 1)
                     )
-                    .modifier(setPROLabel(isPro: true) )
+                    .modifier(setPROLabel(isPro: isPro) )
                     .clipped()
-                    .onAppear{
-                        print(self.w, self.h)
-                    }
+//                    .onAppear{
+//                        print("")
+//                    }
             }
+            .simultaneousGesture(TapGesture(count: 1 )
+                                    .onEnded{
+                                        switch isDraftItem {
+                                        case false:
+                                            if proTemplates.names.firstIndex(of: iPreview!) != nil &&
+                                                            (!UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Year") &&
+                                                              !UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Month"))
+                                            && 1 == 2
+                                                            {
+                                                            settings.showProPurchase = true
+                                                        } else {
+                                                            print("item tap")
+                                                            settings.isOpenedDraft = false
+                                                            settings.navigateToRedactor = true
+                                                            
+                                                            settings.templateName = iPreview! + ".json"
+                                                            settings.templateImageName = iPreview!
+                                                            settings.templateReserveName = iPreview
+                                                            isNavigate = true
+                                                        }
+                                        case true: settings.templateName = iPreview! + ".json"
+                                            settings.templateImageName = iPreview!
+                                            settings.isOpenedDraft = true
+                                            settings.templateOpacity = false
+        //                                    settings.clearAllContainers()
+                                            settings.navigateToRedactor = true
+                                            settings.templateReserveName = iPreview
+                                            isNavigate = true
+                                        }
+                                    
+                                    })
             .shadow(radius: 10.0)
+//            .border(Color.red, width: 1)
         }
+        
     }
 }
 

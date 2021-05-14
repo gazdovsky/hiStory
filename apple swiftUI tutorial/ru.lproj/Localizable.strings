@@ -22,10 +22,39 @@
 
 "version" = "версия";
 
-"Upgrade\nyour stories\nwith hiStorys PRO" = "Прокачай\nсвои сториз с\nhiStorys PRO";
+"Upgrade\nyour stories\nwith hiStory PRO" = "Прокачай\nсвои сториз с\nhiStory PRO";
 
 "Over 100 unique photo frames" = "Более 100 дизайнерских шаблонов";
-"Over 30 fonts - all with Cyrillic support!" = "Более 50 шрифтов с кириллицей";
-"Effects and styles for text with the ability to add shadows, neon, frames and strokes" = "Текстовые эффекты";
+"Over 50 fonts - all with Cyrillic support!" = "Более 50 шрифтов с кириллицей";
+"Effects and styles for text with the ability\nto add shadows, neon, frames and strokes" = "Текстовые эффекты";
 "Ultra HD 4K quality" = "Ultra HD 4K качество";
 "Exclusive templates designs" = "Эксклюзивные дизайны";
+
+"only" = "всего";
+"month" = "месяц";
+
+"Hello! We are creators of the hiStory app, David and Anastasia. The idea to create hiStory came to us in the spring of 2020, when we started learning Swift and UX / UI design. Over time, our pet project became a full-fledged application. We aim to make it in such a way that the process of creating stories becomes even more high-speed, high-quality and diverse. We'd love to get any feedback, and thanks for your support!" = "Привет! Мы создатели приложения hiStory, Давид и Настя. Идея создать hiStory пришла к нам весной 2020, когда мы начали изучать язык Swift и UX/UI дизайн. Со временем наш небольшой, но любимый проект стал полноценным приложением. Мы постарались сделать его таким, чтобы процесс создания сторис стал еще более скоростным качественным и разнообразным. Будем рады обратной связи, и спасибо за поддержку!";
+
+"Templates" = "Шаблоны";
+"My stories" = "История";
+
+"Pallete" = "Палитра";
+"Current" = "Текущий";
+"Saved colors" = "Сохраненные";
+"Double tap to save color" = "Двойной тап, чтобы сохранить цвет";
+"Standart Colors" = "Стандартные цвета";
+"Color palette 2021" = "Палитра 2021";
+"Opacity Colors" = "Прозрачные цвета";
+
+"Size" = "Буквы";
+"Kern" = "Керн";
+"Radius" = "Радиус";
+
+"Subscript" = "Купить";
+"Restore purchase" = "Восстановить покупки";
+
+"Clear all" = "Удалить все";
+"Clear all drafts" = "Удаление всех черновиков";
+"Are you sure? This action cannot be undone" = "Вы уверены? Это действие нельзя будет отменить";
+
+"Here you will see 10 recent redacted templates" = "Здесь вы увидете 10 недавно отредактированных шаблонов";

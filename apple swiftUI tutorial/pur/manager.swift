@@ -9,14 +9,12 @@
 import Foundation
 import StoreKit
 
-class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+class manager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     
-    static var shared = StoreManager()
+    static var shared = manager()
     @Published var myProducts = [SKProduct]()
-//    storeManager.getProducts(productIDs: productIDs)
-//SKPaymentQueue.default().add(storeManager)
-//
+
     let productIDs = [
      "com.davagaz.historyPro.Month",
      "com.davagaz.historyPro.Year"
@@ -24,11 +22,6 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
     @Published var transactionState: SKPaymentTransactionState?
     
     var request: SKProductsRequest!
-    
-//    init() {
-//        self.getProducts(productIDs: productIDs)
-//    }
-    
 
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
@@ -68,10 +61,11 @@ class StoreManager: NSObject, ObservableObject, SKProductsRequestDelegate, SKPay
                 UserDefaults.standard.setValue(true, forKey: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
                 transactionState = .purchased
+                print("purchase", transaction.payment.productIdentifier)
             case .restored:
                 UserDefaults.standard.setValue(true, forKey: transaction.payment.productIdentifier)
                 queue.finishTransaction(transaction)
-                print("Purchased purchase/restored")
+                print("Purchased purchase/restored",transaction.payment.productIdentifier )
                 
                 transactionState = .restored
             case .failed, .deferred:

@@ -86,21 +86,21 @@ class uiColors: ObservableObject{
     ]
     
     @Published var opacityColors: [String] = [
-        "20FDAC53",
-        "409BB7D4",
-        "60B55A30",
-        "cfF5DF4D",
-        "ac0072B5",
-        "ccA0DAA9",
-        "c0E9897E",
-        "f400A170",
-        "2f926AA6",
-        "1aD2386C",
-        "a69A8B4F",
-        "c0E0B589",
-        "80EFE1CE",
-        "b0939597",
-        "a8363945",
+        "7fFDAC53",
+        "7f9BB7D4",
+        "7fB55A30",
+        "7fF5DF4D",
+        "7f0072B5",
+        "7fA0DAA9",
+        "7fE9897E",
+        "7f00A170",
+        "7f926AA6",
+        "7fD2386C",
+        "7f9A8B4F",
+        "7fE0B589",
+        "7fEFE1CE",
+        "7f939597",
+        "7f363945",
     ]
     
 //    var c7 = hexColor(hex: "f4d9c9")
@@ -125,7 +125,7 @@ struct colorsCodes: View {
                 .background(Color.black)
             })
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    VStack{
+            VStack(spacing:0 ,content:{
                         Group{
                         Rectangle()
                             .foregroundColor(Color(hex: "f4d8c8"))
@@ -148,7 +148,7 @@ struct colorsCodes: View {
                             .foregroundColor(Color.elementAccent )
                         }
                         .frame(width: 200, height: 50)
-                    }
+                    })
         }
 
     }
