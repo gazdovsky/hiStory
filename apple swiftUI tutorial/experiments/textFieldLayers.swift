@@ -43,12 +43,16 @@ struct textViewWrapper: View {
     @State var needSynchronizeWidthDrag: Bool = true
     var borderWidthForTest: CGFloat = 0
     var additionComandButtonOffset: CGFloat = 22
-    @State var newrotate: Double = 0.0
+//    @State var newrotate: Double = 0.0
     @State var additionalHorizontalOffset: CGFloat = 0
     @State var additionalDiagonalOffset: CGFloat = 0
+    @State var needSynchronizeAngle: Bool = true
+    @State var rotateIconTranslation: CGSize = .zero
+    @State var hiddenAngle: Angle = .zero
     
     @State var center: CGPoint = CGPoint(x: 0, y: 0)
-     var dot: CGPoint { CGPoint(x: textViewItem.containerW/2 * increaser, y: -textViewItem.containerH/2 * increaser) }
+//     var dot: CGPoint { CGPoint(x: textViewItem.containerW/2 * increaser, y: -textViewItem.containerH/2 * increaser) }
+    var dot: CGPoint { CGPoint(x: 0, y: 0) }
     @State var newDot: CGPoint = CGPoint(x: 0, y: 0)
     @State var newRotate: Angle = .zero
     @State var supDegree: Double = .zero
@@ -70,7 +74,7 @@ struct textViewWrapper: View {
     let gragientColors = Gradient(colors: [.purple,.yellow])
     var body: some View{
         
-        
+        ZStack{
         
         ZStack(content: {
             TextView(fieldText: textViewItem.fieldText,
@@ -93,7 +97,7 @@ struct textViewWrapper: View {
                      style: textViewItem.style,
                      increaser: increaser
             )
-            .rotationEffect(newRotate)
+          
 //            .background(
 //                LinearGradient(gradient: gragientColors, startPoint: .bottomLeading, endPoint: .topTrailing)
 //            )
@@ -194,50 +198,56 @@ struct textViewWrapper: View {
                 .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.clear)
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: borderWidthForTest)
-                .contentShape(Rectangle())
                 .overlay(
                     Image(systemName: "arrow.counterclockwise.circle.fill")
                         .foregroundColor(Color(UIColor.label))
                 )
                 .offset(x: textViewItem.containerW/2 * increaser , y: -textViewItem.containerH/2 * increaser )
-                .offset(x: additionalDiagonalOffset, y: -additionalDiagonalOffset)
                 .opacity(textViewItem.isActive ? 1 : 0)
+        })
+//        .rotationEffect(newRotate)
+        .rotationEffect(Angle(degrees: textViewItem.transform.rotate * 180 / .pi))
+        .overlay(
+            Rectangle()
+                .frame(width: 44, height: 44, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(.clear)
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: borderWidthForTest)
+                .contentShape(Rectangle())
+                .overlay(
+                    Image(systemName: "arrow.counterclockwise.circle.fill")
+                        .foregroundColor(Color(UIColor.label))
+                        .opacity(0.6)
+                        .contentShape(Rectangle())
+                )
+                .offset(x: textViewItem.containerW/2 * increaser , y: -textViewItem.containerH/2 * increaser ) //-textViewItem.containerH/2 * increaser
+                .offset(x: additionalDiagonalOffset, y: -additionalDiagonalOffset)
+                .offset(x: newDot.x, y: newDot.y)
+                .opacity(textViewItem.isActive ? 1 : 0)
+                .rotationEffect(hiddenAngle)
                 .gesture(DragGesture()
-                            .onChanged{value in
-                                newDot = CGPoint(x: value.translation.width, y: value.translation.height)
-                                let dotVelocity = CGPoint(x: value.translation.width + dot.x, y: value.translation.height + dot.y)
-                                let degrees = Angle(degrees: Double(
-                                    atan2(center.y - dotVelocity.y, center.x - dotVelocity.x) -
-                                    atan2(dotVelocity.y - dot.y, dotVelocity.x - dot.x)
-                                ))
+                            .onChanged{ value in
                                 
-                                var supposedDegree = Double(degrees.degrees)
-//                                if supposedDegree > .pi {
-//                                    supposedDegree = supposedDegree - .pi
-//                                } else if supposedDegree < -.pi {
-//                                    supposedDegree = supposedDegree + .pi
-//                                }
-                                supDegree = abs(supposedDegree)
-                                newRotate = Angle(radians: supposedDegree)
-                              print(supDegree, newRotate ,newDot)
-                                
+//                                newRotate = calcRotationAngle(sumCGSize(value.translation, rotateIconTranslation))
+                                textViewItem.transform.rotate = calcRotationAngle(sumCGSize(value.translation, rotateIconTranslation)).radians
                             }
-                            .onEnded { _ in
-                                redactor.textFields.textContainers[index].transform.rotate = 0
+                            .onEnded{ value in
+
+                                rotateIconTranslation = sumCGSize(value.translation, rotateIconTranslation)
+                                hiddenAngle = Angle(degrees: textViewItem.transform.rotate * 180 / .pi)
+
+                                
                             }
                                 )
-                
-        })
-      
+        )
+
         .modifier(makeTransformingMultilineText(
             index : index,
             increaser: increaser,
-            activeContainer: $textViewItem
+            activeContainer: $textViewItem,
+            hiddenAngle: $hiddenAngle
         ))
-//        .fixedSize()
-//        .border(Color.black, width: 1)
-        
         .position(x: x, y: y)
+        }
         
     }
 
@@ -286,8 +296,22 @@ struct textViewWrapper: View {
             return additionComandButtonOffset
         }
     }
+    
+    func sumCGSize(_ a: CGSize, _ b: CGSize) -> CGSize {
+        return CGSize(width: a.width + b.width, height: a.height + b.height)
+    }
+    func calcRotationAngle(_ translation: CGSize) -> Angle {
+        Angle(radians: Double(
+                atan2(translation.height - textViewItem.containerH/2 * increaser / 2,
+                      translation.width + textViewItem.containerW/2 * increaser / 2 )))
+    }
+    
 }
-
+extension CGPoint {
+    func distance(to point: CGPoint) -> CGFloat {
+        return sqrt(pow((point.x - x), 2) + pow((point.y - y), 2))
+    }
+}
 
 struct TextView: UIViewRepresentable {
     

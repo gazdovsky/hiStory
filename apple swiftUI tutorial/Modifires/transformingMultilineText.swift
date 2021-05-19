@@ -49,6 +49,7 @@ struct makeTransformingMultilineText: ViewModifier{
         increaser * 1080
     }
     @Binding var activeContainer: textFieldContainer
+    @Binding var hiddenAngle: Angle
     @GestureState var isScaleActive: Bool = false
     @GestureState var isDragActive: Bool = false
     @GestureState var isRotateActive: Bool = false
@@ -205,13 +206,14 @@ struct makeTransformingMultilineText: ViewModifier{
                 newrotate = redactor.textFields.textContainers[index].transform.rotate
                 redactor.textFields.centerYLineVisible = false
                 redactor.textFields.centerXLineVisible = false
+                hiddenAngle = Angle(degrees: activeContainer.transform.rotate * 180 / .pi)
             })
         let multiGesture = dGesture.simultaneously(with: rGesture)
         
         return content
             .scaleEffect(newSaleValue)
             
-            .rotationEffect(Angle(degrees: activeContainer.transform.rotate * 180 / .pi))
+//            .rotationEffect(Angle(degrees: activeContainer.transform.rotate * 180 / .pi))
             .offset(offset)
             .gesture(multiGesture)
             .onAppear {

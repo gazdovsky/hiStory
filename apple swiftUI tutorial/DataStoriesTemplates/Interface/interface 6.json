@@ -1,1 +1,3 @@
-[{"id":"interface 6","name":"interface 6","containers":[{"id":"aco","x":374,"y":548,"w":332,"h":332,"angle":0,"z":1}]}]
+[{"id":"interface 6","name":"interface 6","containers":[
+    {"id":"avolume control6","x":0,"y":0,"w":1080,"h":1920,"angle":0,"z":1}
+]}]

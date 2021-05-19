@@ -217,9 +217,10 @@ return        (screenWidth - 270)/2
             .offset(x: 0, y: settings.showProPurchase ? 0 : screenHeigth + 100)
             .animation(.linear, value: settings.showProPurchase)
             .transition(.move(edge: .top))
-//            .onAppear(perform: {
-//                print(getDocumentsDirectory().absoluteString)
-//            })
+            .onAppear(perform: {
+                
+//                UserDefaults.standard.setValue(true, forKey: "com.davagaz.historyPro.Month")
+            })
         )
         
     }
@@ -303,7 +304,7 @@ struct mainMenuItem: View {
                                             if proTemplates.names.firstIndex(of: iPreview!) != nil &&
                                                             (!UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Year") &&
                                                               !UserDefaults.standard.bool(forKey: "com.davagaz.historyPro.Month"))
-                                            && 1 == 2
+                                           
                                                             {
                                                             settings.showProPurchase = true
                                                         } else {
